@@ -1,0 +1,22 @@
+#CACHE{24*3600}
+<B_sites>
+[(#ANCRE_PAGINATION)]
+[<p class="pagination">(#PAGINATION{page})</p>]
+<BOUCLE_sites(SITES){id_rubrique}{par num nom_site, nom_site}{pagination}>
+<dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
+    <dt>[<a href="#URL_SITE">(#NOM_SITE|supprimer_numero)</a>]</dt>
+    <dd class="descriptif">[(#DESCRIPTIF)]</dd>
+    <dd class="url">[<a href="#URL_SITE">(#URL_SITE)</a>]</dd>
+    <B_tags>
+    <dd class="tags">
+        <span><:tag:>&nbsp;:</span>
+        <BOUCLE_tags(MOTS){id_syndic}{par num titre, titre}{", "}>[(#TITRE|supprimer_numero)]</BOUCLE_tags>
+    </dd>
+    </B_tags>
+</dl>
+</BOUCLE_sites>
+</B_sites>
+<dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
+    <dt><:aucun_site:></dt>
+</dl>
+<//B_sites>

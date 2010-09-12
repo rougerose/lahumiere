@@ -1,0 +1,40 @@
+#CACHE{7*24*3600}
+<div id="zoneCalendrier">
+  <table summary="<:icone_calendrier:>" id="calendrier">
+		<caption>
+		  [<a class="anneePrecedente" href="(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'}|moins{1})-12]})" title="[<:mois_12:> (#ENV{date}|affdate{'Y'}|moins{1})]">&#x2190;</a>][
+			(#ENV{date}|annee)][
+			<a
+			    class="anneeSuivante"
+				href="(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'}|plus{1})-01]})"
+				title="[<:mois_1:> (#ENV{date}|affdate{'Y'}|plus{1})]">&#x2192;</a>]
+		</caption>
+		<tbody>
+		  [(#REM) on stocke les évenements ]
+			<BOUCLE_calendrier(EVENEMENTS){id_rubrique}{lang}{annee_relatif=0}{par date_debut}>
+			[(#SET{datedebut[(#DATE_DEBUT|affdate{'m'})],[(#GET{datedebut[(#DATE_DEBUT|affdate{'m'})]}|array_merge5{#ARRAY{#COMPTEUR_BOUCLE,#ID_ARTICLE}})]})]
+      </BOUCLE_calendrier>
+			[(#REM) et on les affiche ou pas selon les mois de l'année en cours. Pas terrible comme méthode d'affichage, mais ça marche en attendant de trouver mieux ]
+		  <tr>
+		    <B_tri_01><BOUCLE_tri_01(EVENEMENTS){id_article IN #GET{datedebut01}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-01]})]" [(#ENV{date}|affdate{'m'}|=={'01'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_1:>"><:mois_1:></a></td></BOUCLE_tri_01></B_tri_01><td><span><:mois_1:></span></td><//B_tri_01>
+		    <B_tri_02><BOUCLE_tri_02(EVENEMENTS){id_article IN #GET{datedebut02}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-02]})]" [(#ENV{date}|affdate{'m'}|=={'02'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_2:>"><:mois_2:></a></td></BOUCLE_tri_02></B_tri_02><td><span><:mois_2:></span></td><//B_tri_02>
+		    <B_tri_03><BOUCLE_tri_03(EVENEMENTS){id_article IN #GET{datedebut03}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-03]})]" [(#ENV{date}|affdate{'m'}|=={'03'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_3:>"><:mois_3:></a></td></BOUCLE_tri_03></B_tri_03><td><span><:mois_3:></span></td><//B_tri_03>
+		  </tr>
+		  <tr>
+		    <B_tri_04><BOUCLE_tri_04(EVENEMENTS){id_article IN #GET{datedebut04}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-04]})]" [(#ENV{date}|affdate{'m'}|=={'04'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_4:>"><:mois_4:></a></td></BOUCLE_tri_04></B_tri_04><td><span><:mois_4:></span></td><//B_tri_04>
+		    <B_tri_05><BOUCLE_tri_05(EVENEMENTS){id_article IN #GET{datedebut05}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-05]})]" [(#ENV{date}|affdate{'m'}|=={'05'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_5:>"><:mois_5:></a></td></BOUCLE_tri_05></B_tri_05><td><span><:mois_5:></span></td><//B_tri_05>
+		    <B_tri_06><BOUCLE_tri_06(EVENEMENTS){id_article IN #GET{datedebut06}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-06]})]" [(#ENV{date}|affdate{'m'}|=={'06'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_6:>"><:mois_6:></a></td></BOUCLE_tri_06></B_tri_06><td><span><:mois_6:></span></td><//B_tri_06>
+		  </tr>
+		  <tr>
+		    <B_tri_07><BOUCLE_tri_07(EVENEMENTS){id_article IN #GET{datedebut07}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-07]})]" [(#ENV{date}|affdate{'m'}|=={'07'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_7:>"><:mois_7:></a></td></BOUCLE_tri_07></B_tri_07><td><span><:mois_7:></span></td><//B_tri_07>
+		    <B_tri_08><BOUCLE_tri_08(EVENEMENTS){id_article IN #GET{datedebut08}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-08]})]" [(#ENV{date}|affdate{'m'}|=={'08'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_8:>"><:mois_8:></a></td></BOUCLE_tri_08></B_tri_08><td><span><:mois_8:></span></td><//B_tri_08>
+		    <B_tri_09><BOUCLE_tri_09(EVENEMENTS){id_article IN #GET{datedebut09}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-09]})]" [(#ENV{date}|affdate{'m'}|=={'09'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_9:>"><:mois_9:></a></td></BOUCLE_tri_09></B_tri_09><td><span><:mois_9:></span></td><//B_tri_09>
+		  </tr>
+		  <tr>
+		    <B_tri_10><BOUCLE_tri_10(EVENEMENTS){id_article IN #GET{datedebut10}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-10]})]" [(#ENV{date}|affdate{'m'}|=={'10'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_10:>"><:mois_10:></a></td></BOUCLE_tri_10></B_tri_10><td><span><:mois_10:></span></td><//B_tri_10>
+		    <B_tri_11><BOUCLE_tri_11(EVENEMENTS){id_article IN #GET{datedebut11}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-11]})]" [(#ENV{date}|affdate{'m'}|=={'11'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_11:>"><:mois_11:></a></td></BOUCLE_tri_11></B_tri_11><td><span><:mois_11:></span></td><//B_tri_11>
+		    <B_tri_12><BOUCLE_tri_12(EVENEMENTS){id_article IN #GET{datedebut12}}{0,1}><td class="on"><a href="[(#ENV{self}|parametre_url{date,[(#ENV{date}|affdate{'Y'})-12]})]" [(#ENV{date}|affdate{'m'}|=={'12'}|?{'class="on"',''}) ]title="<:afficher_expo:> <:mois_12:>"><:mois_12:></a></td></BOUCLE_tri_12></B_tri_12><td><span><:mois_12:></span></td><//B_tri_12>
+		  </tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,102 @@
+#CACHE{0}
+[(#REM) squelette gestion abonnement newsletter ]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  [(#REM) page article Galerie ]
+  <title>[(#NOM_SITE_SPIP|textebrut)] : page technique pour la newsletter</title>
+  <INCLURE{fond=inc_headLite}{lang}>
+  [(#REM) pour le sélecteur de date ]
+  <script type="text/javascript" src="[(#CHEMIN{javascript/datePicker/jquery.datePicker.js})]"></script>
+  <script src="[(#CHEMIN{javascript/datePicker/date.js})]" type="text/javascript" charset="utf-8"></script>
+  <script src="[(#CHEMIN{javascript/datePicker/date_fr.js})]" type="text/javascript" charset="utf-8"></script>
+  <!--[if IE]><script type="text/javascript" src="[(#CHEMIN{javascript/datePicker/jquery.bgiframe.js})]"></script><![endif]-->
+  <link rel="stylesheet" href="[(#CHEMIN{javascript/datePicker/datePicker.css}|direction_css)]" type="text/css" media="screen" title="styles du plugin datePicker" charset="utf-8" />
+  <script type="text/javascript" charset="utf-8">
+    Date.format = 'yyyy-mm-dd';
+    $(document).ready(function(){
+        $('#dateP').focus(function(){
+            $(this).val("");
+        });
+        $('#dateP').datePicker({startDate:'01/01/1996'});
+      });
+  </script>
+</head>
+
+<body class="galerie">
+  <div id="enveloppe">
+    <div id="entete" class="clearfix">
+      <INCLURE{fond=inc_entete}>
+      
+      <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
+      
+    </div>
+    
+    <div id="corps" class="clearfix">
+      <div id="colonnePrincipale">
+
+        <h1 id="titrePage">Page technique newsletter</h1>
+        
+        <div id="sections" class="clearfix">
+          &nbsp;
+        </div>
+        
+        [(#ENV{lang}|?{' ',''}) [(#ENV{id_rubrique}|?{' ',''})
+          <INCLURE{fond=fabrique-newsletter-resultats}{id_rubrique}{lang}{date=#ENV{date}}>
+        ]
+        ]
+        
+        
+        
+        
+      </div><!-- fin colonnePrincipale -->
+      <div id="colonneSecondaire">
+          <div class="formulaire_spip formulaire_inscription">
+              <h2>Cette page permet de sélectionner certains contenus pour une newsletter</h2>
+              <form action="spip.php" method="get" class="selecteur">
+                <input name='page' value='fabrique-newsletter' type='hidden' />
+                <fieldset id="choix_de_la_langue" class="">
+                  <legend>1. Choix de la langue des articles</legend>
+                  <select name="lang" id="lang">
+                      <option value=""></option>
+                      <option value="fr"[(#ENV{lang}=={fr}|?{' selected',''})]>français</option>
+                      <option value="en">anglais</option>
+                  </select>
+                </fieldset>
+
+                <fieldset id="choix_de_la_rubrique" class="">
+                  <legend>2. Choix de la rubrique</legend>
+                  <select name="id_rubrique" id="id_rubrique">
+                      <option value=""></option>
+                      <BOUCLE_racine(RUBRIQUES){racine}{par num titre, titre}>
+                      <option value="#ID_RUBRIQUE"[(#ENV{id_rubrique}=={#ID_RUBRIQUE}|?{' selected',''})]>• [(#TITRE|supprimer_numero)]</option>
+                      <BOUCLE_sous_rubriques(RUBRIQUES){id_parent}{par num titre, titre}>
+                      <option value="#ID_RUBRIQUE"[(#ENV{id_rubrique}=={#ID_RUBRIQUE}|?{' selected',''})]>&nbsp;&nbsp;|--[(#TITRE|supprimer_numero)]</option>
+                      <BOUCLE_recursive(boucle_sous_rubriques)></BOUCLE_recursive>
+                      </BOUCLE_sous_rubriques>
+                      </BOUCLE_racine>
+                  </select>
+                </fieldset>
+
+                <fieldset id="choix_de_la_date" class="">
+                  <legend>3. Choix de la date </legend>
+                  <p>La date est de la forme "année-mois-jour" (par exemple&nbsp;: [(#DATE|affdate{Y-m-d})]).
+                  <p>
+                      <label>
+                          <input type="text" name="date" value="[(#ENV{date}|affdate{Y-m-d})]" id="dateP">
+                      </label>
+                  </p>
+                </fieldset>
+                <input type="submit" value="Afficher &rarr;" class="bouton" />
+              </form>
+          </div>
+      </div><!-- fin colonneSecondaire -->
+      
+      <INCLURE{fond=inc_piedDePage}{lang}>
+    </div><!-- fin corps -->
+    
+  </div><!-- fin enveloppe -->
+</body>
+</html>

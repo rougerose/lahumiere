@@ -1,0 +1,68 @@
+#CACHE{86400}
+<BOUCLE_principale(RUBRIQUES){id_rubrique}>[(#REM) page rubrique Artistes spécifiquement ]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+	<title>[(#NOM_SITE_SPIP|textebrut)][ : (#TITRE|supprimer_numero)]</title>
+	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
+	<INCLURE{fond=inc_head}{lang}>
+	
+</head>
+
+<body class="artistes">
+  <div id="enveloppe">
+    <div id="entete" class="clearfix">
+      <INCLURE{fond=inc_entete}>
+      
+      #MENU_LANG
+
+      #FORMULAIRE_RECHERCHE
+      
+      <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
+      
+    </div>
+    
+    <div id="corps" class="clearfix">
+      <div id="colonnePrincipale">
+        #DEBUT_SURLIGNE
+        <h1 id="titrePage">[(#TITRE|supprimer_numero)]</h1>
+        
+        <div id="sections">
+          &nbsp;
+        </div>
+        
+        <div id="portfolio" class="clearfix">
+          [(#REM) repris sur le modele de http://www.spip-contrib.net/Galerie-d-image-en-mosaique ]
+          <BOUCLE_articles_oeuvres(ARTICLES){branche}{titre==(œ|oe|Œ|Oe)uvre}>
+          <BOUCLE_images_oeuvres(DOCUMENTS){id_article}{mode=document}{extension IN jpg, gif, png}{doublons mosaique}></BOUCLE_images_oeuvres>
+          </BOUCLE_articles_oeuvres>
+          
+          <BOUCLE_extraire_autres(DOCUMENTS){tout}{mode=document}{extension IN jpg, gif, png}{doublons mosaique}{doublons extraire}></BOUCLE_extraire_autres>
+          
+          <ul class="mosaique">            
+            <BOUCLE_affichage_mosaique(DOCUMENTS){0,16}{par hasard}{doublons extraire}{mode=document}{extension IN jpg, gif, png}>
+            <BOUCLE_nom_artiste(ARTICLES){id_document}><BOUCLE_nom_artiste2(RUBRIQUES){id_rubrique}>#SET{titre, #TITRE}</BOUCLE_nom_artiste2></BOUCLE_nom_artiste>
+            <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="<BOUCLE_Art(ARTICLES){id_document}>#URL_ARTICLE</BOUCLE_Art>" class="noborder">[(#FICHIER|image_recadre{146,146,center}|inserer_attribut{'alt',[(#GET{titre}|prenom_nom)]})]</a></li>
+            
+            </BOUCLE_affichage_mosaique>
+          </ul>
+        </div>        
+      </div><!-- fin colonnePrincipale -->
+      
+      <div id="colonneSecondaire">
+        <ul id="listeArtistes" class="rubrique#ID_RUBRIQUE">
+          <BOUCLE_artistes(RUBRIQUES){id_parent}{par titre}>
+          <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE|prenom)][ (#TITRE|nom|majuscules)]</#EXPOSE{span,a}></li>
+          </BOUCLE_artistes>
+        </ul>
+        #FIN_SURLIGNE
+      </div><!-- fin colonneSecondaire -->
+      <INCLURE{fond=inc_piedDePage}{lang}>
+    </div><!-- fin corps -->
+    
+  </div><!-- fin enveloppe -->
+</body>
+</html>
+</BOUCLE_principale>

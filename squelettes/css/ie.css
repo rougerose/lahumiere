@@ -1,0 +1,22 @@
+#menuPrincipal, #sections {
+	clear: none;
+}
+
+#colonnePrincipale h1#titrePage {
+	font-size: 2.5em;
+	line-height: normal;
+	margin: 0;
+	position: relative;
+}
+
+.galerie .formulaire_spip fieldset {
+	background-color: transparent;
+}
+
+ul#listeArtistes li span.o {
+	display: inline;
+}
+
+div#portfolio {
+	width: 650px;
+}

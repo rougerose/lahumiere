@@ -1,0 +1,197 @@
+#traductions dd span, #colonnePrincipale .tags span {
+	color:#ff8900;
+}
+
+/* @group Page d'accueil et recherche (orange) */
+
+.accueil h3.spip {
+	color: #ff8900;
+	border-bottom-color: #ff8900;
+}
+
+.recherche h3.titreResultat, .recherche h2.titreContenu span {
+	color: #ff8900;
+}
+
+.accueil #menuPrincipal, .accueil #menuPrincipal li:hover, .accueil #menuPrincipal li.on, .accueil #menuPrincipal li.accueil, .accueil #raccourcis, .accueil #raccourcis li:hover, .recherche #corps, .recherche #enveloppe #logo, .recherche #menuPrincipal, .recherche #menuPrincipal li:hover, .recherche #menuPrincipal li.on, .recherche #menuPrincipal li.accueil, .recherche h2.intertitre, .recherche #formatSecondaire dl, .recherche #raccourcis, .recherche #raccourcis li:hover, .recherche #sections {
+	border-color: #d07430;
+}
+
+.accueil #corps, .accueil #enveloppe #logo, .accueil #formatSecondaire dl, .accueil h2.intertitre {
+	border-color: #ff8900;
+}
+
+.accueil dd.agenda, .accueil h2.intertitre, .recherche dd.agenda, .recherche h2.intertitre, .recherche h1#titrePage, .recherche h2.titreContenu, .recherche p.pagination span.on, .recherche h3.titreResultat {
+	color: #3C5DAE;
+}
+
+.spip_surligne {
+	background-color: #ff8900;
+	padding: 1px;
+}
+
+/* @end */
+
+/* @group Page galerie (rouge) */
+
+.galerie h3.spip {
+	border-bottom-color: #8e2800;
+	color: #8e2800;
+}
+
+.galerie #menuPrincipal, .galerie #menuPrincipal li:hover, .galerie #menuPrincipal li.on, .galerie #sections, .galerie #sections li:hover, .galerie #sections li.on, .galerie h2.intertitre, .galerie #formatSecondaire dl, .galerie #raccourcis, .galerie #raccourcis li:hover, .galerie .formulaire_spip fieldset {
+	border-color: #8e2800;
+}
+
+.galerie #corps, .galerie #enveloppe #logo, .galerie #formatSecondaire dl {
+	border-color: #4c1500;
+}
+
+.galerie .formulaire_spip fieldset {
+	background-color: #320d00;
+	border-color: #8e2800;
+}
+
+.galerie h1#titrePage, .galerie #listeArtistes li.on, .galerie h2.titreContenu, .galerie p.pagination span.on, .galerie .formulaire_spip legend {
+	color: #ff8900;
+}
+
+.galerie .formulaire_spip .spip_bouton input:hover {
+	background-color: #ff8900;
+}
+
+/* @end */
+
+/* @group page Artistes */
+
+.artistes #calendrier td a.on, .artistes #calendrier td a:hover {
+	background-color:#ff8900;
+}
+
+.artistes h3.spip {
+	border-bottom-color: #5914cc;
+	color: #5914cc;
+}
+
+.artistes #calendrier td a:hover {
+	color: #000;
+}
+
+.artistes #enveloppe #logo, .artistes #menuPrincipal, .artistes #menuPrincipal li:hover, .artistes #menuPrincipal li.on, .artistes #sections, .artistes #sections li:hover, .artistes #sections li.on, .artistes h2.intertitre, .artistes #raccourcis, .artistes #raccourcis li:hover {
+	border-color:#5914cc;
+}
+
+.artistes #corps, .artistes #formatSecondaire dl, .artistes #formatSecondaire dl {
+	border-color: #360c7f;
+}
+
+.artistes #calendrier td.on {
+	border-color: #ff8900;
+}
+
+.artistes h1#titrePage, .artistes #listeArtistes li.on, .artistes #listeArtistes li.on a, .artistes h2.titreContenu, .artistes p.pagination span.on, .artistes span.intertitre, .artistes dd.agenda, .artistes #agenda p strong {
+	color: #ff8900;
+}
+
+/* @end */
+
+/* @group pages Expos */
+
+.rubrique3 h3.spip {
+	border-bottom-color: #87c900;
+	color: #87c900;
+}
+
+.rubrique3 #calendrier td a.on, .rubrique3 #calendrier td a:hover {
+	background-color:#ff8900;
+}
+
+.rubrique3 #calendrier td a:hover {
+	color: #000;
+}
+
+.rubrique3 #calendrier td.on {
+	border-color: #ff8900;
+}
+
+.rubrique3 #menuPrincipal, .rubrique3 #menuPrincipal li:hover, .rubrique3 #menuPrincipal li.on, .rubrique3 h2.intertitre, .rubrique3 #sections, .rubrique3 #sections li:hover, .rubrique3 #sections li.on, .rubrique3 #raccourcis, .rubrique3 #raccourcis li:hover {
+	border-color: #87c900;
+}
+
+.rubrique3 #corps, .rubrique3 #enveloppe #logo, .rubrique3 #formatSecondaire dl {
+	border-color: #547f00;
+}
+
+.rubrique3 h1#titrePage, .rubrique3 #listeArtistes li.on, .rubrique3 h2.titreContenu, .rubrique3 p.pagination span.on, .rubrique3 span.intertitre, .rubrique3 dd.agenda, .rubrique3 #agenda p strong {
+	color: #ff8900;
+}
+
+/* @end */
+
+/* @group pages Actualités */
+
+.rubrique5 h3.spip {
+	border-bottom-color: #007cb3;
+	color: #007cb3;
+}
+
+
+.rubrique5 #calendrier td a.on, .rubrique5 #calendrier td a:hover {
+	background-color:#ff8900;
+}
+
+.rubrique5 #calendrier td a:hover {
+	color: #000;
+}
+
+
+.rubrique5 #calendrier td.on {
+	border-color: #ff8900;
+}
+
+.rubrique5 #menuPrincipal, .rubrique5 #menuPrincipal li:hover, .rubrique5 #menuPrincipal li.on, .rubrique5 h2.intertitre, .rubrique5 #sections, .rubrique5 #sections li:hover, .rubrique5 #sections li.on, .rubrique5 #raccourcis, .rubrique5 #raccourcis li:hover {
+	border-color: #007cb3;
+}
+
+.rubrique5 #corps, .rubrique5 #enveloppe #logo, .rubrique5 #formatSecondaire dl {
+	border-color: #004767;
+}
+
+.rubrique5 h1#titrePage, .rubrique5 #listeArtistes li.on, .rubrique5 h2.titreContenu, .rubrique5 p.pagination span.on, .rubrique5 span.intertitre, .rubrique5 dd.agenda, .rubrique5 #agenda p strong {
+	color: #ff8900;
+}
+
+/* @end */
+
+/* @group pages Publications */
+
+.rubrique9 h3.spip {
+	border-bottom-color: #700098;
+	color: #700098;
+}
+
+.rubrique9 #calendrier td a.on, .rubrique9 #calendrier td a:hover {
+	background-color:#ff8900;
+}
+
+.rubrique9 #calendrier td a:hover {
+	color: #000;
+}
+
+.rubrique9 #calendrier td.on {
+	border-color: #ff8900;
+}
+
+.rubrique9 #menuPrincipal, .rubrique9 #menuPrincipal li:hover, .rubrique9 #menuPrincipal li.on, .rubrique9 h2.intertitre, .rubrique9 #sections, .rubrique9 #sections li:hover, .rubrique9 #sections li.on, .rubrique9 #raccourcis, .rubrique9 #raccourcis li:hover {
+	border-color: #700098;
+}
+
+.rubrique9 #corps, .rubrique9 #enveloppe #logo, .rubrique9 #formatSecondaire dl {
+	border-color: #4a0065;
+}
+
+.rubrique9 h1#titrePage, .rubrique9 #listeArtistes li.on, .rubrique9 h2.titreContenu, .rubrique9 p.pagination span.on, .rubrique9 span.intertitre, .rubrique9 dd.agenda, .rubrique9 #agenda p strong {
+	color: #ff8900;
+}
+
+/* @end */

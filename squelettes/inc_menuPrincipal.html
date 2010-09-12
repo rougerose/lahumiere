@@ -1,0 +1,11 @@
+  #CACHE{7*86400}
+  <div id="menuPrincipal">
+    <ul>
+      <li class="accueil"><a href="#URL_SITE_SPIP"><:accueil:></a></li>
+      <BOUCLE_menu_principal(RUBRIQUES){racine}{par num titre, multi titre}>
+      <li[ class="(#EXPOSE{on,off})"]><a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li>
+      </BOUCLE_menu_principal>
+    </ul>
+  </div>
+  <hr class="invisible" />
+    

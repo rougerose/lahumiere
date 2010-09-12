@@ -1,0 +1,143 @@
+#CACHE{86400}
+<BOUCLE_principale(ARTICLES){id_article}>[(#REM) page article Artistes ]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+	<title>[(#NOM_SITE_SPIP|textebrut) : ]<BOUCLE_meta_nom_artiste(HIERARCHIE){id_article}{" : "}>[(#TITRE|supprimer_numero|textebrut|prenom_nom)]</BOUCLE_meta_nom_artiste>[ : (#TITRE|supprimer_numero|textebrut)]</title>
+	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
+	<INCLURE{fond=inc_head}{lang}>
+	
+</head>
+
+<body class="artistes">
+  <div id="enveloppe">
+    <div id="entete" class="clearfix">
+      <INCLURE{fond=inc_entete}>
+      
+      #MENU_LANG
+
+      #FORMULAIRE_RECHERCHE
+      
+      <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
+      
+    </div>
+    
+    <div id="corps" class="clearfix">
+      <div id="colonnePrincipale">
+        #DEBUT_SURLIGNE
+        <h1 id="titrePage"><B_nom_artiste><BOUCLE_nom_artiste(HIERARCHIE){id_article}{1,1}>[(#TITRE|supprimer_numero|prenom_nom)]</BOUCLE_nom_artiste></B_nom_artiste>[(#TITRE|supprimer_numero|prenom_nom)]<//B_nom_artiste></h1>
+        
+        <div id="sections" class="clearfix">
+          <ul>
+            <B_test>
+            <BOUCLE_test(HIERARCHIE){id_rubrique}{1,2}> </BOUCLE_test>
+            <BOUCLE_rubrique_actuelle(RUBRIQUES){id_rubrique}>
+            <BOUCLE_rub_sup(RUBRIQUES){id_enfant}>
+            <BOUCLE_articles_bio_oeuvres(ARTICLES){id_rubrique}{par num titre, multi titre}{lang?}{doublons oeuvres}>
+            <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+            </BOUCLE_articles_bio_oeuvres>
+            [(#REM) la boucle ci-dessus n'affichera pas un article "oeuvres" dont la langue est en français si l'internaute a choisi d'afficher la version anglaise du site. On force l'affichage de l'article ci-dessous ]
+            <BOUCLE_art_oeuvres(ARTICLES){id_rubrique}{par multi titre}{1,1}{doublons oeuvres}>
+            <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
+            </BOUCLE_art_oeuvres>
+            </BOUCLE_rub_sup>
+            <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE|supprimer_numero)]</#EXPOSE{span,a}></li>
+            </BOUCLE_rubrique_actuelle>
+            </B_test>
+            <BOUCLE_art_bio_oeuvres(ARTICLES){id_rubrique}{par num titre, multi titre}{lang?}{doublons oeuvres2}>
+            <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span, a href="#URL_ARTICLE"}>[(#TITRE|supprimer_numero)]</#EXPOSE{span,a}></li>
+            </BOUCLE_art_bio_oeuvres>
+            [(#REM) la boucle ci-dessus n'affichera pas un article "oeuvres" dont la langue est en français si l'internaute a choisi d'afficher la version anglaise du site. On force l'affichage de l'article ci-dessous ]
+            <BOUCLE_art_oeuvres2(ARTICLES){id_rubrique}{par multi titre}{1,1}{doublons oeuvres2}>
+            <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span, a href="#URL_ARTICLE"}>[(#TITRE|supprimer_numero)]</#EXPOSE{span,a}></li>
+            </BOUCLE_art_oeuvres2>
+            <BOUCLE_rubrique_fille(RUBRIQUES){id_parent}>
+            <li><a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li>
+            </BOUCLE_rubrique_fille>
+            <//B_test>
+          </ul>
+        </div>
+        
+        <h2 class="titreContenu">[(#TITRE|supprimer_numero)]</h2>
+        [(#REM) Inclure le modele des liens de traductions ]
+        #MODELE{article_traductions}
+        <B_evenement>
+        <div id="agenda">
+          <BOUCLE_evenement(EVENEMENTS){id_article}>
+          <p>[<:du:> <strong>(#DATE_DEBUT|affdate)</strong>][ <:au:> <strong>(#DATE_FIN|affdate)</strong>]</p>
+          [<p><:lieu:>&nbsp;: <strong>(#LIEU)</strong></p>]
+          </BOUCLE_evenement>
+        </div>
+        </B_evenement>
+        
+        <div id="colonneTexte">
+          [<div id="chapo">
+            (#CHAPO|paragrapher|image_reduire{450,0})
+          </div>]
+
+          [<div id="texte">
+            (#TEXTE|paragrapher|image_reduire{450,0})
+          </div>]
+
+          [<div id="notes">
+              <h3 class="spip">Notes</h3>
+              (#NOTES)
+          </div>]
+        </div>
+        
+        <BOUCLE_portfolio(ARTICLES){id_article}{titre_mot=portfolio}>
+        <div id="portfolio" class="clearfix">
+
+            <B_affichage_mosaique>
+            <ul class="mosaique irreguliere">
+                <BOUCLE_affichage_mosaique(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{0,4}>
+                <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&nbsp;&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+                </BOUCLE_affichage_mosaique>
+            </ul>
+            </B_affichage_mosaique>
+            <BOUCLE_recursive(BOUCLE_affichage_mosaique)></BOUCLE_recursive>
+
+        </div>
+        </BOUCLE_portfolio>
+        
+        <B_p_images>
+        <div id="colonneImages">
+          [(#ANCRE_PAGINATION)]
+          [<p class="pagination">page (#PAGINATION{page})</p>]
+          <ul>
+            <BOUCLE_p_images(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{pagination}>
+            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+            </BOUCLE_p_images>
+          </ul>
+        </div>
+        </B_p_images>
+        
+        
+        <B_test2>
+        <BOUCLE_test2(HIERARCHIE){id_rubrique}{1,2}> </BOUCLE_test2>
+        <BOUCLE_retour_actualites(RUBRIQUES){id_rubrique}>
+        <p class="retour"><a href="#URL_RUBRIQUE" class="suite"><:retour_aux:>[ (#TITRE|supprimer_numero)]</a></p>
+        </BOUCLE_retour_actualites>
+        </B_test2>
+                
+      </div><!-- fin colonnePrincipale -->
+      
+      <div id="colonneSecondaire">
+        <ul id="listeArtistes">
+          <BOUCLE_rubrique_artistes(RUBRIQUES){id_rubrique=2}>
+          <BOUCLE_artistes(RUBRIQUES){id_parent}{par num titre, titre}>
+          <li[ class="(#EXPOSE{on,off})"]><a href="#URL_RUBRIQUE">[(#TITRE|prenom)][ (#TITRE|nom|majuscules)]</a></li>
+          </BOUCLE_artistes>
+          </BOUCLE_rubrique_artistes>
+        </ul> 
+        #FIN_SURLIGNE         
+      </div><!-- fin colonneSecondaire -->
+      <INCLURE{fond=inc_piedDePage}{lang}>
+    </div><!-- fin corps -->
+    
+  </div><!-- fin enveloppe -->
+</body>
+</html>
+</BOUCLE_principale>

@@ -1,0 +1,22 @@
+#CACHE{86400}
+  <BOUCLE_en_cours(EVENEMENTS){agendafull date_debut, date_fin, mois, #ENV{annee}, #ENV{mois}}{doublons encours}>          
+  <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
+    <dt>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dt>
+    [<dd class="soustitre">(#SOUSTITRE)</dd>]
+
+    <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
+
+    <dd class="descriptif">[(#DESCRIPTIF)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+  </dl>
+  </BOUCLE_en_cours>
+  <BOUCLE_a_venir(EVENEMENTS){mois_relatif<=0}{doublons encours}>          
+  <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
+    <dt>[%<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dt>
+    [<dd class="soustitre">(#SOUSTITRE)</dd>]
+
+    <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
+
+    <dd class="descriptif">[(#DESCRIPTIF)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+  </dl>
+  </BOUCLE_a_venir>
+  

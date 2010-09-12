@@ -1,0 +1,57 @@
+#CACHE{24 * 3600}
+#HTTP_HEADER{"Cache-Control: no-store, no-cache, must-revalidate"}
+#HTTP_HEADER{Pragma: no-cache}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+
+	<title>[(#NOM_SITE_SPIP|textebrut)] : <:pass_erreur:> 404</title>
+	<INCLURE{fond=inc_head}{lang}>
+	
+</head>
+
+<body class="rubrique3">
+  <div id="enveloppe">
+    <div id="entete" class="clearfix">
+      <INCLURE{fond=inc_entete}>
+      
+      #MENU_LANG
+
+      #FORMULAIRE_RECHERCHE
+      
+      <INCLURE{fond=inc_menuPrincipal}{lang}>
+      
+    </div>
+    
+    <div id="corps" class="clearfix">
+      <div id="colonnePrincipale">
+        #DEBUT_SURLIGNE
+        <h1 id="titrePage"><<:pass_erreur:> 404</h1>
+        
+        <div id="sections">
+          &nbsp;
+        </div>
+        
+        <div id="formatSecondaire" class="clearfix">
+          <dl class="bloc1">
+            <dt><:pass_erreur:> 404 : <:page_introuvable:></dt>
+          </dl>
+          
+          
+          #FIN_SURLIGNE
+        </div>        
+      </div><!-- fin colonnePrincipale -->
+      
+      <div id="colonneSecondaire">
+        &nbsp;
+      </div><!-- fin colonneSecondaire -->
+      <INCLURE{fond=inc_piedDePage}{lang}>
+    </div><!-- fin corps -->
+    
+  </div><!-- fin enveloppe -->
+
+</body>
+</html>
