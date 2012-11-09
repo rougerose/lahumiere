@@ -7,4 +7,5 @@
 # excepte
 !.gitignore
 !/squelettes
-!README
+!README.md
+!/gestion_accueil
