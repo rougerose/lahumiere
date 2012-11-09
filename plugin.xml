@@ -1,0 +1,25 @@
+<plugin>
+   <nom>Lahumière</nom>
+   <icon>img/lahumiere.png</icon>
+   <auteur>
+      [Christophe Le Drean->http://rouge-rose.net]
+   </auteur>
+   <version>2.1.0</version>
+   <etat>stable</etat>
+   <description>Squelettes et gestion page d'accueil site [->http://lahumiere.com]</description>
+   <prefix>lahumiere</prefix>
+   <options>lahumiere_options.php</options>
+   <fonctions>lahumiere_fonctions.php</fonctions>
+   <bouton id='accueil' parent='bando_edition'>
+      <titre>Gestion page d'accueil</titre>
+      <icone>img/icone-24.png</icone>
+      <url>cfg</url>
+      <args>cfg=gestion_accueil_fr</args>
+   </bouton>
+   <chemin dir="" />
+   <chemin dir="squelettes" />
+   <necessite id='SPIP' version='[2.0.3;2.1.99]' />
+   <necessite id='spip_bonux' version='[1.9.1;]' />
+   <utilise id='bando' version='[1.0.0;]' />
+   <categorie>squelettes</categorie>
+</plugin>
