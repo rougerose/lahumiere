@@ -1,0 +1,29 @@
+<plugin>
+        <nom> <!-- Nom du plugin -->
+            Gestion de la page d&#x27;accueil
+        </nom>
+        <auteur><!-- Auteur du plugin -->
+        </auteur>
+        <version>
+          0.1
+        </version>
+        <etat>
+          dev
+        </etat>
+        <description>
+            S&eacute;lection des articles &agrave; afficher sur la page d&#x27;accueil
+        </description>
+        <lien>
+            
+        </lien>
+        <icon>plugin-24.gif</icon>
+        <prefix>
+          gestion_accueil
+        </prefix>
+        <pipeline>
+            <nom>ajouter_boutons</nom>
+            <inclure>gestion_accueil_pipelines.php</inclure>
+        </pipeline>	
+        <necessite id="cfg" version="[1.0.0;]" />
+        <chemin dir='' />
+</plugin>
