@@ -1,4 +1,3 @@
-#CACHE{86400}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -31,11 +30,11 @@
                     &nbsp;
                 </div>
                 #DEBUT_SURLIGNE
-                
+
                 <BOUCLE_compteur_resultats(INDEX){recherche}{type_table IN articles,rubriques,documents}></BOUCLE_compteur_resultats>
                 <h2 class="titreContenu"><:resultats_recherche:> &laquo;&nbsp;#RECHERCHE&nbsp;&raquo;[ <span>(#TOTAL_BOUCLE) [(#TOTAL_BOUCLE|>{1}|?{<:resultats:>,<:resultat:>})</span>]]</h2>
                 <//B_compteur_resultats>
-                
+
                 <B_recherche>
                 [(#ANCRE_PAGINATION)]
                 [<p class="pagination">(#PAGINATION{page})</p>]
@@ -53,7 +52,7 @@
                 </p>
                 <p class="url"><a href="[(#URL_ARTICLE)]">[(#URL_ARTICLE|url_absolue)]</a></p>
                 </BOUCLE_articles>
-                
+
                 <BOUCLE_rubriques(RUBRIQUES){id_rubrique}>
                 <h3 class="titreResultat">[(#_recherche:COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="[(#URL_RUBRIQUE)]">[(#TITRE|supprimer_numero|prenom_nom)]</a></h3>
                 <p class="descriptif">
@@ -65,7 +64,7 @@
                 </p>
                 <p class="url"><a href="[(#URL_RUBRIQUE)]">[(#URL_RUBRIQUE|url_absolue)]</a></p>
                 </BOUCLE_rubriques>
-                
+
                 <BOUCLE_documents(DOCUMENTS){id_document}>
                 <h3 class="titreResultat">[(#_recherche:COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="<BOUCLE_article_lie(ARTICLES){id_document}>[(#URL_ARTICLE)]</BOUCLE_article_lie>#img#ID_DOCUMENT"[ type="(#MIME_TYPE)"][ title="(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT}|supprimer_tags|attribut_html)"]>[(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT})]</a></h3>
                 <p class="descriptif">[(#LOGO_DOCUMENT||image_reduire{150,0})]</p>

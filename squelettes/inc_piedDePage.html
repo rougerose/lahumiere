@@ -1,7 +1,6 @@
-  #CACHE{7*86400}
-  <hr class="invisible" />
-  <div id="raccourcis">
-    <ul>
+<hr class="invisible" />
+<div id="raccourcis">
+   <ul>
       <li><a href="#URL_SITE_SPIP" title="<:accueil_site:>"><:accueil:></a></li>
       <BOUCLE_contact(ARTICLES){titre_mot=contact}{0,1}>
       <li><a href="#URL_ARTICLE" title="<multi>[fr]nous contacter [en]contact us</multi>">contact</a></li>
@@ -11,9 +10,8 @@
       </BOUCLE_newsletter>
       <li><a href="#URL_PAGE{backend}" title="<:rss:>" type="application/rss+xml"><:rss:></a></li>
       <li><a href="#entete" title="<:top:>"><:top:></a></li>
-    </ul>
-  </div>
-  <div id="piedDePage">
-    <p>&copy; Galerie Lahumière. <:copyright:>.<BOUCLE_apropos_site(ARTICLES){titre_mot=à propos du site}{lang?}>[ <a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>.]</BOUCLE_apropos_site></p>
-  </div>
-  
+   </ul>
+</div>
+<div id="piedDePage">
+   <p>&copy; Galerie Lahumière. <:copyright:>.<BOUCLE_apropos_site(ARTICLES){titre_mot=à propos du site}{lang?}>[ <a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>.]</BOUCLE_apropos_site></p>
+</div>

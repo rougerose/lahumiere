@@ -1,4 +1,4 @@
-#CACHE{86400} [(#REM) squelette gestion abonnement newsletter ]
+[(#REM) squelette gestion abonnement newsletter ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -7,45 +7,45 @@
   [(#REM) page article Galerie ]
   <title>[(#NOM_SITE_SPIP|textebrut)]</title>
   <INCLURE{fond=inc_head}{lang}>
-  
+
 </head>
 
 <body class="galerie">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
+
       #MENU_LANG
 
       #FORMULAIRE_RECHERCHE
-      
+
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
+
     </div>
-    
+
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <BOUCLE_titre_secteur(RUBRIQUES){id_rubrique}>
         <h1 id="titrePage"><multi>[fr]Lettre d'informations [en]Newsletter</multi></h1>
         </BOUCLE_titre_secteur>
-        
+
         <div id="sections" class="clearfix">
           &nbsp;
         </div>
-        
+
         [(#ENV{d}|?{'',' '})
         [(#FORMULAIRE_ABONNEMENT{formulaireAbonnement})]
         ]
         [(#FORMULAIRE_MODIF_ABONNEMENT{formulaireModifAbonnement})]
-        
+
         #FIN_SURLIGNE
-        
+
       </div><!-- fin colonnePrincipale -->
-      
+
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div><!-- fin corps -->
-    
+
   </div><!-- fin enveloppe -->
 </body>
 </html>

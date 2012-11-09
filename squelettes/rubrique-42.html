@@ -1,35 +1,35 @@
-#CACHE{86400} [(#REM) squelette rubrique Newsletter ]
+[(#REM) squelette rubrique Newsletter ]
 <BOUCLE_principale(RUBRIQUES){id_rubrique}>[(#REM) page galerie]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
 <head>
-  
+
 	<title>[(#NOM_SITE_SPIP|textebrut)] [: (#TITRE|supprimer_numero|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-	
+
 </head>
 
 <body class="galerie">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
+
       #MENU_LANG
 
       #FORMULAIRE_RECHERCHE
-      
+
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
+
     </div>
-    
+
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <h1 id="titrePage">[(#TITRE|supprimer_numero)]</h1>
-        
+
         <div id="sections" class="clearfix">
           <ul>
             <BOUCLE_rubrique_parente(RUBRIQUES){id_enfant}>
@@ -40,7 +40,7 @@
             <li[ class="(#EXPOSE)"]>[<span>(#TITRE|supprimer_numero)</span>]</li>
           </ul>
         </div>
-        
+
         <div id="formatSecondaire" class="clearfix">
             <B_archives>
             #ANCRE_PAGINATION
@@ -64,9 +64,9 @@
       </div><!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div> <!-- fin corps -->
-    
+
   </div> <!-- fin enveloppe -->
-  
+
 </body>
 </html>
 </BOUCLE_principale>

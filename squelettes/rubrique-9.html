@@ -1,4 +1,4 @@
-#CACHE{86400} [(#REM) rubrique publications]
+[(#REM) rubrique publications]
 <BOUCLE_principale(RUBRIQUES){id_rubrique}>[(#REM) page éditions ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -8,31 +8,31 @@
 	<title>[(#NOM_SITE_SPIP|textebrut)] [: (#TITRE|supprimer_numero|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-	
+
 </head>
 
 <body class="rubrique#ID_RUBRIQUE">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
+
       #MENU_LANG
 
       #FORMULAIRE_RECHERCHE
-      
+
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
+
     </div>
-    
+
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <h1 id="titrePage">[(#TITRE|supprimer_numero)]</h1>
-        
+
         <div id="sections" class="clearfix">
           &nbsp;
         </div>
-        
+
         <div id="formatSecondaire" class="clearfix">
           <B_articles>
           [(#ANCRE_PAGINATION)]
@@ -46,15 +46,15 @@
           </BOUCLE_articles>
           </B_articles>
           #FIN_SURLIGNE
-        </div>        
+        </div>
       </div> <!-- fin colonnePrincipale -->
-      
+
       <!-- <div id="colonneSecondaire">
-              
+
             </div> --> <!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div> <!-- fin corps -->
-    
+
   </div> <!-- fin enveloppe -->
 </body>
 </html>

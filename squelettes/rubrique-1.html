@@ -1,4 +1,4 @@
-#CACHE{86400} [(#REM) squelette rubrique Galerie ]
+[(#REM) squelette rubrique Galerie ]
 <BOUCLE_principale(RUBRIQUES){id_rubrique}>[(#REM) page galerie]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -8,27 +8,27 @@
 	<title>[(#NOM_SITE_SPIP|textebrut)] [: (#TITRE|supprimer_numero|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-	
+
 </head>
 
 <body class="galerie">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
+
       #MENU_LANG
 
       #FORMULAIRE_RECHERCHE
-      
+
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
+
     </div>
-    
+
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <h1 id="titrePage">[(#TITRE|supprimer_numero)]</h1>
-        
+
         <div id="sections" class="clearfix">
           <ul>
             <BOUCLE_sections(ARTICLES){id_rubrique}{par num titre, titre}{lang?}>
@@ -39,7 +39,7 @@
             </BOUCLE_newsletter>
           </ul>
         </div>
-        
+
         <div id="formatSecondaire" class="clearfix">
           <BOUCLE_articles(ARTICLES){id_rubrique}{par num titre, titre}{lang?}>
           <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
@@ -48,15 +48,15 @@
             <dd class="descriptif">[(#DESCRIPTIF)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
           </dl>
           </BOUCLE_articles>
-        </div>        
+        </div>
       </div> <!-- fin colonnePrincipale -->
       #FIN_SURLIGNE
       <!-- <div id="colonneSecondaire">
-              
+
             </div> --> <!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div> <!-- fin corps -->
-    
+
   </div> <!-- fin enveloppe -->
 </body>
 </html>
