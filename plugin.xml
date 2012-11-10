@@ -8,8 +8,8 @@
    <etat>stable</etat>
    <description>Squelettes et gestion page d'accueil site [->http://lahumiere.com]</description>
    <prefix>lahumiere</prefix>
-   <options>lahumiere_options.php</options>
    <fonctions>lahumiere_fonctions.php</fonctions>
+   <options>lahumiere_options.php</options>
    <bouton id='accueil' parent='bando_edition'>
       <titre>Gestion page d'accueil</titre>
       <icone>img/icone-24.png</icone>

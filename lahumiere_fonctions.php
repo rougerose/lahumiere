@@ -20,13 +20,6 @@ function Agenda_anneedecal($date,$decalage,$format){
    return date($format, $date2);
 }
 
-/*function titrecourtDeuxmots ($texte) { // pour la navigation, affiche les 2 premiers mots du titre de la rubrique, permet de gérer un titre court.
-  $texte = ereg_replace("[[:space:]]{2,}"," ",$texte); //supprime les doubles espaces -- ou plus -- dans le titre
-  $menu2 = explode(" ",$texte);
-  $texte = $menu2[0]." ".$menu2[1];
-  return $texte;
-}*/
-
 /*
  * Fonction prenom_nom()
  *
@@ -72,12 +65,12 @@ function prenom_nom($texte) {
  function prenom($texte) {
     $texte = preg_replace("(@-|@-|@ |@)","",$texte);
     if(strstr($texte,"*")) {
-       if($prenom = trim(preg_replace("^(.*)\*(.*)","\\2",$texte))) {
-          return harmonise_noms($prenom);
+       if($prenom = trim(preg_replace('/^(.*)\*(.*)/i','$2',$texte))) {
+          return trim($prenom);
        }
        else {
           if(substr($texte,0,1) == "*")
-          return harmonise_noms($texte);
+          return trim($texte);
           else
              return "";
        }
@@ -103,14 +96,14 @@ function prenom_nom($texte) {
  function nom($texte) {
     $texte = preg_replace("(@-|@-|@ |@)","",$texte);
     if(strstr($texte,"*")) {
-       if($nom = trim(preg_replace("^(.*)\*(.*)","\\1",$texte))) {
-          return harmonise_noms($nom);
+       if($nom = trim(preg_replace('/^(.*)\*(.*)/i','$1',$texte))) {
+          return trim($nom);
        }
        else {
           if(substr($texte,0,1) == "*")
           return "";
           else
-             return harmonise_noms($texte);
+             return trim($texte);
        }
     }
     else {
