@@ -413,7 +413,13 @@ p.pagination span.on {
 }
 
 #portfolio ul.mosaique li.bloc0, #portfolio ul#ouverture.mosaique li.bloc0 {
-	margin:0;
+	margin-right:0;
+}
+#portfolio .mosaique .bloc1 {clear: left;}
+.estampes #portfolio {
+   float: left;
+   width: 650px;
+   margin-top: 2em;
 }
 
 div.fragment {
