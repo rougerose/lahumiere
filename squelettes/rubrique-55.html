@@ -24,7 +24,7 @@
         </div>
         <div id="portfolio" class="clearfix">
           [(#REM) repris sur le modele de http://www.spip-contrib.net/Galerie-d-image-en-mosaique ]
-          <BOUCLE_articles_oeuvres(ARTICLES){id_rubrique}>
+          <BOUCLE_articles_oeuvres(ARTICLES){id_rubrique}{lang?}>
           <BOUCLE_images_oeuvres(DOCUMENTS){id_article}{mode=document}{extension IN jpg, gif, png}{doublons mosaique}></BOUCLE_images_oeuvres>
           </BOUCLE_articles_oeuvres>
           <BOUCLE_extraire_autres(DOCUMENTS){tout}{mode=document}{extension IN jpg, gif, png}{doublons mosaique}{doublons extraire}></BOUCLE_extraire_autres>
@@ -40,8 +40,8 @@
 
       <div id="colonneSecondaire">
         <ul id="listeArtistes" class="rubrique#ID_RUBRIQUE">
-          <BOUCLE_liste_estampes(ARTICLES){id_rubrique}{par num titre, titre}>
-          <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+          <BOUCLE_liste_estampes(ARTICLES){id_rubrique}{par num titre, titre}{lang?}>
+          <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_ARTICLE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
           </BOUCLE_liste_estampes>
         </ul>
         #FIN_SURLIGNE

@@ -31,16 +31,7 @@
         </BOUCLE_titre_secteur>
 
         <div id="sections" class="clearfix">
-          <ul>
-            <BOUCLE_sections(ARTICLES){id_rubrique}{par num titre, multi titre}{lang?}>
-            <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_ARTICLE"}>[(#TITRE|supprimer_numero)]</#EXPOSE{span,a}></li>
-            </BOUCLE_sections>
-            <BOUCLE_rub_courante(RUBRIQUES){id_rubrique}>
-            <BOUCLE_rubrique_newsletter(RUBRIQUES){id_parent}>
-            <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE|supprimer_numero)]</#EXPOSE{span,a}></li>
-            </BOUCLE_rubrique_newsletter>
-            </BOUCLE_rub_courante>
-          </ul>
+          <!-- sections -->
         </div>
 
         <h2 class="titreContenu">[(#TITRE|supprimer_numero)]</h2>
@@ -96,7 +87,16 @@
         #FIN_SURLIGNE
 
       </div><!-- fin colonnePrincipale -->
-
+      <div id="colonneSecondaire">
+         <ul id="listeArtistes" class="rubrique#ID_RUBRIQUE">
+           <BOUCLE_liste_articles(ARTICLES){lang?}{id_rubrique}{par num titre, titre}>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_ARTICLE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+           </BOUCLE_liste_articles>
+           <BOUCLE_rubrique_liens(RUBRIQUES){id_rubrique=5}{id_parent}>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+           </BOUCLE_rubrique_liens>
+         </ul>
+      </div>
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div><!-- fin corps -->
 

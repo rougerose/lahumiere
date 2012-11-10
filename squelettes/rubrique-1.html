@@ -30,14 +30,7 @@
         <h1 id="titrePage">[(#TITRE|supprimer_numero)]</h1>
 
         <div id="sections" class="clearfix">
-          <ul>
-            <BOUCLE_sections(ARTICLES){id_rubrique}{par num titre, titre}{lang?}>
-            <li><a href="#URL_ARTICLE">[(#TITRE|supprimer_numero)]</a></li>
-            </BOUCLE_sections>
-            <BOUCLE_newsletter(RUBRIQUES){id_parent}{titre_mot=newsletter}{lang?}>
-            <li><a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></li>
-            </BOUCLE_newsletter>
-          </ul>
+          <!-- sections -->
         </div>
 
         <div id="formatSecondaire" class="clearfix">
@@ -51,9 +44,16 @@
         </div>
       </div> <!-- fin colonnePrincipale -->
       #FIN_SURLIGNE
-      <!-- <div id="colonneSecondaire">
-
-            </div> --> <!-- fin colonneSecondaire -->
+      <div id="colonneSecondaire">
+         <ul id="listeArtistes" class="rubrique#ID_RUBRIQUE">
+           <BOUCLE_liste_articles(ARTICLES){lang?}{id_rubrique}{par num titre, titre}>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_ARTICLE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+           </BOUCLE_liste_articles>
+           <BOUCLE_rubrique_liens(RUBRIQUES){id_rubrique=5}{id_parent}>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+           </BOUCLE_rubrique_liens>
+         </ul>
+      </div>
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div> <!-- fin corps -->
 

@@ -1,4 +1,4 @@
-<BOUCLE_mots(MOTS){id_mot==#ENV{tag}}>
+<BOUCLE_mots(MOTS){id_mot=#ENV{cat}}>
 <B_sites>
 [(#ANCRE_PAGINATION)]
 [<p class="pagination">(#PAGINATION{page})</p>]
@@ -9,7 +9,7 @@
     <dd class="url">[<a href="#URL_SITE">(#URL_SITE)</a>]</dd>
     <B_tags>
     <dd class="tags">
-        <span><:tag:>&nbsp;:</span>
+        <span><:category:>&nbsp;:</span>
         <BOUCLE_tags(MOTS){id_syndic}{par num titre, titre}{", "}>[(#TITRE|supprimer_numero)]</BOUCLE_tags>
     </dd>
     </B_tags>

@@ -483,7 +483,7 @@ div.fragment {
 	margin-left: 5px;
 }
 
-.formulaire_recherche label, .formulaire_menu_lang label, #menuSites label {
+.formulaire_recherche label, .formulaire_menu_lang label, #menuSites label, .formulaire_tri_sites label {
 	color: #ccc;
 	display: inline;
 	font-size: 1em; line-height: 1em;
@@ -512,6 +512,10 @@ div.fragment {
 	margin: .7em 0 .5em;
 
 }
+#corps .formulaire_tri_sites p.boutons,
+.formulaire_tri_sites #tri {float: left;}
+
+#corps .formulaire_tri_sites p.boutons {margin: 0 5px;}
 
 /* @end */
 

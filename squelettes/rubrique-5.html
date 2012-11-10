@@ -30,43 +30,26 @@
             [(#TITRE|supprimer_numero)][<span id="soustitreTheme">(#ENV{tag}|?{' ',''})<INCLURE{fond=inc_liensTitreTheme}{tag}></span>]
         </h1>
         <div id="sections">
-          &nbsp;
+           #INCLURE{fond=formulaires/tri_sites,id_rubrique,cat=#ENV{cat}}
         </div>
 
         <div id="formatSecondaire" class="clearfix">
-            [(#ENV{tag}|?{' ',''})
-            [(#ENV{tag}|!={"tous"}|?{' ',''})
-            <INCLURE{fond=inc_liensParGroupe}{id_rubrique}{tag}{self=#SELF}>
-            ]]
-
-            [(#ENV{tag}|=={"tous"}|?{' ',''})
-            <INCLURE{fond=inc_liensTous}{id_rubrique}{self=#SELF}>
-            ]
-
-            [(#ENV{tag}|?{'',' '})
-            <INCLURE{fond=inc_liensTous}{id_rubrique}{self=#SELF}>
-            ]
-
-
-
-          #FIN_SURLIGNE
+           [(#ENV{cat}|oui)
+              <INCLURE{fond=inc_liensParGroupe}{id_rubrique}{cat}{self=#SELF}>
+           ][(#ENV{cat}|non)
+              <INCLURE{fond=inc_liensTous}{id_rubrique}{self=#SELF}>
+           ]
+           #FIN_SURLIGNE
         </div>
       </div><!-- fin colonnePrincipale -->
 
       <div id="colonneSecondaire">
-        <form action="#SELF" method="get" accept-charset="utf-8" id="menuSites">
-            <input type="hidden" name="rubrique" value="#ID_RUBRIQUE">
-            <label for="tag"><:trier:></label>
-            <select name="tag" id="menuTri" onchange="form.submit()">
-                <option value="tous"><:tous:></option>
-                <BOUCLE_sites_menu(SITES){id_rubrique}{par num nom_site, nom_site}>
-                <BOUCLE_tag_menu(MOTS){id_syndic}{par titre}{unique}>
-                <option value="#ID_MOT"[ (#ENV{tag}|=={#ID_MOT}|?{selected="selected"})]>[(#TITRE|supprimer_numero)]</option>
-                </BOUCLE_tag_menu>
-                </BOUCLE_sites_menu>
-            </select>
-            <p id="bouton"><input type="submit" value="<:modifier:>"></p>
-        </form>
+         <ul id="listeArtistes" class="rubrique#ID_RUBRIQUE">
+           <BOUCLE_liste_articles(ARTICLES){lang?}{id_rubrique=1}{par num titre, titre}>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_ARTICLE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+           </BOUCLE_liste_articles>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_RUBRIQUE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+         </ul>
 
       </div><!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
