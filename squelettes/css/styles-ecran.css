@@ -517,6 +517,10 @@ div.fragment {
 
 #corps .formulaire_tri_sites p.boutons {margin: 0 5px;}
 
+.formulaire_ecrire_auteur li {list-style-type: none; font-size: 1.2em; line-height: 1em;}
+.formulaire_ecrire_auteur label {font-size: 1em; line-height: 1em; margin-bottom: .5em; margin-top: 1em;}
+
+.formulaire_ecrire_auteur p.boutons input {font-size: 1.5em; margin-left: 1em;}
 /* @end */
 
 /* @group divers */
