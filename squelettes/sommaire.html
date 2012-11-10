@@ -43,7 +43,7 @@
             <dd class="descriptif">[(#CONFIG{gestion_accueil_#LANG/texte_descriptif_specifique_expo}) ]
             ]
             [(#CONFIG{gestion_accueil_#LANG/descriptif_art_expo}|=={"descriptif_article_expo"}|?{' ',''})
-            <dd class="descriptif">[(#DESCRIPTIF) ]
+            <dd class="descriptif">[(#DESCRIPTIF|PtoBR) ]
             ]
             <a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
           </dl>
@@ -60,7 +60,7 @@
             <BOUCLE_dates1(EVENEMENTS){id_article}>
             <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
             </BOUCLE_dates1>
-            <dd class="descriptif">[(#DESCRIPTIF) ]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+            <dd class="descriptif">[(#DESCRIPTIF|PtoBR) ]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
             <BOUCLE_image(DOCUMENTS){id_article}{0,1}{mode=document}{extension IN jpg, gif, png}{par num titre, titre}>
             <dd class="image">[<a href="#URL_ARTICLE" class="noborder">(#FICHIER|image_recadre{315,157,center}|inserer_attribut{'alt',#GET{titre}})</a>]</dd>
             </BOUCLE_image>
@@ -72,7 +72,7 @@
         <BOUCLE_galerie(ARTICLES){id_article=(#CONFIG{gestion_accueil_#LANG/art_info})}{0,1}>
         <h2 class="intertitre">[(#TITRE|supprimer_numero)]</h2>
         [(#CONFIG{gestion_accueil_#LANG/descriptif_art_info}|=={"descriptif_article_info"}|?{' ',''})
-        <p class="descriptif">[(#DESCRIPTIF) ]<a href="#URL_ARTICLE" class="suite"><:suite:></a></p>
+        <p class="descriptif">[(#DESCRIPTIF|PtoBR) ]<a href="#URL_ARTICLE" class="suite"><:suite:></a></p>
         ]
         [(#CONFIG{gestion_accueil_#LANG/descriptif_art_info}|=={"descriptif_specifique_info"}|?{' ',''})
         <p class="descriptif">[(#CONFIG{gestion_accueil_#LANG/texte_descriptif_specifique_info}) ]<a href="#URL_ARTICLE" class="suite"><:suite:></a></p>

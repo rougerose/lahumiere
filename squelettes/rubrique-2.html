@@ -6,7 +6,7 @@
 <head>
 
 	<title>[(#NOM_SITE_SPIP|textebrut) : ] <BOUCLE_meta_nom_artiste(HIERARCHIE){id_rubrique}{" : "}>[(#TITRE|supprimer_numero|textebrut|prenom_nom)]</BOUCLE_meta_nom_artiste>[ : (#TITRE|supprimer_numero|prenom_nom)]</title>
-	[<meta name="description" content="(#DESCRIPTIF|textebrut|sinon{#INTRODUCTION})" />]
+	[<meta name="description" content="(#DESCRIPTIF|sinon{#INTRODUCTION}|textebrut)" />]
 	<INCLURE{fond=inc_head}{lang}>
 
 </head>
@@ -69,7 +69,7 @@
             <BOUCLE_agenda(EVENEMENTS){id_article}>
             <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
             </BOUCLE_agenda>
-            <dd class="descriptif">[(#DESCRIPTIF)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+            <dd class="descriptif">[(#DESCRIPTIF|PtoBR)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
           </dl>
           </BOUCLE_affichage_liste_actu>
           </B_affichage_liste_actu>
@@ -78,7 +78,7 @@
           <dl class="bloc1">
             <dt><span class="intertitre">[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</span></dt>
             [<dd class="soustitre">(#SOUSTITRE)</dd>]
-            <dd class="descriptif">[(#DESCRIPTIF|sinon{#INTRODUCTION})<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+            <dd class="descriptif">[(#DESCRIPTIF|sinon{#INTRODUCTION}|PtoBR)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
           </dl>
           </BOUCLE_affichage_bio>
           [(#REM) existe-t-il une sous-rubrique Actu et un événement sur le mois en cours]
@@ -96,7 +96,7 @@
               </BOUCLE_art_lie_1>
               <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
               <BOUCLE_art_lie_2(ARTICLES){id_evenement}>
-              <dd class="descriptif">[(#DESCRIPTIF|sinon{#INTRODUCTION})<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+              <dd class="descriptif">[(#DESCRIPTIF|sinon{#INTRODUCTION}|PtoBR)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
               </BOUCLE_art_lie_2>
           </dl>
           </BOUCLE_evenmnt>
