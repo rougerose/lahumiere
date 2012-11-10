@@ -6,22 +6,15 @@
 	<title>[(#NOM_SITE_SPIP|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF_SITE_SPIP|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-
 </head>
-
 <body class="accueil">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete_sommaire}>
-
       #MENU_LANG
-
       #FORMULAIRE_RECHERCHE
-
       <INCLURE{fond=inc_menuPrincipal}{lang}>
-
     </div>
-
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
           #DEBUT_SURLIGNE
@@ -53,7 +46,6 @@
             <dd class="descriptif">[(#DESCRIPTIF) ]
             ]
             <a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
-
           </dl>
           </BOUCLE_expo1>
           </B_expo1>
@@ -76,7 +68,6 @@
           </BOUCLE_autres_actu>
         </div>
       </div> <!-- fin colonnePrincipale -->
-
       <div id="colonneSecondaire">
         <BOUCLE_galerie(ARTICLES){id_article=(#CONFIG{gestion_accueil_#LANG/art_info})}{0,1}>
         <h2 class="intertitre">[(#TITRE|supprimer_numero)]</h2>
@@ -87,22 +78,16 @@
         <p class="descriptif">[(#CONFIG{gestion_accueil_#LANG/texte_descriptif_specifique_info}) ]<a href="#URL_ARTICLE" class="suite"><:suite:></a></p>
         ]
         </BOUCLE_galerie>
-
         [(#CONFIG{gestion_accueil_#LANG/coordonnees}|=={oui}|?{' ',''})
         [(#INCLURE{fond=inc-coordonnees})]
         ]
-
         [(#CONFIG{gestion_accueil_#LANG/design}|=={oui}|?{' ',''})
         [(#INCLURE{fond=inc-design})]
         ]
-
-
         #FIN_SURLIGNE
       </div> <!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div> <!-- fin corps -->
-
   </div> <!-- fin enveloppe -->
-
 </body>
 </html>

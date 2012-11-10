@@ -1,11 +1,11 @@
 /* @group reset css */
 
-/* =INITIAL 
+/* =INITIAL
    v2.1, by Faruk Ates - www.kurafire.net
-   Addendum by Robert Nyman - www.robertnyman.com 
+   Addendum by Robert Nyman - www.robertnyman.com
    Addition by Christian Montoya - www.christianmontoya.net */
 
-/* Neutralize styling: 
+/* Neutralize styling:
    Elements we want to clean out entirely: */
 
 html, body, form, fieldset {
@@ -13,7 +13,7 @@ html, body, form, fieldset {
 	padding: 0;
 }
 
-/* Neutralize styling: 
+/* Neutralize styling:
    Elements with a vertical margin: */
 
 h1, h2, h3, h4, h5, h6, p, pre, blockquote, ul, ol, dl, address {
@@ -44,8 +44,7 @@ fieldset {
 /* ajouts spécifiques */
 
 input, select, textarea {
-	
-	font: 1em/1.1em "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
+	font: 1em/1em "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -136,7 +135,7 @@ body {
 	float: left;
 	padding-top: 4em;
 	width: 315px;
-	
+
 }
 
 #colonneTexte {
@@ -402,7 +401,7 @@ p.pagination span.on {
 }
 
 #portfolio ul.irreguliere {
-	clear: both;	
+	clear: both;
 }
 
 #portfolio ul.mosaique li {
@@ -423,44 +422,6 @@ div.fragment {
 /* @end */
 
 /* @group formulaires */
-
-#formulaireRecherche, #menuLangue {
-	left: 20em;
-	position: absolute;
-	top: 8px;
-}
-
-#menuLangue {
-	left: 0;
-}
-
-#menuSites {
-	margin-left: 5px;
-}
-
-#formulaireRecherche label, #menuLangue label, #menuSites label {
-	color: #ccc;
-	display: inline;
-	font-size: .9em;
-	text-transform: uppercase;
-}
-
-#menuSites label {
-	display: block;
-	margin-bottom: .5em;
-}
-
-#colonnePrincipale .formulaire_inscription {
-	margin: 2em 0;
-	width: 300px;
-}
-
-#corps .formulaire_spip p {
-	font-size: 1em;
-	line-height: 1.2em;
-	margin: .7em 0 .5em;
-	
-}
 
 .formulaire_spip p label {
 	margin-bottom: .5em;
@@ -496,7 +457,52 @@ div.fragment {
 }
 
 .formulaire_spip .spip_bouton input {
-	font-size: .9em;
+	font-size: 1em;
+}
+
+.formulaire_recherche, .formulaire_menu_lang {
+	left: 20em;
+	position: absolute;
+	top: 8px;
+}
+
+.formulaire_menu_lang {
+	left: 0;
+   xmargin-top: 2px;
+}
+
+#menuSites {
+	margin-left: 5px;
+}
+
+.formulaire_recherche label, .formulaire_menu_lang label, #menuSites label {
+	color: #ccc;
+	display: inline;
+	font-size: 1em; line-height: 1em;
+	text-transform: uppercase;
+}
+
+.formulaire_recherche .text {
+   width: 20em;
+   border: none;
+}
+.formulaire_recherche .submit {font-size: .95em;}
+
+#menuSites label {
+	display: block;
+	margin-bottom: .5em;
+}
+
+#colonnePrincipale .formulaire_inscription {
+	margin: 2em 0;
+	width: 300px;
+}
+
+#corps .formulaire_spip p {
+	font-size: 1em;
+	line-height: 1.2em;
+	margin: .7em 0 .5em;
+
 }
 
 /* @end */
@@ -507,7 +513,7 @@ div.fragment {
 	display: none;
 }
 
-/* reglage des float, 
+/* reglage des float,
 voir http://www.positioniseverything.net/easyclearing.html */
 
 .clearfix:after {
@@ -569,7 +575,7 @@ span#soustitreTheme {
 
 #colonneImages li {
 	margin-left: 22px;
-	margin: 0 0 20px 42px ;	
+	margin: 0 0 20px 42px ;
 }
 
 #agenda {
@@ -736,8 +742,8 @@ hr.spip {
 	color: #d8d8d8;
 	height: 2px;
 	margin: 3em auto;
-	text-align: center; 
-	width: 70%; 	
+	text-align: center;
+	width: 70%;
 }
 
 /* style hr Pour Opera et Gecko */
