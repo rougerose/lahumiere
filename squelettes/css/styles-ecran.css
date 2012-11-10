@@ -149,6 +149,7 @@ body {
 
 #colonneImages {
 	width: 188px;
+   float:left;
 }
 
 #raccourcis {
@@ -318,13 +319,14 @@ p.pagination span.on {
 #menuPrincipal li, #sections li {
 	border-left: 1px solid #000;
 	float: left;
+   display: inline; line-height: 1em;
 	margin: 0;
 }
 
 #menuPrincipal li a, #sections li a, #raccourcis li a {
 	display: block;
 	font-weight: normal;
-	line-height: normal;
+	line-height: 1em;
 }
 
 #menuPrincipal a, #menuPrincipal span, #sections a, #sections span {

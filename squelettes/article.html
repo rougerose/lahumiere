@@ -70,7 +70,7 @@
           [<p class="pagination">page (#PAGINATION{page})</p>]
           <ul class="mosaique">
             <BOUCLE_affichage_mosaique(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{pagination}>
-            <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+            <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="mediabox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
             </BOUCLE_affichage_mosaique>
           </ul>
           </B_affichage_mosaique>
@@ -83,7 +83,7 @@
           [<p class="pagination">page (#PAGINATION{page})</p>]
           <ul>
             <BOUCLE_p_images(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{pagination 3}>
-            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="mediabox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
             </BOUCLE_p_images>
           </ul>
         </div>
