@@ -35,12 +35,19 @@
 
         <div id="formatSecondaire" class="clearfix">
           <BOUCLE_articles(ARTICLES){id_rubrique}{par num titre, titre}{lang?}>
-          <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
-            <dt>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dt>
+          <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">[
+             (#SET{compteur,[(#COMPTEUR_BOUCLE|modulo{2})]})
+             ]<dt>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dt>
             [<dd class="soustitre">(#SOUSTITRE)</dd>]
             <dd class="descriptif">[(#DESCRIPTIF|PtoBR)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
           </dl>
           </BOUCLE_articles>
+          <BOUCLE_rub_liens(RUBRIQUES){id_rubrique=5}>
+          <dl class="[bloc(#COMPTEUR_BOUCLE|moins{#GET{compteur}})]">
+            <dt>[<a href="#URL_RUBRIQUE">(#TITRE)</a>] </dt>
+            <dd class="descriptif">[(#DESCRIPTIF|PtoBR)<br />]<a href="#URL_RUBRIQUE" class="suite"><:suite:></a></dd>
+          </dl>
+          </BOUCLE_rub_liens>
         </div>
       </div> <!-- fin colonnePrincipale -->
       #FIN_SURLIGNE
