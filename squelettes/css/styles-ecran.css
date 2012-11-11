@@ -279,7 +279,7 @@ p.spip {
 	text-align: right;
 }
 
-p.pagination span.on {
+p.pagination span.on, p.pagination strong.on {
 	font-size: 1.5em;
 }
 
@@ -522,6 +522,18 @@ div.fragment {
 
 .formulaire_ecrire_auteur p.boutons input {font-size: 1.5em; margin-left: 1em;}
 /* @end */
+
+
+/* Recherche : résultats */
+.recherche #colonnePrincipale .resultats.detail {
+   font-size: 1.8em;
+   border-bottom: 1px solid #ff8900;
+}
+.recherche .liste-items li {font-size: 1.3em;}
+.recherche .liste-items .titreResultat {font-size: 1em;}
+.recherche #colonnePrincipale p {font-size: 1em;}
+.recherche #colonnePrincipale p.pagination {font-size: 1.3em;}
+.recherche #colonnePrincipale p.pagination strong.on {color: #ff8900;}
 
 /* @group divers */
 

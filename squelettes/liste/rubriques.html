@@ -1,0 +1,25 @@
+[(#REM)
+   Variables
+   =========
+   selection : tableau de la sélection transmis par inclure
+] #SET{selection,#ENV{selection}}
+<B_rubriques>
+#ANCRE_PAGINATION
+[<p class="resultats detail">
+   (#GET{selection}|count|singulier_ou_pluriel{recherche_rubrique,recherche_rubriques,nb})
+</p>]
+[<p class="pagination">(#PAGINATION{page})</p>]
+<ol class="liste-items recherche">
+   <BOUCLE_rubriques(RUBRIQUES){id_rubrique IN #GET{selection}}{pagination 5}>
+   <li class="item">
+      <h3 class="titreResultat"><a href="[(#URL_RUBRIQUE)]">[(#TITRE|prenom_nom)]</a></h3>
+      [<p class="descriptif">
+         (#INTRODUCTION|PtoBR)
+      </p>]
+      <p class="url"><a href="[(#URL_RUBRIQUE)]">[(#URL_RUBRIQUE|url_absolue)]</a></p>
+   </li>
+   </BOUCLE_rubriques>
+</ol>
+</B_rubriques>
+<p class="message info"><:caap:aucun_resultat:></p>
+<//B_rubriques>

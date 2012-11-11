@@ -41,6 +41,23 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'suite' => 'suite',
 	'top' => 'haut de page',
 	'traduction_article' => 'Cet article est disponible en',
-	'voir_images_toutes' => 'voir toutes les photos disponibles'
+	'voir_images_toutes' => 'voir toutes les photos disponibles',
+
+      'recherche_article' => '1 article',
+      'recherche_articles' => '@nb@ articles',
+      'recherche_document' => '1 document',
+      'recherche_documents' => '@nb@ documents',
+      'recherche_label' => 'Recherche',
+      'recherche_label_cap' => 'RECHERCHE',
+      'recherche_mot' => '1 mot-clé',
+      'recherche_mots' => '@nb@ mots',
+      'recherche_rubrique' => '1 rubrique',
+      'recherche_rubriques' => '@nb@ rubriques',
+      'recherche_site' => '1 site web',
+      'recherche_sites' => '@nb@ sites web',
+      'recherche_titre' => 'Recherche :',
+      'recherche_resultat' => '1 résultat',
+      'recherche_resultats' => '@nb@ résultats',
+      'recherche_pas_de_resultat' => 'Aucun résultat'
 );
 ?>

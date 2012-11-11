@@ -1,87 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
 <head>
     [(#REM) page article Résultats recherche ]
     <title>[(#NOM_SITE_SPIP|textebrut) : ]<:info_rechercher|textebrut:></title>
     <INCLURE{fond=inc_head}{lang}>
-
 </head>
-
 <body class="recherche">
     <div id="enveloppe">
         <div id="entete" class="clearfix">
             <INCLURE{fond=inc_entete}>
-
             #MENU_LANG
-
             #FORMULAIRE_RECHERCHE
-
             <INCLURE{fond=inc_menuPrincipal}{lang}>
-
         </div>
-
         <div id="corps" class="clearfix">
             <div id="colonnePrincipale">
-                <h1 id="titrePage"><:info_rechercher:></h1>
-
-                <div id="sections" class="clearfix">
-                    &nbsp;
-                </div>
-                #DEBUT_SURLIGNE
-
-                <BOUCLE_compteur_resultats(INDEX){recherche}{type_table IN articles,rubriques,documents}></BOUCLE_compteur_resultats>
-                <h2 class="titreContenu"><:resultats_recherche:> &laquo;&nbsp;#RECHERCHE&nbsp;&raquo;[ <span>(#TOTAL_BOUCLE) [(#TOTAL_BOUCLE|>{1}|?{<:resultats:>,<:resultat:>})</span>]]</h2>
-                <//B_compteur_resultats>
-
-                <B_recherche>
-                [(#ANCRE_PAGINATION)]
-                [<p class="pagination">(#PAGINATION{page})</p>]
-                <BOUCLE_recherche(INDEX){recherche}{!par points}{type_table IN articles,rubriques,documents}{pagination}>
-                <BOUCLE_articles(ARTICLES){id_article}>
-                <h3 class="titreResultat">[(#_recherche:COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="[(#URL_ARTICLE)]">[(#TITRE|supprimer_numero)]</a></h3>
-                <p class="descriptif">
-                    [(#REM|RechercheEtendue_google_like_string_raz)]
-                    [(#TITRE|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#SOUSTITRE|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#DESCRIPTIF|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#TEXTE|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#REM) affichage, avec chapeau en alternative si rien de trouve]
-                    [(#RECHERCHE|RechercheEtendue_google_like{[(#CHAPO|attribut_html)]})]
-                </p>
-                <p class="url"><a href="[(#URL_ARTICLE)]">[(#URL_ARTICLE|url_absolue)]</a></p>
-                </BOUCLE_articles>
-
-                <BOUCLE_rubriques(RUBRIQUES){id_rubrique}>
-                <h3 class="titreResultat">[(#_recherche:COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="[(#URL_RUBRIQUE)]">[(#TITRE|supprimer_numero|prenom_nom)]</a></h3>
-                <p class="descriptif">
-                    [(#REM|RechercheEtendue_google_like_string_raz)]
-                    [(#TITRE|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#DESCRIPTIF|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#TEXTE|supprimer_numero|RechercheEtendue_google_like_string)]
-                    [(#REM) affichage, avec chapeau en alternative si rien de trouve]
-                </p>
-                <p class="url"><a href="[(#URL_RUBRIQUE)]">[(#URL_RUBRIQUE|url_absolue)]</a></p>
-                </BOUCLE_rubriques>
-
-                <BOUCLE_documents(DOCUMENTS){id_document}>
-                <h3 class="titreResultat">[(#_recherche:COMPTEUR_BOUCLE|plus{#ENV{debut}}). ]<a href="<BOUCLE_article_lie(ARTICLES){id_document}>[(#URL_ARTICLE)]</BOUCLE_article_lie>#img#ID_DOCUMENT"[ type="(#MIME_TYPE)"][ title="(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT}|supprimer_tags|attribut_html)"]>[(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT})]</a></h3>
-                <p class="descriptif">[(#LOGO_DOCUMENT||image_reduire{150,0})]</p>
-                <p class="descriptif">
-                    [(#TITRE|supprimer_numero) - ][(#DESCRIPTIF|PtoBR) - ][document (#TYPE_DOCUMENT)][ &#040;(#TAILLE|taille_en_octets)&#041;]
-                </p>
-                <p class="url"><a href="#URL_SITE_SPIP/<BOUCLE_article_lie2(ARTICLES){id_document}>[(#URL_ARTICLE)]</BOUCLE_article_lie2>#img#ID_DOCUMENT"[ type="(#MIME_TYPE)"][ title="(#TITRE|supprimer_numero|sinon{document #ID_DOCUMENT}|supprimer_tags|attribut_html)"]>#URL_SITE_SPIP/<BOUCLE_article_lie3(ARTICLES){id_document}>[(#URL_ARTICLE)]</BOUCLE_article_lie3>#img#ID_DOCUMENT</a></p>
-                </BOUCLE_documents>
-                </BOUCLE_recherche>
-                </B_recherche>
-                #FIN_SURLIGNE
+               [(#INCLURE{fond=inc_recherche,env})]
             </div><!-- fin colonnePrincipale -->
-
             <INCLURE{fond=inc_piedDePage}{lang}>
         </div><!-- fin corps -->
-
     </div><!-- fin enveloppe -->
-
 </body>
 </html>

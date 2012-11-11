@@ -10,7 +10,7 @@
 }
 
 .recherche h3.titreResultat, .recherche h2.titreContenu span {
-	color: #ff8900;
+	xcolor: #ff8900;
 }
 
 .accueil #menuPrincipal, .accueil #menuPrincipal li:hover, .accueil #menuPrincipal li.on, .accueil #menuPrincipal li.accueil, .accueil #raccourcis, .accueil #raccourcis li:hover, .recherche #corps, .recherche #enveloppe #logo, .recherche #menuPrincipal, .recherche #menuPrincipal li:hover, .recherche #menuPrincipal li.on, .recherche #menuPrincipal li.accueil, .recherche h2.intertitre, .recherche #formatSecondaire dl, .recherche #raccourcis, .recherche #raccourcis li:hover, .recherche #sections {
