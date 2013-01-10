@@ -64,18 +64,11 @@ $(document).ready(function(){
         <label for="cfg_art_gf">Article &agrave; afficher :</label>
         <select name="art_gf" id="cfg_art_gf" class="forml">
             <option value="">Racine</option>
-            <BOUCLE_secteurs(RUBRIQUES){racine}{par num titre}>
+            <BOUCLE_secteurs(RUBRIQUES){id_rubrique=3}>
             <option value="" style="font-weight: bold;">rubrique : #TITRE</option>
-            <BOUCLE_articles_racine(ARTICLES){id_rubrique}{par num titre}{lang=en}>
+            <BOUCLE_articles_racine(ARTICLES){id_rubrique}{!par id_article}{lang=en}{0,20}>
             <option value="#ID_ARTICLE" [(#CONFIG{gestion_accueil_en/art_gf}|=={#ID_ARTICLE}|?{selected="selected"})]>&nbsp;&nbsp;[#ID_ARTICLE] #TITRE</option>
             </BOUCLE_articles_racine>
-            <BOUCLE_rubriques(RUBRIQUES){id_parent}{par num titre}>
-            <option value="" style="font-weight: bold;">&nbsp;&nbsp;rubrique #ID_RUBRIQUE : #TITRE</option>
-            <BOUCLE_articles(ARTICLES){id_rubrique}{par num titre}{lang=en}>
-            <option value="#ID_ARTICLE" [(#CONFIG{gestion_accueil_en/art_gf}|=={#ID_ARTICLE}|?{selected="selected"})]>&nbsp;&nbsp;&nbsp;&nbsp;[#ID_ARTICLE] #TITRE</option>
-            </BOUCLE_articles>
-            <BOUCLE_sous_rubriques(BOUCLE_rubriques)></BOUCLE_sous_rubriques>
-            </BOUCLE_rubriques>
             </BOUCLE_secteurs>
         </select>
         <input type="radio" name="descriptif_art_expo" value="descriptif_article_expo" id="dae"[ (#CONFIG{gestion_accueil_en/descriptif_art_expo}|=={"descriptif_article_expo"}|?{checked="checked"})] />
@@ -85,7 +78,7 @@ $(document).ready(function(){
         <label for="dse">Rédiger un descriptif spécifique</label>
         <br />
         <textarea name="texte_descriptif_specifique_expo" id="tdse" rows="4" cols="40" >[(#CONFIG{gestion_accueil_en/texte_descriptif_specifique_expo})]</textarea>
-        
+
     </fieldset>
     <fieldset style="margin-bottom:1em;">
         <legend>Quel article doit apparaître dans la zone d'informations de la Galerie ?</legend>
@@ -94,12 +87,12 @@ $(document).ready(function(){
             <option value="">Racine</option>
             <BOUCLE_secteurs2(RUBRIQUES){racine}{par num titre}>
             <option value="" style="font-weight: bold;">rubrique : #TITRE</option>
-            <BOUCLE_articles_racine2(ARTICLES){id_rubrique}{par num titre}{lang=en}>
+            <BOUCLE_articles_racine2(ARTICLES){id_rubrique}{!par id_article}{lang=en}>
             <option value="#ID_ARTICLE" [(#CONFIG{gestion_accueil_en/art_info}|=={#ID_ARTICLE}|?{selected="selected"})]>&nbsp;&nbsp;[#ID_ARTICLE] #TITRE</option>
             </BOUCLE_articles_racine2>
             <BOUCLE_rubriques2(RUBRIQUES){id_parent}{par num titre}>
             <option value="" style="font-weight: bold;">&nbsp;&nbsp;rubrique #ID_RUBRIQUE : #TITRE</option>
-            <BOUCLE_articles2(ARTICLES){id_rubrique}{par num titre}{lang=en}>
+            <BOUCLE_articles2(ARTICLES){id_rubrique}{!par id_article}{lang=en}>
             <option value="#ID_ARTICLE" [(#CONFIG{gestion_accueil_en/art_info}|=={#ID_ARTICLE}|?{selected="selected"})]>&nbsp;&nbsp;&nbsp;&nbsp;[#ID_ARTICLE] #TITRE</option>
             </BOUCLE_articles2>
             <BOUCLE_sous_rubriques2(BOUCLE_rubriques2)></BOUCLE_sous_rubriques2>
@@ -113,9 +106,9 @@ $(document).ready(function(){
         <label for="dsi">Rédiger un descriptif spécifique</label>
         <br />
         <textarea name="texte_descriptif_specifique_info" id="tdsi" rows="4" cols="40" >[(#CONFIG{gestion_accueil_en/texte_descriptif_specifique_info})]</textarea>
-        
+
     </fieldset>
-    
+
     <fieldset style="margin-bottom:1em;">
         <legend>Faire appara&icirc;tre l&#x27;article relatif aux coordonn&eacute;es de la Galerie ?</legend>
         <div>
@@ -127,12 +120,12 @@ $(document).ready(function(){
                     <option value="">Racine</option>
                     <BOUCLE_secteurs3(RUBRIQUES){racine}{par num titre}>
                     <option value="" style="font-weight: bold;">rubrique : #TITRE</option>
-                    <BOUCLE_articles_racine3(ARTICLES){id_rubrique}{par num titre}{lang=en}>
+                    <BOUCLE_articles_racine3(ARTICLES){id_rubrique}{!par id_article}{lang=en}>
                     <option value="#ID_ARTICLE" [(#CONFIG{gestion_accueil_en/art_coordonnees}|=={#ID_ARTICLE}|?{selected="selected"})]>&nbsp;&nbsp;[#ID_ARTICLE] #TITRE</option>
                     </BOUCLE_articles_racine3>
                     <BOUCLE_rubriques3(RUBRIQUES){id_parent}{par num titre}>
                     <option value="" style="font-weight: bold;">&nbsp;&nbsp;rubrique #ID_RUBRIQUE : #TITRE</option>
-                    <BOUCLE_articles3(ARTICLES){id_rubrique}{par num titre}{lang=en}>
+                    <BOUCLE_articles3(ARTICLES){id_rubrique}{!par id_article}{lang=en}>
                     <option value="#ID_ARTICLE" [(#CONFIG{gestion_accueil_en/art_coordonnees}|=={#ID_ARTICLE}|?{selected="selected"})]>&nbsp;&nbsp;&nbsp;&nbsp;[#ID_ARTICLE] #TITRE</option>
                     </BOUCLE_articles3>
                     <BOUCLE_sous_rubriques3(BOUCLE_rubriques3)></BOUCLE_sous_rubriques3>
@@ -144,8 +137,8 @@ $(document).ready(function(){
         <input type="radio" name="coordonnees" value="non" id="coordonnees_non" [(#CONFIG{gestion_accueil_en/coordonnees}|=={"non"}|?{checked="checked"})] />
         <label for="coordonnees_non">non</label>
     </fieldset>
-    
-    
+
+
     <fieldset style="margin-bottom:1em;">
         <legend>Faire appara&icirc;tre la zone &laquo;&nbsp;Activit&eacute; Design&nbsp;&raquo;</legend>
         <div style="margin:.5em 0;">
@@ -176,11 +169,11 @@ $(document).ready(function(){
                 <input type="text" name="url_design" class="forml" value="#ENV{url_design}" size="10" id="url" />
             </div>
         </div>
-        
+
         <input type="radio" name="design" value="non" id="design_non" [(#CONFIG{gestion_accueil_en/design}|=={"non"}|?{checked="checked"})] />
         <label for="design_non">non</label>
     </fieldset>
-    
+
     <input type="submit" name="_cfg_ok" value="<:OK:>" />
     <input type="submit" name="_cfg_delete" value="<:Supprimer:>" />
 </form>
