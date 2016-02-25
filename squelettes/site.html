@@ -1,4 +1,3 @@
-#CACHE{86400}
 <BOUCLE_principale(SITES){id_syndic}>[(#REM) page sites ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -8,79 +7,50 @@
 	<title>[(#NOM_SITE_SPIP|textebrut)]<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>[ : (#TITRE|supprimer_numero|textebrut)]</BOUCLE_titre_rubrique>[ : (#NOM_SITE|supprimer_numero|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-	
 </head>
-
 <body class="rubrique#ID_RUBRIQUE">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
       #MENU_LANG
-
       #FORMULAIRE_RECHERCHE
-      
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
     </div>
-    
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <h1 id="titrePage"><BOUCLE_titre_secteur(RUBRIQUES){id_rubrique}>[(#TITRE|supprimer_numero)]</BOUCLE_titre_secteur></h1>
-        
         <div id="sections" class="clearfix">
           &nbsp;
         </div>
-        
         <h2 class="titreContenu">[(#NOM_SITE|supprimer_numero)]</h2>
-        
-        
-        
         <div id="colonneTexte">
           <div id="chapo">
             <p class="url"><a href="#URL_SITE">#URL_SITE</a></p>
           </div>
-
           <div id="texte">
             [(#DESCRIPTIF|paragrapher|image_reduire{450,0})]
             <p class="tags"><span><:tag:>&nbsp;:</span>
             <BOUCLE_tags(MOTS){id_syndic}{par num titre, titre}{", "}>[(#TITRE|supprimer_numero)]</BOUCLE_tags></p>
           </div>
-
         </div>
-        
-        
-        
-        
-
         <BOUCLE_retour_actualites(RUBRIQUES){id_rubrique}>
         <p class="retour"><a href="#URL_RUBRIQUE" class="suite"><:retour_aux:>[ (#TITRE|supprimer_numero)]</a></p>
         </BOUCLE_retour_actualites>
-      #FIN_SURLIGNE          
+      #FIN_SURLIGNE
       </div><!-- fin colonnePrincipale -->
-      
       <div id="colonneSecondaire">
-          <BOUCLE_rubrique_liens(RUBRIQUES){id_rubrique}>
-          <form action="#URL_SITE_SPIP" method="get" accept-charset="utf-8" id="menuSites">
-              <input type="hidden" name="rubrique" value="#ID_RUBRIQUE">
-              <label for="tag"><:trier:></label>
-              <select name="tag" id="menuTri" onchange="form.submit()">
-                  <option value=""></option>
-                  <option value="tous"><:tous:></option>
-                  <BOUCLE_sites_menu(SITES){id_rubrique}{par num nom_site, nom_site}>
-                  <BOUCLE_tag_menu(MOTS){id_syndic}{par titre}{unique}>
-                  <option value="#ID_MOT">[(#TITRE|supprimer_numero)]</option>
-                  </BOUCLE_tag_menu>
-                  </BOUCLE_sites_menu>
-              </select>
-              <p id="bouton"><input type="submit" value="<:modifier:>"></p>
-          </form>
-          </BOUCLE_rubrique_liens>
+         <ul id="listeArtistes" class="rubrique#ID_RUBRIQUE">
+           <BOUCLE_liste_articles(ARTICLES){lang?}{id_rubrique=1}{par num titre, titre}>
+           <li[ class="(#EXPOSE{on,off})"]><#EXPOSE{span,a href="#URL_ARTICLE"}>[(#TITRE)]</#EXPOSE{span,a}></li>
+           </BOUCLE_liste_articles>
+           <BOUCLE_rubrique_liens(RUBRIQUES){id_rubrique=5}>
+           <li class="on"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+           </BOUCLE_rubrique_liens>
+         </ul>
       </div><!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div><!-- fin corps -->
-    
   </div><!-- fin enveloppe -->
 </body>
 </html>

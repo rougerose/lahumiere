@@ -1,4 +1,3 @@
-#CACHE{86400}
 <BOUCLE_principale(ARTICLES){id_article}>[(#REM) page article Artistes ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -8,27 +7,27 @@
 	<title>[(#NOM_SITE_SPIP|textebrut) : ]<BOUCLE_meta_nom_artiste(HIERARCHIE){id_article}{" : "}>[(#TITRE|supprimer_numero|textebrut|prenom_nom)]</BOUCLE_meta_nom_artiste>[ : (#TITRE|supprimer_numero|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-	
+
 </head>
 
 <body class="artistes">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
+
       #MENU_LANG
 
       #FORMULAIRE_RECHERCHE
-      
+
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
+
     </div>
-    
+
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <h1 id="titrePage"><B_nom_artiste><BOUCLE_nom_artiste(HIERARCHIE){id_article}{1,1}>[(#TITRE|supprimer_numero|prenom_nom)]</BOUCLE_nom_artiste></B_nom_artiste>[(#TITRE|supprimer_numero|prenom_nom)]<//B_nom_artiste></h1>
-        
+
         <div id="sections" class="clearfix">
           <ul>
             <B_test>
@@ -59,7 +58,7 @@
             <//B_test>
           </ul>
         </div>
-        
+
         <h2 class="titreContenu">[(#TITRE|supprimer_numero)]</h2>
         [(#REM) Inclure le modele des liens de traductions ]
         #MODELE{article_traductions}
@@ -71,7 +70,7 @@
           </BOUCLE_evenement>
         </div>
         </B_evenement>
-        
+
         <div id="colonneTexte">
           [<div id="chapo">
             (#CHAPO|paragrapher|image_reduire{450,0})
@@ -86,14 +85,14 @@
               (#NOTES)
           </div>]
         </div>
-        
+
         <BOUCLE_portfolio(ARTICLES){id_article}{titre_mot=portfolio}>
         <div id="portfolio" class="clearfix">
 
             <B_affichage_mosaique>
             <ul class="mosaique irreguliere">
                 <BOUCLE_affichage_mosaique(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{0,4}>
-                <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&nbsp;&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+                <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="mediabox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&nbsp;&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
                 </BOUCLE_affichage_mosaique>
             </ul>
             </B_affichage_mosaique>
@@ -101,29 +100,29 @@
 
         </div>
         </BOUCLE_portfolio>
-        
+
         <B_p_images>
         <div id="colonneImages">
           [(#ANCRE_PAGINATION)]
           [<p class="pagination">page (#PAGINATION{page})</p>]
           <ul>
             <BOUCLE_p_images(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{pagination}>
-            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="mediabox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
             </BOUCLE_p_images>
           </ul>
         </div>
         </B_p_images>
-        
-        
+
+
         <B_test2>
         <BOUCLE_test2(HIERARCHIE){id_rubrique}{1,2}> </BOUCLE_test2>
         <BOUCLE_retour_actualites(RUBRIQUES){id_rubrique}>
         <p class="retour"><a href="#URL_RUBRIQUE" class="suite"><:retour_aux:>[ (#TITRE|supprimer_numero)]</a></p>
         </BOUCLE_retour_actualites>
         </B_test2>
-                
+
       </div><!-- fin colonnePrincipale -->
-      
+
       <div id="colonneSecondaire">
         <ul id="listeArtistes">
           <BOUCLE_rubrique_artistes(RUBRIQUES){id_rubrique=2}>
@@ -131,12 +130,12 @@
           <li[ class="(#EXPOSE{on,off})"]><a href="#URL_RUBRIQUE">[(#TITRE|prenom)][ (#TITRE|nom|majuscules)]</a></li>
           </BOUCLE_artistes>
           </BOUCLE_rubrique_artistes>
-        </ul> 
-        #FIN_SURLIGNE         
+        </ul>
+        #FIN_SURLIGNE
       </div><!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div><!-- fin corps -->
-    
+
   </div><!-- fin enveloppe -->
 </body>
 </html>

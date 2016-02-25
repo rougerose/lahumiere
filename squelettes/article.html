@@ -1,4 +1,3 @@
-#CACHE{86400}
 <BOUCLE_principale(ARTICLES){id_article}>[(#REM) page article Expositions et Actualités ]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -8,31 +7,31 @@
 	<title>[(#NOM_SITE_SPIP|textebrut)]<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>[ : (#TITRE|supprimer_numero|textebrut)]</BOUCLE_titre_rubrique>[ : (#TITRE|supprimer_numero|textebrut)]</title>
 	<meta name="description" content="[(#DESCRIPTIF|textebrut)]" />
 	<INCLURE{fond=inc_head}{lang}>
-	
+
 </head>
 
 <body class="rubrique#ID_RUBRIQUE">
   <div id="enveloppe">
     <div id="entete" class="clearfix">
       <INCLURE{fond=inc_entete}>
-      
+
       #MENU_LANG
 
       #FORMULAIRE_RECHERCHE
-      
+
       <INCLURE{fond=inc_menuPrincipal}{lang}{id_rubrique}>
-      
+
     </div>
-    
+
     <div id="corps" class="clearfix">
       <div id="colonnePrincipale">
         #DEBUT_SURLIGNE
         <h1 id="titrePage"><BOUCLE_titre_secteur(RUBRIQUES){id_rubrique}>[(#TITRE|supprimer_numero)]</BOUCLE_titre_secteur> <B_date_debut><BOUCLE_date_debut(EVENEMENTS){id_article}>[(#DATE_DEBUT|affdate_mois_annee)]</BOUCLE_date_debut></B_date_debut>[(#DATE|affdate_mois_annee)]<//B_date_debut></h1>
-        
+
         <div id="sections" class="clearfix">
           &nbsp;
         </div>
-        
+
         <h2 class="titreContenu">[(#TITRE|supprimer_numero)]</h2>
         [(#REM) Inclure le modele des liens de traductions ]
         #MODELE{article_traductions}
@@ -44,7 +43,7 @@
           </BOUCLE_evenement>
         </div>
         </B_evenement>
-        
+
         <div id="colonneTexte">
           [<div id="chapo">
             (#CHAPO|paragrapher|image_reduire{450,0})
@@ -63,28 +62,28 @@
           #FORMULAIRE_ECRIRE_AUTEUR
           ]
         </div>
-        
+
         <BOUCLE_portfolio(ARTICLES){id_article}{id_mot=2}>
         <div id="portfolio" class="clearfix">
           <B_affichage_mosaique>
           [(#ANCRE_PAGINATION)]
           [<p class="pagination">page (#PAGINATION{page})</p>]
-          <ul class="mosaique">            
+          <ul class="mosaique">
             <BOUCLE_affichage_mosaique(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{pagination}>
-            <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+            <li class="[bloc(#COMPTEUR_BOUCLE|modulo{4})]"><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="mediabox" rel="portfolio" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
             </BOUCLE_affichage_mosaique>
           </ul>
           </B_affichage_mosaique>
         </div>
         </BOUCLE_portfolio>
-        
+
         <B_p_images>
         <div id="colonneImages">
           [(#ANCRE_PAGINATION)]
           [<p class="pagination">page (#PAGINATION{page})</p>]
           <ul>
             <BOUCLE_p_images(DOCUMENTS){id_article}{doublons}{mode=document}{extension IN jpg, gif, png}{pagination 3}>
-            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="thickbox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
+            <li><a href="#URL_DOCUMENT" type="#MIME_TYPE" class="mediabox" rel="image" title="[&laquo;&nbsp;(#TITRE|supprimer_numero|attribut_html)&raquo;][ (#DESCRIPTIF|PtoBR|attribut_html)]">[(#FICHIER|image_reduire{146,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image})]}|inserer_attribut{'id',img#ID_DOCUMENT})]</a></li>
             </BOUCLE_p_images>
           </ul>
         </div>
@@ -93,15 +92,15 @@
         <BOUCLE_retour_actualites(RUBRIQUES){id_rubrique}>
         <p class="retour"><a href="#URL_RUBRIQUE" class="suite"><:retour_aux:>[ (#TITRE|supprimer_numero)]</a></p>
         </BOUCLE_retour_actualites>
-      #FIN_SURLIGNE          
+      #FIN_SURLIGNE
       </div><!-- fin colonnePrincipale -->
-      
+
       <div id="colonneSecondaire">
-        <INCLURE{fond=inc_calendrier_art}{id_rubrique}{id_article}{self=#SELF}{date=#ENV{date}}{lang}>          
+        <INCLURE{fond=inc_calendrier_art}{id_rubrique}{id_article}{self=#SELF}{date=#ENV{date}}{lang}>
       </div><!-- fin colonneSecondaire -->
       <INCLURE{fond=inc_piedDePage}{lang}>
     </div><!-- fin corps -->
-    
+
   </div><!-- fin enveloppe -->
 </body>
 </html>

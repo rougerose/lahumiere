@@ -1,5 +1,3 @@
-#CACHE{24*3600}
-
 <h2 id="design" class="intertitre">[(#CONFIG{gestion_accueil_#LANG/titre_design})]</h2>
 <p class="descriptif"><a href="[(#CONFIG{gestion_accueil_#LANG/url_design})]"><BOUCLE_image_design(DOCUMENTS){id_document=(#CONFIG{gestion_accueil_#LANG/doc_design})}>[(#FICHIER|image_reduire{315,0}|inserer_attribut{'alt',[(#TITRE|supprimer_numero|sinon{image #ID_DOCUMENT})]})]</BOUCLE_image_design></a></p>
 

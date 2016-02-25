@@ -10,7 +10,7 @@
 }
 
 .recherche h3.titreResultat, .recherche h2.titreContenu span {
-	color: #ff8900;
+	xcolor: #ff8900;
 }
 
 .accueil #menuPrincipal, .accueil #menuPrincipal li:hover, .accueil #menuPrincipal li.on, .accueil #menuPrincipal li.accueil, .accueil #raccourcis, .accueil #raccourcis li:hover, .recherche #corps, .recherche #enveloppe #logo, .recherche #menuPrincipal, .recherche #menuPrincipal li:hover, .recherche #menuPrincipal li.on, .recherche #menuPrincipal li.accueil, .recherche h2.intertitre, .recherche #formatSecondaire dl, .recherche #raccourcis, .recherche #raccourcis li:hover, .recherche #sections {
@@ -150,11 +150,11 @@
 }
 
 .rubrique5 #menuPrincipal, .rubrique5 #menuPrincipal li:hover, .rubrique5 #menuPrincipal li.on, .rubrique5 h2.intertitre, .rubrique5 #sections, .rubrique5 #sections li:hover, .rubrique5 #sections li.on, .rubrique5 #raccourcis, .rubrique5 #raccourcis li:hover {
-	border-color: #007cb3;
+	border-color: #8e2800;
 }
 
 .rubrique5 #corps, .rubrique5 #enveloppe #logo, .rubrique5 #formatSecondaire dl {
-	border-color: #004767;
+	border-color: #8e2800;
 }
 
 .rubrique5 h1#titrePage, .rubrique5 #listeArtistes li.on, .rubrique5 h2.titreContenu, .rubrique5 p.pagination span.on, .rubrique5 span.intertitre, .rubrique5 dd.agenda, .rubrique5 #agenda p strong {
@@ -195,3 +195,5 @@
 }
 
 /* @end */
+
+#spip-debug {color: #000;}

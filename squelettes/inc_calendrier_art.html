@@ -1,4 +1,3 @@
-#CACHE{7*86400}
 <div id="zoneCalendrier">
   <BOUCLE_article(ARTICLES){id_article}><BOUCLE_evenement(EVENEMENTS){id_article}>
   <table summary="<:icone_calendrier:>" id="calendrier">
@@ -6,8 +5,8 @@
 		  [<a class="annePrecedente" href="(#URL_RUBRIQUE|parametre_url{date,[(#DATE_DEBUT|affdate{'Y'}|moins{1})-01]})" title="[<:mois_12:> (#ENV{date}|affdate{'Y'}|moins{1})]">&#x2190;</a>][
 			(#DATE_DEBUT|annee)][
 			<a
-				class="anneeProchaine" 
-				href="(#URL_RUBRIQUE|parametre_url{date,[(#DATE_DEBUT|affdate{'Y'}|plus{1})-01]})" 
+				class="anneeProchaine"
+				href="(#URL_RUBRIQUE|parametre_url{date,[(#DATE_DEBUT|affdate{'Y'}|plus{1})-01]})"
 				title="[<:mois_1:> (#ENV{date}|affdate{'Y'}|plus{1})]">&#x2192;</a>]
 		</caption>
 		<tbody>

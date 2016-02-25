@@ -1,21 +1,20 @@
-#CACHE{86400}
-  <h2>[(#ENV{mois})] [(#ENV{annee})]</h2>
-  <B_en_cours>
-  [(#ANCRE_PAGINATION)]
-  [<p class="pagination">page (#PAGINATION{page})</p>]
-  <BOUCLE_en_cours(EVENEMENTS){agendafull date_debut, date_fin, mois, (#ENV{date}|annee), (#ENV{date}|mois)}{pagination}>          
-  <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
-    <dt>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dt>
-    [<dd class="soustitre">(#SOUSTITRE)</dd>]
 
-    <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
+<h2>[(#ENV{mois})] [(#ENV{annee})]</h2>
+<B_en_cours>
+[(#ANCRE_PAGINATION)]
+[<p class="pagination">page (#PAGINATION{page})</p>]
+<BOUCLE_en_cours(EVENEMENTS){agendafull date_debut, date_fin, mois, (#ENV{date}|annee), (#ENV{date}|mois)}{pagination}>
+<dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
+   <dt>[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dt>
+   [<dd class="soustitre">(#SOUSTITRE)</dd>]
 
-    <dd class="descriptif">[(#DESCRIPTIF)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
-  </dl>
-  </BOUCLE_en_cours>
-  </B_en_cours>
-  <dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
-    <dt>[(#ID_RUBRIQUE|=={3}|?{<:aucune_expo:>,''})][(#ID_RUBRIQUE|=={5}|?{<:aucune_news:>,''})]</dt>
-  </dl>
-  <//B_en_cours>
-  
+   <dd class="agenda">[(#DATE_DEBUT|jour)][ (#DATE_DEBUT|nom_mois)] - [(#DATE_FIN|affdate)]</dd>
+
+   <dd class="descriptif">[(#DESCRIPTIF|PtoBR)<br />]<a href="#URL_ARTICLE" class="suite"><:suite:></a></dd>
+</dl>
+</BOUCLE_en_cours>
+</B_en_cours>
+<dl class="[bloc(#COMPTEUR_BOUCLE|modulo{2})]">
+   <dt>[(#ID_RUBRIQUE|=={3}|?{<:aucune_expo:>,''})][(#ID_RUBRIQUE|=={5}|?{<:aucune_news:>,''})]</dt>
+</dl>
+<//B_en_cours>
