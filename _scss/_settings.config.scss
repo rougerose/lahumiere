@@ -1,0 +1,27 @@
+// ==========================================================================
+// Settings
+// ==========================================================================
+
+// font-family
+$font-base:           'Futura', sans-serif;
+
+// Colors
+$color-black: #000;
+
+$color-links: $color-black;
+
+// wrapper
+$inuit-wrapper-width: 1100px;
+
+// layout
+$inuit-use-markup-fix: true;
+$inuit-fractions:       11;
+$inuit-offsets: true;
+
+
+// mediaqueries
+$mq-breakpoints: (
+  mobile:             320px,
+  tablet:             740px,
+  desktop:            980px
+);

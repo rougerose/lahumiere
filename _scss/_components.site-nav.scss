@@ -1,0 +1,41 @@
+// ==========================================================================
+// SITE-NAV
+// ==========================================================================
+
+.c-site-nav {
+  // display: table;
+}
+
+.c-site-nav__home {
+  display: block;
+  @include inuit-font-size(40px, 50px);
+}
+
+.c-site-nav__title {
+  text-transform: uppercase;
+}
+
+.c-site-nav__logo {
+  position: absolute;
+  left: (2 / 11) * -100%;
+  display: block;
+  width: (2 / 11) * 100%;
+  text-align: right;
+}
+
+.c-site-nav__logo-img {
+  max-width: 100px;
+}
+
+.c-site-nav__list {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c-site-nav__item {
+  display: inline-block;
+}

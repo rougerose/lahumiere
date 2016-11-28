@@ -1,0 +1,14 @@
+# Site settings
+title: Lahumiere
+email: ""
+description: ""
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js

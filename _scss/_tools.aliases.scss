@@ -1,0 +1,14 @@
+// ==========================================================================
+// ALIASES
+// ==========================================================================
+
+// alias et unités en EM
+$spacing-unit:        inuit-rem($inuit-global-spacing-unit);
+$spacing-unit-tiny: inuit-rem($inuit-global-spacing-unit-tiny);
+$spacing-unit-small: inuit-rem($inuit-global-spacing-unit-small);
+$spacing-unit-large: inuit-rem($inuit-global-spacing-unit-large);
+
+
+@mixin font-size($args...) {
+    @include inuit-font-size($args...);
+}
