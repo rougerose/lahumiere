@@ -1078,7 +1078,6 @@ img[height] {
 
 @media (min-width: 45em) {
   .c-site-nav__home {
-    margin-bottom: 0;
     text-align: left;
   }
 }
