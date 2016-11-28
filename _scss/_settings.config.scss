@@ -4,6 +4,7 @@
 
 // font-family
 $font-base:           'Futura', sans-serif;
+$font-heavy: 'FuturaHeavy', 'Futura', sans-serif;
 
 // Colors
 $color-black: #000;
@@ -22,6 +23,6 @@ $inuit-offsets: true;
 // mediaqueries
 $mq-breakpoints: (
   mobile:             320px,
-  tablet:             740px,
+  tablet:             720px,
   desktop:            980px
 );

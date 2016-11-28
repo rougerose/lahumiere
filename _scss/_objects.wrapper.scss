@@ -1,0 +1,14 @@
+// ==========================================================================
+// WRAPPER
+// ==========================================================================
+
+//
+// Add mediaqueries for wrapper object
+//
+
+.o-wrapper {
+  @include mq($until: tablet) {
+    padding-left: $spacing-unit-small;
+    padding-right: $spacing-unit-small;
+  }
+}

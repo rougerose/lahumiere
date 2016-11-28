@@ -870,6 +870,13 @@ img[height] {
   padding-left: 96px;
 }
 
+@media (max-width: 44.99em) {
+  .o-wrapper {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 /* ==========================================================================
    #LAYOUT
    ========================================================================== */
@@ -1064,39 +1071,86 @@ img[height] {
 }
 
 .c-site-nav__home {
+  margin-bottom: 0.75rem;
   display: block;
-  font-size: 40px;
-  font-size: 2.5rem;
-  line-height: 50px;
+  text-align: center;
 }
 
-.c-site-nav__title {
-  text-transform: uppercase;
+@media (min-width: 45em) {
+  .c-site-nav__home {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 45em) {
+  .c-site-nav__home--logo {
+    line-height: 0;
+    text-align: right;
+  }
 }
 
 .c-site-nav__logo {
-  position: absolute;
-  left: -18.18182%;
-  display: block;
-  width: 18.18182%;
-  text-align: right;
-}
-
-.c-site-nav__logo-img {
   max-width: 100px;
 }
 
+@media (min-width: 45em) {
+  .c-site-nav__logo-img {
+    text-align: right;
+  }
+}
+
+.c-site-nav__title {
+  font-family: "FuturaHeavy", "Futura", sans-serif;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1.71429;
+}
+
+@media (min-width: 45em) {
+  .c-site-nav__title {
+    font-size: 40px;
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
 .c-site-nav__list {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  border-bottom: 3px solid #000;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+@media (max-width: 44.99em) {
+  .c-site-nav__list {
+    border-top: 3px solid #000;
+    text-align: center;
+  }
+}
+
 .c-site-nav__item {
   display: inline-block;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+
+.c-site-nav__link {
+  display: block;
+  padding: 0.375rem;
+}
+
+@media (min-width: 45em) {
+  .c-site-nav__link {
+    padding: 0.375rem;
+  }
+}
+
+.c-site-nav__link--galerie {
+  padding-left: 0;
 }
 
 /* ==========================================================================
@@ -1576,7 +1630,7 @@ img[height] {
   }
 }
 
-@media (min-width: 46.25em) {
+@media (min-width: 45em) {
   .u-1\/11\@tablet {
     width: 9.09091% !important;
   }
