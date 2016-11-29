@@ -1,8 +1,18 @@
 // ==========================================================================
-// PAGE
+// ICON
 // ==========================================================================
 
-.c-page__head {
-  position: relative;
-  padding: $spacing-unit-large 0 $spacing-unit;
+.o-icon {}
+
+.o-icon-search {
+  width: 24px;
+  path {
+    fill: $color-gray;
+  }
+
+  &:hover {
+    path {
+      fill: $color-black;
+    }
+  }
 }

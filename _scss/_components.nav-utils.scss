@@ -1,0 +1,75 @@
+// ==========================================================================
+// NAV-UTILS
+// ==========================================================================
+
+.c-nav-utils {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @include mq(tablet) {
+    text-align: right;
+  }
+}
+
+//
+// LIST
+// ==========================================================================
+
+.c-nav-utils__list {}
+
+//
+// ITEM
+// ==========================================================================
+
+.c-nav-utils__item {
+
+  @include mq($until: tablet) {
+    width: 50%;
+    text-align: right;
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  @include mq(tablet) {
+    &:first-child {
+      margin-right: $spacing-unit;
+    }
+  }
+}
+
+//
+// LINK
+// ==========================================================================
+
+.c-nav-utils__link {
+  display: inline-block;
+  padding: $spacing-unit-small;
+  vertical-align: bottom;
+  color: $color-gray;
+  &.is-active,
+  &:hover {
+    color: $color-black;
+  }
+}
+
+  //
+  // Variantes
+  //
+  .c-nav-utils__link--search {
+    line-height: 0;
+  }
+
+  .c-nav-utils__link--lang {
+    padding: $spacing-unit-small 0;
+  }
+
+  .c-nav-utils__link--delimited {
+    &:before {
+      margin: 0 3px;
+      content: "/";
+      color: $color-gray;
+    }
+  }
