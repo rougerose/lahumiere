@@ -2,7 +2,25 @@
 // PAGE
 // ==========================================================================
 
+//
+// HEAD
+// ==========================================================================
+
 .c-page__head {
   position: relative;
   padding: $spacing-unit-large 0 $spacing-unit;
+}
+
+//
+// FOOT
+// ==========================================================================
+
+.c-page__foot {
+  border-top: 1px solid $color-black;
+  border-bottom: 3px solid $color-black;
+  padding-top: $spacing-unit;
+}
+
+.c-page__legal {
+  margin: $spacing-unit 0;
 }

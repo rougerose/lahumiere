@@ -1,0 +1,48 @@
+// ==========================================================================
+// LEGAL
+// ==========================================================================
+
+.c-legal {
+  @include inuit-font-size(13px);
+
+  @include mq(tablet) {
+    display: table;
+    width: 100%;
+  }
+}
+
+//
+// ITEM
+// ==========================================================================
+
+.c-legal__item {
+  margin-bottom: $spacing-unit-small;
+  text-align: center;
+  @include mq(tablet) {
+    display: table-cell;
+    text-align: left;
+  }
+}
+
+//
+// Variantes
+//
+.c-legal__item--copyright {
+  @include mq(tablet) {}
+}
+.c-legal__item--credits {
+  @include mq(tablet) {
+    text-align: right;
+  }
+}
+
+//
+// LINK
+// ==========================================================================
+
+.c-legal__link {
+  margin: 0 $spacing-unit-small;
+  @include mq(tablet) {
+    margin-right: 0;
+  }
+}
