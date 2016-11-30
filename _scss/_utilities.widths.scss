@@ -1,0 +1,22 @@
+// ==========================================================================
+// WIDTHS
+// ==========================================================================
+
+//
+// Plutôt que d'activer $inuit-offsets qui produit beaucoup de code qui n'est
+// pas utilisé, on ajoute juste la classe nécessaire.
+//
+
+.u-push-2\/11 {
+  position: relative !important;
+  right: auto !important;
+  left: 18.18182% !important;
+}
+
+@include mq(tablet) {
+  .u-push-2\/11\@tablet {
+    position: relative !important;
+    right: auto !important;
+    left: 18.18182% !important;
+  }
+}
