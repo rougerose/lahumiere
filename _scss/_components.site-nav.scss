@@ -46,7 +46,6 @@
   //
   .c-site-nav__title {
     font-family: $font-heavy;
-    text-transform: uppercase;
     @include inuit-font-size(28px);
 
     @include mq(tablet) {
@@ -60,9 +59,9 @@
 
 .c-site-nav__list {
   border-bottom: 3px solid $color-black;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  // margin: 0;
+  // padding: 0;
+  // list-style: none;
 
   @include mq($until: tablet) {
     border-top: 3px solid $color-black;
@@ -75,9 +74,6 @@
 // ==========================================================================
 
 .c-site-nav__item {
-  display: inline-block;
-
-  text-transform: uppercase;
   @include inuit-font-size(18px);
 }
 
