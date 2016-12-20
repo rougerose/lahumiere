@@ -5,7 +5,11 @@ var gulp        = require("gulp"),
     browserSync = require("browser-sync").create(),
     sass        = require("gulp-sass"),
     cp          = require("child_process"),
-    prefix      = require("gulp-autoprefixer");
+    prefix      = require("gulp-autoprefixer"),
+    concat      = require("gulp-concat"),
+    uglify      = require("gulp-uglify"),
+    rename      = require("gulp-rename"),
+    pump = require("pump");
 
 /**
  * Build the Jekyll Site
@@ -26,7 +30,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
   browserSync.init({
     server: {
       baseDir: '_site'
@@ -58,8 +62,17 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['_scss/*.scss', 'css/*.scss'], ['sass']);
-  // gulp.watch(['_js/*.js'], ['js']);
+  gulp.watch(['_js/*.js'], ['js']);
   gulp.watch(['**/*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
+});
+
+gulp.task('js', function (cb) {
+  pump([
+    gulp.src(["_js/modernizr.js", "_js/main.js"])
+      .pipe(concat("lahumiere.js")),
+    uglify(),
+    gulp.dest("js")
+  ], cb);
 });
 
 /**

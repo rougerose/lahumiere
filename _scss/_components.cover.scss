@@ -1,0 +1,63 @@
+// ==========================================================================
+// COVER
+// ==========================================================================
+
+.c-cover {
+  margin: 1em 0;
+  position: relative;
+}
+
+  //
+  // Variantes
+  //
+  .c-cover--large {
+    & .c-cover__body {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      vertical-align: middle;
+      width: (4 / 9) * 100%;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        background-color: $color-theme;
+        mix-blend-mode: multiply;
+        width: ((5/9)*100) / (4/9) * 1%;
+        height: 100%;
+      }
+      // background-color: $color-theme;
+      // mix-blend-mode: multiply;
+    }
+
+    & .c-cover__media {
+      display: inline-block;
+      vertical-align: middle;
+      width: (5 / 9) * 100%;
+      margin-bottom: 0;
+      background-color: red;
+    }
+  }
+
+  .c-cover--even {
+    & .c-cover__media {
+      // position: absolute;
+      // right: 0;
+      // top: 50%;
+      // transform: translateY(-50%);
+      // float: right;
+    }
+  }
+
+.c-cover__link {
+  display: block;
+  // @include inuit-clearfix();
+}
+
+.c-cover__exib-date {
+  margin-bottom: 0;
+}
