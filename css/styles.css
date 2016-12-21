@@ -1179,81 +1179,6 @@ img[height] {
 }
 
 /* stylelint-enable */
-/* ==========================================================================
-   #CROP
-   ========================================================================== */
-/**
- * Provide a cropping container in order to display media (usually images)
- * cropped to certain ratios.
- *
- * 1. Set up a positioning context in which the image can sit.
- * 2. This is the crucial part: where the cropping happens.
- */
-.o-crop {
-  position: relative;
-  /* [1] */
-  display: block;
-  overflow: hidden;
-  /* [2] */
-}
-
-/**
-   * Apply this class to the content (usually `img`) that needs cropping.
-   *
-   * 1. Image’s default positioning is top-left in the cropping box.
-   * 2. Make sure the media doesn’t stop itself too soon.
-   */
-.o-crop__content {
-  position: absolute;
-  top: 0;
-  /* [1] */
-  left: 0;
-  /* [1] */
-  max-width: none;
-  /* [2] */
-}
-
-/**
-   * We can position the media in different locations within the cropping area.
-   */
-.o-crop__content--right {
-  right: 0;
-  left: auto;
-}
-
-.o-crop__content--bottom {
-  top: auto;
-  bottom: 0;
-}
-
-.o-crop__content--center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* stylelint-disable */
-/* Crop-ratio variants.
-   ========================================================================== */
-/**
- * Generate a series of crop classes to be used like so:
- *
- *   <div class="o-crop  o-crop--16:9">
- *
- */
-.o-crop--2\:1 {
-  padding-bottom: 50%;
-}
-
-.o-crop--4\:3 {
-  padding-bottom: 75%;
-}
-
-.o-crop--16\:9 {
-  padding-bottom: 56.25%;
-}
-
-/* stylelint-enable */
 .o-icon {
   width: 48px;
   height: 48px;
@@ -1353,12 +1278,6 @@ img[height] {
   padding: 0.375rem;
 }
 
-@media (min-width: 45em) {
-  .c-site-nav__link {
-    padding: 0.375rem;
-  }
-}
-
 .c-site-nav__link--galerie {
   padding-left: 0;
 }
@@ -1421,37 +1340,55 @@ img[height] {
   position: relative;
 }
 
-.c-cover--large .c-cover__body {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  vertical-align: middle;
-  width: 44.44444%;
+@media (min-width: 45em) {
+  .c-cover--large .c-cover__body {
+    display: inline-block;
+    width: 44.44444%;
+    vertical-align: middle;
+  }
+  .c-cover--large .c-cover__media {
+    display: inline-block;
+    width: 55.55556%;
+    vertical-align: middle;
+  }
 }
 
-.c-cover--large .c-cover__body:before {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  background-color: #f8e71c;
-  mix-blend-mode: multiply;
-  width: 125%;
-  height: 100%;
+.c-cover--odd {
+  direction: rtl;
 }
 
-.c-cover--large .c-cover__media {
-  display: inline-block;
-  vertical-align: middle;
-  width: 55.55556%;
-  margin-bottom: 0;
-  background-color: red;
+.c-cover--odd .c-cover__body {
+  direction: ltr;
 }
 
 .c-cover__link {
   display: block;
+}
+
+.c-cover__body {
+  position: relative;
+  padding: 0.75rem;
+  background-color: #f8e71c;
+}
+
+.backgroundblendmode .c-cover__body {
+  background-color: initial;
+}
+
+.backgroundblendmode .c-cover__body:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: #f8e71c;
+  mix-blend-mode: multiply;
+}
+
+.c-cover__media {
+  margin-bottom: -0.75rem;
 }
 
 .c-cover__exib-date {
