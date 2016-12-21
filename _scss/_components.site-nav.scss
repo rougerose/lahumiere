@@ -59,6 +59,7 @@
 
 .c-site-nav__list {
   border-bottom: 3px solid $color-black;
+  margin-bottom: 0;
 
   @include mq($until: tablet) {
     border-top: 3px solid $color-black;
