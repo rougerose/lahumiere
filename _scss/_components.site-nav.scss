@@ -59,9 +59,6 @@
 
 .c-site-nav__list {
   border-bottom: 3px solid $color-black;
-  // margin: 0;
-  // padding: 0;
-  // list-style: none;
 
   @include mq($until: tablet) {
     border-top: 3px solid $color-black;
@@ -84,10 +81,6 @@
 .c-site-nav__link {
   display: block;
   padding: $spacing-unit-tiny;
-
-  @include mq(tablet) {
-    padding: $spacing-unit-tiny;
-  }
 }
 
   //
