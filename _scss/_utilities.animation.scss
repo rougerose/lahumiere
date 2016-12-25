@@ -1,0 +1,78 @@
+// ==========================================================================
+// ANIMATION
+// ==========================================================================
+
+.u-animation {
+  animation-duration: 0.75s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+  //
+  // Variantes
+  //
+  .u-animation--fadeIn {
+    animation-name: fadeIn;
+  }
+
+  .u-animation--fadeInUp {
+    animation-name: fadeInUp;
+  }
+
+  .u-animation--fadeInRight {
+    animation-name: fadeInRight;
+  }
+
+  .u-animation--fadeInLeft {
+    animation-name: fadeInLeft;
+  }
+
+//
+// KEYFRAMES
+// ==========================================================================
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -4,10 +4,34 @@
 
 .c-footer {}
 
+
+//
+// LINK
+// ==========================================================================
+
+.c-footer__link {
+  color: #777;
+  transition: color $global-transition $global-transition-function;
+
+  &:hover {
+    color: $color-links;
+  }
+}
+
+
 //
 // TITLE
 // ==========================================================================
 
 .c-footer__title {
   margin-bottom: $spacing-unit-small;
+}
+
+
+//
+// DESC
+// ==========================================================================
+
+.c-footer__desc {
+  @include inuit-font-size(15px, 1.4);
 }

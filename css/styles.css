@@ -745,7 +745,8 @@ html {
 }
 
 html {
-  font-family: "Futura", sans-serif;
+  font-family: "Futura";
+  color: #555;
 }
 
 a {
@@ -798,7 +799,9 @@ h6 {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Futura", sans-serif;
   font-weight: normal;
+  color: #333;
 }
 
 /* ==========================================================================
@@ -874,7 +877,7 @@ img[height] {
   padding-left: 96px;
 }
 
-@media (max-width: 44.99em) {
+@media (max-width: 39.99em) {
   .o-wrapper {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -1170,6 +1173,10 @@ img[height] {
   padding-bottom: 50%;
 }
 
+.o-ratio--3\:2:before {
+  padding-bottom: 66.66667%;
+}
+
 .o-ratio--4\:3:before {
   padding-bottom: 75%;
 }
@@ -1218,13 +1225,13 @@ img[height] {
   text-align: center;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-site-nav__home {
     text-align: left;
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-site-nav__home--logo {
     line-height: 0;
     text-align: right;
@@ -1235,20 +1242,20 @@ img[height] {
   max-width: 100px;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-site-nav__logo-img {
     text-align: right;
   }
 }
 
 .c-site-nav__title {
-  font-family: "FuturaHeavy", "Futura", sans-serif;
+  font-family: "FuturaHeavy", sans-serif;
   font-size: 28px;
   font-size: 1.75rem;
   line-height: 1.71429;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-site-nav__title {
     font-size: 40px;
     font-size: 2.5rem;
@@ -1261,7 +1268,7 @@ img[height] {
   margin-bottom: 0;
 }
 
-@media (max-width: 44.99em) {
+@media (max-width: 39.99em) {
   .c-site-nav__list {
     border-top: 3px solid #000;
     text-align: center;
@@ -1269,9 +1276,18 @@ img[height] {
 }
 
 .c-site-nav__item {
+  font-family: "Futura", sans-serif;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.33333;
+}
+
+@media (max-width: 59.99em) {
+  .c-site-nav__item {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
 
 .c-site-nav__link {
@@ -1289,13 +1305,17 @@ img[height] {
   width: 100%;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-nav-utils {
     text-align: right;
   }
 }
 
-@media (max-width: 44.99em) {
+.c-nav-utils__item {
+  font-family: "Futura", sans-serif;
+}
+
+@media (max-width: 39.99em) {
   .c-nav-utils__item {
     width: 50%;
     text-align: right;
@@ -1305,7 +1325,7 @@ img[height] {
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-nav-utils__item:first-child {
     margin-right: 1.5rem;
   }
@@ -1341,26 +1361,9 @@ img[height] {
   position: relative;
 }
 
-@media (min-width: 45em) {
-  .c-cover--large .c-cover__body {
-    display: inline-block;
-    width: 44.44444%;
-    vertical-align: middle;
-  }
-  .c-cover--large .c-cover__media {
-    display: inline-block;
-    width: 55.55556%;
-    vertical-align: middle;
-  }
-  .c-cover--large.c-cover--even .c-cover__body:before {
-    left: auto;
-    right: 0;
-  }
-  .c-cover--large.c-cover--odd {
+@media (min-width: 60em) {
+  .c-cover--main.c-cover--odd {
     direction: rtl;
-  }
-  .c-cover--large.c-cover--odd .c-cover__body {
-    direction: ltr;
   }
 }
 
@@ -1370,7 +1373,7 @@ img[height] {
 
 .c-cover__body {
   position: relative;
-  padding: 1.5rem 0.75rem 0.75rem;
+  padding: 2.25rem 0.75rem 0.75rem;
 }
 
 .c-cover__body:before {
@@ -1385,23 +1388,78 @@ img[height] {
   mix-blend-mode: multiply;
 }
 
-@media (min-width: 45em) {
-  .c-cover__body {
+@media (min-width: 60em) {
+  .c-cover--main .c-cover__body {
+    display: inline-block;
+    width: 33.33333%;
     padding: 0.75rem;
+    vertical-align: middle;
   }
-  .c-cover__body:before {
-    width: 125%;
+  .c-cover--main .c-cover__body:before {
+    width: 120%;
   }
+  .c-cover--main.c-cover--even .c-cover__body:before {
+    left: auto;
+    right: 0;
+  }
+  .c-cover--main.c-cover--odd .c-cover__body {
+    direction: ltr;
+  }
+}
+
+.c-cover__header {
+  margin-bottom: 1.5rem;
+}
+
+.c-cover__title {
+  margin-bottom: 0;
+  font-family: "FuturaHeavy", sans-serif;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.09091;
+}
+
+.c-cover__subtitle {
+  margin-top: 0.375rem;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.c-cover__meta {
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.c-cover__meta p {
+  margin-bottom: 0;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.c-cover__meta p:first-child {
+  font-style: italic;
 }
 
 .c-cover__media {
   margin-bottom: -1.5rem;
+  overflow: hidden;
+  background-color: #f8e71c;
 }
 
-@media (min-width: 45em) {
-  .c-cover__media {
+@media (min-width: 60em) {
+  .c-cover--main .c-cover__media {
+    display: inline-block;
+    width: 66.66667%;
     margin-bottom: 0;
+    vertical-align: middle;
   }
+}
+
+.c-cover__img {
+  transition-delay: .25s;
+  transition-property: transform;
+  transition-timing-function: ease;
 }
 
 .no-backgroundblendmode .c-cover__body {
@@ -1417,8 +1475,23 @@ img[height] {
   margin-bottom: 0;
 }
 
+.c-footer__link {
+  color: #777;
+  transition: color 0.33333s ease-in;
+}
+
+.c-footer__link:hover {
+  color: #000;
+}
+
 .c-footer__title {
   margin-bottom: 0.75rem;
+}
+
+.c-footer__desc {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.4;
 }
 
 .c-contact__link {
@@ -1427,12 +1500,13 @@ img[height] {
 }
 
 .c-legal {
+  font-family: "Futura", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.84615;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-legal {
     display: table;
     width: 100%;
@@ -1444,14 +1518,14 @@ img[height] {
   text-align: center;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-legal__item {
     display: table-cell;
     text-align: left;
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-legal__item--credits {
     text-align: right;
   }
@@ -1461,7 +1535,7 @@ img[height] {
   margin: 0 0.75rem;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .c-legal__link {
     margin-right: 0;
   }
@@ -1506,6 +1580,14 @@ img[height] {
  * The following will generate widths helper classes based on the fractions
  * defined in the `$inuit-fractions` list.
  */
+.u-1\/2 {
+  width: 50% !important;
+}
+
+.u-2\/2 {
+  width: 100% !important;
+}
+
 .u-1\/9 {
   width: 11.11111% !important;
 }
@@ -1593,6 +1675,12 @@ img[height] {
  * <div class="u-3/12@mobile">
  */
 @media (min-width: 20em) {
+  .u-1\/2\@mobile {
+    width: 50% !important;
+  }
+  .u-2\/2\@mobile {
+    width: 100% !important;
+  }
   .u-1\/9\@mobile {
     width: 11.11111% !important;
   }
@@ -1655,7 +1743,13 @@ img[height] {
   }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
+  .u-1\/2\@tablet {
+    width: 50% !important;
+  }
+  .u-2\/2\@tablet {
+    width: 100% !important;
+  }
   .u-1\/9\@tablet {
     width: 11.11111% !important;
   }
@@ -1718,7 +1812,13 @@ img[height] {
   }
 }
 
-@media (min-width: 61.25em) {
+@media (min-width: 60em) {
+  .u-1\/2\@desktop {
+    width: 50% !important;
+  }
+  .u-2\/2\@desktop {
+    width: 100% !important;
+  }
   .u-1\/9\@desktop {
     width: 11.11111% !important;
   }
@@ -1787,7 +1887,7 @@ img[height] {
   left: 18.18182% !important;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 40em) {
   .u-push-2\/11\@tablet {
     position: relative !important;
     right: auto !important;
@@ -2101,3 +2201,66 @@ img[height] {
 }
 
 /* stylelint-enable string-quotes */
+.u-animation {
+  animation-duration: 0.75s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+.u-animation--fadeIn {
+  animation-name: fadeIn;
+}
+
+.u-animation--fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.u-animation--fadeInRight {
+  animation-name: fadeInRight;
+}
+
+.u-animation--fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

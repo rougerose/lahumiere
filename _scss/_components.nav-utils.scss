@@ -23,7 +23,7 @@
 // ==========================================================================
 
 .c-nav-utils__item {
-
+  font-family: $font-futura;
   @include mq($until: tablet) {
     width: 50%;
     text-align: right;

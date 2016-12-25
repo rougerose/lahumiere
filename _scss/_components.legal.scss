@@ -3,6 +3,7 @@
 // ==========================================================================
 
 .c-legal {
+  font-family: $font-futura;
   @include inuit-font-size(13px);
 
   @include mq(tablet) {

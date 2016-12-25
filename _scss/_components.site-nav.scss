@@ -45,7 +45,7 @@
   // TITLE
   //
   .c-site-nav__title {
-    font-family: $font-heavy;
+    font-family: $font-futuraHeavy;
     @include inuit-font-size(28px);
 
     @include mq(tablet) {
@@ -72,7 +72,11 @@
 // ==========================================================================
 
 .c-site-nav__item {
+  font-family: $font-futura;
   @include inuit-font-size(18px);
+  @include mq($until: desktop) {
+    @include inuit-font-size(16px);
+  }
 }
 
 //

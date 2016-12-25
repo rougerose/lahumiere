@@ -3,8 +3,12 @@
 // ==========================================================================
 
 // font-family
-$font-base:  'Futura', sans-serif;
-$font-heavy: 'FuturaHeavy', 'Futura', sans-serif;
+$font-base:  'Futura';
+$font-futura: 'Futura', sans-serif;
+$font-futuraHeavy: 'FuturaHeavy', sans-serif;
+$font-futuraLight: 'FuturaLight', sans-serif;
+
+
 
 // Colors
 $color-black: #000;
@@ -15,20 +19,29 @@ $color-links: $color-black;
 $color-theme: $color-yellow;
 
 //
-$global-radius: 3px !default;
-$global-transition: (1/3) + s !default;
+$global-radius: 3px;
+$global-transition: (1/3) + s;
+$global-transition-function: ease-in;
 
 // Wrapper
 $inuit-wrapper-width: 1100px;
 
 // Layout
 $inuit-use-markup-fix: true;
-$inuit-fractions:      9 11;
+$inuit-fractions:      2 9 11;
 $inuit-offsets:        false;
+
+// Ratio
+$inuit-ratios: (
+  (2:1),
+  (3:2),
+  (4:3),
+  (16:9),
+) !default;
 
 // Mediaqueries
 $mq-breakpoints: (
   mobile:             320px,
-  tablet:             720px,
-  desktop:            980px
+  tablet:             640px,
+  desktop:            960px
 );
