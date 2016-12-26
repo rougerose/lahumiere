@@ -121,7 +121,7 @@
 @import "inuitcss/objects/objects.list-inline";
 // @import "inuitcss/objects/objects.box";
 // @import "inuitcss/objects/objects.block";
-@import "inuitcss/objects/objects.ratio";
+// @import "inuitcss/objects/objects.ratio";
 // @import "inuitcss/objects/objects.crop";
 // @import "inuitcss/objects/objects.tables";
 // @import "inuitcss/objects/objects.pack";
@@ -134,6 +134,7 @@
 // @import "components.buttons";
 
 @import "components.cover";
+@import "components.more";
 @import "components.footer";
 @import "components.contact";
 @import "components.legal";
@@ -147,7 +148,8 @@
 @import "utilities.widths";
 @import "inuitcss/utilities/utilities.headings";
 @import "utilities.text";
-@import "inuitcss/utilities/utilities.spacing";
+@import "utilities.spacing";
+// @import "inuitcss/utilities/utilities.spacing";
 @import "utilities.animation";
 // @import "inuitcss/utilities/utilities.print";
 // @import "inuitcss/utilities/utilities.hide";

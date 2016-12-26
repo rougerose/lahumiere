@@ -5,18 +5,20 @@
 .o-icon {
   width: 48px;
   height: 48px;
+  fill: currentColor;
 }
 
 .o-icon-search {
   width: 24px;
   height: 24px;
-  path {
-    fill: $color-gray;
-  }
+  fill: $color-gray;
+  transition: fill 0.2s;
 
   &:hover {
-    path {
-      fill: $color-black;
-    }
+    fill: $color-black;
   }
+}
+
+.o-icon-arrow-right {
+  // fill: red;
 }

@@ -1123,84 +1123,20 @@ img[height] {
   content: ", ";
 }
 
-/* ==========================================================================
-   #RATIO
-   ========================================================================== */
-/**
- * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
- * their correct aspect ratios.
- *
- * http://alistapart.com/article/creating-intrinsic-ratios-for-video
- *
- * 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
- */
-.o-ratio {
-  position: relative;
-  display: block;
-  overflow: hidden;
-}
-
-.o-ratio:before {
-  content: "";
-  display: block;
-  width: 100%;
-  padding-bottom: 100%;
-  /* [1] */
-}
-
-.o-ratio__content,
-.o-ratio > iframe,
-.o-ratio > embed,
-.o-ratio > object {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-/* stylelint-disable */
-/* Ratio variants.
-   ========================================================================== */
-/**
- * Generate a series of ratio classes to be used like so:
- *
- *   <div class="o-ratio  o-ratio--16:9">
- *
- */
-.o-ratio--2\:1:before {
-  padding-bottom: 50%;
-}
-
-.o-ratio--3\:2:before {
-  padding-bottom: 66.66667%;
-}
-
-.o-ratio--4\:3:before {
-  padding-bottom: 75%;
-}
-
-.o-ratio--16\:9:before {
-  padding-bottom: 56.25%;
-}
-
-/* stylelint-enable */
 .o-icon {
   width: 48px;
   height: 48px;
+  fill: currentColor;
 }
 
 .o-icon-search {
   width: 24px;
   height: 24px;
-}
-
-.o-icon-search path {
   fill: #ccc;
+  transition: fill 0.2s;
 }
 
-.o-icon-search:hover path {
+.o-icon-search:hover {
   fill: #000;
 }
 
@@ -1371,6 +1307,19 @@ img[height] {
   display: block;
 }
 
+.c-cover__link:hover .c-cover__img {
+  transform: scale(1.04);
+}
+
+.c-cover__link:hover .c-cover__more {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.c-cover__link:hover .c-cover__more:before {
+  animation: openEffect 0.6s ease-out 75ms;
+}
+
 .c-cover__body {
   position: relative;
   padding: 2.25rem 0.75rem 0.75rem;
@@ -1386,6 +1335,7 @@ img[height] {
   content: "";
   background-color: #f8e71c;
   mix-blend-mode: multiply;
+  transition: background 0.15s ease-in;
 }
 
 @media (min-width: 60em) {
@@ -1422,16 +1372,24 @@ img[height] {
 .c-cover__subtitle {
   margin-top: 0.375rem;
   margin-bottom: 0;
-  line-height: 1.2;
+  font-family: "FuturaLight", sans-serif;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333;
+}
+
+.c-cover__desc p:last-child {
+  margin-bottom: 0;
 }
 
 .c-cover__meta {
+  margin-top: 1.5rem;
   text-align: right;
   text-transform: uppercase;
 }
 
 .c-cover__meta p {
-  margin-bottom: 0;
+  font-family: "FuturaHeavy", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.4;
@@ -1441,25 +1399,56 @@ img[height] {
   font-style: italic;
 }
 
+.c-cover__more {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  margin-right: 0.75rem;
+  opacity: 0;
+  transform: translateX(-100%);
+  transform: translate(-100%, -50%);
+  transition: opacity 0.15s, transform 0.35s;
+}
+
+.c-cover__more:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+  content: "";
+  opacity: 0;
+  transform: scale(0.9);
+  transition: transform 0.1s ease-out, background-color 0.2s;
+}
+
+.c-cover__more .o-icon {
+  fill: #f8e71c;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
 .c-cover__media {
+  position: relative;
   margin-bottom: -1.5rem;
   overflow: hidden;
-  background-color: #f8e71c;
 }
 
 @media (min-width: 60em) {
   .c-cover--main .c-cover__media {
     display: inline-block;
     width: 66.66667%;
-    margin-bottom: 0;
     vertical-align: middle;
   }
 }
 
 .c-cover__img {
-  transition-delay: .25s;
-  transition-property: transform;
-  transition-timing-function: ease;
+  width: 100%;
+  transition: transform 0.3s ease-out;
 }
 
 .no-backgroundblendmode .c-cover__body {
@@ -1473,6 +1462,45 @@ img[height] {
 
 .no-backgroundblendmode .c-cover__media {
   margin-bottom: 0;
+}
+
+.c-more {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.c-more:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.5);
+  content: "";
+  opacity: 0;
+  transform: scale(0.9);
+  transition: transform 0.1s ease-out, background-color 0.2s;
+}
+
+.c-more .o-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  background-color: rgba(119, 119, 119, 0.8);
+  border-radius: 50%;
+}
+
+.c-more:hover {
+  transform: scale(0.93);
+}
+
+.c-more:hover:before {
+  animation: openEffect 0.6s ease-out 75ms;
 }
 
 .c-footer__link {
@@ -1946,265 +1974,13 @@ img[height] {
   text-transform: uppercase;
 }
 
-/* ==========================================================================
-   #SPACING
-   ========================================================================== */
-/**
- * Utility classes to put specific spacing values onto elements. The below loop
- * will generate us a suite of classes like:
- *
- *   .u-margin-top {}
- *   .u-padding-left-large {}
- *   .u-margin-right-small {}
- *   .u-padding {}
- *   .u-padding-right-none {}
- */
-/* stylelint-disable string-quotes */
-.u-padding {
-  padding: 24px !important;
-}
-
-.u-padding-tiny {
-  padding: 6px !important;
-}
-
-.u-padding-small {
-  padding: 12px !important;
-}
-
-.u-padding-large {
-  padding: 48px !important;
-}
-
-.u-padding-huge {
-  padding: 96px !important;
-}
-
-.u-padding-none {
-  padding: 0 !important;
-}
-
-.u-padding-top {
-  padding-top: 24px !important;
-}
-
-.u-padding-top-tiny {
-  padding-top: 6px !important;
-}
-
-.u-padding-top-small {
-  padding-top: 12px !important;
-}
-
-.u-padding-top-large {
-  padding-top: 48px !important;
-}
-
-.u-padding-top-huge {
-  padding-top: 96px !important;
-}
-
-.u-padding-top-none {
-  padding-top: 0 !important;
-}
-
-.u-padding-right {
-  padding-right: 24px !important;
-}
-
-.u-padding-right-tiny {
-  padding-right: 6px !important;
-}
-
-.u-padding-right-small {
-  padding-right: 12px !important;
-}
-
-.u-padding-right-large {
-  padding-right: 48px !important;
-}
-
-.u-padding-right-huge {
-  padding-right: 96px !important;
-}
-
-.u-padding-right-none {
-  padding-right: 0 !important;
-}
-
-.u-padding-bottom {
-  padding-bottom: 24px !important;
-}
-
-.u-padding-bottom-tiny {
-  padding-bottom: 6px !important;
-}
-
-.u-padding-bottom-small {
-  padding-bottom: 12px !important;
-}
-
-.u-padding-bottom-large {
-  padding-bottom: 48px !important;
-}
-
-.u-padding-bottom-huge {
-  padding-bottom: 96px !important;
-}
-
-.u-padding-bottom-none {
-  padding-bottom: 0 !important;
-}
-
-.u-padding-left {
-  padding-left: 24px !important;
-}
-
-.u-padding-left-tiny {
-  padding-left: 6px !important;
-}
-
-.u-padding-left-small {
-  padding-left: 12px !important;
-}
-
-.u-padding-left-large {
-  padding-left: 48px !important;
-}
-
-.u-padding-left-huge {
-  padding-left: 96px !important;
-}
-
-.u-padding-left-none {
-  padding-left: 0 !important;
-}
-
-.u-margin {
-  margin: 24px !important;
-}
-
-.u-margin-tiny {
-  margin: 6px !important;
-}
-
-.u-margin-small {
-  margin: 12px !important;
-}
-
-.u-margin-large {
-  margin: 48px !important;
-}
-
-.u-margin-huge {
-  margin: 96px !important;
-}
-
-.u-margin-none {
-  margin: 0 !important;
-}
-
-.u-margin-top {
-  margin-top: 24px !important;
-}
-
-.u-margin-top-tiny {
-  margin-top: 6px !important;
-}
-
-.u-margin-top-small {
-  margin-top: 12px !important;
-}
-
-.u-margin-top-large {
-  margin-top: 48px !important;
-}
-
-.u-margin-top-huge {
-  margin-top: 96px !important;
-}
-
-.u-margin-top-none {
-  margin-top: 0 !important;
-}
-
-.u-margin-right {
-  margin-right: 24px !important;
-}
-
-.u-margin-right-tiny {
-  margin-right: 6px !important;
-}
-
-.u-margin-right-small {
-  margin-right: 12px !important;
-}
-
-.u-margin-right-large {
-  margin-right: 48px !important;
-}
-
-.u-margin-right-huge {
-  margin-right: 96px !important;
-}
-
-.u-margin-right-none {
-  margin-right: 0 !important;
-}
-
-.u-margin-bottom {
-  margin-bottom: 24px !important;
-}
-
-.u-margin-bottom-tiny {
-  margin-bottom: 6px !important;
-}
-
-.u-margin-bottom-small {
-  margin-bottom: 12px !important;
-}
-
-.u-margin-bottom-large {
-  margin-bottom: 48px !important;
-}
-
-.u-margin-bottom-huge {
-  margin-bottom: 96px !important;
-}
-
 .u-margin-bottom-none {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
-.u-margin-left {
-  margin-left: 24px !important;
-}
-
-.u-margin-left-tiny {
-  margin-left: 6px !important;
-}
-
-.u-margin-left-small {
-  margin-left: 12px !important;
-}
-
-.u-margin-left-large {
-  margin-left: 48px !important;
-}
-
-.u-margin-left-huge {
-  margin-left: 96px !important;
-}
-
-.u-margin-left-none {
-  margin-left: 0 !important;
-}
-
-/* stylelint-enable string-quotes */
 .u-animation {
+  animation-timing-function: ease-in;
   animation-duration: 0.75s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
 }
 
 .u-animation--fadeIn {
@@ -2235,11 +2011,11 @@ img[height] {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 100%, 0);
+    transform: translateY(2em);
   }
   100% {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
 
@@ -2262,5 +2038,20 @@ img[height] {
   100% {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes openEffect {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.1), 0 0 5px 5px #777, 0 0 0 5px rgba(119, 119, 119, 0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+    box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.1), 0 0 5px 5px #777, 0 0 0 5px rgba(119, 119, 119, 0.5);
   }
 }
