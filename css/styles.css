@@ -2034,8 +2034,8 @@ img[height] {
 }
 
 .u-animation {
-  animation-timing-function: ease-in;
   animation-duration: 0.75s;
+  animation-timing-function: ease-out;
 }
 
 .u-animation--fadeIn {
@@ -2066,11 +2066,11 @@ img[height] {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(2em);
+    transform: translate3d(0, 70%, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
