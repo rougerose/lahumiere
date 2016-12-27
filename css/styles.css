@@ -1123,6 +1123,69 @@ img[height] {
   content: ", ";
 }
 
+/* ==========================================================================
+   #RATIO
+   ========================================================================== */
+/**
+ * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
+ * their correct aspect ratios.
+ *
+ * http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ *
+ * 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
+ */
+.o-ratio {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.o-ratio:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+  /* [1] */
+}
+
+.o-ratio__content,
+.o-ratio > iframe,
+.o-ratio > embed,
+.o-ratio > object {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* stylelint-disable */
+/* Ratio variants.
+   ========================================================================== */
+/**
+ * Generate a series of ratio classes to be used like so:
+ *
+ *   <div class="o-ratio  o-ratio--16:9">
+ *
+ */
+.o-ratio--2\:1:before {
+  padding-bottom: 50%;
+}
+
+.o-ratio--3\:2:before {
+  padding-bottom: 66.66667%;
+}
+
+.o-ratio--4\:3:before {
+  padding-bottom: 75%;
+}
+
+.o-ratio--16\:9:before {
+  padding-bottom: 56.25%;
+}
+
+/* stylelint-enable */
 .o-icon {
   width: 48px;
   height: 48px;
@@ -1294,11 +1357,10 @@ img[height] {
 
 .c-cover {
   margin-bottom: 3rem;
-  position: relative;
 }
 
 @media (min-width: 60em) {
-  .c-cover--main.c-cover--odd {
+  .c-cover.c-cover--main.c-cover--odd {
     direction: rtl;
   }
 }
@@ -1335,7 +1397,6 @@ img[height] {
   content: "";
   background-color: #f8e71c;
   mix-blend-mode: multiply;
-  transition: background 0.15s ease-in;
 }
 
 @media (min-width: 60em) {
@@ -1407,7 +1468,6 @@ img[height] {
   height: 48px;
   margin-right: 0.75rem;
   opacity: 0;
-  transform: translateX(-100%);
   transform: translate(-100%, -50%);
   transition: opacity 0.15s, transform 0.35s;
 }
@@ -1433,21 +1493,19 @@ img[height] {
 }
 
 .c-cover__media {
-  position: relative;
   margin-bottom: -1.5rem;
-  overflow: hidden;
 }
 
 @media (min-width: 60em) {
   .c-cover--main .c-cover__media {
     display: inline-block;
+    margin-bottom: 0;
     width: 66.66667%;
     vertical-align: middle;
   }
 }
 
 .c-cover__img {
-  width: 100%;
   transition: transform 0.3s ease-out;
 }
 
