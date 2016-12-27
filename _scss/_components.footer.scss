@@ -2,7 +2,11 @@
 // FOOTER
 // ==========================================================================
 
-.c-footer {}
+.c-footer {
+  border-top: 1px solid $color-black;
+  border-bottom: 3px solid $color-black;
+  padding-top: $spacing-unit;
+}
 
 
 //
