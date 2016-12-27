@@ -7,4 +7,14 @@
 .c-contact__link {
   display: block;
   margin-right: $spacing-unit-small;
+
+  .o-icon {
+    fill: $color-gray-light;
+  }
+
+  &:hover {
+    .o-icon {
+      fill: $color-black;
+    }
+  }
 }

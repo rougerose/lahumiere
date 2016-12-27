@@ -10,7 +10,7 @@
 // ==========================================================================
 
 .c-footer__link {
-  color: #777;
+  color: $color-base;
   transition: color $global-transition $global-transition-function;
 
   &:hover {

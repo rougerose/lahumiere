@@ -48,7 +48,9 @@
   display: inline-block;
   padding: $spacing-unit-small;
   vertical-align: bottom;
-  color: $color-gray;
+  color: $color-gray-light;
+  transition: color 0.2s;
+
   &.is-active,
   &:hover {
     color: $color-black;
@@ -60,6 +62,18 @@
   //
   .c-nav-utils__link--search {
     line-height: 0;
+
+    .o-icon-search {
+      width: 24px;
+      height: 24px;
+      fill: $color-gray-light;
+    }
+
+    &:hover {
+      .o-icon-search {
+        fill: $color-black;
+      }
+    }
   }
 
   .c-nav-utils__link--lang {
@@ -70,6 +84,6 @@
     &:before {
       margin: 0 3px;
       content: "/";
-      color: $color-gray;
+      color: $color-gray-light;
     }
   }

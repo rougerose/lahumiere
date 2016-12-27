@@ -6,19 +6,17 @@
   width: 48px;
   height: 48px;
   fill: currentColor;
-}
-
-.o-icon-search {
-  width: 24px;
-  height: 24px;
-  fill: $color-gray;
   transition: fill 0.2s;
-
-  &:hover {
-    fill: $color-black;
-  }
 }
 
-.o-icon-arrow-right {
-  // fill: red;
-}
+  // search
+  .o-icon-search {}
+
+  // arrow-right
+  .o-icon-arrow-right {}
+
+  // facebook
+  .o-icon-facebook {}
+
+  // phone
+  .o-icon-phone {}

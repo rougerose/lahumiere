@@ -1169,20 +1169,8 @@ img[height] {
  *   <div class="o-ratio  o-ratio--16:9">
  *
  */
-.o-ratio--2\:1:before {
-  padding-bottom: 50%;
-}
-
 .o-ratio--3\:2:before {
   padding-bottom: 66.66667%;
-}
-
-.o-ratio--4\:3:before {
-  padding-bottom: 75%;
-}
-
-.o-ratio--16\:9:before {
-  padding-bottom: 56.25%;
 }
 
 /* stylelint-enable */
@@ -1190,17 +1178,7 @@ img[height] {
   width: 48px;
   height: 48px;
   fill: currentColor;
-}
-
-.o-icon-search {
-  width: 24px;
-  height: 24px;
-  fill: #ccc;
   transition: fill 0.2s;
-}
-
-.o-icon-search:hover {
-  fill: #000;
 }
 
 .c-page__head {
@@ -1334,7 +1312,8 @@ img[height] {
   display: inline-block;
   padding: 0.75rem;
   vertical-align: bottom;
-  color: #ccc;
+  color: #c7c1c1;
+  transition: color 0.2s;
 }
 
 .c-nav-utils__link.is-active, .c-nav-utils__link:hover {
@@ -1345,6 +1324,16 @@ img[height] {
   line-height: 0;
 }
 
+.c-nav-utils__link--search .o-icon-search {
+  width: 24px;
+  height: 24px;
+  fill: #c7c1c1;
+}
+
+.c-nav-utils__link--search:hover .o-icon-search {
+  fill: #000;
+}
+
 .c-nav-utils__link--lang {
   padding: 0.75rem 0;
 }
@@ -1352,7 +1341,7 @@ img[height] {
 .c-nav-utils__link--delimited:before {
   margin: 0 3px;
   content: "/";
-  color: #ccc;
+  color: #c7c1c1;
 }
 
 .c-cover {
@@ -1537,7 +1526,7 @@ img[height] {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.5);
+  box-shadow: 0 0 0 2px rgba(125, 125, 125, 0.5);
   content: "";
   opacity: 0;
   transform: scale(0.9);
@@ -1549,7 +1538,7 @@ img[height] {
   width: 24px;
   height: 24px;
   fill: #fff;
-  background-color: rgba(119, 119, 119, 0.8);
+  background-color: rgba(199, 193, 193, 0.8);
   border-radius: 50%;
 }
 
@@ -1562,7 +1551,7 @@ img[height] {
 }
 
 .c-footer__link {
-  color: #777;
+  color: #7d7d7d;
   transition: color 0.33333s ease-in;
 }
 
@@ -1583,6 +1572,14 @@ img[height] {
 .c-contact__link {
   display: block;
   margin-right: 0.75rem;
+}
+
+.c-contact__link .o-icon {
+  fill: #c7c1c1;
+}
+
+.c-contact__link:hover .o-icon {
+  fill: #000;
 }
 
 .c-legal {
@@ -2105,11 +2102,11 @@ img[height] {
   }
   40% {
     opacity: 0.5;
-    box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.1), 0 0 5px 5px #777, 0 0 0 5px rgba(119, 119, 119, 0.5);
+    box-shadow: 0 0 0 2px rgba(199, 193, 193, 0.1), 0 0 5px 5px #c7c1c1, 0 0 0 5px rgba(199, 193, 193, 0.5);
   }
   100% {
     opacity: 0;
     transform: scale(1.5);
-    box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.1), 0 0 5px 5px #777, 0 0 0 5px rgba(119, 119, 119, 0.5);
+    box-shadow: 0 0 0 2px rgba(199, 193, 193, 0.1), 0 0 5px 5px #c7c1c1, 0 0 0 5px rgba(199, 193, 193, 0.5);
   }
 }
