@@ -4,14 +4,19 @@
 
 .c-cover {
   margin-bottom: $spacing-unit-large;
+  display: block;
 
-  @include mq(desktop) {
-    &.c-cover--main {
+  &:hover {
+    .c-cover__img {
+      transform: scale(1.04);
+    }
 
-      // &.c-cover--even {}
+    .c-cover__more {
+      opacity: 1;
+      transform: translate(0, -50%);
 
-      &.c-cover--odd {
-        direction: rtl;
+      &:before {
+        animation: openEffect 0.6s ease-out 75ms;
       }
     }
   }
@@ -19,25 +24,20 @@
 
 
   //
-  // LINK
+  // MEDIA
   // ==========================================================================
 
-  .c-cover__link {
-    display: block;
+  .c-cover__media {
+    margin-bottom: $spacing-unit * -1;
+  }
 
-    &:hover {
-      .c-cover__img {
-        transform: scale(1.04);
-      }
 
-      .c-cover__more {
-        opacity: 1;
-        transform: translate(0, -50%);
-        &:before {
-          animation: openEffect 0.6s ease-out 75ms;
-        }
-      }
-    }
+  //
+  // IMG
+  // ==========================================================================
+
+  .c-cover__img {
+    transition: transform 0.3s ease-out;
   }
 
 
@@ -59,32 +59,6 @@
       content: "";
       background-color: $color-theme;
       mix-blend-mode: multiply;
-    }
-
-    @include mq(desktop) {
-      .c-cover--main & {
-        display: inline-block;
-        width: (3 / 9) * 100%;
-        padding: $spacing-unit-small;
-        vertical-align: middle;
-
-        &:before {
-          width: ((6/9)*100) / (5/9) * 1%;
-        }
-      }
-
-      // .c-cover--even
-      .c-cover--main.c-cover--even & {
-        &:before {
-          left: auto;
-          right: 0;
-        }
-      }
-
-      // .c-cover--odd
-      .c-cover--main.c-cover--odd & {
-        direction: ltr;
-      }
     }
   }
 
@@ -152,77 +126,64 @@
   .c-cover__more {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: $spacing-unit-small;
     width: 48px;
     height: 48px;
-    margin-right: $spacing-unit-small;
     opacity: 0;
-    transform: translate(-100%, -50%);
+    transform: translate(-100%,-50%);
     transition: opacity 0.15s, transform 0.35s;
 
     &:before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px rgba($color-black, 0.5);
-      content: "";
-      opacity: 0;
-      transform: scale(0.9);
-      transition: transform 0.1s ease-out, background-color 0.2s;
-    }
-
-    & .o-icon {
-      fill: $color-theme;
-      background-color: rgba($color-black, 0.8);
-      border-radius: 50%;
+      @extend %c-more:before;
     }
   }
 
 
   //
-  // MEDIA
+  // Variantes
   // ==========================================================================
 
-  .c-cover__media {
-    margin-bottom: $spacing-unit * -1;
+  @include mq(desktop) {
+    // --large
+    .c-cover--large {
 
-    @include mq(desktop) {
-      .c-cover--main & {
+      & .c-cover__body {
+        display: inline-block;
+        width: (3 / 9) * 100%;
+        padding: $spacing-unit-small;
+        vertical-align: middle;
+
+        &:before {
+          width: ((6/9)*100) / (5/9) * 1%;
+        }
+      }
+
+      & .c-cover__media {
         display: inline-block;
         margin-bottom: 0;
         width: (6 / 9 ) * 100%;
         vertical-align: middle;
       }
     }
-  }
 
-    // IMG
-    .c-cover__img {
-      transition: transform 0.3s ease-out;
+    // --even
+    .c-cover--even {
+
+      & .c-cover__body {
+
+        &:before {
+          left: auto;
+          right: 0;
+        }
+      }
     }
 
+    // --odd
+    .c-cover--odd {
+      direction: rtl;
 
-//
-// BLEND MODE FALLBACK
-// ==========================================================================
-
-//
-// .no-backgroundblendmode via modernizr.js
-//
-
-.no-backgroundblendmode {
-  .c-cover__body {
-    padding-top: $spacing-unit-small;
-    background-color: $color-theme;
-    &:before {
-      display: none;
+      & .c-cover__body {
+        direction: ltr;
+      }
     }
   }
-
-  .c-cover__media {
-    margin-bottom: 0;
-  }
-}
