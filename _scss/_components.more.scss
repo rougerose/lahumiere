@@ -6,9 +6,22 @@
 
 
   //
+  // CONTAINER EXTEND
+  // ==========================================================================
+  %moreContainer {
+    position: absolute;
+    top: 50%;
+    right: $spacing-unit-small;
+    width: 48px;
+    height: 48px;
+    transform: translateY(-50%);
+  }
+
+
+  //
   // :BEFORE EXTEND
   // ==========================================================================
-  %c-more:before {
+  %moreBefore {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,6 +42,8 @@
 
   .c-more__icon {
     position: absolute;
+    width: inherit;
+    height: inherit;
     background-color: rgba($color-black, 0.8);
     border-radius: 50%;
   }
@@ -38,12 +53,7 @@
   // Variantes
   // ==========================================================================
 
-  .c-more--cover {
-
-    .c-more__icon {
-      fill: $color-theme;
-    }
-  }
+  // .c-more--cover {}
 
   .c-more--inline {
     display: inline-block;
@@ -51,15 +61,15 @@
     width: 24px;
     height: 24px;
     vertical-align: middle;
+    color: $color-white;
 
     &:before {
-      @extend %c-more:before;
+      @extend %moreBefore;
     }
 
     .c-more__icon {
       width: inherit;
       height: inherit;
-      fill: $color-white;
       background-color: rgba($color-gray-light,0.8);
     }
 

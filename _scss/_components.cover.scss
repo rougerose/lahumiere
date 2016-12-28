@@ -13,7 +13,6 @@
 
     .c-cover__more {
       opacity: 1;
-      transform: translate(0, -50%);
 
       &:before {
         animation: openEffect 0.6s ease-out 75ms;
@@ -37,7 +36,7 @@
   // ==========================================================================
 
   .c-cover__img {
-    transition: transform 0.3s ease-out;
+    transition: transform 0.3s;
   }
 
 
@@ -73,15 +72,12 @@
 
     // TITLE
     .c-cover__title {
-      margin-bottom: 0;
-      font-family: $font-futuraHeavy;
       @include inuit-font-size(22px);
     }
 
     // SUBTITLE
     .c-cover__subtitle {
       margin-top: $spacing-unit-tiny;
-      margin-bottom: 0;
       font-family: $font-futuraLight;
       @include inuit-font-size(18px);
     }
@@ -107,7 +103,6 @@
   .c-cover__meta {
     margin-top: $spacing-unit;
     text-align: right;
-    text-transform: uppercase;
     p {
       font-family: $font-futuraHeavy;
       @include inuit-font-size(13px, 1.4);
@@ -124,17 +119,13 @@
   // ==========================================================================
 
   .c-cover__more {
-    position: absolute;
-    top: 50%;
-    right: $spacing-unit-small;
-    width: 48px;
-    height: 48px;
+    @extend %moreContainer;
+    color: $color-theme;
     opacity: 0;
-    transform: translate(-100%,-50%);
-    transition: opacity 0.15s, transform 0.35s;
+    transition: opacity 0.15s;
 
     &:before {
-      @extend %c-more:before;
+      @extend %moreBefore;
     }
   }
 
