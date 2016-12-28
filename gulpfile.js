@@ -9,7 +9,9 @@ var gulp        = require("gulp"),
     concat      = require("gulp-concat"),
     uglify      = require("gulp-uglify"),
     rename      = require("gulp-rename"),
-    cleanCSS    = require('gulp-clean-css'),
+    CleanCSS = require('clean-css'),
+    map = require('vinyl-map'),
+    // cleanCSS    = require('gulp-clean-css'),
     pump        = require("pump");
 
 /**
@@ -44,6 +46,13 @@ gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
+  var minify = map(function (buff, filename) {
+    return new CleanCSS({
+      // specify your clean-css options here
+      keepBreaks: true
+    }).minify(buff.toString()).styles;
+  });
+
   return gulp.src('_scss/styles.scss')
     .pipe(sass({
         includePaths: ['css', 'node_modules'],
@@ -52,12 +61,13 @@ gulp.task('sass', function () {
     }))
     .on('error', sass.logError)
     .pipe(prefix(['last 2 versions']))
+    .pipe(minify)
     // .pipe(cleanCSS())
-    .pipe(cleanCSS({debug: true}, function(details) {
-      console.log(details.name + ': ' + details.stats.originalSize);
-      console.log(details.name + ': ' + details.stats.minifiedSize);
-      console.log(details.name + ': ' + Math.ceil(details.stats.efficiency * 100) + '%');
-    }))
+    // .pipe(cleanCSS({debug: true}, function(details) {
+    //   console.log(details.name + ': ' + details.stats.originalSize);
+    //   console.log(details.name + ': ' + details.stats.minifiedSize);
+    //   console.log(details.name + ': ' + Math.ceil(details.stats.efficiency * 100) + '%');
+    // }))
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('css'));
