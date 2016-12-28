@@ -9,7 +9,8 @@ var gulp        = require("gulp"),
     concat      = require("gulp-concat"),
     uglify      = require("gulp-uglify"),
     rename      = require("gulp-rename"),
-    pump = require("pump");
+    cleanCSS    = require('gulp-clean-css'),
+    pump        = require("pump");
 
 /**
  * Build the Jekyll Site
@@ -51,6 +52,12 @@ gulp.task('sass', function () {
     }))
     .on('error', sass.logError)
     .pipe(prefix(['last 2 versions']))
+    // .pipe(cleanCSS())
+    .pipe(cleanCSS({debug: true}, function(details) {
+      console.log(details.name + ': ' + details.stats.originalSize);
+      console.log(details.name + ': ' + details.stats.minifiedSize);
+      console.log(details.name + ': ' + Math.ceil(details.stats.efficiency * 100) + '%');
+    }))
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('css'));
