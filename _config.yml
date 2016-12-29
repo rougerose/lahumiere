@@ -2,8 +2,9 @@
 title: Lahumiere
 email: ""
 description: ""
-baseurl: "lahumiere"
-url: "http://rougerose.github.io"
+#baseurl: "/lahumiere"
+#url: "http://rougerose.github.io"
+#github: "http://rougerose.github.io/lahumiere"
 
 # Build settings
 markdown: kramdown
