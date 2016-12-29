@@ -183,7 +183,7 @@ img[height],img[width]{max-width:none}
 .c-card__body:before{position:absolute;bottom:0;width:100%;transform:translateY(95%);transition:transform .4s}
 .c-card__title{padding-left:.1875rem;padding-right:.1875rem;font-size:16px;font-size:1rem;line-height:1.5;transition:transform .3s .1s}
 .c-card__more{width:24px;height:24px;color:#f8e71c;opacity:0;transform:translateY(-100%);transition:opacity .15s,transform .3s}
-.c-footer{border-top:1px solid #000;padding-top:1.5rem}
+.c-footer{border-top:1px solid #000;margin-top:1.5rem;padding-top:1.5rem}
 .c-footer__link{color:#7d7d7d;transition:color .33333s ease-in}
 .c-footer__link:hover{color:#000}
 .c-footer__title{margin-bottom:.75rem}
