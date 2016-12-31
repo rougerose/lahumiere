@@ -85,7 +85,7 @@ gulp.task('watch', function () {
 
 gulp.task('js', function (cb) {
   pump([
-    gulp.src(["_js/modernizr.js", "_js/main.js"])
+    gulp.src(["_js/jquery-1.12.4.min.js", "_js/imagesloaded.min.js", "_js/modernizr.js", "_js/masonry.js", "_js/main.js"])
       .pipe(concat("lahumiere.js")),
     uglify(),
     gulp.dest("js")

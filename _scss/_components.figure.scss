@@ -1,0 +1,36 @@
+// ==========================================================================
+// FIGURE
+// ==========================================================================
+
+.c-figure {}
+
+
+//
+// IMG
+// ==========================================================================
+
+.c-figure__img {}
+
+//
+// CAPTION
+// ==========================================================================
+
+.c-figure__caption {
+  padding-top: $spacing-unit-tiny;
+  padding-left: $spacing-unit-tiny;
+  border-left: 1px solid $color-gray-light;
+}
+
+  // TITLE
+  .c-figure__title {
+    margin: 0;
+    @include inuit-font-size(14px, 1.3);
+    color: $color-gray;
+  }
+
+  // DESC
+  .c-figure__desc {
+    margin: 0;
+    @include inuit-font-size(14px, 1.3);
+    color: $color-gray;
+  }
