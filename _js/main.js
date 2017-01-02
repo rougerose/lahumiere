@@ -1,5 +1,5 @@
 $(function(){
-  var $grid = $(".js-portfolio");
+  var $grid = $(".c-portfolio");
   // init Masonry
   if ($grid.length) {
     // init Masonry

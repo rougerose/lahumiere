@@ -7,16 +7,25 @@
 // pas utilisé, on ajoute juste la classe nécessaire.
 //
 
-.u-push-2\/11 {
+[class*="u-push-"] {
   position: relative !important;
   right: auto !important;
-  left: 18.18182% !important;
+}
+
+.u-push-1\/11 {
+  left: (1 / 11) * 100% !important;
+}
+
+.u-push-2\/11 {
+  left: (2 / 11) * 100% !important;
 }
 
 @include mq(tablet) {
+  .u-push-1\/11\@tablet {
+    left: (1 / 11) * 100% !important;
+  }
+
   .u-push-2\/11\@tablet {
-    position: relative !important;
-    right: auto !important;
-    left: 18.18182% !important;
+    left: (2 / 11) * 100% !important;
   }
 }
