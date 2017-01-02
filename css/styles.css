@@ -311,7 +311,7 @@ img[height],img[width]{max-width:none}
 .u-h5{font-size:18px!important;font-size:1.125rem!important;line-height:1.33333!important}
 .u-h6{font-size:16px!important;font-size:1rem!important;line-height:1.5!important}
 .u-mb-none{margin-bottom:0}
-.u-animation{animation-duration:.75s;animation-timing-function:ease-out}
+.u-animation{animation-duration:.65s}
 .u-animation--fadeIn{animation-name:fadeIn}
 .u-animation--fadeInUp{animation-name:fadeInUp}
 .u-animation--fadeInRight{animation-name:fadeInRight}
@@ -319,7 +319,7 @@ img[height],img[width]{max-width:none}
 @keyframes fadeIn{0%{opacity:0}
 100%{opacity:1}
 }
-@keyframes fadeInUp{0%{opacity:0;transform:translate3d(0,70%,0)}
+@keyframes fadeInUp{0%{opacity:0;transform:translate3d(0,20%,0)}
 100%{opacity:1;transform:translate3d(0,0,0)}
 }
 @keyframes fadeInRight{0%{opacity:0;transform:translate3d(100%,0,0)}

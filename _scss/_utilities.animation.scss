@@ -3,8 +3,8 @@
 // ==========================================================================
 
 .u-animation {
-  animation-duration: 0.75s;
-  animation-timing-function: ease-out;
+  animation-duration: 0.65s;
+  // animation-timing-function: ease-out;
 }
 
   //
@@ -43,7 +43,7 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 70%, 0);
+    transform: translate3d(0, 20%, 0);
   }
 
   100% {
