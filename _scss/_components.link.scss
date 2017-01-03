@@ -1,0 +1,13 @@
+// ==========================================================================
+// LINK
+// ==========================================================================
+
+.c-link-decoration {
+  box-shadow: inset 0 -4px 0 $color-theme;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: $color-theme;
+  }
+}

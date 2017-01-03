@@ -10,6 +10,10 @@
 // ==========================================================================
 
 .c-page-header__title {
-  @include inuit-font-size(28px);
+  @include inuit-font-size(28px, 1.2);
   text-transform: uppercase;
+
+  @include mq($until: tablet) {
+    text-align: center;
+  }
 }

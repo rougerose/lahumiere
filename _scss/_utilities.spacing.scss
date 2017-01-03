@@ -2,6 +2,14 @@
 // SPACING
 // ==========================================================================
 
+.u-mt {
+  margin-top: $spacing-unit;
+}
+
 .u-mb-none {
   margin-bottom: 0;
+}
+
+.u-mb {
+  margin-bottom: $spacing-unit;
 }

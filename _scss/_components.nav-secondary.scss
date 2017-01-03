@@ -1,0 +1,50 @@
+// ==========================================================================
+// NAV-SECONDARY
+// ==========================================================================
+
+.c-nav-secondary {}
+
+
+  //
+  // Variantes
+  // ==========================================================================
+
+  .c-nav-secondary--prevnext {
+    line-height: 0;
+    text-align: center;
+  }
+
+  .c-nav-secondary--breadcrumb {
+    margin-bottom: $spacing-unit-small;
+    padding-top: $spacing-unit-small;
+  }
+
+
+//
+// ITEM
+// ==========================================================================
+
+.c-nav-secondary__item {
+  display: inline-block;
+
+  &.is-disabled {
+    color: $color-gray-light;
+  }
+
+  &.is-current {
+    color: $color-black;
+    background-color: $color-theme;
+  }
+
+  .c-nav-secondary--breadcrumb & {
+    position: relative;
+    margin-left: $spacing-unit-small;
+
+    &:before {
+      position: absolute;
+      left: $spacing-unit-small * -1;
+      content: "/";
+      color: $color-gray-light;
+    }
+  }
+}

@@ -5,7 +5,6 @@
 .c-footer {
   border-top: 1px solid $color-black;
   border-bottom: 3px solid $color-black;
-  margin-top: $spacing-unit;
   padding-top: $spacing-unit;
 }
 
@@ -19,7 +18,7 @@
   transition: color $global-transition $global-transition-function;
 
   &:hover {
-    color: $color-links;
+    color: $color-link;
   }
 }
 
