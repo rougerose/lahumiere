@@ -144,11 +144,12 @@ img[height],img[width]{max-width:none}
 .c-site-nav__item{font-size:18px;font-size:1.125rem;line-height:1.33333}
 @media (max-width:59.99em){.c-site-nav__item{font-size:16px;font-size:1rem;line-height:1.5}
 }
-.c-site-nav__link{display:block;padding:.375rem}
+.c-site-nav__link{display:block;margin:.375rem}
 .c-more--inline,.c-nav-secondary__item,.c-nav-utils__link{display:inline-block}
-.c-site-nav__link--galerie{padding-left:0}
+.page--artistes .c-site-nav__artistes,.page--expositions .c-site-nav__expositions,.page--galerie .c-site-nav__galerie,.page--publications .c-site-nav__publications{box-shadow:inset 0 -3px 0 #f8e71c}
 .c-nav-utils{position:absolute;top:0;width:100%}
-@media (min-width:40em){.c-nav-utils{text-align:right}
+@media (min-width:40em){.c-site-nav__galerie{margin-left:0}
+.c-nav-utils{text-align:right}
 }
 .c-nav-utils__list{margin:0}
 @media (max-width:39.99em){.c-nav-utils__item{width:50%;text-align:right}

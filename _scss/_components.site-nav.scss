@@ -85,12 +85,22 @@
 
 .c-site-nav__link {
   display: block;
-  padding: $spacing-unit-tiny;
+  margin: $spacing-unit-tiny;
 }
 
-  //
-  // Variante
-  //
-  .c-site-nav__link--galerie {
-    padding-left: 0;
+
+//
+// PAGES
+// ==========================================================================
+
+@each $page in galerie, artistes, expositions, publications {
+  .page--#{$page} .c-site-nav__#{$page} {
+    box-shadow: inset 0 -3px 0 $color-theme;
   }
+}
+
+.c-site-nav__galerie {
+  @include mq(tablet) {
+    margin-left: 0;
+  }
+}

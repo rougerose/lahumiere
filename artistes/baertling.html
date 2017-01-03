@@ -1,6 +1,8 @@
 ---
 layout: default
-title: "Galerie Lahumiere : Olle Baertling"
+site-title: "Galerie Lahumiere"
+title: "Olle Baertling"
+page-class: page--artistes
 ---
 <nav class="c-nav-secondary c-nav-secondary--prevnext u-mb">
   <span class="c-nav-secondary__item is-disabled"><svg aria-hidden="true" class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
@@ -8,7 +10,7 @@ title: "Galerie Lahumiere : Olle Baertling"
 </nav>
 <article class="c-article">
   <header class="c-page-header">
-    <h2 class="c-page-header__title u-upper">Olle Baertling</h2>
+    <h2 class="c-page-header__title u-upper">{{page.title}}</h2>
   </header>
   <section class="c-article__text">
     <h2 class="c-article__subtitle u-upper">À propos de l'artiste</h2>
@@ -68,5 +70,5 @@ title: "Galerie Lahumiere : Olle Baertling"
 <nav class="c-nav-secondary c-nav-secondary--breadcrumb u-upper" role="navigation">
   <a href="{{ site.github.url }}/" class="c-nav-secondary__item c-link-decoration">Accueil</a>
   <a href="{{ site.github.url }}/artistes/" class="c-nav-secondary__item c-link-decoration">Les artistes</a>
-  <span class="c-nav-secondary__item is-current">Olle Baertling</span>
+  <span class="c-nav-secondary__item is-current">{{page.title}}</span>
 </nav>
