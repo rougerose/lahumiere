@@ -5,46 +5,20 @@
 .c-nav-secondary {}
 
 
-  //
-  // Variantes
-  // ==========================================================================
+//
+// LIST
+// ==========================================================================
 
-  .c-nav-secondary--prevnext {
-    line-height: 0;
-    text-align: center;
-  }
-
-  .c-nav-secondary--breadcrumb {
-    margin-bottom: $spacing-unit-small;
-    padding-top: $spacing-unit-small;
-  }
-
+.c-nav-secondary__list {
+  margin: 0;
+}
 
 //
 // ITEM
 // ==========================================================================
 
 .c-nav-secondary__item {
-  display: inline-block;
-
-  &.is-disabled {
-    color: $color-gray-light;
-  }
-
-  &.is-current {
-    color: $color-black;
-    background-color: $color-theme;
-  }
-
-  .c-nav-secondary--breadcrumb & {
-    position: relative;
-    margin-left: $spacing-unit-small;
-
-    &:before {
-      position: absolute;
-      left: $spacing-unit-small * -1;
-      content: "/";
-      color: $color-gray-light;
-    }
-  }
+  // display: inline-block;
+  // vertical-align: middle;
+  // line-height: normal;
 }

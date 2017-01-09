@@ -1,0 +1,26 @@
+// ==========================================================================
+// PAGINATION
+// ==========================================================================
+
+.c-pagination {
+  text-align: center;
+}
+
+
+//
+// ITEM
+// ==========================================================================
+
+.c-pagination__item {
+  display: inline-block;
+  vertical-align: middle;
+  color: $color-black;
+  @include inuit-font-size(18px, normal);
+
+  // &.is-current {}
+
+  &.is-disabled {
+    cursor: not-allowed;
+    color: $color-gray-light;
+  }
+}

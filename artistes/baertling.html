@@ -4,9 +4,9 @@ site-title: "Galerie Lahumiere"
 title: "Olle Baertling"
 page-class: page--artistes
 ---
-<nav class="c-nav-secondary c-nav-secondary--prevnext u-mb">
-  <span class="c-nav-secondary__item is-disabled"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
-  <a href="{{ site.github.url }}/artistes/coignet.html" class="c-nav-secondary__item"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
+<nav class="c-nav-secondary c-pagination u-mb" role="navigation">
+  <span class="c-nav-secondary__item c-pagination__item is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
+  <a href="{{ site.github.url }}/artistes/coignet.html" class="c-nav-secondary__item c-pagination__item" aria-label="Artiste suivant"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
 </nav>
 <article class="c-article">
   <header class="c-page-header">
@@ -63,12 +63,13 @@ page-class: page--artistes
     </div>
   </section>
 </article>
-<nav class="c-nav-secondary c-nav-secondary--prevnext u-mb u-mt">
-  <span class="c-nav-secondary__item is-disabled"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
-  <a href="{{ site.github.url }}/artistes/coignet.html" class="c-nav-secondary__item"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
+<nav class="c-nav-secondary c-pagination u-mb u-mt" role="navigation">
+  <span class="c-nav-secondary__item c-pagination__item is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
+  <a href="{{ site.github.url }}/artistes/coignet.html" class="c-nav-secondary__item c-pagination__item" aria-label="Artiste suivant"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
 </nav>
-<nav class="c-nav-secondary c-nav-secondary--breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-nav-secondary__item c-link-decoration">Accueil</a>
-  <a href="{{ site.github.url }}/artistes/" class="c-nav-secondary__item c-link-decoration">Les artistes</a>
-  <span class="c-nav-secondary__item is-current">{{page.title}}</span>
+
+<nav class="c-nav-secondary c-breadcrumb u-upper" role="navigation">
+  <a href="{{ site.github.url }}/" class="c-nav-secondary__item c-breadcrumb__item">Accueil</a>
+  <a href="{{ site.github.url }}/artistes/" class="c-nav-secondary__item c-breadcrumb__item">Les artistes</a>
+  <span class="c-nav-secondary__item c-breadcrumb__item is-current">{{page.title}}</span>
 </nav>

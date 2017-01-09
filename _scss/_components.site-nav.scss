@@ -85,7 +85,13 @@
 
 .c-site-nav__link {
   display: block;
-  margin: $spacing-unit-tiny;
+  margin: $spacing-unit-tiny $spacing-unit-tiny / 2;
+  padding: 0 $spacing-unit-tiny / 2;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: inset 0 -4px 0 $color-theme;
+  }
 }
 
 
@@ -95,7 +101,7 @@
 
 @each $page in galerie, artistes, expositions, publications {
   .page--#{$page} .c-site-nav__#{$page} {
-    box-shadow: inset 0 -3px 0 $color-theme;
+    background-color: $color-theme;
   }
 }
 
