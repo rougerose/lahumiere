@@ -2,14 +2,12 @@
 // SPACING
 // ==========================================================================
 
-.u-mt {
-  margin-top: $spacing-unit;
-}
+.u-mt { margin-top: $spacing-unit; }
 
-.u-mb-none {
-  margin-bottom: 0;
-}
+.u-mb-none { margin-bottom: 0; }
 
-.u-mb {
-  margin-bottom: $spacing-unit;
-}
+.u-mb { margin-bottom: $spacing-unit; }
+
+.u-mb-s { margin-bottom: $spacing-unit-small; }
+
+.u-mb-l { margin-bottom: $spacing-unit-large; }
