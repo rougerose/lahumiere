@@ -6,10 +6,10 @@
 
 
 //
-// TEXT
+// CONTENT-TEXT
 // ==========================================================================
 
-.c-article__text {
+.c-article__content-text {
 
   // TODO: règles provisoires
   h3 {
@@ -20,6 +20,16 @@
   ul {
     list-style-type: square;
   }
+}
+
+
+.c-article__chapo {
+  @include inuit-font-size(19px);
+  color: $color-black;
+}
+
+.c-article__text {
+  @include inuit-font-size(17px);
 }
 
 
