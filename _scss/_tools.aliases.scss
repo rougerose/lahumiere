@@ -7,7 +7,7 @@ $spacing-unit:        inuit-rem($inuit-global-spacing-unit);
 $spacing-unit-tiny: inuit-rem($inuit-global-spacing-unit-tiny);
 $spacing-unit-small: inuit-rem($inuit-global-spacing-unit-small);
 $spacing-unit-large: inuit-rem($inuit-global-spacing-unit-large);
-
+$spacing-unit-huge: inuit-rem($inuit-global-spacing-unit-huge);
 
 @mixin font-size($args...) {
     @include inuit-font-size($args...);
