@@ -26,7 +26,10 @@
   .o-icon-arrow-right {}
 
   // prev
-  .o-icon-prev {}
+  .o-icon-prev,
+  .o-icon-next {
+    display: block;
+  }
 
   // next
   .o-icon-next {}

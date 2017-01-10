@@ -99,11 +99,10 @@
 // PAGES
 // ==========================================================================
 
-@each $page in galerie, artistes, expositions, publications {
-  .page--#{$page} .c-site-nav__#{$page} {
-    background-color: $color-theme;
-  }
-}
+// @each $page in galerie, artistes, expositions, publications {
+//   .page--#{$page} .c-site-nav__#{$page} {
+//   }
+// }
 
 .c-site-nav__galerie {
   @include mq(tablet) {

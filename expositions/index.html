@@ -1,40 +1,121 @@
 ---
 layout: default
 site-title: "Galerie Lahumiere"
-title: "expositions"
+title: "expositions 2017"
 page-class: page--expositions
 ---
 <article>
   <header class="c-page-header">
-    <h2 class="c-page-header__title u-upper">Expositions</h2>
+    <h2 class="c-page-header__title u-upper">{{page.title}}</h2>
   </header>
-  <nav>
-    <ul class="o-pack">
-      <li class="o-pack__item"><a href="#"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></a></li>
-      <li class="o-pack__item">2017</li>
-      <li class="o-pack__item"><a href="#"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a></li>
-    </ul>
-    <ul class="o-pack">
-      <li class="o-pack__item"><a href="#">Janv.</a></li>
-      <li class="o-pack__item"><a href="#">Fév.</a></li>
-      <li class="o-pack__item"><a href="#">Mars</a></li>
-      <li class="o-pack__item"><a href="#">Avril</a></li>
-      <li class="o-pack__item"><a href="#">Mai</a></li>
-      <li class="o-pack__item"><a href="#">Juin</a></li>
-      <li class="o-pack__item"><a href="#">Juil.</a></li>
-      <li class="o-pack__item"><a href="#">Août</a></li>
-      <li class="o-pack__item"><a href="#">Sept.</a></li>
-      <li class="o-pack__item"><a href="#">Oct.</a></li>
-      <li class="o-pack__item"><a href="#">Nov.</a></li>
-      <li class="o-pack__item"><a href="#">Déc.</a></li>
-    </ul>
-    <select class="" name="">
-      <option value="" selected="selected">Select</option>
-      <option value="/">Home</option>
-      <option value="/collections/all">Books</option>
-      <option value="/blogs/five-simple-steps-blog">Blog</option>
-      <option value="/pages/about-us">About Us</option>
-      <option value="/pages/support">Support</option>
-    </select>
-  </nav>
+
+  {% include nav-expositions.html %}
+
+  <div class="o-layout">
+    <article class="o-layout__item">
+      <a href="#" class="c-cover c-cover--large c-cover--even c-more c-more--cover">
+        <figure class="o-ratio o-ratio--3:2 c-cover__media ">
+          <img src="{{ site.github.url }}/images/exprimer_1er_2-2-590x394.jpg" alt="" class="o-ratio__content c-cover__img">
+        </figure
+        ><div class="c-cover__body">
+          <header class="c-cover__header">
+            <h2 class="c-cover__title u-mb-none">Exprimer, vibrer, construire</h2>
+          </header>
+          <div class="c-cover__desc">
+            <p>Olle Baertling, Marcelle Cahn, Félix del Marle, Jean Dewasne, Georges Folmer, Günter Fruhtrunk, Emile Gilioli, Jean Gorin, Robert Jacobsen, Jean Leppien, Alberto Magnelli, Edgard PIllet, Victor Vasarely</p>
+          </div>
+          <div class="c-cover__meta">
+            <p class="u-mb-none u-upper">Exposition en cours</p>
+            <p class="u-mb-none u-upper">Jusqu'au 10 janvier 2017</p>
+          </div>
+          <div class="c-cover__more">
+            <svg class="o-icon o-icon-arrow-right c-more__icon" aria-hidden="true"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowRight"></use></svg>
+          </div>
+        </div>
+      </a>
+    </article
+    ><article class="o-layout__item">
+      <a href="#" class="c-cover c-cover--large c-cover--odd c-more c-more--cover">
+        <figure class="o-ratio o-ratio--3:2 c-cover__media">
+          <img src="{{ site.github.url }}/images/perrot_dessin_06_16-590x394.jpg" alt="" class="o-ratio__content c-cover__img">
+        </figure
+        ><div class="c-cover__body">
+          <header class="c-cover__header">
+            <h2 class="c-cover__title u-mb-none">Jean-Gabriel Coignet &amp; Antoine Perrot</h2>
+            <p class="c-cover__subtitle u-mb-none">Nécessaire réalité</p>
+          </header>
+          <div class="c-cover__desc">
+            <p>Antoine Perrot et Jean-Gabriel Coignet se connaissent et s’apprécient mutuellement. Cette exposition à 4 mains met en avant le travail du peintre, Antoine Perrot, qui sans relâche pose la question : comment peindre aujourd’hui ? Elle met également en exergue le travail du sculpteur, Jean-Gabriel Coignet qui en maitrisant la technique va vers une forme d’épure de la sculpture. Chacun à sa manière aborde une recherche ancrée de façon concrète dans le quotidien et la réalité.</p>
+          </div>
+          <div class="c-cover__meta">
+            <p class="u-mb-none u-upper">Prochaine exposition</p>
+            <p class="u-mb-none u-upper">13 janvier - 4 mars 2017</p>
+          </div>
+          <div class="c-cover__more">
+            <svg class="o-icon o-icon-arrow-right c-more__icon" aria-hidden="true"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowRight"></use></svg>
+          </div>
+        </div>
+      </a>
+    </article
+    ><article class="o-layout__item u-1/2@tablet u-3/9@desktop">
+      <a href="#" class="c-cover c-more c-more--cover">
+        <figure class="o-ratio o-ratio--3:2 c-cover__media">
+          <img src="{{ site.github.url }}/images/albers_2-590x394.jpg" alt="" class="o-ratio__content c-cover__img">
+        </figure
+        ><div class="c-cover__body">
+          <header class="c-cover__header">
+            <h2 class="c-cover__title u-mb-none">Formes et couleurs</h2>
+            <p class="c-cover__subtitle u-mb-none">Musée de l’Impression sur Etoffes, Mulhouse</p>
+          </header>
+          <div class="c-cover__desc">
+            <p>A ne rater sous aucun prétexte cette exposition à laquelle participent entre autre : J.F. Dubreuil, A. Perrot ou H. Prosi, et découvrir un Musée discret et charmant, celui de l’Impression sur Etoffes</p>
+          </div>
+          <div class="c-cover__more">
+            <svg class="o-icon o-icon-arrow-right c-more__icon" aria-hidden="true"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowRight"></use></svg>
+          </div>
+        </div>
+      </a>
+    </article
+    ><article class="o-layout__item u-1/2@tablet u-3/9@desktop">
+      <a href="#" class="c-cover c-more c-more--cover">
+        <figure class="o-ratio o-ratio--3:2 c-cover__media">
+          <img src="{{ site.github.url }}/images/honegger_79pf-2-590x394.jpg" alt="" class="o-ratio__content c-cover__img">
+        </figure
+        ><div class="c-cover__body">
+          <header class="c-cover__header">
+            <h2 class="c-cover__title u-mb-none">Rythme &amp; géométrie</h2>
+            <p class="c-cover__subtitle u-mb-none">Musée du Couvent des Cordeliers</p>
+          </header>
+          <div class="c-cover__desc">
+            <p>Incontournable cet été, l’exposition ‘Rythme &amp; géométrie’ au musée du Couvent des Cordeliers, avec un grand nombre de nos artistes contemporains. </p>
+          </div>
+          <div class="c-cover__more">
+            <svg class="o-icon o-icon-arrow-right c-more__icon" aria-hidden="true"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowRight"></use></svg>
+          </div>
+        </div>
+      </a>
+    </article
+    ><article class="o-layout__item u-1/2@tablet u-3/9@desktop">
+      <a href="#" class="c-cover c-more c-more--cover">
+        <figure class="o-ratio o-ratio--3:2 c-cover__media">
+          <img src="{{ site.github.url }}/images/th-590x394.jpg" alt="" class="o-ratio__content c-cover__img">
+        </figure
+        ><div class="c-cover__body">
+          <header class="c-cover__header">
+            <h2 class="c-cover__title u-mb-none">Arithmeum Bonn - Donation des artistes de la galerie</h2>
+          </header>
+          <div class="c-cover__desc">
+            <p>Un grand nombre d’artistes de la galerie ont accepté de faire un don dans un musée allemand qui a été accepté avec beaucoup d’enthousiasme. Venez les découvrir au Musée Arithmeum à Bonn.</p>
+          </div>
+          <div class="c-cover__more">
+            <svg class="o-icon o-icon-arrow-right c-more__icon" aria-hidden="true"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowRight"></use></svg>
+          </div>
+        </div>
+      </a>
+    </article>
+  </div>
 </article>
+<nav class="c-nav-secondary c-breadcrumb u-upper" role="navigation">
+  <a href="{{ site.github.url }}/" class="c-nav-secondary__item c-nav-secondary__link c-breadcrumb__item">Accueil</a>
+  <span class="c-nav-secondary__item c-breadcrumb__item is-current">{{page.title}}</span>
+</nav>

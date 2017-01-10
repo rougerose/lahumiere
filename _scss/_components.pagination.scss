@@ -7,6 +7,9 @@
 }
 
 
+  .c-pagination--prevnext {}
+
+
 //
 // ITEM
 // ==========================================================================
@@ -15,12 +18,57 @@
   display: inline-block;
   vertical-align: middle;
   color: $color-black;
-  @include inuit-font-size(18px, normal);
-
-  // &.is-current {}
+  line-height: normal;
+  text-transform: uppercase;
 
   &.is-disabled {
     cursor: not-allowed;
     color: $color-gray-light;
+  }
+
+  &.is-current {
+    box-shadow: inset 0 -4px 0 $color-theme;
+  }
+}
+
+
+//
+// LINK
+// ==========================================================================
+
+.c-pagination__link {
+  display: block;
+}
+
+  .c-pagination__link--prevnext {
+    height: 32px;
+
+    &:hover {
+      box-shadow: none;
+      color: $color-theme;
+    }
+  }
+
+
+//
+// TEXT
+// ==========================================================================
+
+.c-pagination__text {
+  display: block;
+  padding: $spacing-unit-tiny ($spacing-unit-tiny / 1.5);
+
+  > span {
+    @include mq($until: tablet) {
+      @include inuit-hidden-visually;
+    }
+  }
+}
+
+
+.page--expositions {
+  .c-pagination__link--012017,
+  .c-pagination__link--022017 {
+    box-shadow: inset 0 -4px 0 $color-theme;
   }
 }

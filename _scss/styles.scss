@@ -101,11 +101,11 @@
 
 @import "elements.webfonts";
 @import "inuitcss/elements/elements.page";
-@import "elements.page";
-@import "elements.links";
 @import "inuitcss/elements/elements.headings";
 @import "elements.headings";
 @import "inuitcss/elements/elements.images";
+@import "elements.links";
+@import "elements.page";
 // @import "inuitcss/elements/elements.tables";
 
 
@@ -128,11 +128,14 @@
 @import "objects.icons";
 
 // COMPONENTS
-@import "components.link";
+// @import "components.link";
 @import "components.header";
+
 @import "components.site-nav";
 @import "components.nav-utils";
 @import "components.nav-secondary";
+@import "components.pagination";
+@import "components.breadcrumb";
 // @import "components.buttons";
 
 @import "components.page-header";

@@ -9,16 +9,24 @@
 // LIST
 // ==========================================================================
 
-.c-nav-secondary__list {
-  margin: 0;
-}
+.c-nav-secondary__list { margin: 0; }
+
 
 //
 // ITEM
 // ==========================================================================
 
-.c-nav-secondary__item {
-  // display: inline-block;
-  // vertical-align: middle;
-  // line-height: normal;
+.c-nav-secondary__item {}
+
+
+//
+// LINK
+// ==========================================================================
+
+.c-nav-secondary__link {
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: inset 0 -4px 0 $color-theme;
+  }
 }
