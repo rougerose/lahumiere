@@ -29,7 +29,7 @@ audio:not([controls]){display:none;height:0}
 svg:not(:root){overflow:hidden}
 button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}
 button,select{text-transform:none}
-.c-page-header__title,.c-pagination__item,.u-upper{text-transform:uppercase}
+.c-meta,.c-meta__status,.c-page-header__title,.c-pagination__item,.u-upper{text-transform:uppercase}
 [type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}
 [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}
 [type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}
@@ -42,7 +42,7 @@ textarea{overflow:auto}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 h1,h5{line-height:1.33333}
 h6,html{line-height:1.5}
-.c-cover__meta p:first-child,img{font-style:italic}
+.c-meta,img{font-style:italic}
 summary{display:list-item}
 [hidden],template{display:none}
 blockquote,body,dd,dl,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,legend,ol,p,pre,ul{margin:0;padding:0}
@@ -180,7 +180,7 @@ html{font-family:Futura;color:#555}
 .c-breadcrumb__item{position:relative;margin-left:.75rem;padding:.1875rem;color:#bababa;transition:color .3s}
 .c-breadcrumb__item:before{position:absolute;left:-.75rem;content:"/"}
 .c-breadcrumb__item.is-current,.c-breadcrumb__item:hover{color:#000}
-.c-page-header__title{font-size:28px;font-size:1.75rem;line-height:1.2}
+.c-page-header__title{font-size:30px;font-size:1.875rem;line-height:1.2}
 .c-card__more,.c-cover__more{position:absolute;top:50%;right:.75rem;width:48px;height:48px;transform:translateY(-50%)}
 .c-card__more:before,.c-cover__more:before,.c-more--inline:before{position:absolute;top:0;left:0;width:100%;height:100%;content:"";border-radius:50%;box-shadow:0 0 0 2px rgba(0,0,0,.5);opacity:0;transform:scale(.9);transition:transform .1s ease-out,background-color .2s}
 .c-more__icon{position:absolute;width:inherit;height:inherit;background-color:rgba(0,0,0,.8);border-radius:50%}
@@ -199,8 +199,7 @@ html{font-family:Futura;color:#555}
 .c-cover__title{font-size:22px;font-size:1.375rem;line-height:1.09091}
 .c-cover__subtitle{margin-top:.375rem;font-family:FuturaLight,sans-serif;font-size:18px;font-size:1.125rem;line-height:1.33333}
 .c-cover__desc p:last-child{margin-bottom:0}
-.c-cover__meta{margin-top:1.5rem;text-align:right}
-.c-cover__meta p{font-family:FuturaHeavy,sans-serif;font-size:13px;font-size:.8125rem;line-height:1.4}
+.c-cover__meta{margin-top:1.5rem;font-size:14px;font-size:.875rem;line-height:1.4;text-align:right}
 .c-cover__more{color:#f8e71c;opacity:0;transition:opacity .15s}
 @media (min-width:60em){.c-cover--large .c-cover__body{display:inline-block;width:33.33333%;padding:.75rem;vertical-align:middle}
 .c-cover--large .c-cover__body:before{width:120%}
@@ -219,12 +218,13 @@ html{font-family:Futura;color:#555}
 .c-card__body:before{position:absolute;bottom:0;width:100%;transform:translateY(95%);transition:transform .4s}
 .c-card__title{padding-left:.1875rem;padding-right:.1875rem;font-size:16px;font-size:1rem;line-height:1.5;transition:transform .3s .1s}
 .c-card__more{width:24px;height:24px;color:#f8e71c;opacity:0;transform:translateY(-100%);transition:opacity .15s,transform .3s}
-.c-article__content-text h3{margin:3rem 0 .75rem;font-size:20px;font-size:1.25rem;line-height:1.2}
-.c-article__content-text ul{list-style-type:square}
-.c-article__chapo{font-size:19px;font-size:1.1875rem;line-height:1.26316;color:#000}
-.c-article__text{font-size:17px;font-size:1.0625rem;line-height:1.41176}
-.c-article__subtitle{margin-top:1.5rem;font-size:18px;font-size:1.125rem;line-height:1.33333}
+.c-article__chapo{font-size:20px;font-size:1.25rem;line-height:1.2;color:#000}
+.c-article__text{font-size:18px;font-size:1.125rem;line-height:1.33333}
+.c-article__text h3{margin:3rem 0 .75rem;font-size:20px;font-size:1.25rem;line-height:1.2}
+.c-article__text ul{list-style-type:square}
+.c-article__subtitle{margin-top:1.5rem;font-size:22px;font-size:1.375rem;line-height:1.09091}
 .c-article__subtitle:after{display:block;width:100%;height:2px;background-color:currentColor;content:""}
+.c-meta__status{font-family:FuturaHeavy,sans-serif;letter-spacing:.05em}
 .c-figure__caption{padding-top:.375rem;padding-left:.375rem;border-left:1px solid #bababa}
 .c-figure__desc,.c-figure__title{margin:0;font-size:13px;font-size:.8125rem;line-height:1.3;color:#7d7d7d}
 .c-footer{border-top:1px solid #000;border-bottom:3px solid #000;padding-top:1.5rem}

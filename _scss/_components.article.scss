@@ -9,7 +9,16 @@
 // CONTENT-TEXT
 // ==========================================================================
 
-.c-article__content-text {
+.c-article__content-text {}
+
+
+.c-article__chapo {
+  @include inuit-font-size(20px);
+  color: $color-black;
+}
+
+.c-article__text {
+  @include inuit-font-size(18px);
 
   // TODO: règles provisoires
   h3 {
@@ -23,23 +32,13 @@
 }
 
 
-.c-article__chapo {
-  @include inuit-font-size(19px);
-  color: $color-black;
-}
-
-.c-article__text {
-  @include inuit-font-size(17px);
-}
-
-
 //
 // SUBTITLE
 // ==========================================================================
 
 .c-article__subtitle {
   margin-top: $spacing-unit;
-  @include inuit-font-size(18px);
+  @include inuit-font-size(22px);
 
   &:after {
     display: block;

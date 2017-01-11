@@ -102,15 +102,8 @@
 
   .c-cover__meta {
     margin-top: $spacing-unit;
+    @include inuit-font-size(14px, 1.4);
     text-align: right;
-    p {
-      font-family: $font-futuraHeavy;
-      @include inuit-font-size(13px, 1.4);
-
-      &:first-child {
-        font-style: italic;
-      }
-    }
   }
 
 
