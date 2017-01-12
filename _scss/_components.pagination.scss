@@ -2,13 +2,22 @@
 // PAGINATION
 // ==========================================================================
 
-.c-pagination {
-  text-align: center;
+.c-pagination { text-align: center; }
+
+.c-pagination--prevnext {
+  @include inuit-clearfix();
+
+  > .c-pagination__item--prev { float: left; }
+
+  > .c-pagination__item--next { float: right; }
 }
 
 
-  .c-pagination--prevnext {}
+//
+// LIST
+// ==========================================================================
 
+.c-pagination__list { margin-left: 0; }
 
 //
 // ITEM
@@ -26,9 +35,7 @@
     color: $color-gray-light;
   }
 
-  &.is-current {
-    box-shadow: inset 0 -4px 0 $color-theme;
-  }
+  &.is-current { box-shadow: inset 0 -4px 0 $color-theme; }
 }
 
 
@@ -37,16 +44,24 @@
 // ==========================================================================
 
 .c-pagination__link {
-  display: block;
+  transition: box-shadow 0.3s;
+
+  &:hover { box-shadow: inset 0 -4px 0 $color-theme; }
+
+  .c-pagination__item & { display: block; }
 }
 
   .c-pagination__link--prevnext {
-    height: 32px;
 
     &:hover {
       box-shadow: none;
-      color: $color-theme;
+
+      .o-icon {
+        fill: $color-theme;
+      }
     }
+
+    &.is-disabled:hover { color: $color-gray-light; }
   }
 
 
@@ -54,21 +69,21 @@
 // TEXT
 // ==========================================================================
 
-.c-pagination__text {
-  display: block;
-  padding: $spacing-unit-tiny ($spacing-unit-tiny / 1.5);
+.c-pagination__text { vertical-align: middle; }
 
-  > span {
+  .c-pagination__text--block {
+    display: block;
+    padding: $spacing-unit-tiny ($spacing-unit-tiny / 1.5);
+  }
+
+  .c-pagination__text--hide {
     @include mq($until: tablet) {
       @include inuit-hidden-visually;
     }
   }
-}
 
 
 .page--expositions {
   .c-pagination__link--012017,
-  .c-pagination__link--022017 {
-    box-shadow: inset 0 -4px 0 $color-theme;
-  }
+  .c-pagination__link--022017 { box-shadow: inset 0 -4px 0 $color-theme; }
 }

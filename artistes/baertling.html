@@ -4,10 +4,6 @@ site-title: "Galerie Lahumiere"
 title: "Olle Baertling"
 page-class: page--artistes
 ---
-<!-- <nav class="c-nav-secondary c-pagination u-mb" role="navigation">
-  <span class="c-nav-secondary__item c-pagination__item is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
-  <a href="{{ site.github.url }}/artistes/coignet.html" class="c-nav-secondary__item c-pagination__item" aria-label="Artiste suivant"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
-</nav> -->
 <article class="c-article u-mt">
   <header class="c-page-header">
     <h2 class="c-page-header__title u-upper">{{page.title}}</h2>
@@ -65,9 +61,9 @@ page-class: page--artistes
     </div>
   </section>
 </article>
-<nav class="c-nav-secondary c-pagination u-mb u-mt" role="navigation">
-  <span class="c-nav-secondary__item c-pagination__item is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg></span>
-  <a href="{{ site.github.url }}/artistes/coignet.html" class="c-nav-secondary__item c-pagination__item" aria-label="Artiste suivant"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
+<nav class="c-pagination c-pagination--prevnext u-mb u-mt" role="navigation">
+  <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text">Artiste précédent</span></span
+  ><a href="{{ site.github.url }}/artistes/coignet.html" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Artiste suivant"><span class="c-pagination__text">Artiste suivant</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
 </nav>
 
 <nav class="c-nav-secondary c-breadcrumb u-upper" role="navigation">
