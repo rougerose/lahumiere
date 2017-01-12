@@ -5,7 +5,9 @@
 .c-meta {
   text-transform: uppercase;
   font-style: italic;
+  color: $color-black;
 }
+
 
 //
 // STATUS
@@ -14,7 +16,6 @@
 .c-meta__status {
   font-family: $font-futuraHeavy;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 
