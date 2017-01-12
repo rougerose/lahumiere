@@ -16,19 +16,28 @@
   position: relative;
   margin-left: $spacing-unit-small;
   padding: $spacing-unit-tiny / 2;
-  color: $color-gray-light;
-  transition: color 0.3s;
 
   &:before {
     position: absolute;
     left: $spacing-unit-small * -1;
+    color: $color-gray-light;
     content: "/";
-    // color: $color-gray-light;
   }
 
-  &.is-current,
+  &.is-current { color: $color-black; }
+}
+
+
+//
+// LINK
+// ==========================================================================
+
+.c-breadcrumb__link {
+  color: $color-gray-light;
+  transition: box-shadow 0.3s, color 0.3s;
+
   &:hover {
     color: $color-black;
-    // background-color: $color-theme;
+    box-shadow: inset 0 -4px 0 $color-theme;
   }
 }

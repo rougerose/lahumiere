@@ -65,9 +65,8 @@ page-class: page--artistes
   <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text">Artiste précédent</span></span
   ><a href="{{ site.github.url }}/artistes/coignet.html" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Artiste suivant"><span class="c-pagination__text">Artiste suivant</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
 </nav>
-
-<nav class="c-nav-secondary c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-nav-secondary__item c-breadcrumb__item">Accueil</a>
-  <a href="{{ site.github.url }}/artistes/" class="c-nav-secondary__item c-breadcrumb__item">Les artistes</a>
-  <span class="c-nav-secondary__item c-breadcrumb__item is-current">{{page.title}}</span>
+<nav class="c-breadcrumb u-upper" role="navigation">
+  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
+  <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link">Les artistes</a>
+  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
 </nav>

@@ -30,7 +30,6 @@ page-class: page--expositions
     </div>
   </section>
   <section>
-    <!-- <h2 class="c-article__subtitle u-upper">Œuvres</h2> -->
     <div class="o-layout c-portfolio">
       <div class="c-portfolio__sizer u-1/2@tablet"></div>
       <figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
@@ -50,11 +49,10 @@ page-class: page--expositions
 </article>
 <nav class="c-pagination c-pagination--prevnext u-mb u-mt" role="navigation">
   <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Exposition précédente"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text">Exposition précédente</span></span
-  ><a href="{{ site.github.url }}/artistes/baertling.html" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Exposition suivante"><span class="c-pagination__text">Exposition suivante</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
+  ><a href="#" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Exposition suivante"><span class="c-pagination__text">Exposition suivante</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
 </nav>
-
-<nav class="c-nav-secondary c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-nav-secondary__item c-breadcrumb__item">Accueil</a>
-  <a href="{{ site.github.url }}/artistes/" class="c-nav-secondary__item c-breadcrumb__item">Les artistes</a>
-  <span class="c-nav-secondary__item c-breadcrumb__item is-current">{{page.title}}</span>
+<nav class="c-breadcrumb u-upper" role="navigation">
+  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
+  <a href="{{ site.github.url }}/expositions/" class="c-breadcrumb__item c-breadcrumb__link">Expositions</a>
+  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
 </nav>
