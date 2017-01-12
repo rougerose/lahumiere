@@ -163,6 +163,7 @@ html{font-family:Futura;color:#555}
 .c-pagination{text-align:center}
 .c-pagination--prevnext:after{content:""!important;display:block!important;clear:both!important}
 .c-more--inline,.c-pagination__item{display:inline-block;vertical-align:middle}
+.c-pagination--prevnext>.c-pagination__item{font-size:14px;font-size:.875rem;line-height:1.71429}
 .c-pagination--prevnext>.c-pagination__item--prev{float:left}
 .c-pagination--prevnext>.c-pagination__item--next{float:right}
 .c-pagination__list{margin-left:0}

@@ -7,6 +7,8 @@
 .c-pagination--prevnext {
   @include inuit-clearfix();
 
+  > .c-pagination__item { @include inuit-font-size(14px); }
+
   > .c-pagination__item--prev { float: left; }
 
   > .c-pagination__item--next { float: right; }
