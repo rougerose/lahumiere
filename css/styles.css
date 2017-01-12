@@ -127,7 +127,7 @@ html{font-family:Futura;color:#555}
 .o-icon--m{width:32px;height:32px}
 .c-header{position:relative;padding:3rem 0 1.5rem}
 .c-site-nav__home{margin-bottom:.75rem;display:block;text-align:center}
-.c-site-nav__logo{max-width:100px}
+.c-site-nav__logo{max-width:100px;max-height:98px}
 @media (min-width:40em){.c-site-nav__home{text-align:left}
 .c-site-nav__home--logo{line-height:0;text-align:right}
 .c-site-nav__logo-img{text-align:right}
