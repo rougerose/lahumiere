@@ -171,3 +171,25 @@
       }
     }
   }
+
+  //
+  // BLEND MODE FALLBACK
+  // ==========================================================================
+
+  //
+  // .no-backgroundblendmode via modernizr.js
+  //
+
+  .no-backgroundblendmode {
+    .c-cover__body {
+      padding-top: $spacing-unit-small;
+      background-color: $color-theme;
+      &:before {
+        display: none;
+      }
+    }
+
+    .c-cover__media {
+      margin-bottom: 0;
+    }
+  }
