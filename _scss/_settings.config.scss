@@ -2,12 +2,16 @@
 // Settings
 // ==========================================================================
 
+
+// line-height
+$inuit-global-line-height:  20px;
+
+
 // font-family
 $font-base:  'Futura';
 $font-futura: 'Futura', sans-serif;
 $font-futuraHeavy: 'FuturaHeavy', sans-serif;
 $font-futuraLight: 'FuturaLight', sans-serif;
-// $font-futuraMedium: 'font-futuraMedium', sans-serif;
 
 
 // Colors
@@ -19,16 +23,17 @@ $color-gray: #7d7d7d;
 $color-gray-dark: #585353;
 
 $color-yellow: #f8e71c;
+$color-orange: #cf7633;
 
 $color-base: $color-gray;
+$color-theme: $color-orange;
 $color-link: $color-black;
-$color-link-hover: $color-yellow;
-$color-theme: $color-yellow;
+$color-link-hover: $color-theme;
 
 //
 $global-radius: 3px;
 $global-transition: (1/3) + s;
-$global-transition-function: ease-in;
+$global-transition-function: ease-out;
 
 
 // Wrapper
@@ -36,9 +41,9 @@ $inuit-wrapper-width: 1100px;
 
 
 // Layout
-$inuit-use-markup-fix: true;
-$inuit-fractions:      2 9 11;
-$inuit-offsets:        false;
+// $inuit-use-markup-fix: true;
+$inuit-fractions:      10;
+// $inuit-offsets:        false;
 
 
 // Ratio

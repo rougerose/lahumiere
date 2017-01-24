@@ -3,6 +3,11 @@
 // ==========================================================================
 
 a {
-  text-decoration: none;
   color: $color-link;
+  text-decoration: none;
+  transition: color $global-transition $global-transition-function;
+
+  &:hover {
+    color: $color-link-hover;
+  }
 }

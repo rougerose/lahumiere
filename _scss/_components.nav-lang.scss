@@ -1,0 +1,29 @@
+// ==========================================================================
+// NAV-LANG
+// ==========================================================================
+
+.c-nav-lang {}
+
+
+//
+// ITEM
+// ==========================================================================
+
+.c-nav-lang__item {
+  display: inline-block;
+  padding: $spacing-unit-small 0;
+  color: $color-gray-light;
+
+  &.is-current {
+    color: $color-black;
+  }
+}
+
+
+.c-nav-lang__item--separator {
+  &:before {
+    margin: 0 3px;
+    content: "/";
+    color: $color-gray-light;
+  }
+}

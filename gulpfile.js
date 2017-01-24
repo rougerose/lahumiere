@@ -56,12 +56,12 @@ gulp.task('sass', function () {
   return gulp.src('_scss/styles.scss')
     .pipe(sass({
         includePaths: ['css', 'node_modules'],
-        outputStyle: 'expanded',
+        outputStyle: 'compact',
         onError: browserSync.notify('Error in sass'),
     }))
     .on('error', sass.logError)
     .pipe(prefix(['last 2 versions']))
-    .pipe(minify)
+    // .pipe(minify)
     // .pipe(cleanCSS())
     // .pipe(cleanCSS({debug: true}, function(details) {
     //   console.log(details.name + ': ' + details.stats.originalSize);

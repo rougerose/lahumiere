@@ -1,23 +1,24 @@
 <header class="c-header">
-  <nav class="o-layout c-site-nav">
-    <div class="o-layout__item u-2/11@tablet">
-      <a href="{{ site.github.url }}/" class="c-site-nav__home c-site-nav__home--logo"><svg class="c-site-nav__logo" viewBox="0 0 100 98" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><title>Galerie Lahumiere</title><g fill-rule="evenodd"><path d="M0 0v98h100V83.5H14.5V0"/><path d="M26.5 30.2v14.6h59v15.7h-59V75H100V30.2M26.5 0H100v14.5H26.5z"/></g></svg></a>
-    </div><div class="o-layout__item u-9/11@tablet">
-      <a href="{{ site.github.url }}/" class="c-site-nav__home"><span class="c-site-nav__title u-upper">Galerie Lahumiere</span></a>
-      <ul class="o-list-inline c-site-nav__list u-upper">
-        <li class="o-list-inline__item c-site-nav__item"><a href="#" class="c-site-nav__link c-site-nav__galerie">La Galerie</a></li>
-        <li class="o-list-inline__item c-site-nav__item"><a href="{{ site.github.url }}/artistes/" class="c-site-nav__link c-site-nav__artistes">Les artistes</a></li>
-        <li class="o-list-inline__item c-site-nav__item"><a href="{{ site.github.url }}/expositions/" class="c-site-nav__link c-site-nav__expositions">Expositions</a></li>
-        <li class="o-list-inline__item c-site-nav__item"><a href="#" class="c-site-nav__link c-site-nav__publications">Publications</a></li>
+  <nav class="o-layout o-layout--bottom c-nav-site">
+    <div class="o-layout__item u-1/10@tablet">
+      <a href="{{ site.github.url }}/" class="c-nav-site__home c-nav-site__home--logo"><svg class="c-nav-site__logo" viewBox="0 0 103 120" xmlns="http://www.w3.org/2000/svg"><title>Galerie Lahumiere</title><g fill-rule="evenodd"><path d="M12 109.2V0H0v120h103v-10.8H12z"/><path d="M97.6 44.3h5.4v57.3H27V90.8h65.2V55h-65V44.4h70.4zM27 0h76v10.8H27z"/></g></svg></a>
+    </div><div class="o-layout__item u-9/10@tablet">
+      <a href="{{ site.github.url }}/" class="c-nav-site__home c-nav-site__home--title">Galerie Lahumiere</a>
+      <ul class="c-nav-site__list">
+        <li class="c-nav-site__item"><a href="#" class="c-nav-site__link c-nav-site__galerie">La Galerie</a></li>
+        <li class="c-nav-site__item"><a href="{{ site.github.url }}/artistes/" class="c-nav-site__link c-nav-site__artistes">Les artistes</a></li>
+        <li class="c-nav-site__item"><a href="{{ site.github.url }}/expositions/" class="c-nav-site__link c-nav-site__expositions">Expositions</a></li>
+        <li class="c-nav-site__item"><a href="#" class="c-nav-site__link c-nav-site__publications">Publications</a></li>
       </ul>
     </div>
   </nav>
   <nav class="c-nav-utils">
-    <ul class="o-list-inline c-nav-utils__list u-upper">
-      <li class="o-list-inline__item c-nav-utils__item">
-        <a href="#" class="c-nav-utils__link c-nav-utils__link--search" aria-label="Chercher"><svg class="o-icon o-icon-search"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#search"></use></svg></a>
-      </li><li class="o-list-inline__item c-nav-utils__item">
-        <span href="#" class="c-nav-utils__link c-nav-utils__link--lang is-active">FR</span><a href="#" class="c-nav-utils__link c-nav-utils__link--lang c-nav-utils__link--delimited">EN</a>
+    <ul class="c-nav-utils__list">
+      <li class="c-nav-utils__item">
+        <a href="#" class="c-search__open" aria-label="Chercher"><svg class="o-icon c-search__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#search"></use></svg></a>
+      </li
+      ><li class="c-nav-utils__item c-nav-lang">
+        <span href="#" class="c-nav-lang__item is-current">FR</span><a href="#" class="c-nav-lang__item c-nav-lang__item--separator">EN</a>
       </li>
     </ul>
   </nav>

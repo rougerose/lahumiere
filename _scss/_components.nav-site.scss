@@ -1,0 +1,115 @@
+// ==========================================================================
+// NAV-SITE
+// ==========================================================================
+
+.c-nav-site {
+  text-transform: uppercase;
+
+  @include mq($until: tablet) {
+    text-align: center;
+  }
+}
+
+
+
+//
+// HOME
+// ==========================================================================
+
+.c-nav-site__home {
+  display: block;
+}
+
+  //
+  // Variante
+  //
+  .c-nav-site__home--logo {
+    line-height: 0;
+
+    @include mq($until: tablet) {
+      margin-bottom: $spacing-unit;
+    }
+  }
+
+  .c-nav-site__home--title {
+    margin-bottom: $spacing-unit-small;
+    font-family: $font-futuraLight;
+    line-height: 1;
+    @include inuit-font-size(30px, false);
+    @include mq(desktop) {
+      @include inuit-font-size(48px, false);
+    }
+  }
+
+
+//
+// LOGO
+// ==========================================================================
+
+.c-nav-site__logo {
+  height: auto;
+  fill: $color-theme;
+
+  @include mq($until: tablet) {
+    width: 50px;
+  }
+
+  @include mq(desktop) {
+    width: 80px;
+  }
+}
+
+
+//
+// LIST
+// ==========================================================================
+
+.c-nav-site__list {
+  margin: 0;
+  list-style: none;
+  border: 1px solid $color-black;
+  border-width: 1px 0;
+
+  @include mq(tablet) {
+    border-top-width: 0;
+  }
+}
+
+//
+// ITEM
+// ==========================================================================
+
+.c-nav-site__item {
+  display: inline-block;
+  @include inuit-font-size(18px);
+
+  @include mq(tablet, desktop) {
+    @include inuit-font-size(16px, 1);
+  }
+}
+
+//
+// LINK
+// ==========================================================================
+
+.c-nav-site__link {
+  display: block;
+  margin: $spacing-unit-tiny $spacing-unit-tiny / 2;
+  padding: 0 $spacing-unit-tiny / 2;
+}
+
+
+//
+// PAGES
+// ==========================================================================
+
+// @each $page in galerie, artistes, expositions, publications {
+//   .page--#{$page} .c-nav-site__#{$page} {
+//   }
+// }
+
+.c-nav-site__galerie {
+  @include mq(tablet) {
+    margin-left: 0;
+  }
+}
