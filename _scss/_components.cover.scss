@@ -18,11 +18,6 @@
       color: $color-theme;
     }
   }
-
-  @include mq($until: mobileLs) {
-    // border-top: 1px solid $color-black;
-    // padding-top: $spacing-unit-tiny;
-  }
 }
 
 
@@ -30,9 +25,7 @@
 // FIGURE
 // ==========================================================================
 
-.c-cover__figure {
-
-}
+.c-cover__figure {}
 
 
 //
