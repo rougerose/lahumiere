@@ -4,9 +4,8 @@
 
 .c-header {
   position: relative;
-  padding: $spacing-unit-large 0 $spacing-unit;
 
-  @include mq($until: tablet) {
-    padding-top: $spacing-unit-small;
+  @include mq(tablet) {
+    margin-bottom: $spacing-unit;
   }
 }

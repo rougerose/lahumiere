@@ -2,14 +2,22 @@
 // NAV-SITE
 // ==========================================================================
 
+//
+// Variables
+//
+$logo-width-small: 50px;
+$logo-width-large: 80px;
+
+
 .c-nav-site {
+  padding-top: $spacing-unit-large;
+  padding-bottom: $spacing-unit-large;
   text-transform: uppercase;
 
   @include mq($until: tablet) {
     text-align: center;
   }
 }
-
 
 
 //
@@ -29,13 +37,21 @@
     @include mq($until: tablet) {
       margin-bottom: $spacing-unit;
     }
+
+    @include mq(tablet, desktop) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8%;
+    }
   }
 
   .c-nav-site__home--title {
     margin-bottom: $spacing-unit-small;
     font-family: $font-futuraLight;
-    line-height: 1;
     @include inuit-font-size(30px, false);
+    line-height: 1;
+
     @include mq(desktop) {
       @include inuit-font-size(48px, false);
     }
@@ -51,11 +67,11 @@
   fill: $color-theme;
 
   @include mq($until: tablet) {
-    width: 50px;
+    width: $logo-width-small;
   }
 
   @include mq(desktop) {
-    width: 80px;
+    width: $logo-width-large;
   }
 }
 
@@ -67,11 +83,20 @@
 .c-nav-site__list {
   margin: 0;
   list-style: none;
-  border: 1px solid $color-black;
-  border-width: 1px 0;
+
+  @include mq($until: tablet) {
+    &:after {
+      display: block;
+      height: 1px;
+      width: $logo-width-small;
+      margin: $spacing-unit auto;
+      background-color: $color-black;
+      content: "";
+    }
+  }
 
   @include mq(tablet) {
-    border-top-width: 0;
+    border-bottom: 1px solid $color-black;
   }
 }
 

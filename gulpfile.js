@@ -56,18 +56,12 @@ gulp.task('sass', function () {
   return gulp.src('_scss/styles.scss')
     .pipe(sass({
         includePaths: ['css', 'node_modules'],
-        outputStyle: 'compact',
+        outputStyle: 'expanded',
         onError: browserSync.notify('Error in sass'),
     }))
     .on('error', sass.logError)
     .pipe(prefix(['last 2 versions']))
-    // .pipe(minify)
-    // .pipe(cleanCSS())
-    // .pipe(cleanCSS({debug: true}, function(details) {
-    //   console.log(details.name + ': ' + details.stats.originalSize);
-    //   console.log(details.name + ': ' + details.stats.minifiedSize);
-    //   console.log(details.name + ': ' + Math.ceil(details.stats.efficiency * 100) + '%');
-    // }))
+    .pipe(minify)
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('css'));

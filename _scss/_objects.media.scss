@@ -1,31 +1,38 @@
 // ==========================================================================
-// META
+// MEDIA
 // ==========================================================================
 
-.c-meta {
-  text-transform: uppercase;
-  font-style: italic;
+.o-media {
+  display: table;
+  width: 100%;
 }
 
 
 //
-// STATUS
+// IMG
 // ==========================================================================
 
-.c-meta__status {}
+.o-media__img {
+  padding-right: $spacing-unit;
+
+  img {
+    display: block;
+    max-width: none;
+  }
+}
 
 
 //
-// DATE
+// BODY
 // ==========================================================================
 
-.c-meta__date {
-  @include mq(mobileLs) {
-    &:before {
-      content: "\2192";
-      color: $color-theme;
-      margin-right: $spacing-unit-tiny;
-      margin-left: $spacing-unit-tiny;
-    }
-  }
+.o-media__body {
+  width: 100%;
+}
+
+
+.o-media__img,
+.o-media__body {
+  display: table-cell;
+  vertical-align: top;
 }

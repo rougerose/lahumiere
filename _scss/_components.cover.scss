@@ -3,193 +3,142 @@
 // ==========================================================================
 
 .c-cover {
-  margin-bottom: $spacing-unit-large;
   display: block;
+  margin-bottom: $spacing-unit-huge;
 
   &:hover {
-    .c-cover__img {
-      transform: scale(1.04);
+    color: $color-black;
+
+    .c-cover__title {
+      color: $color-theme;
     }
 
-    .c-cover__more {
-      opacity: 1;
-
-      &:before {
-        animation: openEffect 0.6s ease-out 75ms;
-      }
+    .c-cover__description:after {
+      padding-left: $spacing-unit;
+      color: $color-theme;
     }
+  }
+
+  @include mq($until: mobileLs) {
+    // border-top: 1px solid $color-black;
+    // padding-top: $spacing-unit-tiny;
   }
 }
 
 
-  //
-  // MEDIA
-  // ==========================================================================
+//
+// FIGURE
+// ==========================================================================
 
-  .c-cover__media {
-    margin-bottom: $spacing-unit * -1;
+.c-cover__figure {
+
+}
+
+
+//
+// IMG
+// ==========================================================================
+
+.c-cover__img {
+  border: 1px solid rgba($color-gray-lighter, 0.5);
+}
+
+
+//
+// BODY
+// ==========================================================================
+
+.c-cover__body {
+  line-height: 1.3;
+  @include mq($until: mobileLs) {
+    text-align: center !important;
+  }
+}
+
+
+//
+// TITLE
+// ==========================================================================
+
+.c-cover__title {
+  @include inuit-font-size(22px, 1.2);
+  transition: color $global-transition $global-transition-function;
+
+  @include mq(desktop) {
+    @include inuit-font-size(24px, false);
+  }
+}
+
+
+//
+// SUBTITLE
+// ==========================================================================
+
+.c-cover__subtitle {
+  text-transform: uppercase;
+  @include inuit-font-size(15px, false);
+
+  @include mq(desktop) {
+    @include inuit-font-size(17px, false);
+  }
+}
+
+
+//
+// DESCRIPTION
+// ==========================================================================
+
+.c-cover__description {
+  padding-right: $spacing-unit-small;
+  &:after {
+    content: "\27F6";
+    transition-property: color, padding;
+    transition-timing-function: $global-transition-function;
+    transition-duration: $global-transition;
+
+    @include mq(mobile, desktop) {
+      color: $color-theme;
+    }
   }
 
+  @include mq(tablet) {
 
-  //
-  // IMG
-  // ==========================================================================
-
-  .c-cover__img {
-    transition: transform 0.3s;
+    @include inuit-font-size(18px, false);
   }
+}
 
 
-  //
-  // BODY
-  // ==========================================================================
+//
+// META
+// ==========================================================================
 
-  .c-cover__body {
-    position: relative;
-    padding: ($spacing-unit + $spacing-unit/2) $spacing-unit-small $spacing-unit-small;
+.c-cover__meta {
+  @include inuit-font-size(14px);
+
+  @include mq($until: mobileLs) {
+    padding: $spacing-unit-tiny 0 $spacing-unit-small;
+    text-align: center;
 
     &:before {
       display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      margin: 0 auto $spacing-unit-small;
       content: "";
-      background-color: $color-theme;
-      mix-blend-mode: multiply;
+      width: 50px;
+      height: 1px;
+      background-color: $color-black;
+    }
+
+    > .c-meta__item {
+      &:first-child:after {
+        content: "\A";
+        white-space: pre;
+      }
     }
   }
 
-
-  //
-  // HEADER
-  // ==========================================================================
-
-  .c-cover__header {
+  @include mq(mobileLs) {
+    border-bottom: 1px solid $color-black;
     margin-bottom: $spacing-unit;
+    padding-bottom: $spacing-unit-tiny;
   }
-
-    // TITLE
-    .c-cover__title {
-      @include inuit-font-size(22px);
-    }
-
-    // SUBTITLE
-    .c-cover__subtitle {
-      margin-top: $spacing-unit-tiny;
-      font-family: $font-futuraLight;
-      @include inuit-font-size(18px);
-    }
-
-
-  //
-  // DESC
-  // ==========================================================================
-
-  .c-cover__desc {
-    p {
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-
-  //
-  // META
-  // ==========================================================================
-
-  .c-cover__meta {
-    margin-top: $spacing-unit;
-    @include inuit-font-size(14px, 1.4);
-    text-align: right;
-  }
-
-
-  //
-  // MORE
-  // ==========================================================================
-
-  .c-cover__more {
-    @extend %moreContainer;
-    color: $color-theme;
-    opacity: 0;
-    transition: opacity 0.15s;
-
-    &:before {
-      @extend %moreBefore;
-    }
-  }
-
-
-  //
-  // Variantes
-  // ==========================================================================
-
-  @include mq(desktop) {
-    // --large
-    .c-cover--large {
-
-      & .c-cover__body {
-        display: inline-block;
-        width: (3 / 9) * 100%;
-        padding: $spacing-unit-small;
-        vertical-align: middle;
-
-        &:before {
-          width: ((6/9)*100) / (5/9) * 1%;
-        }
-      }
-
-      & .c-cover__media {
-        display: inline-block;
-        margin-bottom: 0;
-        width: (6 / 9 ) * 100%;
-        vertical-align: middle;
-      }
-    }
-
-    // --even
-    .c-cover--even {
-
-      & .c-cover__body {
-
-        &:before {
-          left: auto;
-          right: 0;
-        }
-      }
-    }
-
-    // --odd
-    .c-cover--odd {
-      direction: rtl;
-
-      & .c-cover__body {
-        direction: ltr;
-      }
-    }
-  }
-
-  //
-  // BLEND MODE FALLBACK
-  // ==========================================================================
-
-  //
-  // .no-backgroundblendmode via modernizr.js
-  //
-
-  .no-backgroundblendmode {
-    .c-cover__body {
-      padding-top: $spacing-unit-small;
-      background-color: $color-theme;
-      &:before {
-        display: none;
-      }
-    }
-
-    .c-cover__media {
-      margin-bottom: 0;
-    }
-  }
+}

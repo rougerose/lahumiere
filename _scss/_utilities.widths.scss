@@ -12,20 +12,20 @@
   right: auto !important;
 }
 
-.u-push-1\/11 {
-  left: (1 / 11) * 100% !important;
+.u-push-1\/10 {
+  left: (1 / 10) * 100% !important;
 }
 
-.u-push-2\/11 {
-  left: (2 / 11) * 100% !important;
-}
+// .u-push-2\/11 {
+//   left: (2 / 11) * 100% !important;
+// }
 
 @include mq(tablet) {
-  .u-push-1\/11\@tablet {
-    left: (1 / 11) * 100% !important;
+  .u-push-1\/10\@tablet {
+    left: (1 / 10) * 100% !important;
   }
 
-  .u-push-2\/11\@tablet {
-    left: (2 / 11) * 100% !important;
-  }
+  // .u-push-2\/11\@tablet {
+  //   left: (2 / 11) * 100% !important;
+  // }
 }
