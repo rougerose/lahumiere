@@ -3,22 +3,22 @@
 // ==========================================================================
 
 .c-footer {
-  border-top: 1px solid $color-black;
-  border-bottom: 3px solid $color-black;
-  padding-top: $spacing-unit;
+  border: 1px solid $color-black;
+  border-width: 1px 0;
+  padding-top: $spacing-unit-large;
 }
 
 
 //
-// LINK
+// ITEM
 // ==========================================================================
 
-.c-footer__link {
-  color: $color-base;
-  transition: color $global-transition $global-transition-function;
+.c-footer__item {
+  margin-bottom: $spacing-unit-large;
+  color: $color-black;
 
-  &:hover {
-    color: $color-link;
+  @include mq($until: mobileLs) {
+    text-align: center;
   }
 }
 
@@ -29,6 +29,8 @@
 
 .c-footer__title {
   margin-bottom: $spacing-unit-small;
+  @include inuit-font-size(18px);
+  text-transform: uppercase;
 }
 
 

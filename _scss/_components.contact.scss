@@ -2,19 +2,21 @@
 // CONTACT
 // ==========================================================================
 
-.c-contact {}
+.c-contact {
+  margin: 0;
+  list-style: none;
+}
 
-.c-contact__link {
+
+//
+// ITEM
+// ==========================================================================
+
+.c-contact__item {
+  display: inline-block;
+}
+
+.c-contact__open {
   display: block;
   margin-right: $spacing-unit-small;
-
-  .o-icon {
-    fill: $color-gray-light;
-  }
-
-  &:hover {
-    .o-icon {
-      fill: $color-black;
-    }
-  }
 }

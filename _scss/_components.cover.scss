@@ -3,21 +3,7 @@
 // ==========================================================================
 
 .c-cover {
-  display: block;
   margin-bottom: $spacing-unit-huge;
-
-  &:hover {
-    color: $color-black;
-
-    .c-cover__title {
-      color: $color-theme;
-    }
-
-    .c-cover__description:after {
-      padding-left: $spacing-unit;
-      color: $color-theme;
-    }
-  }
 }
 
 
@@ -82,20 +68,7 @@
 // ==========================================================================
 
 .c-cover__description {
-  padding-right: $spacing-unit-small;
-  &:after {
-    content: "\27F6";
-    transition-property: color, padding;
-    transition-timing-function: $global-transition-function;
-    transition-duration: $global-transition;
-
-    @include mq(mobile, desktop) {
-      color: $color-theme;
-    }
-  }
-
   @include mq(tablet) {
-
     @include inuit-font-size(18px, false);
   }
 }

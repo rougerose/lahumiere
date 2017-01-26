@@ -3,13 +3,11 @@
 // ==========================================================================
 
 .o-icon {
-  // width: 48px;
-  // height: 48px;
   vertical-align: middle;
   fill: currentColor;
   transition: fill 0.2s;
 }
-/*
+
 .o-icon--s {
   width: 24px;
   height: 24px;
@@ -20,21 +18,7 @@
   height: 32px;
 }
 
-  // search
-  .o-icon-search {}
-
-  // arrow-right
-  .o-icon-arrow-right {}
-
-  // prev
-  .o-icon-prev {}
-
-  // next
-  .o-icon-next {}
-
-  // facebook
-  .o-icon-facebook {}
-
-  // phone
-  .o-icon-phone {}
-*/
+.o-icon--l {
+  width: 48px;
+  height: 48px;
+}
