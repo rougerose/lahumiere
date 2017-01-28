@@ -18,9 +18,7 @@
 // IMG
 // ==========================================================================
 
-.c-cover__img {
-  border: 1px solid rgba($color-gray-lighter, 0.5);
-}
+.c-cover__img {}
 
 
 //
@@ -29,11 +27,25 @@
 
 .c-cover__body {
   line-height: 1.3;
+
   @include mq($until: mobileLs) {
     text-align: center !important;
   }
 }
 
+
+//
+// HEADER
+// ==========================================================================
+
+.c-cover__header,
+.c-cover__description {
+  padding-right: $spacing-unit-small;
+
+  @include mq($until: mobileLs) {
+    padding-left: $spacing-unit-small;
+  }
+}
 
 //
 // TITLE

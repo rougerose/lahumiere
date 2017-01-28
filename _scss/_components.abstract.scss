@@ -25,7 +25,6 @@
 // ==========================================================================
 
 .c-abstract__more {
-  padding-right: $spacing-unit-small;
 
   &:after {
     content: "\27F6";
@@ -38,8 +37,8 @@
     }
   }
 
-  @include mq($until: mobileLs) {
-    padding: 0 $spacing-unit-small;
-  }
+  // @include mq($until: mobileLs) {
+  //   padding: 0 $spacing-unit-small;
+  // }
 
 }
