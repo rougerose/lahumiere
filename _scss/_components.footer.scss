@@ -24,6 +24,14 @@
 
 
 //
+// HEADER
+// ==========================================================================
+
+.c-footer__header {
+
+}
+
+//
 // TITLE
 // ==========================================================================
 
@@ -39,5 +47,17 @@
 // ==========================================================================
 
 .c-footer__desc {
+  padding-right: $spacing-unit;
   @include inuit-font-size(15px, 1.4);
+
+  @include mq(mobile, mobileLs) {
+    padding-left: $spacing-unit;
+  }
 }
+
+  .c-footer__desc--about {
+    @include mq(mobileLs, desktop) {
+      width: 70%;
+      padding-right: 0;
+    }
+  }
