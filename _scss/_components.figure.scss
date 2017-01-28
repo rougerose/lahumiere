@@ -9,21 +9,43 @@
 // IMG
 // ==========================================================================
 
-.c-figure__img {}
+.c-figure__img {
+  border: 1px solid rgba($color-gray-lighter, 0.5);
+}
 
 //
 // CAPTION
 // ==========================================================================
 
 .c-figure__caption {
+  margin-left: 1px;
   padding-top: $spacing-unit-tiny;
   padding-left: $spacing-unit-tiny;
-  border-left: 1px solid $color-gray-light;
+  border-left: 1px solid rgba($color-gray-light, 0.5);
 }
 
-  // TITLE & DESC
-  .c-figure__title, .c-figure__desc {
-    margin: 0;
-    @include inuit-font-size(13px, 1.3);
-    color: $color-gray;
-  }
+
+//
+// TITLE
+// ==========================================================================
+
+.c-figure__title {
+  font-style: italic;
+  color: $color-gray;
+}
+
+
+//
+// DESC
+// ==========================================================================
+
+.c-figure__desc {
+  color: $color-gray-light;
+}
+
+// TITLE & DESC
+.c-figure__title, .c-figure__desc {
+  margin: 0;
+  font-family: $font-futuraLight;
+  @include inuit-font-size(15px, false);
+}

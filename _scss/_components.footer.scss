@@ -15,7 +15,6 @@
 
 .c-footer__item {
   margin-bottom: $spacing-unit-large;
-  color: $color-black;
 
   @include mq($until: mobileLs) {
     text-align: center;
@@ -48,7 +47,7 @@
 
 .c-footer__desc {
   padding-right: $spacing-unit;
-  @include inuit-font-size(15px, 1.4);
+  @include inuit-font-size(16px, 1.35);
 
   @include mq(mobile, mobileLs) {
     padding-left: $spacing-unit;
