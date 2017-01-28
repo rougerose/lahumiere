@@ -155,11 +155,14 @@
 // @import "components.legal";
 
 @import "components.abstract";
+@import "components.article";
+@import "components.card";
 @import "components.contact";
 @import "components.cover";
 @import "components.footer";
 @import "components.header";
 @import "components.legal";
+@import "components.logo";
 @import "components.meta";
 @import "components.nav-lang";
 @import "components.nav-site";
@@ -170,12 +173,12 @@
 
 // UTILITIES
 @import "utilities.animation";
-// @import "inuitcss/utilities/utilities.clearfix";
+@import "utilities.spacing";
 @import "inuitcss/utilities/utilities.widths";
 @import "utilities.widths";
+// @import "inuitcss/utilities/utilities.clearfix";
 // @import "inuitcss/utilities/utilities.headings";
 // @import "utilities.text";
-// @import "utilities.spacing";
 // @import "inuitcss/utilities/utilities.spacing";
 // @import "inuitcss/utilities/utilities.print";
 // @import "inuitcss/utilities/utilities.hide";

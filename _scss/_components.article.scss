@@ -6,6 +6,29 @@
 
 
 //
+// HEADER
+// ==========================================================================
+
+.c-article__header {
+  margin-bottom: $spacing-unit-large;
+  color: $color-black;
+
+  @include mq($until: mobileLs) {
+    text-align: center;
+  }
+}
+
+
+//
+// TITLE
+// ==========================================================================
+
+.c-article__title {
+  text-transform: uppercase;
+}
+
+
+//
 // CONTENT-TEXT
 // ==========================================================================
 
