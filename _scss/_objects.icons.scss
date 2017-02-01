@@ -8,6 +8,11 @@
   transition: fill 0.2s;
 }
 
+
+//
+// ICON SIZES
+// ==========================================================================
+
 .o-icon--s {
   width: 24px;
   height: 24px;
@@ -21,4 +26,54 @@
 .o-icon--l {
   width: 48px;
   height: 48px;
+}
+
+//
+// ARROW
+// ==========================================================================
+
+.o-icon-arrow {
+  display: block;
+  position: relative;
+  top: 50%;
+  height: 28px;
+  width: 28px;
+  margin-left: 2px;
+  transform: translateY(-50%);
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 35%;
+    width: 3px;
+    height: 50%;
+    backface-visibility: hidden;
+    background-color: currentColor;
+    content: "";
+    transition: transform $global-transition;
+  }
+
+  &:before {
+    transform-origin: 0 100%;
+    transform: translateX(-50%) rotate(30deg);
+  }
+
+  &:after {
+    top: 50%;
+    transform: translateX(-50%) rotate(-30deg);
+    transform-origin: 0 0;
+  }
+
+  &.is-disabled {
+    &:before,
+    &:after {
+      background-color: $color-is-disabled;
+    }
+  }
+}
+
+.o-icon-arrow--left {}
+
+.o-icon-arrow--right {
+  transform: rotate(180deg) translateY(50%);
 }

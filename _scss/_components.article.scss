@@ -17,6 +17,16 @@
   }
 }
 
+  .c-article__header--pagination {
+    position: relative;
+
+    .c-article__title {
+      @include mq(mobileLs) {
+        width: 60%;
+      }
+    }
+  }
+
 
 //
 // TITLE
@@ -24,6 +34,10 @@
 
 .c-article__title {
   text-transform: uppercase;
+
+  @include mq(mobileLs) {
+    margin-bottom: 0;
+  }
 }
 
 
