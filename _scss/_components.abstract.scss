@@ -4,6 +4,7 @@
 
 .c-abstract {
   display: block;
+  margin-bottom: $spacing-unit-huge;
 
   &:hover {
     color: $color-black;
@@ -19,6 +20,10 @@
   }
 }
 
+  // VARIANTE
+  .c-abstract--footer {
+    margin-bottom: 0;
+  }
 
 //
 // TITLE
@@ -26,7 +31,7 @@
 
 .c-abstract__title {
   @include inuit-font-size(22px, 1.2)
-  transition: color $global-transition $global-transition-function;
+  transition: color $global-transition;
 }
 
   // VARIANTES

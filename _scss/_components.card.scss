@@ -3,12 +3,8 @@
 // ==========================================================================
 
 .c-card {
-  display: block;
-  margin-bottom: $spacing-unit-huge;
-
   &:hover {
     .c-card__title {
-      color: $color-theme;
       border-color: $color-theme;
     }
   }
@@ -36,6 +32,7 @@
 .c-card__title {
   border-bottom: 1px solid $color-black;
   padding-bottom: $spacing-unit;
+  transition: color $global-transition, border-color $global-transition;
 
   @include mq($until: mobileLs) {
     text-align: center;
