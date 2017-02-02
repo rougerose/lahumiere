@@ -223,6 +223,8 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:1em;overf
 @media (min-width:40em){.c-nav-site__galerie{margin-left:0}
 .c-nav-utils__item:first-child{margin-right:1.25rem}
 }
+@media (min-width:27.4375em){.c-pagination--header{position:absolute;right:0;top:0}
+}
 .c-pagination--prevnext-bottom{margin-bottom:5rem;text-align:center}
 .c-pagination__item--prev{margin-right:.625rem}
 .c-pagination__item--prev a.c-pagination__link:hover .c-pagination__icon{transform:translateX(-10px)}
@@ -232,6 +234,7 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:1em;overf
 .c-pagination__link.is-disabled{color:#efefef;cursor:not-allowed}
 .c-pagination__icon{background-color:transparent;border-radius:50%;transition:transform .3s,background-color .3s}
 .c-pagination__text{font-size:18px;font-size:1.125rem}
+.c-pagination__text-hide{border:0!important;clip:rect(0 0 0 0)!important;height:1px!important;margin:-1px!important;overflow:hidden!important;padding:0!important;position:absolute!important;width:1px!important}
 .c-search__open{padding:.625rem;color:#7d7d7d}
 .c-search__open:hover{color:#cf7633}
 .c-search__icon{width:24px;height:24px}
@@ -295,8 +298,7 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:1em;overf
 .u-9\/10\@mobile{width:90%!important}
 .u-10\/10\@mobile{width:100%!important}
 }
-@media (min-width:27.4375em){.c-pagination--header{position:absolute;right:0;top:0}
-.u-1\/9\@mobileLs{width:11.11111%!important}
+@media (min-width:27.4375em){.u-1\/9\@mobileLs{width:11.11111%!important}
 .u-2\/9\@mobileLs{width:22.22222%!important}
 .u-3\/9\@mobileLs{width:33.33333%!important}
 .u-4\/9\@mobileLs{width:44.44444%!important}

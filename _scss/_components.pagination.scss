@@ -103,3 +103,12 @@
 .c-pagination__text {
   @include inuit-font-size(18px, false);
 }
+
+
+//
+// TEXT-HIDE
+// ==========================================================================
+
+.c-pagination__text-hide {
+  @include inuit-hidden-visually;
+}
