@@ -38,6 +38,18 @@
 // HEADER
 // ==========================================================================
 
+.c-cover__header {
+  margin-bottom: $spacing-unit;
+
+  &:after {
+    display: inline-block;
+    width: 3em;
+    height: 1px;
+    background-color: $color-theme;
+    content: "";
+  }
+}
+
 .c-cover__header,
 .c-cover__description {
   padding-right: $spacing-unit-small;
@@ -51,13 +63,9 @@
 // TITLE
 // ==========================================================================
 
-.c-cover__title {
-  @include inuit-font-size(22px, 1.2);
-  transition: color $global-transition $global-transition-function;
-
-  @include mq(desktop) {
-    @include inuit-font-size(24px, false);
-  }
+.c-cover__title,
+.c-cover__subtitle {
+  margin-bottom: $spacing-unit-small;
 }
 
 
@@ -65,14 +73,7 @@
 // SUBTITLE
 // ==========================================================================
 
-.c-cover__subtitle {
-  text-transform: uppercase;
-  @include inuit-font-size(15px, false);
-
-  @include mq(desktop) {
-    @include inuit-font-size(17px, false);
-  }
-}
+.c-cover__subtitle {}
 
 
 //

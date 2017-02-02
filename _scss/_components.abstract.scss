@@ -21,6 +21,35 @@
 
 
 //
+// TITLE
+// ==========================================================================
+
+.c-abstract__title {
+  @include inuit-font-size(22px, 1.2)
+  transition: color $global-transition $global-transition-function;
+}
+
+  // VARIANTES
+  .c-abstract__title--large {
+    @include inuit-font-size(26px, false);
+  }
+
+
+//
+// SUBTITLE
+// ==========================================================================
+
+.c-abstract__subtitle {
+  font-style: italic;
+  @include inuit-font-size(17px);
+}
+
+.c-abstract__subtitle--large {
+  @include inuit-font-size(19px);
+}
+
+
+//
 // MORE
 // ==========================================================================
 
@@ -36,9 +65,4 @@
       color: $color-theme;
     }
   }
-
-  // @include mq($until: mobileLs) {
-  //   padding: 0 $spacing-unit-small;
-  // }
-
 }

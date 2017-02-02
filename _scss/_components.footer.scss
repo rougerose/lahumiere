@@ -26,9 +26,7 @@
 // HEADER
 // ==========================================================================
 
-.c-footer__header {
-
-}
+.c-footer__header {}
 
 //
 // TITLE
@@ -36,7 +34,7 @@
 
 .c-footer__title {
   margin-bottom: $spacing-unit-small;
-  @include inuit-font-size(18px);
+  @include inuit-font-size(18px, 1.2);
   text-transform: uppercase;
 }
 
@@ -46,11 +44,12 @@
 // ==========================================================================
 
 .c-footer__desc {
-  padding-right: $spacing-unit;
+  padding-right: $spacing-unit-small;
   @include inuit-font-size(16px, 1.35);
 
   @include mq(mobile, mobileLs) {
-    padding-left: $spacing-unit;
+    padding-left: $spacing-unit-small / 2;
+    padding-right: $spacing-unit-small /2;
   }
 }
 

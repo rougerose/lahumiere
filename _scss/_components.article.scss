@@ -33,19 +33,30 @@
 // ==========================================================================
 
 .c-article__title {
-  text-transform: uppercase;
+  // text-transform: uppercase;
+  @include inuit-font-size(38px);
 
   @include mq(mobileLs) {
     margin-bottom: 0;
   }
 }
 
+  // VARIANTE
+  .c-article__title--upper {
+    @include inuit-font-size(30px);
+    text-transform: uppercase;
+  }
 
 //
 // TEXT
 // ==========================================================================
 
-.c-article__text {}
+.c-article__text {
+  @include mq($until: mobileLs) {
+    padding-left: $spacing-unit-small / 2;
+    padding-right: $spacing-unit-small / 2;
+  }
+}
 
 
 .c-article__chapo {
@@ -72,9 +83,9 @@
 // SUBTITLE
 // ==========================================================================
 
-.c-article__subtitle {
+.c-article__section-subtitle {
   margin-top: $spacing-unit;
-  @include inuit-font-size(22px);
+  @include inuit-font-size(20px);
   text-transform: uppercase;
 
   &:after {

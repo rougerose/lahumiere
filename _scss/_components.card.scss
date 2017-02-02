@@ -36,8 +36,6 @@
 .c-card__title {
   border-bottom: 1px solid $color-black;
   padding-bottom: $spacing-unit;
-  @include inuit-font-size(16px);
-  text-transform: uppercase;
 
   @include mq($until: mobileLs) {
     text-align: center;
