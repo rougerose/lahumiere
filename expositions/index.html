@@ -100,17 +100,19 @@ page-class: page--expositions
     </article>
   </div>
 
-  <nav class="c-pagination c-pagination--prevnext c-pagination--prevnext-bottom" role="navigation">
-    <ul class="c-pagination__list">
-      <li class="c-pagination__item c-pagination__item--prev">
-        <a href="#" aria-label="Année précédente" class="c-pagination__link"><span class="c-pagination__icon"><span class="o-icon o-icon-arrow o-icon-arrow--left"></span></span><span class="c-pagination__text"><span class="c-pagination__text-hide">Expositions </span>2016</span></a>
-      </li
-      ><li class="c-pagination__item c-pagination__item--next">
-        <span href="#" aria-label="Année suivante" class="c-pagination__link is-disabled"><span class="c-pagination__text is-disabled"><span class="c-pagination__text-hide">Expositions </span>2018</span><span class="c-pagination__icon"><span class="o-icon o-icon-arrow o-icon-arrow--right is-disabled"></span></span></span></li>
+  <nav class="c-nav c-pagination c-pagination--prevnext c-pagination--prevnext-bottom" role="navigation">
+    <ul class="c-nav__list">
+      <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
+        <a href="#" aria-label="Année précédente" class="c-pagination__link">
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronLeft"></use></svg>
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Expositions </span>2016</span>
+        </a>
+      </li><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
+        <span class="c-pagination__link is-disabled">
+          <span class="c-nav__text c-pagination__text is-disabled"><span class="c-pagination__text-hide">Expositions </span>2018</span>
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronRight"></use></svg>
+        </span>
+      </li>
     </ul>
   </nav>
 </article>
-<!-- <nav class="c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
-  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
-</nav> -->

@@ -10,7 +10,6 @@
 // ==========================================================================
 
 .c-article__header {
-  margin-bottom: $spacing-unit-huge;
   margin-top: $spacing-unit-large;
 
   @include mq($until: mobileLs) {
@@ -34,7 +33,6 @@
 // ==========================================================================
 
 .c-article__title {
-  // text-transform: uppercase;
   @include inuit-font-size(38px);
 
   @include mq(mobileLs) {
@@ -81,7 +79,15 @@
 
 
 //
-// SUBTITLE
+// SECTION
+// ==========================================================================
+
+.c-article__section {
+  margin-bottom: $spacing-unit-huge;
+}
+
+//
+// SECTION-SUBTITLE
 // ==========================================================================
 
 .c-article__section-subtitle {

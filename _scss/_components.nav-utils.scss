@@ -14,8 +14,6 @@
 // ==========================================================================
 
 .c-nav-utils__list {
-  margin: 0;
-  list-style: none;
   text-align: right;
 }
 
@@ -25,7 +23,6 @@
 // ==========================================================================
 
 .c-nav-utils__item {
-  display: inline-block;
 
   @include mq($until: tablet) {
     width: 50%;

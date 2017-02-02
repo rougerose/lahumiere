@@ -7,7 +7,6 @@
   margin-bottom: $spacing-unit-huge;
   @include inuit-font-size(15px);
   letter-spacing: $global-letter-spacing;
-  text-transform: uppercase;
 }
 
 
@@ -48,9 +47,7 @@
 // TEXT
 // ==========================================================================
 
-.c-breadcrumb__text {
-  vertical-align: middle;
-}
+.c-breadcrumb__text {}
 
 .c-breadcrumb__text--sep {
   color: $color-gray-light;

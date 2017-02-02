@@ -5,23 +5,26 @@ title: "Exprimer, vibrer, construire"
 page-class: page--expositions
 ---
 <article class="c-article">
-  <nav class="c-breadcrumb" role="navigation" aria-label="You are here:">
-    <a href="#" class="c-breadcrumb__item c-breadcrumb__link"><svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg> <span class="c-breadcrumb__text">Les artistes</span></a>
-    <span class="c-breadcrumb__item"><span class="c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
+  <nav class="c-nav c-breadcrumb" role="navigation" aria-label="You are here:">
+    <a href="{{ site.github.url }}/expositions/" class="c-breadcrumb__item c-breadcrumb__link">
+      <svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg>
+      <span class="c-nav__text c-breadcrumb__text">Expositions</span>
+    </a>
+    <span class="c-breadcrumb__item"><span class="c-nav__text c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
     <span class="c-breadcrumb__item is-current">
-      <span class="c-breadcrumb__text">{{page.title}}</span>
+      <span class="c-nav__text c-breadcrumb__text">{{page.title}}</span>
     </span>
   </nav>
-  <header class="c-page-header u-mb-l">
+  <header class="c-article__section c-page-header u-mb-l">
     <h1 class="c-article__title">{{page.title}}</h1>
     <p class="c-page-header__subtitle c-meta"><span class="c-meta__status">Exposition en cours</span> <span class="c-meta__date"><time class="dtstart" datetime="2016-12-15">15 décembre 2015</time> / <time class="dtend" datetime="2017-01-10">10 janvier 2017</time></span></p>
   </header>
-  <section class="u-mb-l">
+  <section class="c-article__section u-mb-l">
     <figure class="c-figure">
       <img src="{{ site.github.url }}/images/exprimer/exprimer_1er_1-2-900x594.jpg" alt="c-figure__img">
     </figure>
   </section>
-  <section class="c-article__content-text">
+  <section class="c-article__section c-article__content-text">
     <div class="o-layout">
       <div class="o-layout__item u-10/11@tablet u-push-1/11@tablet u-8/11@desktop">
         <div class="c-article__chapo">
@@ -36,7 +39,7 @@ page-class: page--expositions
       </div>
     </div>
   </section>
-  <section>
+  <section class="c-article__section">
     <div class="o-layout c-portfolio">
       <div class="c-portfolio__sizer u-1/2@tablet"></div>
       <figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
@@ -53,13 +56,20 @@ page-class: page--expositions
       </figure>
     </div>
   </section>
+
+  <nav class="c-nav c-pagination c-pagination--prevnext c-pagination--prevnext-bottom" role="navigation">
+    <ul class="c-nav__list">
+      <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
+        <a href="#" aria-label="Année précédente" class="c-pagination__link">
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronLeft"></use></svg>
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Exposition </span>précédente</span>
+        </a>
+      </li><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
+        <span class="c-pagination__link is-disabled">
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Exposition </span>suivante</span>
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronRight"></use></svg>
+        </span>
+      </li>
+    </ul>
+  </nav>
 </article>
-<nav class="c-pagination c-pagination--prevnext u-mb u-mt" role="navigation">
-  <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Exposition précédente"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text"><span class="c-pagination__text--hide">Exposition </span>précédente</span></span
-  ><a href="#" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Exposition suivante"><span class="c-pagination__text"><span class="c-pagination__text--hide">Exposition </span>suivante</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
-</nav>
-<nav class="c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
-  <a href="{{ site.github.url }}/expositions/" class="c-breadcrumb__item c-breadcrumb__link">Expositions</a>
-  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
-</nav>

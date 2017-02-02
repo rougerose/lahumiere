@@ -12,7 +12,7 @@ $logo-width-large: 80px;
 .c-nav-site {
   padding-top: $spacing-unit-large;
   padding-bottom: $spacing-unit-large;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 
   @include mq($until: tablet) {
     text-align: center;
@@ -82,8 +82,6 @@ $logo-width-large: 80px;
 // ==========================================================================
 
 .c-nav-site__list {
-  margin: 0;
-  list-style: none;
 
   @include mq($until: tablet) {
     &:after {
@@ -106,7 +104,7 @@ $logo-width-large: 80px;
 // ==========================================================================
 
 .c-nav-site__item {
-  display: inline-block;
+
   @include inuit-font-size(18px);
   letter-spacing: $global-letter-spacing;
 
