@@ -5,6 +5,7 @@
 .c-legal {
   margin: $spacing-unit 0;
   @include inuit-font-size(13px);
+  letter-spacing: $global-letter-spacing;
   text-transform: uppercase;
 
   @include mq(tablet) {

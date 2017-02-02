@@ -50,6 +50,7 @@ $logo-width-large: 80px;
     margin-bottom: $spacing-unit-small;
     font-family: $font-futuraLight;
     @include inuit-font-size(30px, false);
+    letter-spacing: $global-letter-spacing;
     line-height: 1;
 
     @include mq(desktop) {
@@ -107,6 +108,7 @@ $logo-width-large: 80px;
 .c-nav-site__item {
   display: inline-block;
   @include inuit-font-size(18px);
+  letter-spacing: $global-letter-spacing;
 
   @include mq(tablet, desktop) {
     @include inuit-font-size(16px, 1);
