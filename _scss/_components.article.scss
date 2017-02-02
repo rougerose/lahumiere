@@ -10,7 +10,8 @@
 // ==========================================================================
 
 .c-article__header {
-  margin-bottom: $spacing-unit-large;
+  margin-bottom: $spacing-unit-huge;
+  margin-top: $spacing-unit-large;
 
   @include mq($until: mobileLs) {
     text-align: center;

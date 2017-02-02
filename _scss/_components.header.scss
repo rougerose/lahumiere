@@ -6,6 +6,8 @@
   position: relative;
 
   @include mq(tablet) {
-    margin-bottom: $spacing-unit;
+    .page--home & {
+      margin-bottom: $spacing-unit-large;
+    }
   }
 }
