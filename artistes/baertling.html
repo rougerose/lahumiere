@@ -5,7 +5,14 @@ title: "Olle Baertling"
 page-class: page--artistes
 ---
 <article class="c-article">
-  <p class="c-meta"><a href="#">Les artistes</a></p>
+  <nav class="c-breadcrumb" role="navigation" aria-label="You are here:">
+    <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link"><svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg> <span class="c-breadcrumb__text">Les artistes</span></a>
+    <span class="c-breadcrumb__item"><span class="c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
+    <span class="c-breadcrumb__item is-current">
+      <span class="c-breadcrumb__text">{{page.title}}</span>
+    </span>
+  </nav>
+
   <header class="c-article__header">
     <h1 class="c-article__title">{{page.title}}</h1>
   </header>
@@ -62,12 +69,8 @@ page-class: page--artistes
     </div>
   </section>
 </article>
+
 <nav class="c-pagination c-pagination--prevnext u-mb u-mt" role="navigation">
   <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text"><span class="c-pagination__text--hide">Artiste </span>précédent</span></span
   ><a href="{{ site.github.url }}/artistes/coignet.html" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Artiste suivant"><span class="c-pagination__text"><span class="c-pagination__text--hide">Artiste </span>suivant</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
-</nav>
-<nav class="c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
-  <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link">Les artistes</a>
-  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
 </nav>

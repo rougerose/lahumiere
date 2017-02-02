@@ -132,7 +132,6 @@
 
 // COMPONENTS
 // @import "components.link";
-// @import "components.breadcrumb";
 // @import "components.buttons";
 // @import "components.page-header";
 // @import "components.more";
@@ -148,6 +147,7 @@
 
 @import "components.abstract";
 @import "components.article";
+@import "components.breadcrumb";
 @import "components.card";
 @import "components.contact";
 @import "components.cover";
@@ -166,8 +166,8 @@
 
 // UTILITIES
 @import "utilities.animation";
-@import "utilities.spacing";
-@import "utilities.text";
+// @import "utilities.spacing";
+// @import "utilities.text";
 @import "inuitcss/utilities/utilities.widths";
 @import "utilities.widths";
 
