@@ -16,8 +16,12 @@
   }
 
   .c-pagination--prevnext-bottom {
-    margin-bottom: $spacing-unit-huge;
+    margin-bottom: $spacing-unit;
     text-align: center;
+
+    @include mq(tablet) {
+      margin-bottom: $spacing-unit-huge;
+    }
   }
 
 

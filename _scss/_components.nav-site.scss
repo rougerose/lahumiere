@@ -12,9 +12,9 @@ $logo-width-large: 80px;
 .c-nav-site {
   padding-top: $spacing-unit-large;
   padding-bottom: $spacing-unit-large;
-  // text-transform: uppercase;
 
   @include mq($until: tablet) {
+    padding-bottom: $spacing-unit;
     text-align: center;
   }
 }
@@ -88,7 +88,7 @@ $logo-width-large: 80px;
       display: block;
       height: 1px;
       width: $logo-width-small;
-      margin: $spacing-unit auto;
+      margin: $spacing-unit-small auto;
       background-color: $color-black;
       content: "";
     }

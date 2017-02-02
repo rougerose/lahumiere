@@ -4,9 +4,14 @@
 
 
 .c-breadcrumb {
-  margin-bottom: $spacing-unit-huge;
-  @include inuit-font-size(15px);
+  margin-bottom: $spacing-unit;
+  @include inuit-font-size(12px);
   letter-spacing: $global-letter-spacing;
+
+  @include mq(tablet) {
+
+    @include inuit-font-size(14px);
+  }
 }
 
 
