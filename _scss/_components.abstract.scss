@@ -1,0 +1,69 @@
+// ==========================================================================
+// ABSTRACT
+// ==========================================================================
+
+.c-abstract {
+  display: block;
+  margin-bottom: $spacing-unit-huge;
+
+  &:hover {
+    color: $color-black;
+
+    .c-abstract__title {
+      color: $color-theme;
+    }
+
+    .c-abstract__more {
+
+      .o-icon {
+        transform: translateX($spacing-unit);
+        fill: $color-theme;
+      }
+    }
+  }
+}
+
+  // VARIANTE
+  .c-abstract--footer {
+    margin-bottom: 0;
+  }
+
+//
+// TITLE
+// ==========================================================================
+
+.c-abstract__title {
+  @include inuit-font-size(22px, 1.2)
+  transition: color $global-transition;
+}
+
+  // VARIANTES
+  .c-abstract__title--large {
+    @include inuit-font-size(26px, false);
+  }
+
+
+//
+// SUBTITLE
+// ==========================================================================
+
+.c-abstract__subtitle {
+  font-style: italic;
+  @include inuit-font-size(17px);
+}
+
+.c-abstract__subtitle--large {
+  @include inuit-font-size(19px);
+}
+
+
+//
+// MORE
+// ==========================================================================
+
+.c-abstract__more {
+
+  .o-icon {
+    transition: fill $global-transition, transform $global-transition;
+  }
+}

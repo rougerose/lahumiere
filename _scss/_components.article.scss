@@ -6,44 +6,85 @@
 
 
 //
-// CONTENT-TEXT
+// HEADER
 // ==========================================================================
 
-.c-article__content-text {}
+.c-article__header {
+  margin-top: $spacing-unit-large;
 
-
-.c-article__chapo {
-  @include inuit-font-size(20px);
-  color: $color-black;
-}
-
-.c-article__text {
-  @include inuit-font-size(18px);
-
-  // TODO: règles provisoires
-  h3 {
-    margin: $spacing-unit-large 0 $spacing-unit-small;
-    @include inuit-font-size(20px);
+  @include mq($until: mobileLs) {
+    text-align: center;
   }
 
-  ul {
-    list-style-type: square;
+  @include mq($until: tablet) {
+    margin-top: 0;
+  }
+}
+
+  .c-article__header--pagination {
+    position: relative;
+
+    .c-article__title {
+      @include mq(mobileLs) {
+        width: 60%;
+      }
+    }
+  }
+
+
+//
+// TITLE
+// ==========================================================================
+
+.c-article__title {
+  @include inuit-font-size(33px, 1.1);
+
+
+  @include mq(mobileLs) {
+
+  }
+}
+
+  // VARIANTE
+  .c-article__title--upper {
+    @include inuit-font-size(28px);
+    text-transform: uppercase;
+  }
+
+//
+// TEXT
+// ==========================================================================
+
+.c-article__text {
+  @include mq($until: mobileLs) {
+    padding-left: $spacing-unit-small / 2;
+    padding-right: $spacing-unit-small / 2;
   }
 }
 
 
 //
-// SUBTITLE
+// SECTION
 // ==========================================================================
 
-.c-article__subtitle {
+.c-article__section {
+  margin-bottom: $spacing-unit-large;
+}
+
+//
+// SECTION-SUBTITLE
+// ==========================================================================
+
+.c-article__section-subtitle {
   margin-top: $spacing-unit;
-  @include inuit-font-size(22px);
+  @include inuit-font-size(18px, 1.3);
+  letter-spacing: $global-letter-spacing;
+  text-transform: uppercase;
 
   &:after {
     display: block;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: currentColor;
     content: "";
   }

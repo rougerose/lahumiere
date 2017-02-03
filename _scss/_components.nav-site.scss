@@ -1,0 +1,140 @@
+// ==========================================================================
+// NAV-SITE
+// ==========================================================================
+
+//
+// Variables
+//
+$logo-width-small: 50px;
+$logo-width-large: 80px;
+
+
+.c-nav-site {
+  padding-top: $spacing-unit-large;
+  padding-bottom: $spacing-unit-large;
+
+  @include mq($until: tablet) {
+    padding-bottom: $spacing-unit;
+    text-align: center;
+  }
+}
+
+
+//
+// HOME
+// ==========================================================================
+
+.c-nav-site__home {
+  display: block;
+}
+
+  //
+  // Variante
+  //
+  .c-nav-site__home--logo {
+    line-height: 0;
+
+    @include mq($until: tablet) {
+      margin-bottom: $spacing-unit;
+    }
+
+    @include mq(tablet, desktop) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8%;
+    }
+  }
+
+  .c-nav-site__home--title {
+    margin-bottom: $spacing-unit-small;
+    font-family: $font-futuraLight;
+    @include inuit-font-size(30px, false);
+    letter-spacing: $global-letter-spacing;
+    line-height: 1;
+
+    @include mq(desktop) {
+      @include inuit-font-size(48px, false);
+    }
+  }
+
+
+//
+// LOGO
+// ==========================================================================
+
+.c-nav-site__logo {
+  height: auto;
+  fill: $color-theme;
+
+  @include mq($until: tablet) {
+    width: $logo-width-small;
+  }
+
+  @include mq(desktop) {
+    width: $logo-width-large;
+  }
+}
+
+
+//
+// LIST
+// ==========================================================================
+
+.c-nav-site__list {
+
+  @include mq($until: tablet) {
+    &:after {
+      display: block;
+      height: 1px;
+      width: $logo-width-small;
+      margin: $spacing-unit-small auto;
+      background-color: $color-black;
+      content: "";
+    }
+  }
+
+  @include mq(tablet) {
+    border-bottom: 1px solid $color-black;
+  }
+}
+
+//
+// ITEM
+// ==========================================================================
+
+.c-nav-site__item {
+
+  @include inuit-font-size(18px);
+  letter-spacing: $global-letter-spacing;
+
+  @include mq(tablet, desktop) {
+    @include inuit-font-size(16px, 1);
+  }
+}
+
+//
+// LINK
+// ==========================================================================
+
+.c-nav-site__link {
+  display: block;
+  margin: $spacing-unit-tiny $spacing-unit-tiny / 2;
+  padding: 0 $spacing-unit-tiny / 2;
+}
+
+
+//
+// PAGES
+// ==========================================================================
+
+// @each $page in galerie, artistes, expositions, publications {
+//   .page--#{$page} .c-nav-site__#{$page} {
+//   }
+// }
+
+.c-nav-site__galerie {
+  @include mq(tablet) {
+    margin-left: 0;
+  }
+}

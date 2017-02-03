@@ -2,194 +2,106 @@
 // COVER
 // ==========================================================================
 
-.c-cover {
-  margin-bottom: $spacing-unit-large;
-  display: block;
+.c-cover {}
 
-  &:hover {
-    .c-cover__img {
-      transform: scale(1.04);
-    }
 
-    .c-cover__more {
-      opacity: 1;
+//
+// FIGURE
+// ==========================================================================
 
-      &:before {
-        animation: openEffect 0.6s ease-out 75ms;
-      }
-    }
+.c-cover__figure {}
+
+
+//
+// IMG
+// ==========================================================================
+
+.c-cover__img {}
+
+
+//
+// BODY
+// ==========================================================================
+
+.c-cover__body {
+  line-height: 1.4;
+
+  @include mq($until: mobileLs) {
+    text-align: center !important;
   }
 }
 
 
-  //
-  // MEDIA
-  // ==========================================================================
+//
+// HEADER
+// ==========================================================================
 
-  .c-cover__media {
-    margin-bottom: $spacing-unit * -1;
+.c-cover__header {
+  margin-bottom: $spacing-unit;
+
+  &:after {
+    display: inline-block;
+    width: 3em;
+    height: 1px;
+    background-color: $color-theme;
+    content: "";
+  }
+}
+
+.c-cover__header,
+.c-cover__description {
+  padding-right: $spacing-unit-small;
+
+  @include mq($until: mobileLs) {
+    padding-left: $spacing-unit-small;
+  }
+}
+
+//
+// TITLE
+// ==========================================================================
+
+.c-cover__title,
+.c-cover__subtitle {
+  margin-bottom: $spacing-unit-small;
+}
+
+
+//
+// SUBTITLE
+// ==========================================================================
+
+.c-cover__subtitle {}
+
+
+//
+// DESCRIPTION
+// ==========================================================================
+
+.c-cover__description {
+  @include inuit-font-size(17px, false);
+  
+  @include mq(tablet) {
+    @include inuit-font-size(18px, false);
+  }
+}
+
+
+//
+// META
+// ==========================================================================
+
+.c-cover__meta {
+  @include inuit-font-size(14px);
+
+  @include mq($until: mobileLs) {
+    padding: $spacing-unit-tiny 0 $spacing-unit-small;
+    text-align: center;
   }
 
-
-  //
-  // IMG
-  // ==========================================================================
-
-  .c-cover__img {
-    transition: transform 0.3s;
-  }
-
-
-  //
-  // BODY
-  // ==========================================================================
-
-  .c-cover__body {
-    position: relative;
-    padding: ($spacing-unit + $spacing-unit/2) $spacing-unit-small $spacing-unit-small;
-
-    &:before {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background-color: $color-theme;
-      mix-blend-mode: multiply;
-    }
-  }
-
-
-  //
-  // HEADER
-  // ==========================================================================
-
-  .c-cover__header {
+  @include mq(mobileLs) {
+    border-bottom: 1px solid $color-black;
     margin-bottom: $spacing-unit;
+    padding-bottom: $spacing-unit-tiny;
   }
-
-    // TITLE
-    .c-cover__title {
-      @include inuit-font-size(22px);
-    }
-
-    // SUBTITLE
-    .c-cover__subtitle {
-      margin-top: $spacing-unit-tiny;
-      font-family: $font-futuraLight;
-      @include inuit-font-size(18px);
-    }
-
-
-  //
-  // DESC
-  // ==========================================================================
-
-  .c-cover__desc {
-    p {
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-
-  //
-  // META
-  // ==========================================================================
-
-  .c-cover__meta {
-    margin-top: $spacing-unit;
-    @include inuit-font-size(14px, 1.4);
-    text-align: right;
-  }
-
-
-  //
-  // MORE
-  // ==========================================================================
-
-  .c-cover__more {
-    @extend %moreContainer;
-    color: $color-theme;
-    opacity: 0;
-    transition: opacity 0.15s;
-
-    &:before {
-      @extend %moreBefore;
-    }
-  }
-
-
-  //
-  // Variantes
-  // ==========================================================================
-
-  @include mq(desktop) {
-    // --large
-    .c-cover--large {
-
-      & .c-cover__body {
-        display: inline-block;
-        width: (3 / 9) * 100%;
-        padding: $spacing-unit-small;
-        vertical-align: middle;
-
-        &:before {
-          width: ((6/9)*100) / (5/9) * 1%;
-        }
-      }
-
-      & .c-cover__media {
-        display: inline-block;
-        margin-bottom: 0;
-        width: (6 / 9 ) * 100%;
-        vertical-align: middle;
-      }
-    }
-
-    // --even
-    .c-cover--even {
-
-      & .c-cover__body {
-
-        &:before {
-          left: auto;
-          right: 0;
-        }
-      }
-    }
-
-    // --odd
-    .c-cover--odd {
-      direction: rtl;
-
-      & .c-cover__body {
-        direction: ltr;
-      }
-    }
-  }
-
-  //
-  // BLEND MODE FALLBACK
-  // ==========================================================================
-
-  //
-  // .no-backgroundblendmode via modernizr.js
-  //
-
-  .no-backgroundblendmode {
-    .c-cover__body {
-      padding-top: $spacing-unit-small;
-      background-color: $color-theme;
-      &:before {
-        display: none;
-      }
-    }
-
-    .c-cover__media {
-      margin-bottom: 0;
-    }
-  }
+}

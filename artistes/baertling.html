@@ -4,15 +4,26 @@ site-title: "Galerie Lahumiere"
 title: "Olle Baertling"
 page-class: page--artistes
 ---
-<article class="c-article u-mt">
-  <header class="c-page-header u-mb-l">
-    <h2 class="c-page-header__title u-upper">{{page.title}}</h2>
+<article class="c-article">
+  <nav class="c-nav c-breadcrumb" role="navigation" aria-label="You are here:">
+    <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link">
+      <svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg>
+      <span class="c-nav__text c-breadcrumb__text">Les artistes</span>
+    </a>
+    <span class="c-breadcrumb__item"><span class="c-nav__text c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
+    <span class="c-breadcrumb__item is-current">
+      <span class="c-nav__text c-breadcrumb__text">{{page.title}}</span>
+    </span>
+  </nav>
+
+  <header class="c-article__section c-article__header">
+    <h1 class="c-article__title">{{page.title}}</h1>
   </header>
-  <section class="c-article__content-text">
-    <h2 class="c-article__subtitle u-upper">À propos de l'artiste</h2>
+  <section class="c-article__section c-article__text c-text">
+    <h2 class="c-article__section-subtitle">À propos de l'artiste</h2>
     <div class="o-layout">
-      <div class="o-layout__item u-10/11@tablet u-push-1/11@tablet u-8/11@desktop">
-        <div class="c-article__text">
+      <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+        <div class="c-text__main">
           <p>D’abord expressionniste, puis portraitiste, il est en 1948 élève d’André Lhote, puis de Fernand Léger. Son admiration pour Auguste Herbin, lui fait trouver son chemin dans l’abstraction. Très tôt il participe au salon des Réalités Nouvelles. La peinture de Baertling, où les grandes surfaces noires, certains verts et rouge dominent souvent, atteint un degré extrême de simplification et de force.</p>
           <p>Né en 1911 à Halmstad, Suède. Décédé en 1981</p>
           <h3>Sélection des principales expositions</h3>
@@ -45,28 +56,35 @@ page-class: page--artistes
     </div>
   </section>
 
-  <section class="c-article__portfolio">
-    <h2 class="c-article__subtitle u-upper">Œuvres</h2>
+  <section class="c-article__section c-article__portfolio">
+    <h2 class="c-article__section-subtitle">Œuvres</h2>
     <div class="o-layout c-portfolio">
-      <div class="c-portfolio__sizer u-1/2@tablet"></div>
-      <figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
+      <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
+      <figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
         <img src="{{ site.github.url }}/images/Baertling_Force_noir_blanc_bleu_1953.jpg" alt="c-figure__img">
       </figure
-      ><figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
+      ><figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
         <img src="{{ site.github.url }}/images/Baertling_Geram.jpg" alt="" class="c-figure__img">
       </figure
-      ><figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
+      ><figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
           <img src="{{ site.github.url }}/images/Baertling_Xolgia_1956.jpg" alt="" class="c-figure__img">
       </figure>
     </div>
   </section>
+
+  <nav class="c-nav c-pagination c-pagination--prevnext c-pagination--prevnext-bottom" role="navigation">
+    <ul class="c-nav__list">
+      <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
+        <span aria-label="Année précédente" class="c-pagination__link is-disabled">
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronLeft"></use></svg>
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Artiste </span>précédent</span>
+        </span>
+      </li><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
+        <a href="{{ site.github.url }}/artistes/coignet.html" class="c-pagination__link">
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Artiste </span>suivant</span>
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronRight"></use></svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </article>
-<nav class="c-pagination c-pagination--prevnext u-mb u-mt" role="navigation">
-  <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Artiste précédent"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text"><span class="c-pagination__text--hide">Artiste </span>précédent</span></span
-  ><a href="{{ site.github.url }}/artistes/coignet.html" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Artiste suivant"><span class="c-pagination__text"><span class="c-pagination__text--hide">Artiste </span>suivant</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
-</nav>
-<nav class="c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
-  <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link">Les artistes</a>
-  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
-</nav>

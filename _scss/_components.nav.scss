@@ -1,40 +1,39 @@
 // ==========================================================================
-// CARD
+// NAV
 // ==========================================================================
 
-.c-card {
-  &:hover {
-    .c-card__title {
-      border-color: $color-theme;
-    }
-  }
+// Styles communs à tous les éléments de navigation
+
+
+.c-nav {
+  text-transform: uppercase;
 }
 
 
 //
-// MEDIA
+// LIST
 // ==========================================================================
 
-.c-card__media {}
+.c-nav__list {
+  margin: 0;
+  list-style: none;
+}
 
 
 //
-// BODY
+// LIST-ITEM
 // ==========================================================================
 
-.c-card__body {}
+.c-nav__list-item {
+  display: inline-block;
+}
 
 
 //
-// TITLE
+// TEXT
 // ==========================================================================
 
-.c-card__title {
-  border-bottom: 1px solid $color-black;
-  padding-bottom: $spacing-unit;
-  transition: color $global-transition, border-color $global-transition;
-
-  @include mq($until: mobileLs) {
-    text-align: center;
-  }
+.c-nav__text {
+  display: inline-block;
+  vertical-align: middle;
 }

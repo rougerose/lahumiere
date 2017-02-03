@@ -5,22 +5,67 @@
 .c-meta {
   text-transform: uppercase;
   font-style: italic;
-  color: $color-black;
+
+  @include mq($until: mobileLs) {
+    &:before {
+      display: block;
+      margin: 0 auto $spacing-unit-small;
+      content: "";
+      width: 50px;
+      height: 1px;
+      background-color: $color-black;
+    }
+
+    > .c-meta__item {
+      &:first-child:after {
+        content: "\A";
+        white-space: pre;
+      }
+    }
+  }
 }
 
 
+  // VARIANTE
+  .c-meta--article {
+    @include mq($until: mobileLs) {
+      &:before {
+        margin-bottom: $spacing-unit;
+        background-color: $color-theme;
+      }
+    }
+
+    @include mq(mobileLs) {
+      padding-top: $spacing-unit;
+    }
+  }
+
 //
-// STATUS
+// ITEM
 // ==========================================================================
 
-.c-meta__status {
-  font-family: $font-futuraHeavy;
-  text-transform: uppercase;
+.c-meta__item {
+  vertical-align: middle;
+
+  @include mq(mobileLs) {
+    line-height: 1;
+  }
 }
 
 
-//
-// DATE
-// ==========================================================================
+  // VARIANTES
+  .c-meta__item--status {
+    font-family: $font-futuraHeavy;
+  }
 
-.c-meta__date {}
+  .c-meta__item--date {}
+
+  .c-meta__item--icon {
+    @include mq($until: mobileLs) {
+      @include inuit-hidden-visually;
+    }
+
+    @include mq(mobileLs) {
+      fill: $color-theme;
+    }
+  }

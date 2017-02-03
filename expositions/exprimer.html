@@ -4,23 +4,35 @@ site-title: "Galerie Lahumiere"
 title: "Exprimer, vibrer, construire"
 page-class: page--expositions
 ---
-<article class="c-article u-mt">
-  <header class="c-page-header u-mb-l">
-    <h2 class="c-page-header__title u-upper">{{page.title}}</h2>
-    <p class="c-page-header__subtitle c-meta"><span class="c-meta__status">Exposition en cours</span> <span class="c-meta__date"><time class="dtstart" datetime="2016-12-15">15 décembre 2015</time> / <time class="dtend" datetime="2017-01-10">10 janvier 2017</time></span></p>
+<article class="c-article">
+  <nav class="c-nav c-breadcrumb" role="navigation" aria-label="You are here:">
+    <a href="{{ site.github.url }}/expositions/" class="c-breadcrumb__item c-breadcrumb__link">
+      <svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg>
+      <span class="c-nav__text c-breadcrumb__text">Expositions</span>
+    </a>
+    <span class="c-breadcrumb__item c-breadcrumb__item--hide"><span class="c-nav__text c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
+    <span class="c-breadcrumb__item c-breadcrumb__item--hide is-current">
+      <span class="c-nav__text c-breadcrumb__text">{{page.title}}</span>
+    </span>
+  </nav>
+  <header class="c-article__section c-article__header">
+    <h1 class="c-article__title">{{page.title}}</h1>
+    <p class="c-meta c-meta--article">
+      <span class="c-meta__item c-meta__item--status">Exposition en cours</span> <span class="c-meta__item c-meta__item--date"><time class="dtstart" datetime="2016-12-15">15 décembre 2015</time> / <time class="dtend" datetime="2017-01-10">10 janvier 2017</time></span>
+    </p>
   </header>
-  <section class="u-mb-l">
+  <section class="c-article__section">
     <figure class="c-figure">
       <img src="{{ site.github.url }}/images/exprimer/exprimer_1er_1-2-900x594.jpg" alt="c-figure__img">
     </figure>
   </section>
-  <section class="c-article__content-text">
+  <section class="c-article__section c-article__text c-text">
     <div class="o-layout">
-      <div class="o-layout__item u-10/11@tablet u-push-1/11@tablet u-8/11@desktop">
-        <div class="c-article__chapo">
+      <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+        <div class="c-text__chapo">
           <p>Pour cette exposition Céline Berchiche, historienne de l’art, nous a consacré un texte. Elle donnera aussi une conférence dans le cadre de la manifestation un dimanche à la galerie, organisée par le Comité Professionnel des Galeries d’Art le 27 novembre.</p>
         </div>
-        <div class="c-article__text">
+        <div class="c-text__main">
           <p>Il pourrait paraître surprenant pour une galerie dévouée à l’art construit et à l’art concret, d’inaugurer son exposition de rentrée par un titre contenant trois verbes dont le premier «&nbsp;exprimer&nbsp;» est, on peut le dire, peu utilisé quand il s’agit de parler d’art abstrait géométrique. Pourtant on ne saurait gommer l’aspect expressif voulu par les artistes eux-mêmes, «&nbsp;la création est l’expression de toutes choses qui sont en nous&nbsp;» écrivit Auguste Herbin.</p>
           <p>Après la seconde guerre mondiale en France, l’histoire de l’art abstrait s’est écrite principalement dans la presse à grands coups de diatribes pour ou contre, de manifestes, de tribunes partisanes. Au cours des années cinquante l’art abstrait se scinda en deux camps&nbsp;: les lyriques et les géométriques, ces derniers étant qualifiés de froids par opposition aux autres, un qualificatif dépréciatif pour une répartition commode aisément assimilée avec un vocabulaire explicite réservé à chacun&nbsp;; les lyriques expriment, les géométriques construisent. Désormais, avec le recul historique et critique qui est le nôtre, assorti de la multitude de moyens mis à notre disposition, notamment les archives et écrits de ces artistes, nous sommes en mesure d’appréhender différemment ce mouvement. À l’aune de cela il ne paraît plus  scandaleux de dire d’un artiste ayant choisi comme langage la géométrie qu’il exprime son individualité ou encore qu’il veuille que son art vibre à l’unisson du rythme de l’univers. Cela n’est plus scandaleux puisque c’est ce qu’en disent ces artistes. L’aspect cosmique de Victor Vasarely, naturaliste de Jean Leppien, vibratoire d’Olle Baertling, florentin d’Alberto Magnelli, ou baroque de Jean Dewasne ne sauraient être ignorés. On peut être un constructeur, un pur géométrique et vouloir exprimer, cela n’est pas antinomique, il suffit pour le vérifier de regarder les œuvres et de lire ces artistes. Cette exposition qui présente des œuvres de neuf artistes d’expressions et de générations différentes nous le montre, elle offre un vaste panorama d’une histoire de l’art abstrait géométrique. Néoplasticisme, très bien représenté dans l’exposition par les figures incontournables de Felix Del marle et de Jean Gorin, mais aussi Art Concret, Abstraction Création, Salon des Réalités Nouvelles, Atelier d’Art Abstrait créé par Jean Dewasne et Edgard Pillet, Groupe Espace, Groupe Mesure avec Georges Folmer, les neuf artistes exposés ont tous participé activement à chacun ou à plusieurs de ces mouvements unis par une même volonté&nbsp;; celle de concourir, par leurs œuvres, à une modernité en construction. Olle Baertling dans le nouveau centre de Stockholm, Edgard Pillet à Tours et dans de nombreux bâtiments publics en France et en Afrique, Vasarely à Montparnasse, Tel Aviv ou Caracas, Jean Dewasne à La Défense, Hanovre, Copenhague ou Rome, Emile Gilioli à Grenoble, sur le plateau des Glières etc., ces artistes ont inscrit leurs œuvres dans l’espace et dans des territoires, dépassant le fait individuel pour un mieux-être collectif.</p>
           <p>Cette exposition éclaire une période historique qui peut nous permettre de nous interroger sur ce qu’il reste de cet esprit car, derrière elle, c’est l’idée de synthèse des arts qui transparaît. Outre les peintures et reliefs exposés, les différentes intégrations architecturales réalisées durant leurs carrières par ces artistes, témoignent de leur engagement dans le réel et la société. On peut tout à la fois exprimer, vibrer et construire. Il est heureux qu’autour de cela la Galerie Lahumière les ait rassemblés.</p>
@@ -29,30 +41,37 @@ page-class: page--expositions
       </div>
     </div>
   </section>
-  <section>
+  <section class="c-article__section">
     <div class="o-layout c-portfolio">
-      <div class="c-portfolio__sizer u-1/2@tablet"></div>
-      <figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
+      <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
+      <figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
         <img src="{{ site.github.url }}/images/exprimer/exprimer_1er_1-2.jpg" alt="c-figure__img">
       </figure
-      ><figure class="o-layout__item u-1/2@tablet c-portfolio__item c-figure">
+      ><figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
         <img src="{{ site.github.url }}/images/exprimer/exprimer_1er_2-2.jpg" alt="" class="c-figure__img">
       </figure
-      ><figure class="o-layout__item u-1/2@tablet c-portofolio__item c-figure">
+      ><figure class="o-layout__item u-5/10@mobileLs c-portofolio__item c-figure">
           <img src="{{ site.github.url }}/images/exprimer/vibrer_rdc1-2.jpg" alt="" class="c-figure__img">
       </figure
-      ><figure class="o-layout__item u-1/2@tablet c-portofolio__item c-figure">
+      ><figure class="o-layout__item u-5/10@mobileLs c-portofolio__item c-figure">
           <img src="{{ site.github.url }}/images/exprimer/vibrer_rdc2-2.jpg" alt="" class="c-figure__img">
       </figure>
     </div>
   </section>
+
+  <nav class="c-nav c-pagination c-pagination--prevnext c-pagination--prevnext-bottom" role="navigation">
+    <ul class="c-nav__list">
+      <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
+        <a href="#" aria-label="Année précédente" class="c-pagination__link">
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronLeft"></use></svg>
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Exposition </span>précédente</span>
+        </a>
+      </li><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
+        <span class="c-pagination__link is-disabled">
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Exposition </span>suivante</span>
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronRight"></use></svg>
+        </span>
+      </li>
+    </ul>
+  </nav>
 </article>
-<nav class="c-pagination c-pagination--prevnext u-mb u-mt" role="navigation">
-  <span class="c-pagination__item c-pagination__item--prev is-disabled" aria-label="Exposition précédente"><svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowPrev"></use></svg> <span class="c-pagination__text"><span class="c-pagination__text--hide">Exposition </span>précédente</span></span
-  ><a href="#" class="c-pagination__item c-pagination__item--next c-pagination__link c-pagination__link--prevnext" aria-label="Exposition suivante"><span class="c-pagination__text"><span class="c-pagination__text--hide">Exposition </span>suivante</span> <svg class="o-icon o-icon--m"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowNext"></use></svg></a>
-</nav>
-<nav class="c-breadcrumb u-upper" role="navigation">
-  <a href="{{ site.github.url }}/" class="c-breadcrumb__item c-breadcrumb__link">Accueil</a>
-  <a href="{{ site.github.url }}/expositions/" class="c-breadcrumb__item c-breadcrumb__link">Expositions</a>
-  <span class="c-breadcrumb__item is-current">{{page.title}}</span>
-</nav>

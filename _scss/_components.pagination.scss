@@ -2,43 +2,78 @@
 // PAGINATION
 // ==========================================================================
 
-.c-pagination { text-align: center; }
 
-.c-pagination--prevnext {
-  @include inuit-clearfix();
-
-  > .c-pagination__item { @include inuit-font-size(14px); }
-
-  > .c-pagination__item--prev { float: left; }
-
-  > .c-pagination__item--next { float: right; }
-}
+.c-pagination {}
 
 
-//
-// LIST
-// ==========================================================================
+  // VARIANTES
+  .c-pagination--header {
+    @include mq(mobileLs) {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
 
-.c-pagination__list { margin-left: 0; }
+  .c-pagination--prevnext-bottom {
+    margin-bottom: $spacing-unit;
+    text-align: center;
+
+    @include mq(tablet) {
+      margin-bottom: $spacing-unit-huge;
+    }
+  }
+
 
 //
 // ITEM
 // ==========================================================================
 
-.c-pagination__item {
-  display: inline-block;
-  vertical-align: middle;
-  color: $color-black;
-  line-height: normal;
-  text-transform: uppercase;
+.c-pagination__item {}
 
-  &.is-disabled {
-    cursor: not-allowed;
-    color: $color-gray-light;
+  // VARIANTES
+  .c-pagination__item--prev {
+    margin-right: $spacing-unit-small;
+
+    a.c-pagination__link {
+
+      &:hover {
+
+        .c-pagination__icon {
+          transform: translateX(-10px);
+        }
+      }
+    }
   }
 
-  &.is-current { box-shadow: inset 0 -4px 0 $color-theme; }
-}
+  .c-pagination__item--next {
+    margin-left: $spacing-unit-small;
+
+    a.c-pagination__link {
+
+      &:hover {
+
+        .c-pagination__icon {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+
+  .c-pagination__item--prev,
+  .c-pagination__item--next {
+
+    a.c-pagination__link {
+
+      &:hover {
+
+        .c-pagination__icon {
+          color: $color-black;
+          background-color: $color-theme;
+        }
+      }
+    }
+  }
 
 
 //
@@ -46,46 +81,40 @@
 // ==========================================================================
 
 .c-pagination__link {
-  transition: box-shadow 0.3s;
+  display: block;
 
-  &:hover { box-shadow: inset 0 -4px 0 $color-theme; }
-
-  .c-pagination__item & { display: block; }
+  &.is-disabled {
+    color: $color-is-disabled;
+    cursor: not-allowed;
+  }
 }
 
-  .c-pagination__link--prevnext {
 
-    &:hover {
-      box-shadow: none;
+//
+// ICON
+// ==========================================================================
 
-      .o-icon {
-        fill: $color-theme;
-      }
-    }
-
-    &.is-disabled:hover { color: $color-gray-light; }
-  }
-
+.c-pagination__icon {
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform $global-transition, background-color $global-transition;
+}
 
 //
 // TEXT
 // ==========================================================================
 
-.c-pagination__text { vertical-align: middle; }
+.c-pagination__text {
+  @include inuit-font-size(18px, false);
+}
 
-  .c-pagination__text--block {
-    display: block;
-    padding: $spacing-unit-tiny ($spacing-unit-tiny / 1.5);
+
+//
+// TEXT-HIDE
+// ==========================================================================
+
+.c-pagination__text-hide {
+  @include mq($until: mobileLs) {
+    @include inuit-hidden-visually;
   }
-
-  .c-pagination__text--hide {
-    @include mq($until: tablet) {
-      @include inuit-hidden-visually;
-    }
-  }
-
-
-.page--expositions {
-  .c-pagination__link--012017,
-  .c-pagination__link--022017 { box-shadow: inset 0 -4px 0 $color-theme; }
 }

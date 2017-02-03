@@ -49,7 +49,7 @@ gulp.task('sass', function () {
   var minify = map(function (buff, filename) {
     return new CleanCSS({
       // specify your clean-css options here
-      keepBreaks: true
+      keepBreaks: false
     }).minify(buff.toString()).styles;
   });
 
@@ -62,12 +62,6 @@ gulp.task('sass', function () {
     .on('error', sass.logError)
     .pipe(prefix(['last 2 versions']))
     .pipe(minify)
-    // .pipe(cleanCSS())
-    // .pipe(cleanCSS({debug: true}, function(details) {
-    //   console.log(details.name + ': ' + details.stats.originalSize);
-    //   console.log(details.name + ': ' + details.stats.minifiedSize);
-    //   console.log(details.name + ': ' + Math.ceil(details.stats.efficiency * 100) + '%');
-    // }))
     .pipe(gulp.dest('_site/css'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('css'));
@@ -85,7 +79,7 @@ gulp.task('watch', function () {
 
 gulp.task('js', function (cb) {
   pump([
-    gulp.src(["_js/jquery-1.12.4.min.js", "_js/imagesloaded.min.js", "_js/modernizr.js", "_js/masonry.js", "_js/main.js"])
+    gulp.src(["_js/jquery-1.12.4.min.js", "_js/imagesloaded.min.js", "_js/masonry.js", "_js/main.js"])
       .pipe(concat("lahumiere.js")),
     uglify(),
     gulp.dest("js")

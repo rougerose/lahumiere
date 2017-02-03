@@ -3,25 +3,31 @@
 // ==========================================================================
 
 .c-footer {
-  border-top: 1px solid $color-black;
-  border-bottom: 3px solid $color-black;
-  padding-top: $spacing-unit;
+  border: 1px solid $color-black;
+  border-width: 1px 0;
+  margin-top: $spacing-unit-large;
+  padding-top: $spacing-unit-large;
 }
 
 
 //
-// LINK
+// ITEM
 // ==========================================================================
 
-.c-footer__link {
-  color: $color-base;
-  transition: color $global-transition $global-transition-function;
+.c-footer__item {
+  margin-bottom: $spacing-unit-large;
 
-  &:hover {
-    color: $color-link;
+  @include mq($until: mobileLs) {
+    text-align: center;
   }
 }
 
+
+//
+// HEADER
+// ==========================================================================
+
+.c-footer__header {}
 
 //
 // TITLE
@@ -29,6 +35,8 @@
 
 .c-footer__title {
   margin-bottom: $spacing-unit-small;
+  @include inuit-font-size(19px, 1.2);
+  text-transform: uppercase;
 }
 
 
@@ -37,5 +45,18 @@
 // ==========================================================================
 
 .c-footer__desc {
-  @include inuit-font-size(15px, 1.4);
+  padding-right: $spacing-unit-small;
+  @include inuit-font-size(16px, 1.35);
+
+  @include mq(mobile, mobileLs) {
+    padding-left: $spacing-unit-small / 2;
+    padding-right: $spacing-unit-small /2;
+  }
 }
+
+  .c-footer__desc--about {
+    @include mq(mobileLs, desktop) {
+      width: 70%;
+      padding-right: 0;
+    }
+  }

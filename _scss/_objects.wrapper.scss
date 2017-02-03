@@ -7,7 +7,7 @@
 //
 
 .o-wrapper {
-  @include mq($until: tablet) {
+  @include mq($until: mobileLs) {
     padding-left: $spacing-unit-small;
     padding-right: $spacing-unit-small;
   }
