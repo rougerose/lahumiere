@@ -44,7 +44,13 @@
 // ITEM
 // ==========================================================================
 
-.c-meta__item {}
+.c-meta__item {
+  vertical-align: middle;
+
+  @include mq(mobileLs) {
+    line-height: 1;
+  }
+}
 
 
   // VARIANTES
@@ -52,28 +58,14 @@
     font-family: $font-futuraHeavy;
   }
 
-  .c-meta__item--date {
+  .c-meta__item--date {}
+
+  .c-meta__item--icon {
+    @include mq($until: mobileLs) {
+      @include inuit-hidden-visually;
+    }
+
     @include mq(mobileLs) {
-      &:before {
-        content: "\2192";
-        color: $color-theme;
-        margin-right: $spacing-unit-tiny;
-        margin-left: $spacing-unit-tiny;
-      }
+      fill: $color-theme;
     }
   }
-
-//
-// STATUS
-// ==========================================================================
-
-.c-meta__status {}
-
-
-//
-// DATE
-// ==========================================================================
-
-.c-meta__date {
-
-}

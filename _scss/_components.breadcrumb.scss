@@ -9,7 +9,6 @@
   letter-spacing: $global-letter-spacing;
 
   @include mq(tablet) {
-
     @include inuit-font-size(14px);
   }
 }
