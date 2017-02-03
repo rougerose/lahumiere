@@ -49,7 +49,7 @@ gulp.task('sass', function () {
   var minify = map(function (buff, filename) {
     return new CleanCSS({
       // specify your clean-css options here
-      keepBreaks: true
+      keepBreaks: false
     }).minify(buff.toString()).styles;
   });
 
