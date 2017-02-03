@@ -95,22 +95,6 @@
   @include mq($until: mobileLs) {
     padding: $spacing-unit-tiny 0 $spacing-unit-small;
     text-align: center;
-
-    &:before {
-      display: block;
-      margin: 0 auto $spacing-unit-small;
-      content: "";
-      width: 50px;
-      height: 1px;
-      background-color: $color-black;
-    }
-
-    > .c-meta__item {
-      &:first-child:after {
-        content: "\A";
-        white-space: pre;
-      }
-    }
   }
 
   @include mq(mobileLs) {

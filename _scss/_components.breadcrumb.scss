@@ -25,6 +25,13 @@
   }
 }
 
+  // VARIANTE
+  .c-breadcrumb__item--hide {
+    @include mq($until: mobileLs) {
+      @include inuit-hidden-visually;
+    }
+  }
+
 
 //
 // LINK

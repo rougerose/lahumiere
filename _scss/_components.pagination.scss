@@ -114,5 +114,7 @@
 // ==========================================================================
 
 .c-pagination__text-hide {
-  @include inuit-hidden-visually;
+  @include mq($until: mobileLs) {
+    @include inuit-hidden-visually;
+  }
 }
