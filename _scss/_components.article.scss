@@ -63,24 +63,24 @@
 }
 
 
-.c-article__chapo {
-  @include inuit-font-size(20px);
-}
-
-.c-article__text {
-  @include inuit-font-size(18px, 1.35);
-
-  // TODO: règles provisoires
-  h3 {
-    margin: $spacing-unit-large 0 $spacing-unit-small;
-    font-family: $font-futuraHeavy;
-    @include inuit-font-size(20px, false);
-  }
-
-  ul {
-    list-style-type: square;
-  }
-}
+// .c-article__chapo {
+//   @include inuit-font-size(20px);
+// }
+//
+// .c-article__text {
+//   @include inuit-font-size(18px, 1.35);
+//
+//   // TODO: règles provisoires
+//   h3 {
+//     margin: $spacing-unit-large 0 $spacing-unit-small;
+//     font-family: $font-futuraHeavy;
+//     @include inuit-font-size(20px, false);
+//   }
+//
+//   ul {
+//     list-style-type: square;
+//   }
+// }
 
 
 //

@@ -24,7 +24,7 @@
 // ==========================================================================
 
 .c-cover__body {
-  line-height: 1.3;
+  line-height: 1.4;
 
   @include mq($until: mobileLs) {
     text-align: center !important;
@@ -79,6 +79,8 @@
 // ==========================================================================
 
 .c-cover__description {
+  @include inuit-font-size(17px, false);
+  
   @include mq(tablet) {
     @include inuit-font-size(18px, false);
   }
