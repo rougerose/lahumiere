@@ -10,35 +10,35 @@
   //
   // Variantes
   //
-  .u-animation--fadeIn {
-    animation-name: fadeIn;
-  }
+  // .u-animation--fadeIn {
+  //   animation-name: fadeIn;
+  // }
 
   .u-animation--fadeInUp {
     animation-name: fadeInUp;
   }
 
-  .u-animation--fadeInRight {
-    animation-name: fadeInRight;
-  }
-
-  .u-animation--fadeInLeft {
-    animation-name: fadeInLeft;
-  }
+  // .u-animation--fadeInRight {
+  //   animation-name: fadeInRight;
+  // }
+  //
+  // .u-animation--fadeInLeft {
+  //   animation-name: fadeInLeft;
+  // }
 
 //
 // KEYFRAMES
 // ==========================================================================
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//   }
+//
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
 @keyframes fadeInUp {
   0% {
@@ -52,41 +52,41 @@
   }
 }
 
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
-  }
+// @keyframes fadeInRight {
+//   0% {
+//     opacity: 0;
+//     transform: translate3d(100%, 0, 0);
+//   }
+//
+//   100% {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
 
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
+// @keyframes fadeInLeft {
+//   0% {
+//     opacity: 0;
+//     transform: translate3d(-100%, 0, 0);
+//   }
+//
+//   100% {
+//     opacity: 1;
+//     transform: none;
+//   }
+// }
 
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes openEffect {
-  0% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.5;
-    box-shadow: 0 0 0 2px rgba($color-gray-light, 0.1), 0 0 5px 5px $color-gray-light, 0 0 0 5px rgba($color-gray-light, 0.5);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5);
-    box-shadow: 0 0 0 2px rgba($color-gray-light, 0.1), 0 0 5px 5px $color-gray-light, 0 0 0 5px rgba($color-gray-light, 0.5);
-  }
-}
+// @keyframes openEffect {
+//   0% {
+//     opacity: 0.3;
+//   }
+//   40% {
+//     opacity: 0.5;
+//     box-shadow: 0 0 0 2px rgba($color-gray-light, 0.1), 0 0 5px 5px $color-gray-light, 0 0 0 5px rgba($color-gray-light, 0.5);
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: scale(1.5);
+//     box-shadow: 0 0 0 2px rgba($color-gray-light, 0.1), 0 0 5px 5px $color-gray-light, 0 0 0 5px rgba($color-gray-light, 0.5);
+//   }
+// }
