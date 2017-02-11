@@ -128,10 +128,11 @@ $logo-width-large: 80px;
 // PAGES
 // ==========================================================================
 
-// @each $page in galerie, artistes, expositions, publications {
-//   .page--#{$page} .c-nav-site__#{$page} {
-//   }
-// }
+@each $page in galerie, artistes, expositions, publications {
+  .page--#{$page} .c-nav-site__#{$page} {
+    color: $color-theme;
+  }
+}
 
 .c-nav-site__galerie {
   @include mq(tablet) {
