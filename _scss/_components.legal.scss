@@ -3,7 +3,9 @@
 // ==========================================================================
 
 .c-legal {
-  margin: $spacing-unit 0;
+  border-top: 1px solid $color-black;
+  margin-bottom: $spacing-unit;
+  padding-top: $spacing-unit;
   @include inuit-font-size(13px);
   letter-spacing: $global-letter-spacing;
   text-transform: uppercase;
