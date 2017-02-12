@@ -27,8 +27,10 @@
     "gulp-uglify": "^2.0.0",
     "imagesloaded": "^4.1.1",
     "inuitcss": "^6.0.0-beta.4",
+    "jquery": "^1.12.1",
     "masonry-layout": "^4.1.1",
     "pump": "^1.0.1",
+    "slick-carousel": "^1.6.0",
     "vinyl-map": "^1.0.2"
   }
 }

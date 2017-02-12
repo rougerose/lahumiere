@@ -73,15 +73,33 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['_scss/*.scss', 'css/*.scss'], ['sass']);
-  gulp.watch(['_js/*.js'], ['js']);
+  gulp.watch(['_js/*.js'], ['jsMain']);
   gulp.watch(['**/*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
 });
 
-gulp.task('js', function (cb) {
+gulp.task('jsLib', function(cb) {
   pump([
-    gulp.src(["_js/jquery-1.12.4.min.js", "_js/imagesloaded.min.js", "_js/masonry.js", "_js/main.js"])
-      .pipe(concat("lahumiere.js")),
+    gulp.src(["node_modules/jquery/dist/jquery.js", "node_modules/imagesloaded.pkgd.js", "node_modules/masonry-layout/masonry.pkgd.js"])
+      .pipe(concat("lib.min.js")),
     uglify(),
+    gulp.dest("js")
+  ], cb);
+});
+
+gulp.task('jsLibExtra', function(cb) {
+  pump([
+    gulp.src(["node_modules/slick-carousel/slick/slick.js"])
+      .pipe(concat("lib-extra.min.js")),
+    uglify(),
+    gulp.dest("js")
+  ], cb);
+});
+
+gulp.task('jsMain', function(cb) {
+  pump([
+    gulp.src(["_js/main.js", "_js/extra.js"]),
+    uglify(),
+    rename({suffix: ".min"}),
     gulp.dest("js")
   ], cb);
 });
@@ -91,3 +109,6 @@ gulp.task('js', function (cb) {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+gulp.task('lib', ['jsLib', 'jsLibExtra']);
+gulp.task('js', ['jsMain']);
