@@ -33,7 +33,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jsMain', 'jekyll-build'], function() {
   browserSync.init({
     server: {
       baseDir: '_site'
@@ -79,27 +79,19 @@ gulp.task('watch', function () {
 
 gulp.task('jsLib', function(cb) {
   pump([
-    gulp.src(["node_modules/jquery/dist/jquery.js", "node_modules/imagesloaded.pkgd.js", "node_modules/masonry-layout/masonry.pkgd.js"])
+    gulp.src(["node_modules/jquery/dist/jquery.min.js", "node_modules/imagesloaded/imagesloaded.pkgd.min.js", "node_modules/masonry-layout/dist/masonry.pkgd.min.js"])
       .pipe(concat("lib.min.js")),
-    uglify(),
-    gulp.dest("js")
-  ], cb);
-});
-
-gulp.task('jsLibExtra', function(cb) {
-  pump([
-    gulp.src(["node_modules/slick-carousel/slick/slick.js"])
-      .pipe(concat("lib-extra.min.js")),
-    uglify(),
+    // uglify(),
     gulp.dest("js")
   ], cb);
 });
 
 gulp.task('jsMain', function(cb) {
   pump([
-    gulp.src(["_js/main.js", "_js/extra.js"]),
-    uglify(),
-    rename({suffix: ".min"}),
+    gulp.src(["_js/main.js"])
+      .pipe(uglify())
+      .pipe(rename({suffix: ".min"}))
+      .pipe(browserSync.reload({stream: true})),
     gulp.dest("js")
   ], cb);
 });
