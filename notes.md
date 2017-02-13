@@ -10,3 +10,6 @@
 
 # bugs IE 11
 - svg : référence (use xlink) nécessite un polyfill https://github.com/jonathantneal/svg4everybody
+
+# bugs IE 9
+- flexbox et c-section
