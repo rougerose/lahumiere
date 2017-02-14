@@ -44,7 +44,7 @@
 // PAGES
 // ==========================================================================
 
-@each $page in galerie-about, artistes, expositions, publications {
+@each $page in galerie-about, galerie-plaisirs {
   .page--#{$page} .c-nav-secondary__#{$page} {
     color: $color-theme;
   }

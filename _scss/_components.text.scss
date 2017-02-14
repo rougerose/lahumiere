@@ -10,6 +10,7 @@
 // ==========================================================================
 
 .c-text__chapo {
+  margin-bottom: $spacing-unit;
   @include inuit-font-size(20px, false);
   line-height: 1.4;
 
@@ -17,6 +18,7 @@
     @include inuit-font-size(22px, false);
   }
 }
+
 
 .c-text__main {
   @include inuit-font-size(17px, false);

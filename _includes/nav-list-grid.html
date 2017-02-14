@@ -1,0 +1,11 @@
+<nav class="c-nav c-nav-sort" role="navigation">
+  <h1 class="c-nav-sort__title">Afficher</h1>
+  <a href="{{ site.github.url }}/galerie/plaisirs.html" class="c-nav-sort__link {% if page.name == "plaisirs.html" %} is-current {% endif %}">
+    <svg class="o-icon o-icon--bottom o-icon--s"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#list"></use></svg>
+    <span>Liste</span>
+  </a>
+  <a href="{{ site.github.url }}/galerie/plaisirs-images.html" class="c-nav-sort__link {% if page.name == "plaisirs-images.html" %} is-current {% endif %}">
+    <svg class="o-icon o-icon--bottom o-icon--s"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#grid"></use></svg>
+    <span>Images</span>
+  </a>
+</nav>
