@@ -1,0 +1,43 @@
+---
+layout: default
+site-title: "Galerie Lahumiere"
+title: "André Masson"
+page-class: page--galerie page--galerie-plaisirs
+category: galerie
+---
+{% include nav-secondary-galerie.html %}
+
+<article class="c-article">
+
+  <header class="c-article__section c-article__header">
+    <h1 class="c-article__title">{{page.title}}</h1>
+  </header>
+
+  <section class="c-article__section c-article__portfolio">
+    <div class="o-layout c-portfolio">
+      <figure class="o-layout__item u-5/10@tablet c-portfolio__item c-figure">
+        <img src="{{ site.github.url }}/images/galerie/plaisirs/Masson.jpg" class="c-figure__img">
+        <figcaption class="c-figure__caption">
+          <h3 class="c-figure__title">Titre de l'estampe</h3>
+          <p class="c-figure__desc">Description, technique, etc.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <nav class="c-nav c-pagination c-pagination--prevnext c-pagination--prevnext-bottom" role="navigation">
+    <ul class="c-nav__list">
+      <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
+        <a href="{{ site.github.url }}/galerie/plaisirs-lefoll.html" aria-label="Année précédente" class="c-pagination__link">
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronLeft"></use></svg>
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Artiste </span>précédent</span>
+        </a>
+      </li><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
+        <span class="c-pagination__link is-disabled">
+          <span class="c-nav__text c-pagination__text"><span class="c-pagination__text-hide">Artiste </span>suivant</span>
+          <svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#chevronRight"></use></svg>
+        </span>
+      </li>
+    </ul>
+  </nav>
+</article>
