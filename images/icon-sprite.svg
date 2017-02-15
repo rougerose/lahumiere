@@ -9,4 +9,6 @@
   <symbol id="arrowRightShort" viewBox="0 0 48 48"><path d="M31.3 27L26 36h6l7-12-7-12h-6l5.3 9H13v6h18.3z" fill-rule="evenodd"/></symbol>
   <symbol id="chevronLeft" viewBox="0 0 48 48"><path d="M30 40h-6l-7-16 7-16h6l-7 16" fill-rule="evenodd"/></symbol>
   <symbol id="chevronRight" viewBox="0 0 48 48"><path d="M19 8h6l7 16-7 16h-6l7-16" fill-rule="evenodd"/></symbol>
+  <symbol id="grid" viewBox="0 0 48 48"><path d="M8 8h8v8H8V8zm0 12h8v8H8v-8zm12 0h8v8h-8v-8zm12 0h8v8h-8v-8zm0 12h8v8h-8v-8zm-12 0h8v8h-8v-8zM8 32h8v8H8v-8zM20 8h8v8h-8V8zm12 0h8v8h-8V8z"/></symbol>
+  <symbol id="list" viewBox="0 0 48 48"><path d="M18 8h22v8H18V8zM8 8h6v8H8V8zm0 12h6v8H8v-8zm0 12h6v8H8v-8zm10-12h22v8H18v-8zm0 12h22v8H18v-8z"/></symbol>
 </svg>

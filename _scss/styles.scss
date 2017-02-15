@@ -132,6 +132,7 @@
 // COMPONENTS
 @import "components.abstract";
 @import "components.article";
+@import "components.artists";
 @import "components.breadcrumb";
 @import "components.card";
 @import "components.contact";
@@ -140,14 +141,18 @@
 @import "components.footer";
 @import "components.header";
 @import "components.legal";
+@import "components.message";
 @import "components.meta";
 @import "components.nav";
 @import "components.nav-lang";
+@import "components.nav-secondary";
+@import "components.nav-sort";
 @import "components.nav-site";
 @import "components.nav-utils";
 @import "components.pagination";
 @import "components.portfolio";
 @import "components.search";
+@import "components.section";
 @import "components.text";
 
 

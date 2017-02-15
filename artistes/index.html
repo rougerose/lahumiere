@@ -3,91 +3,28 @@ layout: default
 site-title: "Galerie Lahumiere"
 title: "Les artistes"
 page-class: page--artistes
+category: artistes
 ---
 <article class="c-article">
   <header class="c-article__section c-article__header">
     <h1 class="c-article__title c-article__title--upper">{{page.title}}</h1>
   </header>
-  <ul class="o-layout o-layout--bottom">
-    <li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="{{ site.github.url }}/artistes/baertling.html" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/Baertling_Force_noir_blanc_bleu_1953-rec.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Olle Baertling</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="#" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/Bauduin_12_vl-2.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Bauduin</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="#" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/bezie_427.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Charles Bézie</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="#" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/bodde_166-2.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Nicholas Bodde</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="#" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/brandt_11.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Andreas Brandt</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="#" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/cahn_78.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Marcelle Cahn</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="{{ site.github.url }}/artistes/coignet.html" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/coignet_41.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Jean-Gabriel Coignet</h2>
-        </div>
-      </a>
-    </li
-    ><li class="o-layout__item u-5/10@mobileLs u-3/9@desktop">
-      <a href="#" class="c-card c-abstract">
-        <figure class="c-card__media c-figure">
-          <img src="{{ site.github.url }}/images/d_Imbleval_Signe.jpg" alt="" class="c-figure__img">
-        </figure>
-        <div class="c-card__body">
-          <h2 class="c-card__title c-abstract__title">Jean D'Imbleval</h2>
-        </div>
-      </a>
-    </li>
-  </ul>
+  <!-- TODO: c-artist au lieu de c-card ? -->
+
+  <section class="c-article__section c-article__text c-text">
+    {% include nav-list-grid-artistes.html %}
+    <div class="c-text__main">
+      <ul class="c-artists c-artists--list">
+       <li><a href="{{ site.github.url }}/artistes/baertling.html">Olle Baertling</a></li>
+       <li><a href="">Bauduin</a></li>
+       <li><a href="">Charles Bézie</a></li>
+       <li><a href="">Nicholas Bodde</a></li>
+       <li><a href="">Andreas Brandt</a></li>
+       <li><a href="">Marcelle Cahn</a></li>
+       <li><a href="{{ site.github.url }}/artistes/coignet.html">Jean-Gabriel Coignet</a></li>
+       <li><a href="">Jean D'Imbleval</a></li>
+     </ul>
+    </div>
+  </section>
+
 </article>

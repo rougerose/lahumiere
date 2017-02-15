@@ -1,0 +1,51 @@
+// ==========================================================================
+// NAV-SECONDARY
+// ==========================================================================
+
+.c-nav-secondary {
+  margin-bottom: $spacing-unit-large;
+
+  @include mq($until: tablet) {
+    text-align: center;
+  }
+}
+
+
+//
+// ITEM
+// ==========================================================================
+
+.c-nav-secondary__item {
+  @include mq($until: tablet) {
+    display: block;
+  }
+}
+
+
+//
+// LINK
+// ==========================================================================
+
+.c-nav-secondary__link {
+  display: block;
+  padding-bottom: $spacing-unit-tiny;
+  color: $color-gray-light;
+  @include inuit-font-size(15px);
+
+  @include mq(tablet) {
+    padding-bottom: 0;
+    padding-right: $spacing-unit-small;
+    @include inuit-font-size(16px);
+  }
+}
+
+
+//
+// PAGES
+// ==========================================================================
+
+@each $page in galerie-about, galerie-plaisirs {
+  .page--#{$page} .c-nav-secondary__#{$page} {
+    color: $color-theme;
+  }
+}

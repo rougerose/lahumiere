@@ -20,4 +20,7 @@
 // ITEM
 // ==========================================================================
 
-.c-portfolio__item {}
+.c-portfolio__item {
+  margin-bottom: 0;
+  padding-bottom: $spacing-unit-large;
+}

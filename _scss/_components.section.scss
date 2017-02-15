@@ -1,0 +1,50 @@
+// ==========================================================================
+// SECTION
+// ==========================================================================
+
+// TODO: prévoir des styles alternatifs pour IE: 9 ?
+
+.c-section {
+  margin-bottom: $spacing-unit-large;
+  @include mq(mobileLs) {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: $spacing-unit-small;
+  }
+}
+
+
+//
+// HEADER
+// ==========================================================================
+
+.c-section__header {
+
+  @include mq(mobileLs) {
+    flex: 1 0 25%;
+  }
+
+  @include mq(tablet) {
+    flex: 1 0 20%;
+  }
+}
+
+
+.c-section__title {
+  margin-bottom: $spacing-unit-tiny;
+  font-family: $font-futuraHeavy;
+  @include inuit-font-size(17px,1.4);
+  text-transform: uppercase;
+}
+
+
+.c-section__body {
+
+  @include mq(mobileLs) {
+    flex: 1 0 75%;
+  }
+
+  @include mq(tablet) {
+    flex: 1 0 80%;
+  }
+}

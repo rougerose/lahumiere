@@ -1,22 +1,15 @@
 // ==========================================================================
-// CONTACT
+// MESSAGE
 // ==========================================================================
 
-.c-contact {
-  margin: 0 0 $spacing-unit;
-  list-style: none;
-}
+.c-message {}
 
 
 //
-// ITEM
+// STATUS
 // ==========================================================================
 
-.c-contact__item {
-  display: inline-block;
-}
-
-.c-contact__open {
-  display: block;
-  margin-right: $spacing-unit-small;
+.c-message--status-open {
+  color: $color-green;
+  font-family: $font-futuraHeavy;
 }

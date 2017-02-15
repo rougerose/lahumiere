@@ -3,18 +3,9 @@ layout: default
 site-title: "Galerie Lahumiere"
 title: "Olle Baertling"
 page-class: page--artistes
+category: artistes
 ---
 <article class="c-article">
-  <nav class="c-nav c-breadcrumb" role="navigation" aria-label="You are here:">
-    <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link">
-      <svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg>
-      <span class="c-nav__text c-breadcrumb__text">Les artistes</span>
-    </a>
-    <span class="c-breadcrumb__item"><span class="c-nav__text c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
-    <span class="c-breadcrumb__item is-current">
-      <span class="c-nav__text c-breadcrumb__text">{{page.title}}</span>
-    </span>
-  </nav>
 
   <header class="c-article__section c-article__header">
     <h1 class="c-article__title">{{page.title}}</h1>
@@ -26,8 +17,8 @@ page-class: page--artistes
         <div class="c-text__main">
           <p>D’abord expressionniste, puis portraitiste, il est en 1948 élève d’André Lhote, puis de Fernand Léger. Son admiration pour Auguste Herbin, lui fait trouver son chemin dans l’abstraction. Très tôt il participe au salon des Réalités Nouvelles. La peinture de Baertling, où les grandes surfaces noires, certains verts et rouge dominent souvent, atteint un degré extrême de simplification et de force.</p>
           <p>Né en 1911 à Halmstad, Suède. Décédé en 1981</p>
-          <h3>Sélection des principales expositions</h3>
-          <ul>
+          <h3 class="c-text__subtitle">Sélection des principales expositions</h3>
+          <ul class="c-text__list">
             <li>1956 Kunstakademien, Copenhagen, Danemark avec Jacobsen et Mortensen</li>
             <li>1966 Allen Memorial Art Museum, Ohio, USA</li>
             <li>1977 Kunsthalle Düsseldorf, Allemagne</li>
@@ -37,8 +28,8 @@ page-class: page--artistes
             <li>2003 Retrospective Mjellby Konstmuseum, Halmstat, Suède</li>
           </ul>
 
-          <h3>Œuvres dans les musées et collection publiques</h3>
-          <ul>
+          <h3 class="c-text__subtitle">Œuvres dans les musées et collection publiques</h3>
+          <ul class="c-text__list">
             <li>Centre National d’Art et de Culture Georges Pompidou, Paris</li>
             <li>Musée National d’Art Moderne, Paris</li>
             <li>Museum of Modern Art, New York</li>
@@ -58,7 +49,7 @@ page-class: page--artistes
 
   <section class="c-article__section c-article__portfolio">
     <h2 class="c-article__section-subtitle">Œuvres</h2>
-    <div class="o-layout c-portfolio">
+    <div class="o-layout c-portfolio js-portfolio">
       <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
       <figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
         <img src="{{ site.github.url }}/images/Baertling_Force_noir_blanc_bleu_1953.jpg" alt="c-figure__img">

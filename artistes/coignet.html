@@ -3,18 +3,10 @@ layout: default
 site-title: "Galerie Lahumiere"
 title: "Jean-Gabriel Coignet"
 page-class: page--artistes
+category: artistes
 ---
 <article class="c-article">
-  <nav class="c-nav c-breadcrumb" role="navigation" aria-label="You are here:">
-    <a href="{{ site.github.url }}/artistes/" class="c-breadcrumb__item c-breadcrumb__link">
-      <svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg>
-      <span class="c-nav__text c-breadcrumb__text">Les artistes</span>
-    </a>
-    <span class="c-breadcrumb__item"><span class="c-nav__text c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
-    <span class="c-breadcrumb__item is-current">
-      <span class="c-nav__text c-breadcrumb__text">{{page.title}}</span>
-    </span>
-  </nav>
+  
   <header class="c-article__section c-article__header">
     <h1 class="c-article__title">{{page.title}}</h1>
   </header>
@@ -23,11 +15,11 @@ page-class: page--artistes
     <div class="o-layout">
       <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
         <div class="c-text__main">
-          <p>« Les formes de Coignet apparaissent parfois données pour elles-mêmes, dans leur stupéfiante et solitaire présence… A moins qu’il ne faille lire l’œuvre dans son ensemble à l’aune d’un refus motivé des formes successives que revêt la sculpture depuis 30 ans : refus de l’objet banal comme sculpture, métaphore duchampienne devenue l’indigeste lieu commun que l’on sait, refus de la sculpture organique de l’arte povera, refus de la sculpture se posturant par l’intermédiaire du corps, corps se donnant de manière théâtrale ou sous la forme classique de la statuaire »</p>
+          <p>«&nbsp;Les formes de Coignet apparaissent parfois données pour elles-mêmes, dans leur stupéfiante et solitaire présence… A moins qu’il ne faille lire l’œuvre dans son ensemble à l’aune d’un refus motivé des formes successives que revêt la sculpture depuis 30 ans : refus de l’objet banal comme sculpture, métaphore duchampienne devenue l’indigeste lieu commun que l’on sait, refus de la sculpture organique de l’arte povera, refus de la sculpture se posturant par l’intermédiaire du corps, corps se donnant de manière théâtrale ou sous la forme classique de la statuaire&nbsp;»</p>
           <p>Extraits d’un texte de Paul Ardenne</p>
           <p>Né en 1951 à Aurec</p>
-          <h3>Sélection des principales expositions</h3>
-          <ul>
+          <h3 class="c-text__subtitle">Sélection des principales expositions</h3>
+          <ul class="c-text__list">
             <li>2007 2 au Carré d’Art de Nîmes </li>
             <li>2008 + de réalité, Ecole régionale des Beaux Arts de Nantes </li>
             <li>2009 La Verrière Hermès, Bruxelles, Belgique </li>
@@ -35,8 +27,8 @@ page-class: page--artistes
             <li>2010 Messmer Foundation, Riegel, Allemagne</li>
           </ul>
 
-          <h3>Œuvres dans les musées et collection publiques</h3>
-          <ul>
+          <h3 class="c-text__subtitle">Œuvres dans les musées et collection publiques</h3>
+          <ul class="c-text__list">
             <li>Fond National d’Art Contemporain, Puteaux</li>
             <li>Domaine de Chamarande, Chamarande, Essonne </li>
             <li>Grenoble, Musée de Peinture et de Sculpture </li>
@@ -50,10 +42,10 @@ page-class: page--artistes
 
   <section class="c-article__section c-article__portfolio">
     <h2 class="c-article__section-subtitle">Œuvres</h2>
-    <div class="o-layout c-portfolio">
+    <div class="o-layout c-portfolio js-portfolio">
       <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
       <figure class="o-layout__item u-5/10@mobileLs c-portfolio__item c-figure">
-        <img src="{{ site.github.url }}/images/coignet_41.jpg" alt="c-figure__img">
+        <img src="{{ site.github.url }}/images/coignet_41.jpg" class="c-figure__img">
         <figcaption class="c-figure__caption">
           <h3 class="c-figure__title">« Katarzyna série V 2/3, 2011 »</h3>
           <p class="c-figure__desc">Résine epoxy, peinture polyuréthane 85 x 61 x 81 cm</p>

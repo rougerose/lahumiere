@@ -33,7 +33,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'js', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jsMain', 'jekyll-build'], function() {
   browserSync.init({
     server: {
       baseDir: '_site'
@@ -73,15 +73,25 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['_scss/*.scss', 'css/*.scss'], ['sass']);
-  gulp.watch(['_js/*.js'], ['js']);
+  gulp.watch(['_js/*.js'], ['jsMain']);
   gulp.watch(['**/*.html', '_layouts/*.html', '_includes/*.html'], ['jekyll-rebuild']);
 });
 
-gulp.task('js', function (cb) {
+gulp.task('jsLib', function(cb) {
   pump([
-    gulp.src(["_js/jquery-1.12.4.min.js", "_js/imagesloaded.min.js", "_js/masonry.js", "_js/main.js"])
-      .pipe(concat("lahumiere.js")),
-    uglify(),
+    gulp.src(["node_modules/jquery/dist/jquery.min.js", "node_modules/imagesloaded/imagesloaded.pkgd.min.js", "node_modules/masonry-layout/dist/masonry.pkgd.min.js"])
+      .pipe(concat("lib.min.js")),
+    // uglify(),
+    gulp.dest("js")
+  ], cb);
+});
+
+gulp.task('jsMain', function(cb) {
+  pump([
+    gulp.src(["_js/main.js"])
+      .pipe(uglify())
+      .pipe(rename({suffix: ".min"}))
+      .pipe(browserSync.reload({stream: true})),
     gulp.dest("js")
   ], cb);
 });
@@ -91,3 +101,6 @@ gulp.task('js', function (cb) {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+gulp.task('lib', ['jsLib', 'jsLibExtra']);
+gulp.task('js', ['jsMain']);
