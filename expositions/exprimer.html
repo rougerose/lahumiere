@@ -6,20 +6,15 @@ page-class: page--expositions
 category: expositions
 ---
 <article class="c-article">
-  <nav class="c-nav c-breadcrumb" role="navigation" aria-label="You are here:">
-    <a href="{{ site.github.url }}/expositions/" class="c-breadcrumb__item c-breadcrumb__link">
-      <svg class="o-icon o-icon--m c-breadcrumb__back"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowLeftShort"></use></svg>
-      <span class="c-nav__text c-breadcrumb__text">Expositions</span>
-    </a>
-    <span class="c-breadcrumb__item c-breadcrumb__item--hide"><span class="c-nav__text c-breadcrumb__text c-breadcrumb__text--sep"> / </span></span>
-    <span class="c-breadcrumb__item c-breadcrumb__item--hide is-current">
-      <span class="c-nav__text c-breadcrumb__text">{{page.title}}</span>
-    </span>
-  </nav>
+
+  <!-- TODO: Marge basse du header en version mobile est trop grande -->
+
   <header class="c-article__section c-article__header">
     <h1 class="c-article__title">{{page.title}}</h1>
     <p class="c-meta c-meta--article">
-      <span class="c-meta__item c-meta__item--status">Exposition en cours</span> <span class="c-meta__item c-meta__item--date"><time class="dtstart" datetime="2016-12-15">15 décembre 2015</time> / <time class="dtend" datetime="2017-01-10">10 janvier 2017</time></span>
+      <span class="c-meta__item c-meta__item--status">Exposition en cours</span>
+      <svg class="o-icon o-icon--s c-meta__item c-meta__item--icon"><use xlink:href="{{ site.github.url }}/images/icon-sprite.svg#arrowRightLarge"></use></svg>
+      <span class="c-meta__item c-meta__item--date"><time class="dtstart" datetime="2016-12-15">15 décembre 2015</time> / <time class="dtend" datetime="2017-01-10">10 janvier 2017</time></span>
     </p>
   </header>
   <section class="c-article__section">
