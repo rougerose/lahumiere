@@ -24,7 +24,6 @@
 const gulp            = require("gulp");
 const autoprefixer    = require("gulp-autoprefixer");
 const sass            = require("gulp-sass");
-const notify          = require("gulp-notify");
 const cleanCSS        = require("clean-css");
 const map             = require("vinyl-map");
 const rename          = require("gulp-rename");
