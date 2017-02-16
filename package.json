@@ -1,0 +1,32 @@
+{
+  "name": "lahumiere",
+  "version": "2.0.0",
+  "description": "Squelettes du site lahumiere.com. Plugin SPIP 3.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rougerose/lahumiere.git"
+  },
+  "private": true,
+  "author": "christophe le drean",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rougerose/lahumiere/issues"
+  },
+  "homepage": "https://github.com/rougerose/lahumiere#readme",
+  "devDependencies": {
+    "clean-css": "^4.0.7",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber-notifier": "0.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.1",
+    "inuitcss": "^6.0.0-beta.4",
+    "vinyl-map": "^1.0.2"
+  }
+}
