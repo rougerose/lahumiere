@@ -75,7 +75,8 @@
  */
 
 // SETTINGS
-// @import "settings.config";
+@import "settings/globals";
+@import "settings/colors";
 @import "inuitcss/settings/settings.core";
 
 

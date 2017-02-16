@@ -43,7 +43,7 @@ var options = {
 
   // ----- SCSS ----- //
   scss: {
-    paths       : ['./node_modules/'],
+    paths       : ['./node_modules/', '.scss/'],
     file        : '_src/scss/application.scss',
     files       : '_src/scss/**/*.scss',
     destination : 'css'
