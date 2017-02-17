@@ -13,9 +13,9 @@
 
 .c-nav-lang__item {
   padding: $spacing-unit-small 0;
-  color: $color-gray-light;
+  // color: $color-gray-light;
 
   &.is-current {
-    color: $color-black;
+    color: $color-theme;
   }
 }
