@@ -1,3 +1,7 @@
 <body>
-  <INCLURE{fond=content/#ENV{type-page}, env}>
+  <div class="o-wrapper">
+    <INCLURE{fond=header/#ENV{type-page}, env} />
+    <INCLURE{fond=content/#ENV{type-page}, env} />
+  </div>
 </body>
+#FILTRE{mini_html}

@@ -1,10 +1,11 @@
 [(#VAL{_Z_DOCTYPE}|defined|?{#VAL{_Z_DOCTYPE}|constant}|sinon{<!DOCTYPE HTML>})][
-(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
-<html class="[(#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR">
+(#SET{class,[page--(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
+<html class="page[ (#GET{class})][ (#LANG_DIR)][ (#LANG)] no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG" dir="#LANG_DIR">
   <head>
     <script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
     [(#REM) Preciser le charset avant tout]
     <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     [(#REM) Debut du head particulier a chaque page
       pour inserer un title, des css particulieres(mais surchargees), ou des js *inline*
@@ -19,3 +20,4 @@
   </head>
   <INCLURE{fond=body,env}>
 </html>
+#FILTRE{mini_html}
