@@ -1,0 +1,17 @@
+// =====================================
+// Wrapper
+// =====================================
+
+.o-wrapper {
+  @include inuit-clearfix();
+  padding-right: $inuit-global-spacing-unit;
+  padding-left:  $inuit-global-spacing-unit;
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: $inuit-wrapper-width;
+
+  @include mq($until: mobileLs) {
+    padding-left: $spacing-unit-small;
+    padding-right: $spacing-unit-small;
+  }
+}

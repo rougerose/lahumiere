@@ -101,7 +101,7 @@
 @import "inuitcss/elements/elements.headings";
 // @import "elements.headings";
 @import "inuitcss/elements/elements.images";
-// @import "elements.links";
+@import "elements/links";
 @import "inuitcss/elements/elements.page";
 @import "elements/page";
 @import "elements/webfonts";
@@ -112,9 +112,9 @@
 // OBJECTS
 // @import "objects.icons";
 @import "inuitcss/objects/objects.layout";
-@import "inuitcss/objects/objects.wrapper";
-// @import "objects.wrapper";
+@import "objects/wrapper";
 
+    // @import "inuitcss/objects/objects.wrapper";
     // @import "inuitcss/objects/objects.media";
     // @import "inuitcss/objects/objects.flag";
     // @import "inuitcss/objects/objects.list-bare";
@@ -137,15 +137,15 @@
 // @import "components.cover";
 // @import "components.figure";
 // @import "components.footer";
-// @import "components.header";
+@import "components/header";
 // @import "components.legal";
 // @import "components.message";
 // @import "components.meta";
-// @import "components.nav";
+@import "components/nav";
 // @import "components.nav-lang";
 // @import "components.nav-secondary";
 // @import "components.nav-sort";
-// @import "components.nav-site";
+@import "components/nav-site";
 // @import "components.nav-utils";
 // @import "components.pagination";
 // @import "components.portfolio";

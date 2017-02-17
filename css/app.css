@@ -193,6 +193,10 @@ img { max-width: 100%; /* [1] */ font-style: italic; /* [2] */ vertical-align: m
 /** 1. If a `width` and/or `height` attribute have been explicitly defined, let’s not make the image fluid. */
 img[width], img[height] { /* [1] */ max-width: none; }
 
+a { color: #1a1a1a; text-decoration: none; transition: all 0.3s ease-out; }
+
+a:hover { color: #cf7633; }
+
 /* ========================================================================== #PAGE ========================================================================== */
 /** Simple page-level setup. 1. Set the default `font-size` and `line-height` for the entire project, sourced from our default variables. The `font-size` is calculated to exist in ems, the `line-height` is calculated to exist unitlessly. 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when navigating between pages that do/do not have enough content to produce scrollbars naturally. 3. Ensure the page always fills at least the entire height of the viewport. */
 html { font-size: 1em; /* [1] */ line-height: 1.25; /* [1] */ overflow-y: scroll; /* [2] */ min-height: 100%; /* [3] */ }
@@ -272,22 +276,57 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .o-layout--reverse > .o-layout__item { direction: ltr; text-align: left; }
 
-/* ========================================================================== #WRAPPERS ========================================================================== */
-/** Page-level constraining and wrapping elements. */
-/* stylelint-disable */
-/* stylelint-enable */
 .o-wrapper { padding-right: 20px; padding-left: 20px; margin-right: auto; margin-left: auto; max-width: 1100px; }
 
 .o-wrapper:after { content: "" !important; display: block !important; clear: both !important; }
 
-/* Size variants. ========================================================================== */
-.o-wrapper--tiny { padding-right: 5px; padding-left: 5px; }
+@media (max-width: 27.4275em) { .o-wrapper { padding-left: 0.625rem; padding-right: 0.625rem; } }
 
-.o-wrapper--small { padding-right: 10px; padding-left: 10px; }
+.c-header { position: relative; }
 
-.o-wrapper--large { padding-right: 40px; padding-left: 40px; }
+@media (min-width: 40em) { .page--home .c-header { margin-bottom: 2.5rem; } }
 
-.o-wrapper--huge { padding-right: 80px; padding-left: 80px; }
+.c-nav { text-transform: uppercase; }
+
+.c-nav__list { margin: 0; list-style: none; }
+
+.c-nav__list-item { display: inline-block; }
+
+.c-nav-site { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+
+@media (max-width: 39.99em) { .c-nav-site { padding-bottom: 1.25rem; text-align: center; } }
+
+.c-nav-site__home { display: block; }
+
+.c-nav-site__home--logo { line-height: 0; }
+
+@media (max-width: 39.99em) { .c-nav-site__home--logo { margin-bottom: 1.25rem; } }
+
+@media (min-width: 40em) and (max-width: 59.99em) { .c-nav-site__home--logo { position: absolute; top: 50%; transform: translateY(-50%); width: 8%; } }
+
+.c-nav-site__home--title { margin-bottom: 0.625rem; font-family: "FuturaLight", sans-serif; font-size: 30px; font-size: 1.875rem; letter-spacing: 0.03125em; line-height: 1; }
+
+@media (min-width: 60em) { .c-nav-site__home--title { font-size: 48px; font-size: 3rem; } }
+
+.c-nav-site__logo { height: auto; fill: #cf7633; }
+
+@media (max-width: 39.99em) { .c-nav-site__logo { width: 50px; } }
+
+@media (min-width: 60em) { .c-nav-site__logo { width: 80px; } }
+
+@media (max-width: 39.99em) { .c-nav-site__list:after { display: block; height: 1px; width: 50px; margin: 0.625rem auto; background-color: #1a1a1a; content: ""; } }
+
+@media (min-width: 40em) { .c-nav-site__list { border-bottom: 1px solid #1a1a1a; } }
+
+.c-nav-site__item { font-size: 18px; font-size: 1.125rem; line-height: 1.11111; letter-spacing: 0.03125em; }
+
+@media (min-width: 40em) and (max-width: 59.99em) { .c-nav-site__item { font-size: 16px; font-size: 1rem; line-height: 1; } }
+
+.c-nav-site__link { display: block; margin: 0.3125rem 0.15625rem; padding: 0 0.15625rem; }
+
+@media (min-width: 40em) { .c-nav-site__item:first-child .c-nav-site__link { margin-left: 0; } }
+
+.c-nav-site__link.is-current { color: #cf7633; }
 
 .spip-admin-float { right: auto !important; }
 

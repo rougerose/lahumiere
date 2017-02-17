@@ -1,0 +1,16 @@
+<header class="c-header">
+  <nav class="o-layout o-layout--bottom c-nav c-nav-site">
+    <div class="o-layout__item u-1/10@tablet">
+      [<a href="#URL_SITE_SPIP" title="<:lahumiere:retour_accueil:>" class="c-nav-site__home c-nav-site__home--logo">(#INCLURE{fond=images/lahumiere-logo.svg, class=c-nav-site__logo})</a>]
+    </div>
+    <div class="o-layout__item u-9/10@tablet">
+      <a href="#URL_SITE_SITE" title="<:lahumiere:retour_accueil:>" class="c-nav-site__home c-nav-site__home--title">#NOM_SITE_SPIP</a>
+      <ul class="c-nav__list c-nav-site__list">
+        <BOUCLE_menu_principal(RUBRIQUES){racine}{par num titre, multi titre}>
+          <li class="c-nav__list-item c-nav-site__item"><a href="#URL_RUBRIQUE" class="c-nav-site__link[ (#ENV{id_rubrique}|=={#ID_RUBRIQUE}|?{is-current})]">#TITRE</a></li>
+        </BOUCLE_menu_principal>
+      </ul>
+    </div>
+  </nav>
+</header>
+#FILTRE{mini_html}

@@ -1,0 +1,13 @@
+// =====================================
+// Header
+// =====================================
+
+.c-header {
+  position: relative;
+
+  @include mq(tablet) {
+    .page--home & {
+      margin-bottom: $spacing-unit-large;
+    }
+  }
+}
