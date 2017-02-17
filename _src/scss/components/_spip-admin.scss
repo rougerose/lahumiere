@@ -1,26 +1,13 @@
-// -------------------------------------
+// =====================================
 // Spip-admin
-// -------------------------------------
+// =====================================
 
 .spip-admin-float {
-  top: auto !important;
-  right: 0 !important;
-  bottom: 0;
-  margin-right: -70px;
-  margin-top: 10px;
-  transition: margin 0.5s ease;
-
-  &:hover {
-    margin-right: 0;
-  }
+  right: auto !important;
 
   .spip-admin-boutons {
-    display: block;
-    margin-bottom: 5px;
-    border-radius: 3px 0 0 3px;
     font-family: $font-monospace;
     @include inuit-font-size(10px, 1);
     text-align: left;
   }
-
 }
