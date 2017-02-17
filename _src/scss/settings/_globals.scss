@@ -11,11 +11,11 @@
 
 // ----- Font-size ----- //
 
-$inuit-global-font-size:    16px;
+$inuit-global-font-size: 16px;
 
 // ----- Line-height ----- //
 
-$inuit-global-line-height:  20px;
+$inuit-global-line-height: 20px;
 
 // ----- Wrapper ----- //
 
@@ -23,7 +23,7 @@ $inuit-wrapper-width: 1100px;
 
 // ----- Layout ----- //
 
-$inuit-fractions:      9 10;
+$inuit-fractions: 9 10;
 
 // ----- Mediaqueries ----- //
 
@@ -41,10 +41,11 @@ $mq-breakpoints: (
 
 // ----- Font-family ----- //
 
-$font-base:  'Futura';
-$font-futura: $font-base, sans-serif;
+$font-base:        'Ft';
+$font-futura:      $font-base, sans-serif;
 $font-futuraHeavy: 'FuturaHeavy', sans-serif;
 $font-futuraLight: 'FuturaLight', sans-serif;
+$font-monospace:   "Space Mono", monospace;
 
 // ----- Letter-spacing ----- //
 
