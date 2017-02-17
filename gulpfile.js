@@ -53,6 +53,20 @@ var options = {
   css: {
     file        : 'css/application.css',
     destination : 'css'
+  },
+
+  // ----- Watch ----- //
+  watch: {
+    files: function () {
+      return [
+        options.scss.files
+      ]
+    },
+    run: function () {
+      return [
+        ['compile:scss']
+      ]
+    }
   }
 };
 
@@ -69,7 +83,7 @@ gulp.task( 'default', options.default.tasks );
 // -------------------------------------
 
 gulp.task( 'compile:scss', function () {
-  gulp.src( options.scss.file )
+  gulp.src( options.scss.files )
     .pipe( plumberNotifier() )
     .pipe( sass({
       includePaths: options.scss.paths,
@@ -105,4 +119,9 @@ gulp.task( 'minify:css', function () {
 // Task : watch
 // -------------------------------------
 
-gulp.task( 'watch', ['compile:scss'] );
+gulp.task('watch', function() {
+  var watchFiles = options.watch.files();
+  watchFiles.forEach( function( files, index ) {
+    gulp.watch( files, options.watch.run()[ index ]  );
+  });
+});
