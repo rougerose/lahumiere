@@ -44,14 +44,14 @@ var options = {
   // ----- SCSS ----- //
   scss: {
     paths       : ['./node_modules/', '.scss/'],
-    file        : '_src/scss/application.scss',
+    file        : '_src/scss/app.scss',
     files       : '_src/scss/**/*.scss',
     destination : 'css'
   },
 
   // ----- CSS ----- //
   css: {
-    file        : 'css/application.css',
+    file        : 'css/app.css',
     destination : 'css'
   },
 
@@ -105,7 +105,7 @@ gulp.task( 'minify:css', function () {
   var minify = map( function (buff, filename) {
     return new cleanCSS({
       keepBreaks: false
-    }).minify( buff.toString() ).styles;
+    }).minify( buff.toString() ).styles
   });
 
   return gulp.src( options.css.file )
