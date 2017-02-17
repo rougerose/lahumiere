@@ -1,0 +1,20 @@
+// =====================================
+// search
+// =====================================
+
+.c-search {}
+
+
+//
+// link
+// -------------------------------------
+
+.c-search__link {
+  display: block;
+  padding: $spacing-unit-small;
+  color: $color-gray;
+
+  &:hover {
+    color: $color-theme;
+  }
+}

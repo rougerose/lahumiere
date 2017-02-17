@@ -1,0 +1,21 @@
+// =====================================
+// nav-lang
+// =====================================
+
+.c-nav-lang {
+  color: $color-gray-light;
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-nav-lang__item {
+  padding: $spacing-unit-small 0;
+  color: $color-gray-light;
+
+  &.is-current {
+    color: $color-black;
+  }
+}

@@ -1,0 +1,38 @@
+// =====================================
+// icon
+// =====================================
+
+.o-icon {
+  vertical-align: middle;
+  fill: currentColor;
+  transition: fill 0.2s;
+}
+
+
+//
+// ALIGNEMENT
+// ==========================================================================
+
+.o-icon--bottom {
+  vertical-align: bottom;
+}
+
+
+//
+// ICON SIZES
+// ==========================================================================
+
+.o-icon--s {
+  width: 24px;
+  height: 24px;
+}
+
+.o-icon--m {
+  width: 32px;
+  height: 32px;
+}
+
+.o-icon--l {
+  width: 48px;
+  height: 48px;
+}

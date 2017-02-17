@@ -1,0 +1,39 @@
+// =====================================
+// nav-utils
+// =====================================
+
+.c-nav-utils {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+//
+// list
+// -------------------------------------
+
+.c-nav-utils__list {
+  text-align: right;
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-nav-utils__item {
+
+  @include mq($until: tablet) {
+    width: 50%;
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  @include mq(tablet) {
+    &:first-child {
+      margin-right: $spacing-unit;
+    }
+  }
+}

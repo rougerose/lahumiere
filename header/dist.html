@@ -12,5 +12,16 @@
       </ul>
     </div>
   </nav>
+  <nav class="c-nav c-nav-utils">
+    <ul class="c-nav__list c-nav-utils__list">
+      [<li class="c-nav__list-item c-nav-utils__item">
+        <a href="#" class="c-search__link" aria-label="<:lahumiere:recherche_lien:>"><svg class="o-icon o-icon--s"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{search})"></use></svg></a>
+      </li>]
+      <li class="c-nav__list-item c-nav-utils__item c-nav-lang">
+        [(#INCLURE{fond=formulaires/menu_lang,env})]
+        <!-- <span href="#" class="c-nav-lang__item is-current">FR</span><a href="#" class="c-nav-lang__item c-nav-lang__item--separator">EN</a> -->
+      </li>
+    </ul>
+  </nav>
 </header>
 #FILTRE{mini_html}
