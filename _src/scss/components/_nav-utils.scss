@@ -6,14 +6,6 @@
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-
-//
-// list
-// -------------------------------------
-
-.c-nav-utils__list {
   text-align: right;
 }
 
@@ -23,17 +15,19 @@
 // -------------------------------------
 
 .c-nav-utils__item {
+  display: inline-block;
+  vertical-align: middle;
 
   @include mq($until: tablet) {
     width: 50%;
-    &:first-child {
-      text-align: left;
-    }
   }
+}
 
-  @include mq(tablet) {
-    &:first-child {
-      margin-right: $spacing-unit;
-    }
-  }
+// ----- variante: search-trigger ----- //
+
+.c-nav-utils__item--search-trigger {
+  padding: $spacing-unit-small $spacing-unit;
+  padding-left: 0;
+  color: $color-gray;
+  text-align: left;
 }
