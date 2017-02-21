@@ -14,7 +14,7 @@
   </nav>
   <nav class="c-nav c-nav-utils c-nav-lang">
     [<a href="#URL_PAGE{recherche}" class="c-nav-utils__item c-nav-utils__item--search-trigger" aria-label="<:lahumiere:recherche_lien:>"><svg class="o-icon o-icon--s" role="presentation"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{search})"></use></svg></a>]
-    #MENU_LANG
+    [(#INCLURE{fond=formulaires/menu_lang,env})]
   </nav>
 </header>
 #FILTRE{mini_html}
