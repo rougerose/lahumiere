@@ -1,0 +1,9 @@
+<div class="c-search-form formulaire_spip formulaire_recherche[ (#ENV{class})]" id="formulaire_recherche">
+<form action="[(#ENV{action})]" method="get"><div class="editer-groupe">
+  [(#ENV{action}|form_hidden)]
+  [<input type="hidden" name="lang" value="(#ENV{lang})" />]
+  <label for="#ENV{_id_champ}" class="c-search-form__label"><:lahumiere:recherche_label:></label>
+  <input class="c-search-form__searchbox" id="#ENV{_id_champ}" placeholder="<:lahumiere:recherche_placeholder:>" type="search" autocapitalize="none" autocomplete="off" required />
+  <button type="submit" class="c-btn"><:lahumiere:recherche_submit:></button>
+</div></form>
+</div>
