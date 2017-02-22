@@ -302,11 +302,11 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-nav__list-item { display: inline-block; }
 
-.c-nav-lang { color: #bababa; }
-
-.c-nav-lang__item { padding: 0.625rem 0; }
+.c-nav-lang__item { padding: 0.625rem 0; color: #bababa; }
 
 .c-nav-lang__item.is-current { color: #cf7633; }
+
+.c-nav-lang__item--separator:before { margin: 0 3px; content: "/"; color: #bababa; }
 
 .c-nav-site { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 
@@ -344,20 +344,17 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-nav-site__link.is-current { color: #cf7633; }
 
-.c-nav-utils { position: absolute; top: 0; width: 100%; }
+.c-nav-utils { position: absolute; top: 0; width: 100%; text-align: right; }
 
-.c-nav-utils__list { text-align: right; }
+.c-nav-utils__item { display: inline-block; vertical-align: middle; }
 
-@media (max-width: 39.99em) { .c-nav-utils__item { width: 50%; }
-  .c-nav-utils__item:first-child { text-align: left; } }
+@media (max-width: 39.99em) { .c-nav-utils__item { width: 50%; } }
 
-@media (min-width: 40em) { .c-nav-utils__item:first-child { margin-right: 1.25rem; } }
+.c-nav-utils__item--search-trigger { padding: 0.625rem 1.25rem; padding-left: 0; color: #7d7d7d; text-align: left; }
 
-.c-search__link { display: block; padding: 0.625rem; color: #7d7d7d; }
+.c-search-form__label { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
 
-.c-search__link:hover { color: #cf7633; }
-
-.spip-admin-float { right: auto !important; }
+.spip-admin-float { right: auto !important; top: auto !important; bottom: 0; }
 
 .spip-admin-float .spip-admin-boutons { font-family: "PT Mono", "Menlo", monospace; font-size: 10px; font-size: 0.625rem; line-height: 1; text-align: left; }
 
@@ -482,3 +479,11 @@ html { font-family: "Futura"; color: #1a1a1a; }
   .u-8\/10\@desktop { width: 80% !important; }
   .u-9\/10\@desktop { width: 90% !important; }
   .u-10\/10\@desktop { width: 100% !important; } }
+
+[class*="u-push-"] { position: relative !important; right: auto !important; }
+
+.u-push-1\/10 { left: 10% !important; }
+
+@media (min-width: 27.4375em) { .u-push-1\/10\@mobileLs { left: 10% !important; } }
+
+@media (min-width: 40em) { .u-push-1\/10\@tablet { left: 10% !important; } }
