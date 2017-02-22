@@ -2,5 +2,5 @@
   <nom>Rubrique Artistes</nom>
   <description>Composition pour la rubrique « Artistes »</description>
   <icon>images/objet-simple.png</icon>
-  <branche type="article" composition="artistes" />
+  <branche type="article" composition="artiste" />
 </composition>
