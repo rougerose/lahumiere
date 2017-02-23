@@ -3,17 +3,16 @@
 // =====================================
 
 // ----- Variables logo sizes ----- //
-$logo-width-small: 50px;
+$logo-width-small: 40px;
 $logo-width-large: 80px;
 // -------------------------------- //
 
 
 .c-nav-site {
   padding-top: $spacing-unit-large;
-  padding-bottom: $spacing-unit-large;
 
   @include mq($until: tablet) {
-    padding-bottom: $spacing-unit;
+    padding-top: $spacing-unit-small + ($spacing-unit-small / 2);
     text-align: center;
   }
 }
@@ -23,7 +22,9 @@ $logo-width-large: 80px;
 // home
 // -------------------------------------
 
-.c-nav-site__home { display: block; }
+.c-nav-site__home {
+  display: block;
+}
 
   // ----- variante: home--logo ----- //
 
@@ -36,8 +37,7 @@ $logo-width-large: 80px;
 
     @include mq(tablet, desktop) {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 0;
       width: 8%;
     }
   }
@@ -46,12 +46,16 @@ $logo-width-large: 80px;
 
   .c-nav-site__home--title {
     margin-bottom: $spacing-unit-small;
-    font-family: $font-futuraLight;
-    @include inuit-font-size(30px, false);
+    @include inuit-font-size(26px, false);
     letter-spacing: $global-letter-spacing;
     line-height: 1;
 
+    @include mq(tablet) {
+      @include inuit-font-size(24px, false);
+    }
+
     @include mq(desktop) {
+      font-family: $font-futuraLight;
       @include inuit-font-size(48px, false);
     }
   }
@@ -84,7 +88,7 @@ $logo-width-large: 80px;
     &:after {
       display: block;
       height: 1px;
-      width: $logo-width-small;
+      width: 100%;
       margin: $spacing-unit-small auto;
       background-color: $color-black;
       content: "";
@@ -102,8 +106,7 @@ $logo-width-large: 80px;
 // -------------------------------------
 
 .c-nav-site__item {
-
-  @include inuit-font-size(18px);
+  @include inuit-font-size(16px);
   letter-spacing: $global-letter-spacing;
 
   @include mq(tablet, desktop) {
