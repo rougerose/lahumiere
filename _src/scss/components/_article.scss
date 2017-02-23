@@ -1,0 +1,57 @@
+// =====================================
+// article
+// =====================================
+
+.c-article {}
+
+
+//
+// header
+// -------------------------------------
+
+.c-article__header {
+  margin-bottom: $spacing-unit-large;
+
+  @include mq($until: mobileLs) {
+    text-align: center;
+  }
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-article__title {
+  @include inuit-font-size(33px, 1.1);
+}
+
+
+//
+// main
+// -------------------------------------
+
+.c-article__main {
+  @include mq($until: mobileLs) {
+    padding-left: $spacing-unit-small;
+    padding-right: $spacing-unit-small;
+  }
+}
+
+
+//
+// chapo
+// -------------------------------------
+
+.c-article__chapo {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// text
+// -------------------------------------
+
+.c-article__text {
+
+}

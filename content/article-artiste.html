@@ -1,19 +1,30 @@
 <BOUCLE_article_artiste(ARTICLES){id_article}>
 <article class="c-article">
-  <header class="c-article__section c-article__header">
-    <h1 class="c-article__title">#TITRE</h1>
-    [<p>(#SOUSTITRE)</p>]
+  <header class="c-article__header">
+    <h1 class="c-article__title">[(#TITRE|prenom_nom)]</h1>
+    [<p class="c-article__subtitle">(#SOUSTITRE)</p>]
   </header>
-  [<section class="c-article__section c-article__text c-text">
-    <h2 class="c-article__section-subtitle">À propos de l'artiste</h2>
-    <div class="o-layout">
+  <div class="c-article__main">
+    [<div class="o-layout">
       <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
-        <div class="c-text__main">
-          (#TEXTE)
+        <div class="c-article__chapo c-text c-text--chapo">
+          (#CHAPO)
         </div>
       </div>
-    </div>
-  </section>]
+    </div>]
+    [<section class="c-section">
+      <header class="c-section__header">
+        <h1 class="c-section__title"><:lahumiere:artist_about:></h1>
+      </header>
+      <div class="o-layout">
+        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+          <div class="c-article__text c-text">
+            (#TEXTE)
+          </div>
+        </div>
+      </div>
+    </section>]
+  </div>
 
 </article>
 </BOUCLE_article_artiste>

@@ -1,0 +1,34 @@
+// =====================================
+// section
+// =====================================
+
+.c-section {}
+
+
+//
+// header
+// -------------------------------------
+
+.c-section__header {}
+
+
+//
+// title
+// -------------------------------------
+
+.c-section__title {
+  // color: $color-theme;
+  @include inuit-font-size(18px, false);
+  text-transform: uppercase;
+
+  &:after {
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+
+    @include mq(tablet) {
+      width: 50%;
+    }
+  }
+}
