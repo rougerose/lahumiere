@@ -6,6 +6,11 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 $GLOBALS['z_blocs'] = array('content', 'head', 'head_js', 'header', 'footer');
 
 
+// Intertitres
+$GLOBALS['debut_intertitre'] = '<h2 class="spip">';
+$GLOBALS['fin_intertitre'] = '</h2>';
+
+
 // Développement
 
 // pas de cache

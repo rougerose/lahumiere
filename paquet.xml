@@ -11,6 +11,9 @@
 
   <pipeline nom="insert_head_css" inclure="lahumiere_pipelines.php" />
 
+  <utilise nom="intertitrestdm" />
+  <utilise nom="bellespuces" />
+
   <necessite nom="zcore" compatibilite="[2.6.1;2.6.*]" />
   <necessite nom="compositions" compatibilite="[3.5.9;3.5.*]" />
   <necessite nom="mll" compatibilite="[1.2.4;1.2.*]" />
