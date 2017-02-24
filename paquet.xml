@@ -13,8 +13,11 @@
 
   <utilise nom="intertitrestdm" />
   <utilise nom="bellespuces" />
+  <utilise nom="minidoc" />
 
   <necessite nom="zcore" compatibilite="[2.6.1;2.6.*]" />
   <necessite nom="compositions" compatibilite="[3.5.9;3.5.*]" />
   <necessite nom="mll" compatibilite="[1.2.4;1.2.*]" />
+  <necessite nom="ordoc" compatibilite="[1.1.1;1.1.*]" />
+  <necessite nom="medoc" compatibilite="[2.3.0;2.3.*]" />
 </paquet>
