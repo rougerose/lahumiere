@@ -1,0 +1,50 @@
+<BOUCLE_logo_article(ARTICLES){id_article}>
+[(#REM)
+  <!--
+  Largeur du logo en fonction des breakpoints.
+  Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+  ************************************************************************
+    desktop hdpi : 1920px
+    desktop: 952px
+    tablet: 538 | 826
+    mobileLs: 399 | 599
+    mobile: 300 | 418
+  -->
+]
+
+[(#REM)
+  <!--
+    Le logo devrait avoir une largeur mimum de 1920 px.
+    Sinon on "fabrique" une image à cette taille.
+  -->
+]
+[(#LOGO_ARTICLE|largeur|>={1920}|?{
+  [(#SET{fichier, #LOGO_ARTICLE|image_reduire{1920,0} })],
+  [(#SET{fichier, #LOGO_ARTICLE|image_recadre{1920,0, 'center', '#000000'} })]
+})]
+
+[(#REM)
+  <!--
+    Une image de 952 px de largeur sera utilisée deux fois,
+    version par défaut et une seconde fois explicitement.
+  -->
+]
+[(#SET{952w, #GET{fichier}|image_reduire{952,0} })]
+<figure class="c-figure">
+  [<img src="
+    (#GET{952w}|extraire_attribut{src})
+  " srcset="
+    [(#GET{fichier}|extraire_attribut{src}) 1920w,]
+    [(#GET{952w}|extraire_attribut{src}) 952w,]
+    [(#GET{fichier}|image_reduire{800,0}|extraire_attribut{src}) 800w,]
+    [(#GET{fichier}|image_reduire{600,0}|extraire_attribut{src}) 600w,]
+    [(#GET{fichier}|image_reduire{400,0}|extraire_attribut{src}) 400w]
+  " sizes="100vw" alt="" class="c-figure__img">]
+  [(#PLUGIN{titre_logo}|oui)
+    <figcaption class="c-figure__caption">
+      [<h3 class="c-figure__title">(#TITRE_LOGO)</h3>]
+      [<div class="c-figure__desc">(#DESCRIPTIF_LOGO)</div>]
+    </figcaption>
+  ]
+</figure>
+</BOUCLE_logo_article>

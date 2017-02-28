@@ -1,0 +1,59 @@
+// =====================================
+// figure
+// =====================================
+
+.c-figure {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// img
+// -------------------------------------
+
+.c-figure__img {
+  border: 1px solid rgba($color-gray-lighter, 0.5);
+}
+
+
+//
+// caption
+// -------------------------------------
+
+.c-figure__caption {
+  margin-left: 1px;
+  padding-top: $spacing-unit-tiny;
+  padding-left: $spacing-unit-tiny;
+  border-left: 1px solid rgba($color-gray-light, 0.5);
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-figure__title {
+  font-style: italic;
+  // color: $color-gray;
+}
+
+
+//
+// desc
+// -------------------------------------
+
+.c-figure__desc {
+  color: $color-gray-light;
+}
+
+
+//
+// title & desc
+// -------------------------------------
+
+.c-figure__title,
+.c-figure__desc {
+  margin: 0;
+  font-family: $font-futuraLight;
+  @include inuit-font-size(15px, false);
+}

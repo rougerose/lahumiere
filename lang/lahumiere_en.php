@@ -6,6 +6,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // A
   'artist_about' => "About the artist",
+  'artist_work' => "Work",
 
   // F
   'footnotes_title' => "Footnotes",

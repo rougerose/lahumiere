@@ -23,7 +23,20 @@
 // -------------------------------------
 
 .c-article__title {
+  margin-bottom: 0;
   @include inuit-font-size(33px, 1.1);
+}
+
+
+//
+// subtitle
+// -------------------------------------
+
+.c-article__subtitle {
+  margin-top: $spacing-unit-small;
+  margin-bottom: 0;
+  font-style: italic;
+  @include inuit-font-size(26px);
 }
 
 
@@ -40,18 +53,40 @@
 
 
 //
+// section
+// -------------------------------------
+
+.c-article__section {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
 // chapo
 // -------------------------------------
 
-.c-article__chapo {
-  margin-bottom: $spacing-unit-large;
-}
+.c-article__chapo {}
 
 
 //
 // text
 // -------------------------------------
 
-.c-article__text {
+.c-article__text {}
 
+
+//
+// footnotes
+// -------------------------------------
+
+.c-article__footnotes {
+
+  &:before {
+    display: block;
+    margin-bottom: $spacing-unit-small;
+    height: 1px;
+    width: 30%;
+    content: "";
+    background-color: $color-black;
+  }
 }

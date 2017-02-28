@@ -1,31 +1,52 @@
 <BOUCLE_article_artiste(ARTICLES){id_article}>
-<article class="c-article">
-  <header class="c-article__header">
-    <h1 class="c-article__title">[(#TITRE|prenom_nom)]</h1>
-    [<p class="c-article__subtitle">(#SOUSTITRE)</p>]
-  </header>
-  <div class="c-article__main">
-    [<div class="o-layout">
-      <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
-        <div class="c-article__chapo c-text c-text--chapo">
-          (#CHAPO)
-        </div>
-      </div>
-    </div>]
-    [<section class="c-section">
-      <header class="c-section__header">
-        <h1 class="c-section__title"><:lahumiere:artist_about:></h1>
-      </header>
+  <article class="c-article">
+    <header class="c-article__header">
+      <h1 class="c-article__title">[(#TITRE|prenom_nom)]</h1>
+      [<p class="c-article__subtitle">(#SOUSTITRE)</p>]
+    </header>
+    <div class="c-article__main">
       <div class="o-layout">
-        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
-          <div class="c-article__text c-text">
-            (#TEXTE)
+        [<div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+          <div class="c-article__section c-text c-text--chapo">
+            (#CHAPO)
           </div>
+        </div>]
+        <div class="o-layout__item">
+          <section class="c-section">
+            <header class="c-section__header">
+              <h1 class="c-section__title"><:lahumiere:artist_about:></h1>
+            </header>
+            <div class="o-layout">
+              <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+                [<div class="c-article__section c-text">
+                  (#TEXTE)
+                </div>]
+                [<section class="c-article__section c-article__footnotes c-text c-text--footnotes">
+                  (#NOTES)
+                </section>]
+              </div>
+            </div>
+          </section>
         </div>
+        <B_portfolio>
+          <div class="o-layout__item">
+            <section class="c-section">
+              <header class="c-section__header">
+                <h1 class="c-section__title"><:lahumiere:artist_work:></h1>
+              </header>
+              <div class="o-layout c-portfolio js-portfolio">
+                <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
+                <BOUCLE_portfolio(DOCUMENTS){id_article}{vu=non}{par rang_lien, num titre, id_document}>
+                  <figure class="o-layout__item u-5/10@mobileLs c-portfolio__figure">
+                    <img src="#FICHIER" alt="">
+                  </figure>
+                </BOUCLE_portfolio>
+              </div>
+            </section>
+          </div>
+        </B_portfolio>
       </div>
-    </section>]
-  </div>
-
-</article>
+    </div>
+  </article>
 </BOUCLE_article_artiste>
 #FILTRE{mini_html}
