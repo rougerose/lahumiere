@@ -10,6 +10,7 @@
   <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
 
   <pipeline nom="insert_head_css" inclure="lahumiere_pipelines.php" />
+  <pipeline nom="insert_head" inclure="lahumiere_pipelines.php" />
 
   <utilise nom="intertitrestdm" />
   <utilise nom="bellespuces" />

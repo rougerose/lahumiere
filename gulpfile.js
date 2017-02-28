@@ -28,6 +28,7 @@ const cleanCSS        = require("clean-css");
 const map             = require("vinyl-map");
 const rename          = require("gulp-rename");
 const plumberNotifier = require("gulp-plumber-notifier");
+const concat          = require("gulp-concat");
 
 
 // -------------------------------------
@@ -53,6 +54,18 @@ var options = {
   css: {
     file        : 'css/app.css',
     destination : 'css'
+  },
+
+  // ----- JS ----- //
+  js: {
+    lib: {
+      files: [
+        'node_modules/imagesloaded/imagesloaded.pkgd.min.js',
+        'node_modules/masonry-layout/dist/masonry.pkgd.min.js'
+      ]
+    },
+    files: '_src/js/**/*.js',
+    destination: 'js'
   },
 
   // ----- Watch ----- //
@@ -112,6 +125,28 @@ gulp.task( 'minify:css', function () {
     .pipe( minify )
     .pipe( rename({ suffix: '.min' }) )
     .pipe( gulp.dest(options.css.destination) )
+});
+
+
+// -------------------------------------
+// Task : compile:jsLib
+// -------------------------------------
+
+gulp.task( 'compile:jsLib', function () {
+  gulp.src( options.js.lib.files )
+    .pipe(concat("lib.min.js"))
+    .pipe( gulp.dest( options.js.destination ))
+});
+
+
+// -------------------------------------
+// Task : compile:js
+// -------------------------------------
+
+gulp.task( 'compile:js', function () {
+  gulp.src( options.js.files )
+    .pipe(concat("app.js"))
+    .pipe( gulp.dest( options.js.destination ))
 });
 
 
