@@ -4,7 +4,7 @@
   Largeur du logo en fonction des breakpoints.
   Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
   ************************************************************************
-    desktop hdpi : 1920px
+    desktop hdpi : 1600px
     desktop: 952px
     tablet: 538 | 826
     mobileLs: 399 | 599
@@ -18,9 +18,10 @@
     Sinon on "fabrique" une image à cette taille.
   -->
 ]
-  [(#LOGO_ARTICLE|largeur|>={1920}|?{
-    [(#SET{fichier, #LOGO_ARTICLE|image_reduire{1920,0} })],
-    [(#SET{fichier, #LOGO_ARTICLE|image_recadre{1920,0, 'center', '#000000'} })]
+  [(#LOGO_ARTICLE|largeur|>={1600}|?{
+    [(#SET{fichier, #LOGO_ARTICLE|image_reduire{1600,0} })]
+    ,
+    [(#SET{fichier, #LOGO_ARTICLE|image_recadre{1600,0, 'center', '#000000'} })]
   })]
 
 [(#REM)
@@ -48,7 +49,7 @@
   [<img src="
     (#GET{952w}|extraire_attribut{src})
   " srcset="
-    [(#GET{fichier}|extraire_attribut{src}) 1920w,]
+    [(#GET{fichier}|extraire_attribut{src}) 1600w,]
     [(#GET{952w}|extraire_attribut{src}) 952w,]
     [(#GET{fichier}|image_reduire{800,0}|extraire_attribut{src}) 800w,]
     [(#GET{fichier}|image_reduire{600,0}|extraire_attribut{src}) 600w,]
