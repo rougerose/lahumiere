@@ -8,6 +8,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'artist_next'           => "<span class='c-pagination__text-hide'>Artiste </span>suivant",
     'artist_previous'       => "<span class='c-pagination__text-hide'>Artiste </span>précédent",
     'artist_work'           => "Œuvres",
+  // N
+    'next'                  => "Suivant",
+  // P
+    'previous'              => "Précédent",
   // R
     'recherche_label'       => "Rechercher",
     'recherche_lien'        => "Faire une recherche",
