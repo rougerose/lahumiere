@@ -320,11 +320,11 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-figure__caption { margin-left: 1px; padding-top: 0.3125rem; padding-left: 0.3125rem; border-left: 1px solid rgba(186, 186, 186, 0.5); }
 
+.c-figure__title, .c-figure__desc p, .c-figure__author { margin: 0; font-family: "FuturaLight", sans-serif; font-size: 15px; font-size: 0.9375rem; }
+
 .c-figure__title { font-style: italic; }
 
-.c-figure__desc { color: #bababa; }
-
-.c-figure__title, .c-figure__desc { margin: 0; font-family: "FuturaLight", sans-serif; font-size: 15px; font-size: 0.9375rem; }
+.c-figure__desc, .c-figure__author { color: #bababa; }
 
 .c-header { position: relative; margin-bottom: 2.5rem; }
 

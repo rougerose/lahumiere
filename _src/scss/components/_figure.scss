@@ -37,31 +37,32 @@
 
 
 //
+// title, desc & author
+// -------------------------------------
+
+.c-figure__title,
+.c-figure__desc p,
+.c-figure__author {
+  margin: 0;
+  font-family: $font-futuraLight;
+  @include inuit-font-size(15px, false);
+}
+
+
+//
 // title
 // -------------------------------------
 
 .c-figure__title {
   font-style: italic;
-  // color: $color-gray;
 }
 
 
 //
-// desc
+// desc & author
 // -------------------------------------
 
-.c-figure__desc {
+.c-figure__desc,
+.c-figure__author {
   color: $color-gray-light;
-}
-
-
-//
-// title & desc
-// -------------------------------------
-
-.c-figure__title,
-.c-figure__desc {
-  margin: 0;
-  font-family: $font-futuraLight;
-  @include inuit-font-size(15px, false);
 }
