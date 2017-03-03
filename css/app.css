@@ -239,10 +239,10 @@ html { font-family: "Futura"; color: #1a1a1a; }
 /** Grid-like layout system. The layout object provides us with a column-style layout system. This file contains the basic structural elements, but classes should be complemented with width utilities, for example: <div class="o-layout"> <div class="o-layout__item  u-1/2"> </div> <div class="o-layout__item  u-1/2"> </div> </div> The above will create a two-column structure in which each column will fluidly fill half of the width of the parent. We can have more complex systems: <div class="o-layout"> <div class="o-layout__item  u-1/1  u-1/3@medium"> </div> <div class="o-layout__item  u-1/2  u-1/3@medium"> </div> <div class="o-layout__item  u-1/2  u-1/3@medium"> </div> </div> The above will create a system in which the first item will be 100% width until we enter our medium breakpoint, when it will become 33.333% width. The second and third items will be 50% of their parent, until they also become 33.333% width at the medium breakpoint. We can also manipulate entire layout systems by adding a series of modifiers to the `.o-layout` block. For example: <div class="o-layout  o-layout--reverse"> This will reverse the displayed order of the system so that it runs in the opposite order to our source, effectively flipping the system over. <div class="o-layout  o-layout--[right|center]"> This will cause the system to fill up from either the centre or the right hand side. Default behaviour is to fill up the layout system from the left. There are plenty more options available to us: explore them below. */
 /* Default/mandatory classes. ========================================================================== */
 /** 1. Allows us to use the layout object on any type of element. 2. We need to defensively reset any box-model properties. 3. Use the negative margin trick for multi-row grids: http://csswizardry.com/2011/08/building-better-grid-systems/ */
-.o-layout { display: block; /* [1] */ margin: 0; /* [2] */ padding: 0; /* [2] */ list-style: none; /* [1] */ margin-left: -20px; /* [3] */ font-size: 0; }
+.o-layout { display: block; /* [1] */ margin: 0; /* [2] */ padding: 0; /* [2] */ list-style: none; /* [1] */ margin-left: -20px; /* [3] */ }
 
 /** 1. Required in order to combine fluid widths with fixed gutters. 2. Allows us to manipulate grids vertically, with text-level properties, etc. 3. Default item alignment is with the tops of each other, like most traditional grid/layout systems. 4. By default, all layout items are full-width (mobile first). 5. Gutters provided by left padding: http://csswizardry.com/2011/08/building-better-grid-systems/ 6. Fallback for old IEs not supporting `rem` values. */
-.o-layout__item { box-sizing: border-box; /* [1] */ display: inline-block; /* [2] */ vertical-align: top; /* [3] */ width: 100%; /* [4] */ padding-left: 20px; /* [5] */ font-size: 16px; /* [6] */ font-size: 1rem; }
+.o-layout__item { box-sizing: border-box; /* [1] */ display: inline-block; /* [2] */ vertical-align: top; /* [3] */ width: 100%; /* [4] */ padding-left: 20px; /* [5] */ }
 
 /* Gutter size modifiers. ========================================================================== */
 .o-layout--tiny { margin-left: -5px; }
@@ -293,6 +293,8 @@ html { font-family: "Futura"; color: #1a1a1a; }
 .o-wrapper:after { content: "" !important; display: block !important; clear: both !important; }
 
 @media (max-width: 27.4275em) { .o-wrapper { padding-left: 0.625rem; padding-right: 0.625rem; } }
+
+.c-article { margin-bottom: 1.25rem; }
 
 .c-article__header { margin-bottom: 2.5rem; }
 
@@ -385,6 +387,28 @@ html { font-family: "Futura"; color: #1a1a1a; }
 @media (max-width: 39.99em) { .c-nav-utils__item { width: 50%; } }
 
 .c-nav-utils__item--search-trigger { padding: 0.625rem 1.25rem; padding-left: 0; color: #7d7d7d; text-align: left; }
+
+.c-pagination--bottom { margin-bottom: 1.25rem; text-align: center; }
+
+@media (min-width: 40em) { .c-pagination--bottom { margin-bottom: 5rem; } }
+
+.c-pagination__item--prev { margin-right: 0.625rem; }
+
+.c-pagination__item--next { margin-left: 0.625rem; }
+
+.c-pagination__link { display: block; }
+
+.c-pagination__link.is-disabled { color: #efefef; cursor: not-allowed; }
+
+.c-pagination__link--prev:hover .c-pagination__icon { background-color: #cf7633; color: #1a1a1a; transform: translateX(-10px); }
+
+.c-pagination__link--next:hover .c-pagination__icon { background-color: #cf7633; color: #1a1a1a; transform: translateX(10px); }
+
+.c-pagination__icon { margin-bottom: .125em; background-color: transparent; border-radius: 50%; transition: transform 0.3s, background-color 0.3s; }
+
+.c-pagination__text { vertical-align: middle; font-size: 16px; font-size: 1rem; }
+
+@media (max-width: 27.4275em) { .c-pagination__text-hide { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 
 .c-search-form__label { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
 

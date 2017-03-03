@@ -22,4 +22,5 @@
   <necessite nom="ordoc" compatibilite="[1.1.1;1.1.*]" />
   <necessite nom="medoc" compatibilite="[2.3.0;2.3.*]" />
   <necessite nom="ps" compatibilite="[0.1.0;0.1.*]" />
+  <necessite nom="suivant_precedent" compatibilite="[1.4.2;1.4.*]" />
 </paquet>

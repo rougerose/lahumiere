@@ -1,0 +1,105 @@
+// =====================================
+// pagination
+// =====================================
+
+.c-pagination {}
+
+// ----- variante: bottom ----- //
+
+.c-pagination--bottom {
+  margin-bottom: $spacing-unit;
+  text-align: center;
+
+  @include mq(tablet) {
+    margin-bottom: $spacing-unit-huge;
+  }
+}
+
+//
+// item
+// -------------------------------------
+
+.c-pagination__item {}
+
+// ----- variante: prev ----- //
+
+.c-pagination__item--prev {
+  margin-right: $spacing-unit-small;
+}
+
+// ----- variante: next ----- //
+
+.c-pagination__item--next {
+  margin-left: $spacing-unit-small;
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-pagination__link {
+  display: block;
+
+  &.is-disabled {
+    color: $color-is-disabled;
+    cursor: not-allowed;
+  }
+}
+
+// ----- variante: prev ----- //
+
+.c-pagination__link--prev {
+  &:hover {
+    .c-pagination__icon {
+      background-color: $color-theme;
+      color: $color-black;
+      transform: translateX(-10px);
+    }
+  }
+}
+
+// ----- variante: next ----- //
+
+.c-pagination__link--next {
+  &:hover {
+    .c-pagination__icon {
+      background-color: $color-theme;
+      color: $color-black;
+      transform: translateX(10px);
+    }
+  }
+}
+
+
+//
+// icon
+// -------------------------------------
+
+.c-pagination__icon {
+  margin-bottom: .125em;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform $global-transition, background-color $global-transition;
+}
+
+
+//
+// text
+// -------------------------------------
+
+.c-pagination__text {
+  vertical-align: middle;
+  @include inuit-font-size(16px, false);
+}
+
+
+//
+// text-hide
+// -------------------------------------
+
+.c-pagination__text-hide {
+  @include mq($until: mobileLs) {
+    @include inuit-hidden-visually;
+  }
+}
