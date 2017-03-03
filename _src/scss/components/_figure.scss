@@ -6,6 +6,14 @@
   margin-bottom: $spacing-unit-large;
 }
 
+// ----- variante logo-article ----- //
+
+.c-figure--logo-article {
+  @include mq(desktop) {
+    margin-bottom: $spacing-unit-huge;
+  }
+}
+
 
 //
 // img

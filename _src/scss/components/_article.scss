@@ -15,6 +15,10 @@
   @include mq($until: mobileLs) {
     text-align: center;
   }
+
+  @include mq(desktop) {
+    margin-bottom: $spacing-unit-huge;
+  }
 }
 
 
@@ -58,6 +62,10 @@
 
 .c-article__section {
   margin-bottom: $spacing-unit-large;
+
+  @include mq(desktop) {
+    margin-bottom: $spacing-unit-huge;
+  }
 }
 
 

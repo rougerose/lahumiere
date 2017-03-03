@@ -9,7 +9,13 @@
 // header
 // -------------------------------------
 
-.c-section__header {}
+.c-section__header {
+  margin-bottom: $spacing-unit;
+
+  @include mq(tablet) {
+    margin-bottom: $spacing-unit-large;
+  }
+}
 
 
 //

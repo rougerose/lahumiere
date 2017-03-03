@@ -298,6 +298,8 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 @media (max-width: 27.4275em) { .c-article__header { text-align: center; } }
 
+@media (min-width: 60em) { .c-article__header { margin-bottom: 5rem; } }
+
 .c-article__title { margin-bottom: 0; font-size: 33px; font-size: 2.0625rem; line-height: 1.1; }
 
 .c-article__subtitle { margin-top: 0.625rem; margin-bottom: 0; font-style: italic; font-size: 26px; font-size: 1.625rem; line-height: 1.53846; }
@@ -306,9 +308,13 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-article__section { margin-bottom: 2.5rem; }
 
+@media (min-width: 60em) { .c-article__section { margin-bottom: 5rem; } }
+
 .c-article__footnotes:before { display: block; margin-bottom: 0.625rem; height: 1px; width: 30%; content: ""; background-color: #1a1a1a; }
 
 .c-figure { margin-bottom: 2.5rem; }
+
+@media (min-width: 60em) { .c-figure--logo-article { margin-bottom: 5rem; } }
 
 .c-figure__img { border: 1px solid rgba(239, 239, 239, 0.5); }
 
@@ -381,6 +387,10 @@ html { font-family: "Futura"; color: #1a1a1a; }
 .c-nav-utils__item--search-trigger { padding: 0.625rem 1.25rem; padding-left: 0; color: #7d7d7d; text-align: left; }
 
 .c-search-form__label { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
+
+.c-section__header { margin-bottom: 1.25rem; }
+
+@media (min-width: 40em) { .c-section__header { margin-bottom: 2.5rem; } }
 
 .c-section__title { font-size: 18px; font-size: 1.125rem; text-transform: uppercase; }
 

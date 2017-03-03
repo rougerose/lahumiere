@@ -12,7 +12,7 @@
           </div>
         </div>]
         <div class="o-layout__item">
-          <section class="c-section">
+          <section class="c-section c-article__section">
             <header class="c-section__header">
               <h1 class="c-section__title"><:lahumiere:artist_about:></h1>
             </header>
@@ -21,30 +21,33 @@
                 [<div class="c-article__section c-text">
                   (#TEXTE)
                 </div>]
-                [<section class="c-article__section c-article__footnotes c-text c-text--footnotes">
+                [<div class="c-article__section c-article__footnotes c-text c-text--footnotes">
                   (#NOTES)
-                </section>]
+                </div>]
               </div>
             </div>
           </section>
         </div>
+
         <B_portfolio>
           <div class="o-layout__item">
-            <section class="c-section">
+            <section class="c-section c-article__section">
               <header class="c-section__header">
                 <h1 class="c-section__title"><:lahumiere:artist_work:></h1>
               </header>
-              <div class="o-layout c-portfolio js-portfolio">
+              <div class="o-layout c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
                 <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
-                <BOUCLE_portfolio(DOCUMENTS){id_article}{vu=non}{par rang_lien, num titre, id_document}>
-                  <figure class="o-layout__item u-5/10@mobileLs c-portfolio__figure">
-                    <img src="#FICHIER" alt="">
-                  </figure>
-                </BOUCLE_portfolio>
+                <div class="js-photoswipe">
+                  <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
+                    [(#INCLURE{fond=inclure/document_portfolio, id_document})]
+                  </BOUCLE_portfolio>
+                </div>
               </div>
             </section>
           </div>
+          #MODELE{photoswipe}
         </B_portfolio>
+
       </div>
     </div>
   </article>
