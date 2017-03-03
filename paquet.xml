@@ -21,4 +21,5 @@
   <necessite nom="mll" compatibilite="[1.2.4;1.2.*]" />
   <necessite nom="ordoc" compatibilite="[1.1.1;1.1.*]" />
   <necessite nom="medoc" compatibilite="[2.3.0;2.3.*]" />
+  <necessite nom="ps" compatibilite="[0.1.0;0.1.*]" />
 </paquet>
