@@ -1,0 +1,21 @@
+[(#SET{vue, #ENV{vue, list}})]
+
+[(#INCLURE{fond=inclure/nav_vue_liste_images, vue=#GET{vue}})]
+
+<BOUCLE_articles(ARTICLES){id_rubrique}{par titre}{lang}>
+[(#GET{vue}|=={list}|oui)
+  <ul class="c-artists c-artists--list">
+    <li class="c-artist"><a href="#URL_ARTICLE">[<h2 class="c-artist__name">(#TITRE|prenom_nom)</h2>]</a></li>
+  </ul>
+][(#GET{vue}|=={images}|oui)
+  <ul class="o-layout o-layout--bottom c-artists c-artists--image">
+    <li class="o-layout__item u-5/10@mobileLs u-3/9@desktop c-artist">
+      <a href="#URL_ARTICLE">
+        <img src="" alt="" class="c-artist__img">
+        [<h2 class="c-artist__name">(#TITRE|prenom_nom)</h2>]
+      </a>
+    </li>
+  </ul>
+]
+</BOUCLE_articles>
+#FILTRE{mini_html}

@@ -1,0 +1,33 @@
+// =====================================
+// artists
+// =====================================
+
+.c-artists {}
+
+// ----- variante: list ----- //
+
+.c-artists--list {
+  margin: 0;
+  list-style: none;
+  columns: 2 12.5em;
+  text-transform: uppercase;
+
+  @include mq(desktop) {
+    width: 75%;
+  }
+}
+
+// ----- variante: images ----- //
+
+.c-artists--images {}
+
+
+
+
+// =====================================
+// artist
+// =====================================
+
+.c-artist {
+  margin-bottom: $spacing-unit-small;
+}
