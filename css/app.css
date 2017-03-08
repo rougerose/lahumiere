@@ -314,11 +314,23 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-article__footnotes:before { display: block; margin-bottom: 0.625rem; height: 1px; width: 30%; content: ""; background-color: #1a1a1a; }
 
-.c-artists--list { margin: 0; list-style: none; -moz-columns: 2 12.5em; columns: 2 12.5em; text-transform: uppercase; }
+.c-artists--list { margin: 0; list-style: none; -moz-columns: 2; columns: 2; }
 
 @media (min-width: 60em) { .c-artists--list { width: 75%; } }
 
 .c-artist { margin-bottom: 0.625rem; }
+
+.c-artist__link { display: block; }
+
+.c-artist__link--images { margin-bottom: 2.5rem; }
+
+.c-artist__link--images:hover .c-artist__name--images { border-color: #cf7633; }
+
+.c-artist__img { margin-bottom: 1.25rem; }
+
+.c-artist__name { margin-bottom: 0; font-size: 18px; font-size: 1.125rem; text-transform: uppercase; }
+
+.c-artist__name--images { border-bottom: 1px solid #1a1a1a; padding-bottom: 1.25rem; transition: border-color 0.3s; }
 
 .c-figure { margin-bottom: 2.5rem; }
 
