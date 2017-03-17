@@ -8,7 +8,7 @@
   #SET{liClass, 'o-layout__item u-5/10@mobileLs u-3/9@desktop c-artist'}
 ]
 
-[(#INCLURE{fond=inclure/nav_vue_liste_images, vue=#GET{vue}})]
+[(#INCLURE{fond=inclure/nav_liste_ou_images, vue=#GET{vue}})]
 
 
 <B_articles>
@@ -19,9 +19,9 @@
           [(#GET{vue}|=={liste}|oui)[<h2 class="c-artist__name">(#TITRE|prenom_nom)</h2>]]
           [(#GET{vue}|=={images}|oui)
             [(#LOGO_ARTICLE|?{
-              [(#INCLURE{fond=inclure/rubrique_vue_images_logo, id_article})]
+              [(#INCLURE{fond=inclure/artist_img_logo, id_article})]
               ,
-              [(#INCLURE{fond=inclure/rubrique_vue_images_document, id_article})]
+              [(#INCLURE{fond=inclure/artist_img_document, id_article})]
             })]
             [<h2 class="c-artist__name[ (#GET{vue}|=={images}|oui)c-artist__name--images]">(#TITRE|prenom_nom)</h2>]
           ]
