@@ -29,7 +29,9 @@ const map             = require("vinyl-map");
 const rename          = require("gulp-rename");
 const plumberNotifier = require("gulp-plumber-notifier");
 const concat          = require("gulp-concat");
-
+const uglify          = require("gulp-uglify");
+const pump            = require("pump");
+const wrap            = require('gulp-wrap');
 
 // -------------------------------------
 // Options
@@ -64,7 +66,8 @@ var options = {
         'node_modules/masonry-layout/dist/masonry.pkgd.min.js'
       ]
     },
-    files: '_src/js/**/*.js',
+    files: '_src/js/*.js',
+    file: 'js/app.js',
     destination: 'js'
   },
 
@@ -144,11 +147,27 @@ gulp.task( 'compile:jsLib', function () {
 // -------------------------------------
 
 gulp.task( 'compile:js', function () {
-  gulp.src( options.js.files )
+  gulp.src(['_src/js/*.js'] )
     .pipe(concat("app.js"))
-    .pipe( gulp.dest( options.js.destination ))
+    .pipe(wrap('(function(){\n\'use strict\';\n<%= contents %>\n})();'))
+    .pipe( gulp.dest( options.js.destination ));
 });
 
+
+// -------------------------------------
+// Task : minify:js
+// -------------------------------------
+
+gulp.task('minify:js', function (cb) {
+  pump([
+        gulp.src( options.js.file ),
+        uglify(),
+        rename( {suffix: '.min' }),
+        gulp.dest( options.js.destination )
+    ],
+    cb
+  );
+});
 
 // -------------------------------------
 // Task : watch

@@ -10,10 +10,10 @@ function lahumiere_insert_head_css($flux) {
 
 function lahumiere_insert_head($flux) {
   // lib
-  $flux .= '<script src="'.find_in_path('js/lib.min.js').'" type="text/javascript"></script>';
+  $flux .= '<script src="'.find_in_path('js/lib.min.js').'" type="text/javascript" defer></script>';
 
   // app
-  $flux .= '<script src="'.find_in_path('js/app.js').'" type="text/javascript"></script>';
-  
+  $flux .= '<script src="'.find_in_path('js/app.js').'" type="text/javascript" defer></script>';
+
   return $flux;
 }

@@ -29,10 +29,10 @@ $inuit-use-markup-fix: true;
 // ----- Mediaqueries ----- //
 
 $mq-breakpoints: (
-  mobile:   320px,
-  mobileLs: 439px,
-  tablet:   640px,
-  desktop:  960px
+  mobile:   320px, // 20em
+  mobileLs: 439px, // 27.43em
+  tablet:   640px, // 40em
+  desktop:  960px  // 60em
 );
 
 

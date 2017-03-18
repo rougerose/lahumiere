@@ -205,10 +205,6 @@ html { font-size: 1em; /* [1] */ line-height: 1.25; /* [1] */ overflow-y: scroll
 
 html { font-family: "Futura"; color: #1a1a1a; }
 
-::-moz-selection { background-color: #cf7633; }
-
-::selection { background-color: #cf7633; }
-
 @font-face { font-family: 'Futura'; src: url("webfonts/FuturaStd-Book.eot"); /* IE9 Compat Modes */ src: url("webfonts/FuturaStd-Book.eot?#iefix") format("embedded-opentype"), url("webfonts/FuturaStd-Book.woff") format("woff"), url("webfonts/FuturaStd-Book.ttf") format("truetype"), url("webfonts/FuturaStd-Book.svg#FuturaStd-Book") format("svg"); /* Legacy iOS */ font-style: normal; font-weight: normal; }
 
 @font-face { font-family: 'Futura'; src: url("webfonts/FuturaStd-BookOblique.eot"); /* IE9 Compat Modes */ src: url("webfonts/FuturaStd-BookOblique.eot?#iefix") format("embedded-opentype"), url("webfonts/FuturaStd-BookOblique.woff") format("woff"), url("webfonts/FuturaStd-BookOblique.ttf") format("truetype"), url("webfonts/FuturaStd-BookOblique.svg#FuturaStd-BookOblique") format("svg"); /* Legacy iOS */ font-style: italic; font-weight: normal; }
@@ -300,9 +296,9 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 @media (max-width: 27.4275em) { .c-article__header { text-align: center; } }
 
-@media (min-width: 60em) { .c-article__header { margin-bottom: 5rem; } }
-
 .c-article__title { margin-bottom: 0; font-size: 33px; font-size: 2.0625rem; line-height: 1.1; }
+
+.c-article__title--rubric { font-size: 28px; font-size: 1.75rem; text-transform: uppercase; }
 
 .c-article__subtitle { margin-top: 0.625rem; margin-bottom: 0; font-style: italic; font-size: 26px; font-size: 1.625rem; line-height: 1.53846; }
 
@@ -332,11 +328,55 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-artist__name--images { border-bottom: 1px solid #1a1a1a; padding-bottom: 1.25rem; transition: border-color 0.3s; }
 
+.c-cover { margin-bottom: 5rem; }
+
+.c-cover__link { display: block; }
+
+.c-cover__link:hover { color: #1a1a1a; }
+
+.c-cover__link:hover .c-cover__title { color: #cf7633; }
+
+.c-cover__link:hover .c-cover__more { transform: translateX(1.25rem); fill: #cf7633; }
+
+.c-cover__meta { font-size: 14px; font-size: 0.875rem; line-height: 1.42857; }
+
+@media (max-width: 27.4275em) { .c-cover__meta { margin-bottom: 0; padding: 0.3125rem 0 0.625rem; text-align: center; } }
+
+@media (min-width: 27.4375em) { .c-cover__meta { border-bottom: 1px solid #1a1a1a; padding-bottom: 0.3125rem; } }
+
+.c-cover__text { line-height: 1.4; }
+
+@media (max-width: 27.4275em) { .c-cover__text { text-align: center !important; } }
+
+.c-cover__header { margin-bottom: 1.25rem; }
+
+.c-cover__header:after { display: inline-block; width: 3em; height: 1px; background-color: #1a1a1a; content: ""; }
+
+.c-cover__title { font-size: 22px; font-size: 1.375rem; line-height: 1.2; transition: color 0.3s; }
+
+.c-cover__title--large { font-size: 26px; font-size: 1.625rem; }
+
+.c-cover__subtitle { font-style: italic; font-size: 17px; font-size: 1.0625rem; line-height: 1.17647; }
+
+.c-cover__subtitle--large { font-size: 19px; font-size: 1.1875rem; line-height: 1.05263; }
+
+.c-cover__title, .c-cover__subtitle { margin-bottom: 0.625rem; }
+
+.c-cover__description { font-size: 17px; font-size: 1.0625rem; }
+
+@media (min-width: 40em) { .c-cover__description { font-size: 18px; font-size: 1.125rem; } }
+
+@media (min-width: 27.4375em) { .c-cover__header, .c-cover__description { padding-right: 0.625rem; } }
+
+@media (min-width: 27.4375em) { .c-cover__header--large, .c-cover__description--large { padding-left: 0.625rem; padding-right: 0; } }
+
+@media (min-width: 27.4375em) { .c-cover__header--reverse, .c-cover__description--reverse { padding-left: 0; padding-right: 0.625rem; } }
+
+.c-cover__more { transition: fill 0.3s, transform 0.3s; }
+
 .c-figure { margin-bottom: 2.5rem; }
 
-@media (min-width: 60em) { .c-figure--logo-article { margin-bottom: 5rem; } }
-
-.c-figure__img { border: 1px solid rgba(239, 239, 239, 0.5); }
+@media (min-width: 60em) { .c-figure--logo-article { margin-top: 5rem; margin-bottom: 5rem; } }
 
 .c-figure__caption { margin-left: 1px; padding-top: 0.3125rem; padding-left: 0.3125rem; border-left: 1px solid rgba(186, 186, 186, 0.5); }
 
@@ -347,6 +387,23 @@ html { font-family: "Futura"; color: #1a1a1a; }
 .c-figure__desc, .c-figure__author { color: #bababa; }
 
 .c-header { position: relative; margin-bottom: 2.5rem; }
+
+.c-meta { text-transform: uppercase; font-style: italic; }
+
+@media (max-width: 27.4275em) { .c-meta:before { display: block; margin: 0 auto 1.25rem; content: ""; width: 50px; height: 2px; background-color: #1a1a1a; }
+  .c-meta > .c-meta__item:first-child:after { content: "\A"; white-space: pre; } }
+
+.c-meta--std > .c-meta__item:first-child:after { content: "\A"; white-space: pre; }
+
+.c-meta--std > .c-meta__item--icon { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
+
+.c-meta__item { margin-right: 0.3125rem; vertical-align: middle; }
+
+@media (max-width: 27.4275em) { .c-meta__item--icon { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
+
+@media (min-width: 27.4375em) { .c-meta__item--icon { fill: #cf7633; } }
+
+.c-meta__item--statut { font-family: "FuturaHeavy", sans-serif; }
 
 .c-nav { text-transform: uppercase; }
 
@@ -416,13 +473,19 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-nav-utils__item--search-trigger { padding: 0.625rem 1.25rem; padding-left: 0; color: #7d7d7d; text-align: left; }
 
-.c-pagination--bottom { margin-bottom: 1.25rem; text-align: center; }
+.c-pagination { margin-bottom: 2.5rem; }
+
+.c-pagination--bottom { margin-bottom: 1.25rem; }
 
 @media (min-width: 40em) { .c-pagination--bottom { margin-bottom: 5rem; } }
 
-.c-pagination__item--prev { margin-right: 0.625rem; }
+.c-pagination--prevnext { text-align: center; }
 
-.c-pagination__item--next { margin-left: 0.625rem; }
+.c-pagination__item .is-selected { font-weight: bold; }
+
+.c-pagination__item--prev { margin-right: 1.25rem; }
+
+.c-pagination__item--next { margin-left: 1.25rem; }
 
 .c-pagination__link { display: block; }
 
@@ -434,7 +497,7 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-pagination__icon { margin-bottom: .125em; background-color: transparent; border-radius: 50%; transition: transform 0.3s, background-color 0.3s; }
 
-.c-pagination__text { vertical-align: middle; font-size: 16px; font-size: 1rem; }
+.c-pagination__text { vertical-align: middle; font-size: 18px; font-size: 1.125rem; }
 
 @media (max-width: 27.4275em) { .c-pagination__text-hide { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 

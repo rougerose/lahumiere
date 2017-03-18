@@ -17,10 +17,6 @@
   @include mq($until: mobileLs) {
     text-align: center;
   }
-
-  @include mq(desktop) {
-    margin-bottom: $spacing-unit-huge;
-  }
 }
 
 
@@ -33,6 +29,12 @@
   @include inuit-font-size(33px, 1.1);
 }
 
+// ----- variante: rubric ----- //
+
+.c-article__title--rubric {
+  @include inuit-font-size(28px, false);
+  text-transform: uppercase;
+}
 
 //
 // subtitle

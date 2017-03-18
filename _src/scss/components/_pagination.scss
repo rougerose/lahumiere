@@ -2,35 +2,48 @@
 // pagination
 // =====================================
 
-.c-pagination {}
+.c-pagination {
+  margin-bottom: $spacing-unit-large;
+}
 
 // ----- variante: bottom ----- //
 
 .c-pagination--bottom {
   margin-bottom: $spacing-unit;
-  text-align: center;
 
   @include mq(tablet) {
     margin-bottom: $spacing-unit-huge;
   }
 }
 
+
+// ----- variante: prevnext ----- //
+
+.c-pagination--prevnext {
+  text-align: center;
+}
+
+
 //
 // item
 // -------------------------------------
 
-.c-pagination__item {}
+.c-pagination__item {
+  & .is-selected {
+    font-weight: bold;
+  }
+}
 
 // ----- variante: prev ----- //
 
 .c-pagination__item--prev {
-  margin-right: $spacing-unit-small;
+  margin-right: $spacing-unit;
 }
 
 // ----- variante: next ----- //
 
 .c-pagination__item--next {
-  margin-left: $spacing-unit-small;
+  margin-left: $spacing-unit;
 }
 
 
@@ -90,7 +103,7 @@
 
 .c-pagination__text {
   vertical-align: middle;
-  @include inuit-font-size(16px, false);
+  @include inuit-font-size(18px, false);
 }
 
 

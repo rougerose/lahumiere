@@ -1,25 +1,26 @@
+(function(){
+'use strict';
 // =====================================
 // portfolio
 //
 // utilise masonry et imagesloaded
 // =====================================
 
-$(function(){
+var $grid = $('.js-portfolio');
 
-  var $grid = $(".js-portfolio");
+if ($grid.length) {
 
-  if ($grid.length) {
+  // init Masonry
+  $grid.masonry({
+    itemSelector: '.o-layout__item',
+    columnWidth: '.c-portfolio__sizer',
+    percentPosition: true
+  });
 
-    // init Masonry
-    $grid.masonry({
-      itemSelector: '.o-layout__item',
-      columnWidth: '.c-portfolio__sizer',
-      percentPosition: true
-    });
+  // imagesLoaded
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry('layout');
+  });
+}
 
-    // imagesLoaded
-    $grid.imagesLoaded().progress( function() {
-      $grid.masonry('layout');
-    });
-  }
-});
+})();

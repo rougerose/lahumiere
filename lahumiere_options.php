@@ -25,4 +25,4 @@ define('_INTERDIRE_COMPACTE_HEAD_ECRIRE', true);
 // toutes les erreurs dans SPIP
 define('SPIP_ERREUR_REPORT',E_ALL);
 
-define('_BOUCLE_PROFILER', 1000);
+define('_BOUCLE_PROFILER', 2000);

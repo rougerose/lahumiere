@@ -1,0 +1,35 @@
+<BOUCLE_cover_img_large(ARTICLES){id_article}>
+[(#REM)
+  <!--
+  Largeur du logo en fonction des breakpoints.
+  Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+  ************************************************************************
+    desktop hdpi: 810px
+    desktop:      262px | 304px
+    tablet:       260px | 403px
+    mobileLs:     190px | 290px
+    mobile:       280px | 198px
+  -->
+][(#LOGO_ARTICLE|oui)
+
+  [(#SET{405w, #LOGO_ARTICLE|image_reduire{405,0}|extraire_attribut{src} })]
+
+  <figure class="o-layout__item c-cover__figure c-figure">
+    [<img src="
+      (#GET{405w})
+    " srcset="
+      [(#LOGO_ARTICLE|image_reduire{810,0}|extraire_attribut{src}) 810w,]
+      [(#GET{405w}) 405w,]
+      [(#LOGO_ARTICLE|image_reduire{300,0}|extraire_attribut{src}) 300w,]
+      [(#LOGO_ARTICLE|image_reduire{200,0}|extraire_attribut{src}) 200w]
+    " sizes="100vw" alt="#TITRE" class="c-cover__img c-figure__img">]
+  </figure>
+][
+  (#LOGO_ARTICLE|non)
+  [(#SET{fichier, #CHEMIN{images/image-default.png}|image_reduire{405,0}})]
+  <figure class="c-cover__figure c-figure">
+    [<img src="(#GET{fichier}|extraire_attribut{src})" alt="#TITRE" class="c-cover__img c-figure__img">]
+  </figure>
+]
+</BOUCLE_cover_img_large>
+#FILTRE{mini_html}
