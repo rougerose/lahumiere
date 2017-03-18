@@ -1,31 +1,33 @@
-<nav class="c-nav c-pagination c-pagination--prevnext c-pagination--bottom" role="navigation">
-  <ul class="c-nav__list">
-      <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
-        <BOUCLE_precedent_article(ARTICLES){id_rubrique}{precedent}{par titre}{lang}>
-          <a href="#URL_ARTICLE" class="c-pagination__link c-pagination__link--prev">
-            [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
-            <span class="c-nav__text c-pagination__text"><:lahumiere:previous:></span>
-          </a>
-        </BOUCLE_precedent_article>
-          <span class="c-pagination__link is-disabled">
-            [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
-            <span class="c-nav__text c-pagination__text"><:lahumiere:previous:></span>
-          </span>
-        <//B_precedent_article>
-      </li
-      ><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
-        <BOUCLE_suivant_article(ARTICLES){id_rubrique}{suivant}{par titre}{lang}>
-          <a href="#URL_ARTICLE" class="c-pagination__link c-pagination__link--next">
-            <span class="c-nav__text c-pagination__text"><:lahumiere:next:></span>
-            [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
-          </a>
-        </BOUCLE_suivant_article>
-          <span class="c-pagination__link is-disabled">
-            <span class="c-nav__text c-pagination__text"><:lahumiere:next:></span>
-            [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
-          </span>
-        <//B_suivant_article>
-      </li>
-  </ul>
-</nav>
+<BOUCLE_nav_prev_next_article(ARTICLES){id_article}>
+  <nav class="c-nav c-pagination c-pagination--prevnext c-pagination--bottom" role="navigation">
+    <ul class="c-nav__list">
+        <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
+          <BOUCLE_precedent_article(ARTICLES){id_rubrique}{precedent}{par date}{lang}>
+            <a href="#URL_ARTICLE" class="c-pagination__link c-pagination__link--prev">
+              [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
+              <span class="c-nav__text c-pagination__text"><:lahumiere:previous:></span>
+            </a>
+          </BOUCLE_precedent_article>
+            <span class="c-pagination__link is-disabled">
+              [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
+              <span class="c-nav__text c-pagination__text"><:lahumiere:previous:></span>
+            </span>
+          <//B_precedent_article>
+        </li
+        ><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
+          <BOUCLE_suivant_article(ARTICLES){id_rubrique}{suivant}{par date}{lang}>
+            <a href="#URL_ARTICLE" class="c-pagination__link c-pagination__link--next">
+              <span class="c-nav__text c-pagination__text"><:lahumiere:next:></span>
+              [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
+            </a>
+          </BOUCLE_suivant_article>
+            <span class="c-pagination__link is-disabled">
+              <span class="c-nav__text c-pagination__text"><:lahumiere:next:></span>
+              [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
+            </span>
+          <//B_suivant_article>
+        </li>
+    </ul>
+  </nav>
+</BOUCLE_nav_prev_next_article>
 #FILTRE{mini_html}
