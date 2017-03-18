@@ -1,0 +1,5 @@
+<composition>
+  <nom>Article sans logo</nom>
+  <description>Identique à la composition par défaut, excepté que le logo ne sera pas affiché.</description>
+  <icon>images/objet-simple.png</icon>
+</composition>

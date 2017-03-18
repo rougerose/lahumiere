@@ -1,5 +1,6 @@
 <composition>
   <nom>Rubrique Expositions</nom>
   <description>Composition pour la rubrique « Expositions »</description>
+  <branche type="article" composition="nologo" />
   <icon>images/objet-simple.png</icon>
 </composition>
