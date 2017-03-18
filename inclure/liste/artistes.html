@@ -4,7 +4,7 @@
 #SET{liClass, 'c-artist'}
 
 [(#GET{vue}|=={images}|oui)
-  #SET{ulClass, 'o-layout o-layout--bottom c-artists c-artists--image'}
+  #SET{ulClass, 'o-layout o-layout--bottom c-artists c-artists--images'}
   #SET{liClass, 'o-layout__item u-5/10@mobileLs u-3/9@desktop c-artist'}
 ]
 
@@ -16,14 +16,14 @@
     <BOUCLE_articles(ARTICLES){id_rubrique}{par titre}{lang}>
       <li[ class="(#GET{liClass})"]>
         <a href="#URL_ARTICLE" class="c-artist__link[ (#GET{vue}|=={images}|oui)c-artist__link--images]">
-          [(#GET{vue}|=={liste}|oui)[<h2 class="c-artist__name">(#TITRE|prenom_nom)</h2>]]
+          [(#GET{vue}|=={liste}|oui)[<h2 class="c-artist__name c-artist__name--list">(#TITRE|prenom_nom)</h2>]]
           [(#GET{vue}|=={images}|oui)
             [(#LOGO_ARTICLE|?{
               [(#INCLURE{fond=inclure/artist_img_logo, id_article})]
               ,
               [(#INCLURE{fond=inclure/artist_img_document, id_article})]
             })]
-            [<h2 class="c-artist__name[ (#GET{vue}|=={images}|oui)c-artist__name--images]">(#TITRE|prenom_nom)</h2>]
+            [<h2 class="c-artist__name c-artist__name--images">(#TITRE|prenom_nom)</h2>]
           ]
         </a>
       </li>

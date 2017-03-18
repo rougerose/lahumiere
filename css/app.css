@@ -310,23 +310,27 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-article__footnotes:before { display: block; margin-bottom: 0.625rem; height: 1px; width: 30%; content: ""; background-color: #1a1a1a; }
 
-.c-artists--list { margin: 0; list-style: none; -moz-columns: 2; columns: 2; }
+.c-artists--list { margin: 0; list-style: none; -moz-columns: 2 200px; columns: 2 200px; }
+
+.c-artists--list > li { margin-bottom: 1.25rem; }
 
 @media (min-width: 60em) { .c-artists--list { width: 75%; } }
 
-.c-artist { margin-bottom: 0.625rem; }
+.c-artists--images > li { margin-bottom: 0.625rem; }
 
 .c-artist__link { display: block; }
 
 .c-artist__link--images { margin-bottom: 2.5rem; }
 
-.c-artist__link--images:hover .c-artist__name--images { border-color: #cf7633; }
-
 .c-artist__img { margin-bottom: 1.25rem; }
 
 .c-artist__name { margin-bottom: 0; font-size: 18px; font-size: 1.125rem; text-transform: uppercase; }
 
-.c-artist__name--images { border-bottom: 1px solid #1a1a1a; padding-bottom: 1.25rem; transition: border-color 0.3s; }
+.c-artist__name--images { border-bottom: 1px solid #cf7633; padding-bottom: 1.25rem; transition: border-color 0.3s; }
+
+.c-artist__name--list { position: relative; padding-left: 1rem; }
+
+.c-artist__name--list:before { position: absolute; bottom: 0; left: 0; height: 1px; width: 1.5rem; background-color: #cf7633; content: ""; }
 
 .c-cover { margin-bottom: 5rem; }
 
@@ -411,15 +415,17 @@ html { font-family: "Futura"; color: #1a1a1a; }
 
 .c-nav__list-item { display: inline-block; }
 
-.c-nav-chooser { border-bottom: 1px solid #1a1a1a; margin-bottom: 2.5rem; text-transform: none; }
+.c-nav-chooser { border-bottom: 1px solid #1a1a1a; margin-bottom: 2.5rem; }
 
 @media (min-width: 40em) { .c-nav-chooser { width: 50%; } }
 
-.c-nav-chooser__title { display: inline-block; margin-bottom: 0; font-size: 18px; font-size: 1.125rem; line-height: 1.11111; }
+.c-nav-chooser__title { display: inline-block; margin-bottom: 0; margin-right: 0.3125rem; font-size: 17px; font-size: 1.0625rem; font-family: "FuturaHeavy", sans-serif; }
 
-.c-nav-chooser__link { display: inline-block; padding-bottom: 0.3125rem; padding: 0 0.3125rem 0.3125rem; font-size: 18px; font-size: 1.125rem; line-height: 1.11111; }
+.c-nav-chooser__link { display: inline-block; margin-right: 0.3125rem; padding: 0 0.3125rem; font-size: 17px; font-size: 1.0625rem; }
 
-.c-nav-chooser__link.is-current { border-bottom: 2px solid #1a1a1a; color: #cf7633; }
+.c-nav-chooser__link.is-current { border-bottom: 1px solid #1a1a1a; color: #cf7633; }
+
+.c-nav-chooser__link > .o-icon { margin-right: 3px; }
 
 .c-nav-lang__item { padding: 0.625rem 0; color: #bababa; }
 

@@ -9,7 +9,11 @@
 .c-artists--list {
   margin: 0;
   list-style: none;
-  columns: 2;
+  columns: 2 200px;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
 
   @include mq(desktop) {
     width: 75%;
@@ -18,16 +22,18 @@
 
 // ----- variante: images ----- //
 
-.c-artists--images {}
+.c-artists--images {
+  > li {
+    margin-bottom: $spacing-unit-small;
+  }
+}
 
 
 // =====================================
 // artist
 // =====================================
 
-.c-artist {
-  margin-bottom: $spacing-unit-small;
-}
+.c-artist {}
 
 
 //
@@ -42,12 +48,6 @@
 
 .c-artist__link--images {
   margin-bottom: $spacing-unit-large;
-
-  &:hover {
-    .c-artist__name--images {
-      border-color: $color-theme;
-    }
-  }
 }
 
 
@@ -73,7 +73,23 @@
 // ----- variante: images ----- //
 
 .c-artist__name--images {
-  border-bottom: 1px solid $color-black;
+  border-bottom: 1px solid $color-theme;
   padding-bottom: $spacing-unit;
   transition: border-color $global-transition;
+}
+
+// ----- variante: list ----- //
+
+.c-artist__name--list {
+  position: relative;
+  padding-left: 1rem;
+  &:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 1.5rem;
+    background-color: $color-theme;
+    content: "";
+  }
 }
