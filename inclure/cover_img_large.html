@@ -1,36 +1,44 @@
 <BOUCLE_cover_img_large(ARTICLES){id_article}>
-[(#REM)
-  <!--
-  Largeur du logo en fonction des breakpoints.
-  Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
-  ************************************************************************
-    desktop hdpi: 1040px
-    desktop:      450px | 520px
-    tablet:       290px | 450px
-    mobileLs:     190px | 290px
-    mobile:       300px | 418px
-  -->
-][(#LOGO_ARTICLE|oui)
+  [(#REM)
+    <!--
+      Si le logo existe, on garde son URL relative.
+      Sinon on prend le premier document du porfolio
+    -->
+  ][(#LOGO_ARTICLE|oui) #SET{fichier,#VAL{IMG/}|concat{#LOGO_ARTICLE**}}]
+    <BOUCLE_portofolio(DOCUMENTS){id_article}{extension IN jpg, gif, png}{vu=non}{0,1}{si #LOGO_ARTICLE|non}>
+      #SET{fichier, #FICHIER}
+    </BOUCLE_portofolio>
 
-  [(#SET{520w, #LOGO_ARTICLE|image_reduire{520,0}|extraire_attribut{src} })]
+  [(#REM)
+    <!--
+      Largeur du logo en fonction des breakpoints.
+      Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+      ************************************************************************
+        desktop hdpi: 1040px
+        desktop:      450px | 520px
+        tablet:       290px | 450px
+        mobileLs:     190px | 290px
+        mobile:       300px | 418px
+    -->
+  ][(#REM)
+    <!--
+      Si le fichier a une largeur inférieure à 1040px,
+      Spip "fabrique" une image à cette largeur.
+    -->
+  ][(#GET{fichier}|largeur|<{1040}|oui) [(#SET{fichier, #GET{fichier}|image_passe_partout{1040,0}|image_recadre{1040,0, 'center', '#000000'} })] ]
 
-  <figure class="o-layout__item u-5/10@mobileLs u-5/9@tablet c-cover__figure c-figure">
+  [(#SET{520w, #GET{fichier}|image_reduire{520,0}|extraire_attribut{src}})]
+
+  <figure class="o-layout__item u-5/10@mobileLs u-5/9@tablet c-cover__figure c-figure [(#GET{fichier}|largeur)]">
     [<img src="
       (#GET{520w})
     " srcset="
-      [(#LOGO_ARTICLE|image_reduire{1040,0}|extraire_attribut{src}) 1040w,]
+      [(#GET{fichier}|image_reduire{1040,0}|extraire_attribut{src}) 1040w,]
       [(#GET{520w}) 520w,]
-      [(#LOGO_ARTICLE|image_reduire{450,0}|extraire_attribut{src}) 450w,]
-      [(#LOGO_ARTICLE|image_reduire{300,0}|extraire_attribut{src}) 300w,]
-      [(#LOGO_ARTICLE|image_reduire{200,0}|extraire_attribut{src}) 200w]
+      [(#GET{fichier}|image_reduire{450,0}|extraire_attribut{src}) 450w,]
+      [(#GET{fichier}|image_reduire{300,0}|extraire_attribut{src}) 300w,]
+      [(#GET{fichier}|image_reduire{200,0}|extraire_attribut{src}) 200w]
     " sizes="100vw" alt="#TITRE" class="c-cover__img c-figure__img">]
   </figure>
-][
-  (#LOGO_ARTICLE|non)
-  [(#SET{fichier, #CHEMIN{images/image-default.png}|image_reduire{520,0}})]
-  <figure class="o-layout__item u-5/10@mobileLs u-5/9@tablet c-cover__figure c-figure">
-    [<img src="(#GET{fichier}|extraire_attribut{src})" alt="#TITRE" class="c-cover__img c-figure__img">]
-  </figure>
-]
 </BOUCLE_cover_img_large>
 #FILTRE{mini_html}
