@@ -1,0 +1,5 @@
+<composition>
+  <nom>Article Expositions / Version sans logo</nom>
+  <description>Composition pour les articles de la rubrique «Expositions». Le logo de l'article ne sera pas affiché.</description>
+  <icon>images/objet-simple.png</icon>
+</composition>

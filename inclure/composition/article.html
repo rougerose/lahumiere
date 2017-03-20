@@ -27,9 +27,9 @@
         </div>
 
         <B_portfolio>
-          <div class="o-layout__item">
+          <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs">
             <div class="c-article__section">
-              <div class="o-layout u-9/10@mobileLs u-push-1/10@mobileLs c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
+              <div class="o-layout c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
                 <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
                 <div class="js-photoswipe">
                   <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
@@ -41,7 +41,9 @@
           </div>
           #MODELE{photoswipe}
         </B_portfolio>
+
         [(#INCLURE{fond=inclure/nav_prev-next_article-artiste, id_article, id_rubrique, lang})]
+
       </div>
     </div>
   </article>

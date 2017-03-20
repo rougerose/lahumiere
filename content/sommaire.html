@@ -1,3 +1,43 @@
-<h1>page sommaire</h1>
+[(#REM)
+  <!--
+    Variables d'agenda:
+      - reprises sur le modèle du squelette agenda (cf. plugin Agenda)
+      - affichage sur 12 mois + le début est calé sur le 1er janvier.
+  -->
+]
+#SET{affichage_duree,12}
+#SET{affichage_debut, debut_mois_1}
+#SET{date_debut,#ENV{date_debut,#ENV{date}}|agenda_date_debut_liste{#GET{affichage_debut}}}
+#SET{date_prev,#GET{date_debut}|agenda_moisdecal{#GET{affichage_duree}|mult{-1},'Y-m-d H:i:00'}}
+#SET{date_fin,#GET{date_debut}|agenda_moisdecal{#GET{affichage_duree},'Y-m-d H:i:00'}}
+
+[(#REM)
+  <!--
+    Variables pour l'affichage des expositions
+  -->
+]
+#SET{articles, #ARRAY}
+#SET{compteur, ''}
+
+<BOUCLE_evenements(EVENEMENTS){id_rubrique=3}{!evenement_passe #GET{date_debut}}{!evenement_a_venir #GET{date_fin}}{par date_debut}{lang}>
+  <p>#TITRE / #DATE_DEBUT - #DATE_FIN</p>
+  [(#SET{articles, #GET{articles}|push{#ID_ARTICLE} })]
+</BOUCLE_evenements>
+
+<div class="o-layout">
+  <BOUCLE_selections(ARTICLES pb_selection){spip_pb_selection.id_rubrique=0}{par ordre}{lang}>
+    [(#SET{compteur, #COMPTEUR_BOUCLE})]
+    [(#INCLURE{fond=inclure/cover_exhibition,
+      id_article,
+      lang,
+      date_debut=#GET{date_debut},
+      date_fin=#GET{date_fin},
+      variante=large,
+      compteur=#GET{compteur}
+    })]
+  </BOUCLE_selections>
+</div>
+
+
 
 #FILTRE{mini_html}

@@ -1,0 +1,75 @@
+// =====================================
+// event
+// =====================================
+
+.c-event {
+  position: relative;
+  @include inuit-clearfix();
+  border: 1px solid $color-gray-lighter;
+  border-width: 1px 0;
+  padding: $spacing-unit 0;
+}
+
+
+//
+// content
+// -------------------------------------
+
+.c-event__content {
+  margin-bottom: $spacing-unit;
+
+  @include mq(tabletPlus) {
+    float: left;
+    margin-bottom: 0;
+    margin-right: $spacing-unit;
+    width: 60%;
+  }
+}
+
+
+//
+// add-to-cal
+// -------------------------------------
+
+.c-event__action {
+  text-align: center;
+
+  @include mq(tabletPlus) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    overflow: hidden;
+    transform: translateY(-50%);
+  }
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-event__title {
+  margin-bottom: $spacing-unit-small;
+  font-family: $font-futuraHeavy;
+  @include inuit-font-size(18px, 1.4);
+}
+
+
+//
+// dates
+// -------------------------------------
+
+.c-event__dates {
+  margin-bottom: $spacing-unit-small;
+}
+
+
+//
+// place
+// -------------------------------------
+
+.c-event__place {
+  p {
+    margin-bottom: 0;
+  }
+}

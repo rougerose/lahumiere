@@ -9,10 +9,9 @@
 // ----- variante logo-article ----- //
 
 .c-figure--logo-article {
-  @include mq(desktop) {
-    margin-top: $spacing-unit-huge;
-    margin-bottom: $spacing-unit-huge;
-  }
+  // @include mq(desktop) {
+  //   margin-top: $spacing-unit-large;
+  // }
 }
 
 
@@ -20,9 +19,7 @@
 // img
 // -------------------------------------
 
-.c-figure__img {
-  // border: 1px solid rgba($color-gray-lighter, 0.5);
-}
+.c-figure__img {}
 
 
 //

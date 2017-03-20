@@ -1,0 +1,54 @@
+// =====================================
+// button
+// =====================================
+
+.c-btn {
+  border: 1px solid $color-black;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all $global-transition;
+}
+
+// ----- variantes size ----- //
+
+.c-btn--xs {
+  padding: $spacing-unit-tiny;
+  @include inuit-font-size(12px, normal);
+}
+
+// ----- variantes color ----- //
+
+.c-btn--primary {
+  border-color: $color-gray-lighter;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    border-color: $color-theme;
+    background-color: $color-theme;
+  }
+
+  &:active,
+  &:focus {
+    border-color: darken($color-theme, 15%) lighten($color-theme, 20%) lighten($color-theme, 20%) darken($color-theme, 15%);
+  }
+}
+
+
+//
+// icon
+// -------------------------------------
+
+.c-btn__icon {}
+
+
+//
+// label
+// -------------------------------------
+
+.c-btn__label {
+  margin-left: $spacing-unit-tiny;
+  vertical-align: middle;
+}

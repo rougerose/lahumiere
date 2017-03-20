@@ -44,7 +44,7 @@
   margin-top: $spacing-unit-small;
   margin-bottom: 0;
   font-style: italic;
-  @include inuit-font-size(26px);
+  @include inuit-font-size(24px, false);
 }
 
 
@@ -67,9 +67,9 @@
 .c-article__section {
   margin-bottom: $spacing-unit-large;
 
-  @include mq(desktop) {
-    margin-bottom: $spacing-unit-huge;
-  }
+  // @include mq(desktop) {
+  //   margin-bottom: $spacing-unit-huge;
+  // }
 }
 
 
@@ -99,6 +99,6 @@
     height: 1px;
     width: 30%;
     content: "";
-    background-color: $color-black;
+    background-color: $color-gray-light;
   }
 }
