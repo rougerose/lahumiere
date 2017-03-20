@@ -28,7 +28,7 @@
 </BOUCLE_next>
 
 [(#GET{hasprev}|=={1}|ou{#GET{hasnext}|=={1}}|oui)
-  #INCLURE{fond=inclure/nav_prev-next_expositions,
+  #INCLURE{fond=inclure/nav_prev-next-year_expositions,
     label_courant=#ENV{date}|affdate{Y},
     label_precedent=#GET{date_prev}|affdate_periode{#GET{affichage_duree}},
     label_suivant=#GET{date_fin}|affdate_periode{#GET{affichage_duree}},
