@@ -1,5 +1,5 @@
 <BOUCLE_cover_exhibition(ARTICLES){id_article}{lang}>
-
+  #SET{event,0}
   #SET{date_debut, #ENV{date_debut}}
   #SET{date_fin, #ENV{date_fin}}
   #SET{statut,''}
@@ -14,6 +14,7 @@
   #SET{compteur, #ENV{compteur, 1}}
 
   <BOUCLE_evenement(EVENEMENTS){id_article}{!evenement_passe #GET{date_debut}}{!evenement_a_venir #GET{date_fin}}{par date_debut}{0,1}>
+    [(#SET{event,1})]
     [(#DATE_DEBUT|agenda_date_a_venir|?{
       #SET{statut, <:lahumiere:exhibition_upcoming:>}
       ,
@@ -30,8 +31,9 @@
     <a href="#URL_ARTICLE" class="c-cover__link">
       <p class="c-cover__meta c-meta[(#GET{variante}|=={std}|oui) c-meta--std]">
         [<span class="c-meta__item c-meta__item--statut">(#GET{statut})</span>]
-        [<svg class="o-icon o-icon--s c-meta__item c-meta__item--icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]
+        [(#GET{event}|oui)[<svg class="o-icon o-icon--s c-meta__item c-meta__item--icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]]
         [<span class="c-meta__item c-meta__item--date">(#GET{dates})</span>]
+        [(#GET{event}|non)&nbsp;]
       </p>
       [(#GET{variante}|=={large}|oui)<div class="o-layout[(#GET{compteur}|modulo{2}|?{'',' o-layout--reverse'})]">]
         [(#GET{variante}|=={large}|?{
