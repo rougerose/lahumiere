@@ -9,10 +9,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'artist_previous'       => '<span class="c-pagination__text-hide">Artiste </span>précédent',
     'artist_work'           => "Œuvres",
   // E
-    'exhibition_add_to_cal'    => 'Ajouter à mon calendrier',
+    'exhibition_add_to_cal' => 'Ajouter à mon calendrier',
     'exhibition_current'    => "Exposition en cours",
     'exhibition_end'        => 'au @date@',
+    'exhibition_next'       => '<span class="c-pagination__text-hide">Exposition </span>suivante',
     'exhibition_past'       => "Exposition passée",
+    'exhibition_previous'   => '<span class="c-pagination__text-hide">Exposition </span>précédente',
     'exhibition_upcoming'   => "Exposition à venir",
     'exhibition_start'      => 'Du @date@',
   // N

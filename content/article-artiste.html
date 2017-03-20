@@ -48,7 +48,8 @@
           #MODELE{photoswipe}
         </B_portfolio>
 
-        [(#INCLURE{fond=inclure/nav_prev-next_article-artiste, id_article, id_rubrique, lang})]
+        [(#SET{label_prev, lahumiere:artist_previous})] [(#SET{label_next, lahumiere:artist_next})]
+        [(#INCLURE{fond=inclure/nav_prev-next_article-artiste, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
 
       </div>
     </div>

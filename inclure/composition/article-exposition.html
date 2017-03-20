@@ -69,7 +69,8 @@
             </div>
           ]
 
-          [(#INCLURE{fond=inclure/nav_prev-next_article, id_article, id_rubrique, lang})]
+          [(#SET{label_prev, lahumiere:exhibition_previous})] [(#SET{label_next, lahumiere:exhibition_next})]
+          [(#INCLURE{fond=inclure/nav_prev-next_article, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
 
         </div>
         [(#GET{portfolio}|oui)

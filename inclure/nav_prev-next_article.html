@@ -5,24 +5,24 @@
           <BOUCLE_precedent_article(ARTICLES){id_rubrique}{precedent}{par date}{lang}>
             <a href="#URL_ARTICLE" class="c-pagination__link c-pagination__link--prev">
               [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
-              <span class="c-nav__text c-pagination__text"><:lahumiere:previous:></span>
+              <span class="c-nav__text c-pagination__text"><:{=#ENV{label_prev}}:></span>
             </a>
           </BOUCLE_precedent_article>
             <span class="c-pagination__link is-disabled">
               [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
-              <span class="c-nav__text c-pagination__text"><:lahumiere:previous:></span>
+              <span class="c-nav__text c-pagination__text"><:{=#ENV{label_prev}}:></span>
             </span>
           <//B_precedent_article>
         </li
         ><li class="c-nav__list-item c-pagination__item c-pagination__item--next">
           <BOUCLE_suivant_article(ARTICLES){id_rubrique}{suivant}{par date}{lang}>
             <a href="#URL_ARTICLE" class="c-pagination__link c-pagination__link--next">
-              <span class="c-nav__text c-pagination__text"><:lahumiere:next:></span>
+              <span class="c-nav__text c-pagination__text"><:{=#ENV{label_next}}:></span>
               [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
             </a>
           </BOUCLE_suivant_article>
             <span class="c-pagination__link is-disabled">
-              <span class="c-nav__text c-pagination__text"><:lahumiere:next:></span>
+              <span class="c-nav__text c-pagination__text"><:{=#ENV{label_prev}}:></span>
               [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
             </span>
           <//B_suivant_article>
