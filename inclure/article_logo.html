@@ -21,7 +21,7 @@
   [(#LOGO_ARTICLE|largeur|>={1600}|?{
     [(#SET{fichier, #LOGO_ARTICLE|image_reduire{1600,0} })]
     ,
-    [(#SET{fichier, #LOGO_ARTICLE|image_recadre{1600,0, 'center', '#000000'} })]
+    [(#SET{fichier, #LOGO_ARTICLE|image_passe_partout{1600,0}|image_recadre{1600,0,'center','#000000'} })]
   })]
 
 [(#REM)
