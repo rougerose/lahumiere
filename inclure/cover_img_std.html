@@ -22,13 +22,6 @@
     -->
   ]
 
-  [(#REM)
-    <!--
-      Si le fichier a une largeur inférieure à 810px,
-      Spip "fabrique" une image à cette largeur.
-    -->
-  ][(#GET{fichier}|largeur|<{810}|oui) [(#SET{fichier, #GET{fichier}|image_passe_partout{1040,0}|image_recadre{1040,0, 'center', '#000000'} })] ]
-
   [(#SET{405w, #GET{fichier}|image_reduire{405,0}|extraire_attribut{src}})]
 
   <figure class="c-cover__figure c-figure">
