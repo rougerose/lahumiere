@@ -1,4 +1,5 @@
 <BOUCLE_rubrique_vue_images_logo(ARTICLES){id_article}>
+[(#SET{logo, #LOGO_ARTICLE})]
 [(#REM)
   <!--
   Largeur du logo en fonction des breakpoints.
@@ -12,17 +13,24 @@
   -->
 ][(#REM)
   <!--
+    Vérifier que le logo
+  -->
+][(#GET{logo}|largeur|<{800}|oui) [(#SET{logo, #GET{logo}|image_passe_partout{800,0}|image_recadre{800,0,'center','#000000'} })] ]
+
+[(#REM)
+  <!--
     Une image de 405px de largeur sera utilisée deux fois,
     version par défaut et une seconde fois explicitement.
   -->
-][(#SET{405w, #LOGO_ARTICLE|image_reduire{405,0}|extraire_attribut{src} })]
+]
+[(#SET{405w, #GET{logo}|image_reduire{405,0}|extraire_attribut{src} })]
 
 [<img src="
   (#GET{405w})
 " srcset="
-  [(#LOGO_ARTICLE|image_reduire{800,0}|extraire_attribut{src}) 800w,]
+  [(#GET{logo}|image_reduire{800,0}|extraire_attribut{src}) 800w,]
   [(#GET{405w}) 405w,]
-  [(#LOGO_ARTICLE|image_reduire{305,0}|extraire_attribut{src}) 305w,]
-  [(#LOGO_ARTICLE|image_reduire{190,0}|extraire_attribut{src}) 190w]
+  [(#GET{logo}|image_reduire{305,0}|extraire_attribut{src}) 305w,]
+  [(#GET{logo}|image_reduire{190,0}|extraire_attribut{src}) 190w]
 " sizes="100vw" alt="[(#TITRE|prenom_nom)]" class="c-artist__img">]
 </BOUCLE_rubrique_vue_images_logo>
