@@ -48,6 +48,9 @@
           [<div class="c-article__section c-article__footnotes c-text c-text--footnotes">
             (#NOTES)
           </div>]
+        </div>
+
+        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-8/10@desktop">
 
           <B_portfolio>
             <div class="c-article__section">
@@ -73,10 +76,12 @@
           [(#INCLURE{fond=inclure/nav_prev-next_article, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
 
         </div>
-        [(#GET{portfolio}|oui)
-          #MODELE{photoswipe}
-        ]
+
       </div>
+
+      [(#GET{portfolio}|oui)
+        #MODELE{photoswipe}
+      ]
     </div>
   </article>
 </BOUCLE_composition_article_exposition>
