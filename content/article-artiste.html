@@ -1,4 +1,5 @@
 <BOUCLE_article_artiste(ARTICLES){id_article}>
+  #SET{portfolio, 0}
   <article class="c-article">
     <header class="c-article__header">
       <h1 class="c-article__title">[(#TITRE|prenom_nom)]</h1>
@@ -35,23 +36,29 @@
               <header class="c-section__header">
                 <h1 class="c-section__title"><:lahumiere:artist_work:></h1>
               </header>
-              <div class="o-layout u-9/10@mobileLs u-push-1/10@mobileLs c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
+              <div class="o-layout u-9/10@mobileLs u-push-1/10@mobileLs u-8/10@desktop c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
                 <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
                 <div class="js-photoswipe">
                   <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
+                    #SET{portfolio, 1}
                     [(#INCLURE{fond=inclure/document_portfolio, id_document})]
                   </BOUCLE_portfolio>
                 </div>
               </div>
             </section>
           </div>
-          #MODELE{photoswipe}
         </B_portfolio>
 
-        [(#SET{label_prev, lahumiere:artist_previous})] [(#SET{label_next, lahumiere:artist_next})]
-        [(#INCLURE{fond=inclure/nav_prev-next_article-artiste, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
+        <div class="o-layout u-9/10@mobileLs u-push-1/10@mobileLs u-8/10@desktop">
+          [(#SET{label_prev, lahumiere:artist_previous})] [(#SET{label_next, lahumiere:artist_next})]
+          [(#INCLURE{fond=inclure/nav_prev-next_article-artiste, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
+        </div>
 
       </div>
+
+      [(#GET{portfolio}|oui)
+        #MODELE{photoswipe}
+      ]
     </div>
   </article>
 </BOUCLE_article_artiste>

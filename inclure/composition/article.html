@@ -1,6 +1,7 @@
 <BOUCLE_article(ARTICLES){id_article}>
 
   #SET{afficher_logo, #ENV{afficher_logo, 1}}
+  #SET{portfolio, 0}
 
   <article class="c-article">
     <header class="c-article__header">
@@ -26,26 +27,30 @@
           </div>]
         </div>
 
-        <B_portfolio>
-          <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs">
+        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-8/10@desktop">
+          <B_portfolio>
             <div class="c-article__section">
               <div class="o-layout c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
                 <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
                 <div class="js-photoswipe">
                   <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
+                    [(#SET{portfolio, 1})]
                     [(#INCLURE{fond=inclure/document_portfolio, id_document})]
                   </BOUCLE_portfolio>
                 </div>
               </div>
             </div>
-          </div>
-          #MODELE{photoswipe}
-        </B_portfolio>
+          </B_portfolio>
 
-        [(#SET{label_prev, lahumiere:previous})] [(#SET{label_next, lahumiere:next})]
-        [(#INCLURE{fond=inclure/nav_prev-next_article, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
+          [(#SET{label_prev, lahumiere:previous})] [(#SET{label_next, lahumiere:next})]
+          [(#INCLURE{fond=inclure/nav_prev-next_article, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
+        </div>
 
       </div>
+
+      [(#GET{portfolio}|oui)
+        #MODELE{photoswipe}
+      ]
     </div>
   </article>
 </BOUCLE_article>
