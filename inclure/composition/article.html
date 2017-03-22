@@ -35,7 +35,7 @@
                 <div class="js-photoswipe">
                   <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
                     [(#SET{portfolio, 1})]
-                    [(#INCLURE{fond=inclure/document_portfolio, id_document})]
+                    [(#INCLURE{fond=inclure/document_portfolio, id_document, lang, variante=article})]
                   </BOUCLE_portfolio>
                 </div>
               </div>

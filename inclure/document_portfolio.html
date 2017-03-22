@@ -1,29 +1,38 @@
 <BOUCLE_document_portfolio(DOCUMENTS){id_document}>
-[(#REM)
-  <!--
-    Largeur de l'image en fonction des breakpoints.
-    Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+  [(#REM)
+    <!--
+      Deux variantes possibles qui modifie la classe de o-layout__item c-figure :
+      - rubrique : u-5/10 u-3/9@tablet
+      - article : u-5/10@mobileLs
+    -->
+  ] [(#SET{variante, #ENV{variante, article}})]
+    [(#SET{varianteClass, #GET{variante}|=={article}|?{'u-5/10@mobileLs', 'u-5/10 u-3/9@tablet'} })]
 
-    desktop :       466px
-    tablet :        259px min | 403px max
-    mobileLs :      190px min | 290px max
-    mobile :        280px min | 398px max
+  [(#REM)
+    <!--
+      Largeur de l'image en fonction des breakpoints.
+      Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
 
-    Largeur des vignettes à afficher :
+      desktop :       466px
+      tablet :        259px min | 403px max
+      mobileLs :      190px min | 290px max
+      mobile :        280px min | 398px max
 
-    S: 300px
-    M: 410px
-    L: 470px
-    XL: 900px
+      Largeur des vignettes à afficher :
 
-    Largeur des images plein écran :
+      S: 300px
+      M: 410px
+      L: 470px
+      XL: 900px
 
-    S: 600px
-    M: 900px
-    L: 1024px
-    XL: 1600px
-  -->
-]
+      Largeur des images plein écran :
+
+      S: 600px
+      M: 900px
+      L: 1024px
+      XL: 1600px
+    -->
+  ]
   [(#LARGEUR|>{300}|?{
     [(#SET{vignette_s, #FICHIER|image_reduire{300,0}|extraire_attribut{src}})]
     ,
@@ -62,7 +71,7 @@
 
   [(#SET{alt, [(#TITRE|sinon{#DESCRIPTIF}|sinon{#FICHIER|basename}|textebrut)]})]
 
-  <figure class="o-layout__item u-5/10@mobileLs c-portfolio__figure c-figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+  <figure class="o-layout__item[ (#GET{varianteClass}) ]c-portfolio__figure c-figure" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <a href="#GET{image_xl}" itemprop="contentUrl" data-size="[(#GET{image_xl}|largeur)][x(#GET{image_xl}|hauteur)]" data-s="[(#GET{image_s})]" data-s-size="[(#GET{image_s}|largeur)][x(#GET{image_s}|hauteur)]" data-m="[(#GET{image_m})]" data-m-size="[(#GET{image_m}|largeur)][x(#GET{image_m}|hauteur)]" data-l="[(#GET{image_l})]" data-l-size="[(#GET{image_l}|largeur)][x(#GET{image_l}|hauteur)]"[ data-title="(#TITRE|textebrut)"][ data-desc="(#DESCRIPTIF|textebrut)"][ data-author="(#CREDITS|textebrut)"]>
       <img src="
         [(#GET{vignette_l})]
