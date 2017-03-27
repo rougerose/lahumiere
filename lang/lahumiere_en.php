@@ -27,6 +27,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'gallery_about'         => 'About the Gallery',
   'gallery_closed'        => 'Gallery is <span class="c-message is-closed">closed</span>.',
   'gallery_opened'        => 'Gallery is <span class="c-message is-opened">opened</span>.',
+  'gallery_visitors'      => 'Visitors information',
   // N
   'nav_images'            => 'images',
   'nav_list'              => 'list',
@@ -35,7 +36,5 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   // P
   'previous'              => 'Previous',
   // R
-  'retour_accueil'        => 'Back to homepage',
-  // V
-  'visitor_informations'  => 'Visitor informations'
+  'retour_accueil'        => 'Back to homepage'
 );

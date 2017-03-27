@@ -27,6 +27,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'gallery_about'         => 'À propos de la Galerie',
   'gallery_closed'        => 'La galerie est <span class="c-message is-closed">fermée</span>.',
   'gallery_opened'        => 'La galerie est <span class="c-message is-opened">ouverte</span>.',
+  'gallery_visitors'      => 'Infos pratiques',
   // N
   'nav_images'            => 'images',
   'nav_list'              => 'liste',
@@ -39,7 +40,5 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'recherche_lien'        => 'Faire une recherche',
   'recherche_placeholder' => 'Votre recherche',
   'recherche_submit'      => 'OK',
-  'retour_accueil'        => 'Retour à la page d\'accueil',
-  // V
-  'visitor_informations'  => 'Infos pratiques',
+  'retour_accueil'        => 'Retour à la page d\'accueil'
 );
