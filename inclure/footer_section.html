@@ -1,0 +1,47 @@
+<section class="c-footer">
+  <div class="o-layout">
+    <BOUCLE_gallery_about(RUBRIQUES){id_rubrique=1}>
+      <article class="o-layout__item u-3/9@desktop c-footer__item c-abstract">
+        <a href="#URL_RUBRIQUE" class="c-abstract__link">
+          <header class="c-abstract__header">
+            <h2 class="c-abstract__title">#TITRE</h2>
+          </header>
+          [<div class="c-abstract__description c-abstract__description--about">
+            (#DESCRIPTIF)
+            [<svg class="o-icon o-icon--m c-abstract__more"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]
+          </div>]
+        </a>
+      </article>
+    </BOUCLE_gallery_about>
+    [(#PLUGIN{identite_extra}|oui|et{#PLUGIN{open_close}|oui}|oui)
+    <article class="o-layout__item u-5/10@mobileLs u-3/9@desktop c-footer__item">
+      <header class="c-abstract__header">
+        <h2 class="c-abstract__title"><:lahumiere:visitor_informations:></h2>
+      </header>
+      <div class="c-abstract__description">
+        [<p>(#IDENTITE_ADRESSE)[ (#IDENTITE_CODE_POSTAL)[ (#IDENTITE_VILLE)]]</p>]
+        [(#CONFIG{open_close/horaires_resume}|propre)]
+        [<p>(#DATE|isOpenClose{<:lahumiere:gallery_opened:>, <:lahumiere:gallery_closed:>})</p>]
+      </div>
+    </article>]
+    <article class="o-layout__item u-5/10@mobileLs u-3/9@desktop c-footer__item">
+      <header class="c-abstract__header">
+        <h2 class="c-abstract__title"><:lahumiere:contact:></h2>
+      </header>
+      <ul class="c-contact">
+        <li class="c-contact__item">
+          [<a href="(#CONFIG{sociaux/facebook})" class="c-contact__link" aria-label="<:lahumiere:contact_facebook:>">[<svg class="o-icon o-icon--l"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{facebook})"></use></svg>]</a>]
+        </li>
+        <BOUCLE_contact(ARTICLES){page=contact}{lang}>
+          <li class="c-contact__item">
+            <a href="#URL_ARTICLE" class="c-contact__link" aria-label="<:lahumiere:contact_mail:>">[<svg class="o-icon o-icon--l"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{mail})"></use></svg>]</a>
+          </li>
+        </BOUCLE_contact>
+        [<li class="c-contact__item">
+          <a href="tel:(#IDENTITE_TELEPHONE)" class="c-contact__link" aria-label="<:lahumiere:contact_phone:>">[<svg class="o-icon o-icon--l"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{phone})"></use></svg>]</a>
+        </li>]
+      </ul>
+    </article>
+  </div>
+</section>
+#FILTRE{mini_html}

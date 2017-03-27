@@ -1,0 +1,78 @@
+// =====================================
+// abstract
+// =====================================
+
+.c-abstract {}
+
+
+//
+// link
+// -------------------------------------
+
+.c-abstract__link {
+  display: block;
+
+  &:hover {
+    color: $color-black;
+
+    .c-abstract__title {
+      color: $color-theme;
+    }
+
+    .c-abstract__more {
+      transform: translateX($spacing-unit);
+      fill: $color-theme;
+    }
+  }
+}
+
+
+//
+// header
+// -------------------------------------
+
+.c-abstract__header {}
+
+
+//
+// title
+// -------------------------------------
+
+.c-abstract__title {
+  margin-bottom: $spacing-unit-small;
+  @include inuit-font-size(19px);
+  text-transform: uppercase;
+}
+
+
+//
+// description
+// -------------------------------------
+
+.c-abstract__description {
+  padding-right: $spacing-unit-small;
+  @include inuit-font-size(16px);
+
+  @include mq(mobile, mobileLs) {
+    padding-left: $spacing-unit-small / 2;
+    padding-right: $spacing-unit-small /2;
+  }
+}
+
+// ----- variante about ----- //
+
+.c-abstract__description--about {
+  @include mq(mobileLs, desktop) {
+      width: 80%;
+      padding-right: 0;
+    }
+}
+
+
+//
+// more
+// -------------------------------------
+
+.c-abstract__more {
+  transition: fill $global-transition, transform $global-transition;
+}

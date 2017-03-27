@@ -1,3 +1,8 @@
-
-
-<!--  -->
+[(#ID_RUBRIQUE|=={1}|non)
+  [(#INCLURE{fond=inclure/footer_section, env})]
+]
+<footer class="c-legal">
+  <p class="c-legal__item c-legal__item--copyright"><:lahumiere:copyright_info:></p>
+  <B_legal><p class="c-legal__item c-legal__item--credits"><BOUCLE_legal(ARTICLES){page=legal}{lang}><a href="#URL_ARTICLE" class="c-legal__link">#TITRE</a></BOUCLE_legal></p></B_legal>
+</footer>
+#FILTRE{mini_html}

@@ -8,6 +8,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'artist_next'           => 'Next<span class="c-pagination__text-hide"> artist</span>',
   'artist_previous'       => 'Previous<span class="c-pagination__text-hide"> artist</span>',
   'artist_work'           => 'Work',
+  // C
+  'contact'               => 'Contact',
+  'contact_facebook'      => 'Follow us on Facebook',
+  'contact_mail'          => 'Send us a message',
+  'contact_phone'         => 'Call us',
+  'copyright_info'        => '© Galerie Lahumière. All rights reserved.',
   // E
   'exhibition_add_to_cal' => 'Add to my calendar',
   'exhibition_current'    => 'Current exhibition',
@@ -19,6 +25,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'exhibition_upcoming'   => 'Upcoming exhibition',
   // G
   'gallery_about'         => 'About the Gallery',
+  'gallery_closed'        => 'Gallery is <span class="c-message is-closed">closed</span>.',
+  'gallery_opened'        => 'Gallery is <span class="c-message is-opened">opened</span>.',
   // N
   'nav_images'            => 'images',
   'nav_list'              => 'list',
@@ -28,4 +36,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'previous'              => 'Previous',
   // R
   'retour_accueil'        => 'Back to homepage',
+  // V
+  'visitor_informations'  => 'Visitor informations'
 );

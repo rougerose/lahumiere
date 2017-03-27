@@ -1,0 +1,16 @@
+// =====================================
+// message
+// =====================================
+
+.c-message {
+
+  &.is-closed {
+    color: $color-red;
+    font-weight: bold;
+  }
+
+  &.is-opened {
+    color: $color-green;
+    font-weight: bold;
+  }
+}

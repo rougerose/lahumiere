@@ -1,0 +1,27 @@
+// =====================================
+// contact
+// =====================================
+
+.c-contact {
+  margin: 0 0 $spacing-unit;
+  list-style: none;
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-contact__item {
+  display: inline-block;
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-contact__link {
+  display: block;
+  margin-right: $spacing-unit-small;
+}
