@@ -1,0 +1,94 @@
+// =====================================
+// form
+// =====================================
+
+.c-form {}
+
+
+//
+// preview (formulaire_ecrire_auteur)
+// -------------------------------------
+
+.c-form__preview {}
+
+
+//
+// fields
+// -------------------------------------
+
+.c-form__fields {}
+
+
+//
+// legend
+// -------------------------------------
+
+.c-form__legend {
+  border-bottom: 1px solid $color-black;
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  @include inuit-font-size(18px);
+  text-transform: uppercase;
+}
+
+//
+// fields
+// -------------------------------------
+
+.c-form__fields {}
+
+// ----- variante preview ----- //
+
+.c-form__fields--preview {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// field-container
+// -------------------------------------
+
+.c-form__field-container {
+  margin-bottom: $spacing-unit;
+}
+
+
+//
+// label
+// -------------------------------------
+
+.c-form__label {
+  color: $color-gray-light;
+}
+
+
+//
+// label & message
+// -------------------------------------
+
+.c-form__label,
+.c-form__message {
+  display: block;
+  margin-bottom: $spacing-unit-tiny;
+  width: 100%;
+}
+
+
+//
+// field
+// -------------------------------------
+
+.c-form__field {
+  border: 1px solid $color-gray-lighter;
+  padding: $spacing-unit-small;
+  width: 100%;
+}
+
+
+//
+// answer
+// -------------------------------------
+
+.c-form__answer {
+  padding: $spacing-unit-small;
+}

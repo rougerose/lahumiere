@@ -5,12 +5,34 @@
 .c-message {
 
   &.is-closed {
-    color: $color-red;
     font-weight: bold;
   }
 
   &.is-opened {
     color: $color-green;
     font-weight: bold;
+  }
+
+  &.is-error,
+  &.is-closed {
+    color: $color-red;
+  }
+}
+
+// ----- variante reverse ----- //
+
+.c-message--reverse {
+
+  &.is-error,
+  &.is-ok {
+    color: $color-white;
+  }
+
+  &.is-error {
+    background-color: $color-red;
+  }
+
+  &.is-ok {
+    background-color: $color-green;
   }
 }

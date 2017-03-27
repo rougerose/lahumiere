@@ -1,0 +1,5 @@
+<composition>
+  <nom>Article «unique»</nom>
+  <description>Composition pour les articles «uniques» (contact, mentions légales, etc.).</description>
+  <icon>images/objet-simple.png</icon>
+</composition>

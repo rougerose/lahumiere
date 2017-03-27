@@ -1,0 +1,49 @@
+<div class="c-form formulaire_spip formulaire_ecrire_auteur ajax" id="formulaire_ecrire_auteur#ENV{id}">
+  [<p class="c-form__answer c-message c-message--reverse is-ok reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+  [<p class="c-form__answer c-message c-message--reverse is-error reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+  [(#ENV{editable})
+    <form method="post" action="#ENV{action}#formulaire_ecrire_auteur#ENV{id}">
+      [(#REM) declarer les hidden qui declencheront le service du formulaire parametre : url d'action ]
+        #ACTION_FORMULAIRE{#ENV{action}}
+      [(#REM) Previsualisation... ]
+        [(#ENV*{erreurs}|table_valeur{previsu}|oui)
+      <fieldset class="c-form__fields c-form__fields--preview previsu">
+        <legend class="c-form__legend"><:previsualisation:></legend>
+        <div class="c-form__preview">
+          <p><strong>#ENV{email_message_auteur}</strong></p>
+          <p><em>#ENV{sujet_message_auteur}</em></p>
+          <p>[(#ENV{texte_message_auteur}|nl2br)]</p>
+        </div>
+        <p class="boutons"><input type="submit" class="c-btn c-btn--secondary c-btn--s submit" name="confirmer" value="<:form_prop_confirmer_envoi:>" /></p>
+      </fieldset>
+      ]
+      [(#REM) Sinon, formulaire normal ]
+      <fieldset class="c-form__fields">
+        <legend class="c-form__legend"><:envoyer_message:></legend>
+        <div class="editer-groupe">
+          <div class="c-form__field-container editer saisie_email_message_auteur obligatoire[ (#ENV*{erreurs}|table_valeur{email_message_auteur}|oui)erreur]">
+            <label class="c-form__label" for="email_message_auteur#ENV{id}"><:entree_adresse_email:> <:info_obligatoire_02:></label>
+            [<span class="c-form__message c-message is-error erreur_message">(#ENV*{erreurs}|table_valeur{email_message_auteur})</span>]
+            <input[ (#HTML5|?{required="required" type="email" class="c-form__field text email",type="text" class="c-form__field text"})] name="email_message_auteur" id="email_message_auteur#ENV{id}" value="#ENV{email_message_auteur}" />
+          </div>
+          <div class="c-form__field-container editer saisie_sujet_message_auteur obligatoire[ (#ENV*{erreurs}|table_valeur{sujet_message_auteur}|oui)erreur]">
+            <label class="c-form__label" for="sujet_message_auteur#ENV{id}"><:form_prop_sujet:> <:info_obligatoire_02:></label>
+            [<span class="c-form__message c-message is-error erreur_message">(#ENV*{erreurs}|table_valeur{sujet_message_auteur})</span>]
+            <input type="text" class="c-form__field text" name="sujet_message_auteur" id="sujet_message_auteur#ENV{id}" value="#ENV{sujet_message_auteur}" [(#HTML5) required="required"] />
+          </div>
+          <div class="c-form__field-container editer saisie_texte_message_auteur obligatoire[ (#ENV*{erreurs}|table_valeur{texte_message_auteur}|oui)erreur]">
+            <label class="c-form__label" for="texte_message_auteur#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label>
+            [<span class="c-form__message c-message is-error erreur_message">(#ENV*{erreurs}|table_valeur{texte_message_auteur})</span>]
+            <textarea class="c-form__field" name="texte_message_auteur" id="texte_message_auteur#ENV{id}" rows="10" cols="60"[(#HTML5) required="required"]>#ENV{texte_message_auteur}</textarea>
+          </div>
+        </div>
+      </fieldset>
+      [(#REM) Piege a robots spammeurs ]
+      <p style="display: none;">
+        <label for="nobot"><:antispam_champ_vide:></label>
+        <input type="text" class="text" name="nobot" id="nobot" value="#ENV{nobot}" size="10" />
+      </p>
+      <p class="boutons"><input type="submit" class="c-btn c-btn--secondary c-btn--s submit" name="valide" value="<:form_prop_envoyer:>" /></p>
+    </form>
+  ]
+</div>

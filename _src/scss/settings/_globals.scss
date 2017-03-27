@@ -43,8 +43,8 @@ $mq-breakpoints: (
 
 // ----- Font-family ----- //
 
-$font-base:        'Futura';
-$font-futura:      $font-base, sans-serif;
+$font-base:        'Futura', sans-serif;
+$font-futura:      $font-base;
 $font-futuraHeavy: 'FuturaHeavy', sans-serif;
 $font-futuraLight: 'FuturaLight', sans-serif;
 $font-monospace:   "PT Mono", "Menlo", monospace;
