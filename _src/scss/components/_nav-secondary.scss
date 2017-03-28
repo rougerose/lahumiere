@@ -1,0 +1,43 @@
+// =====================================
+// nav-secondary
+// =====================================
+
+.c-nav-secondary {
+  margin-bottom: $spacing-unit-large;
+
+  @include mq($until: tablet) {
+    text-align: center;
+  }
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-nav-secondary__item {
+  @include mq($until: tablet) {
+    display: block;
+  }
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-nav-secondary__link {
+  display: block;
+  padding-bottom: $spacing-unit-tiny;
+  color: $color-gray-light;
+  @include inuit-font-size(17px);
+
+  @include mq(tablet) {
+    padding-bottom: 0;
+    padding-right: $spacing-unit-small;
+  }
+
+  &.is-current {
+    color: $color-theme;
+  }
+}

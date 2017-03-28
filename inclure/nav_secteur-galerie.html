@@ -1,0 +1,16 @@
+<BOUCLE_secteur(RUBRIQUES){id_secteur=1}{id_rubrique=1}>
+  <nav class="c-nav c-nav-secondary" role="navigation">
+    <ul class="c-nav__list">
+      <BOUCLE_galerie(RUBRIQUES){id_rubrique=1}>
+        <li class="c-nav__list-item c-nav-secondary__item">
+          <a href="#URL_RUBRIQUE" class="c-nav-secondary__link[(#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui) is-current]">#TITRE</a>
+        </li>
+    </BOUCLE_galerie>
+    <BOUCLE_autres_rubriques(RUBRIQUES){id_parent}{par num titre}>
+      <li class="c-nav__list-item c-nav-secondary__item">
+        <a href="#URL_RUBRIQUE" class="c-nav-secondary__link[(#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui) is-current]">#TITRE</a>
+      </li>
+    </BOUCLE_autres_rubriques>
+    </ul>
+  </nav>
+</BOUCLE_secteur>

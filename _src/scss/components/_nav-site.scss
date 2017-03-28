@@ -106,12 +106,8 @@ $logo-width-large: 80px;
 // -------------------------------------
 
 .c-nav-site__item {
-  @include inuit-font-size(16px);
+  @include inuit-font-size(18px);
   letter-spacing: $global-letter-spacing;
-
-  @include mq(tablet, desktop) {
-    @include inuit-font-size(16px, 1);
-  }
 }
 
 
