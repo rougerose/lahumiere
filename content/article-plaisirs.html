@@ -1,0 +1,50 @@
+<BOUCLE_article_plaisirs(ARTICLES){id_article}>
+  [(#INCLURE{fond=inclure/nav_secteur-galerie, env})]
+  #SET{portfolio, 0}
+  <article class="c-article">
+    <header class="c-article__header">
+      <h1 class="c-article__title">[(#TITRE|prenom_nom)]</h1>
+      [<p class="c-article__subtitle">(#SOUSTITRE)</p>]
+    </header>
+    <div class="c-article__main">
+      <div class="o-layout">
+        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+          [<div class="c-article__section c-text c-text--chapo">
+            (#CHAPO)
+          </div>]
+          [<div class="c-article__section c-text">
+            (#TEXTE)
+          </div>]
+          [<div class="c-article__section c-article__footnotes c-text c-text--footnotes">
+            (#NOTES)
+          </div>]
+        </div>
+
+        <div class="o-layout__item">
+          <B_portfolio>
+            <div class="c-article__section">
+              <div class="o-layout c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
+                <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
+                <div class="js-photoswipe">
+                  <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
+                    [(#SET{portfolio, 1})]
+                    [(#INCLURE{fond=inclure/document_portfolio, id_document, lang, variante=article})]
+                  </BOUCLE_portfolio>
+                </div>
+              </div>
+            </div>
+          </B_portfolio>
+
+          [(#SET{label_prev, lahumiere:artist_previous})] [(#SET{label_next, lahumiere:artist_next})]
+          [(#INCLURE{fond=inclure/nav_prev-next_article-artiste, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
+        </div>
+
+      </div>
+
+      [(#GET{portfolio}|oui)
+        #MODELE{photoswipe}
+      ]
+    </div>
+  </article>
+</BOUCLE_article_plaisirs>
+#FILTRE{mini_html}

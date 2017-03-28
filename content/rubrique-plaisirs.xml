@@ -1,0 +1,6 @@
+<composition>
+  <nom>Rubrique Plaisirs</nom>
+  <description>Composition pour la rubrique « Les plaisirs d'Anne Lahumière »</description>
+  <branche type="article" composition="plaisirs" />
+  <icon>images/objet-simple.png</icon>
+</composition>
