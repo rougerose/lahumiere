@@ -21,7 +21,7 @@
       <div class="c-abstract__description">
         [<p>(#IDENTITE_ADRESSE)[ (#IDENTITE_CODE_POSTAL)[ (#IDENTITE_VILLE)]]</p>]
         [(#CONFIG{open_close/horaires_resume}|propre)]
-        [<p>(#DATE|isOpenClose{<:lahumiere:gallery_opened:>, <:lahumiere:gallery_closed:>})</p>]
+        <INCLURE{fond=inclure/gallery_open_close} />
       </div>
     </article>]
     <article class="o-layout__item u-5/10@mobileLs u-3/9@desktop c-footer__item">

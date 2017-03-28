@@ -25,8 +25,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'exhibition_start'      => 'Du @date@',
   // G
   'gallery_about'         => 'À propos de la Galerie',
+  'gallery_address'       => 'Adresse',
   'gallery_closed'        => 'La galerie est <span class="c-message is-closed">fermée</span>.',
+  'gallery_holidays'      => 'La galerie est exceptionnellement <span class="c-message is-closed">fermée du @date_debut@ au @date_fin@</span>.',
   'gallery_opened'        => 'La galerie est <span class="c-message is-opened">ouverte</span>.',
+  'gallery_openinghours'  => 'Horaires',
   'gallery_visitors'      => 'Infos pratiques',
   // N
   'nav_images'            => 'images',
