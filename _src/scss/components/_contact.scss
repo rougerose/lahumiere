@@ -24,4 +24,8 @@
 .c-contact__link {
   display: block;
   margin-right: $spacing-unit-small;
+
+  .c-text & {
+    border-bottom-width: 0;
+  }
 }

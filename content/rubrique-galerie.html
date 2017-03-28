@@ -1,0 +1,105 @@
+<BOUCLE_rubrique_galerie(RUBRIQUES){id_rubrique}>
+  <article class="c-article">
+    <header class="c-article__header">
+      <h1 class="c-article__title c-article__title--rubric">[(#TITRE)]</h1>
+    </header>
+    <div class="c-article__main">
+      <div class="o-layout">
+        <div class="o-layout__item">
+          <section class="c-section c-article__section">
+            <header class="c-section__header">
+              <h1 class="c-section__title"><:lahumiere:gallery_about:></h1>
+            </header>
+            <div class="o-layout">
+              <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+                [<div class="c-article__section c-text">
+                  (#TEXTE)
+                </div>]
+                [<div class="c-article__section c-article__footnotes c-text c-text--footnotes">
+                  (#NOTES)
+                </div>]
+              </div>
+
+              <B_portfolio>
+                <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-8/10@desktop">
+                  <div class="o-layout c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
+                    <div class="c-portfolio__sizer u-5/10 u-3/9@tablet"></div>
+                    <div class="js-photoswipe">
+                      <BOUCLE_portfolio(DOCUMENTS){id_rubrique}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
+                        [(#SET{portfolio, 1})]
+                        [(#INCLURE{fond=inclure/document_portfolio, id_document, variante=rubrique})]
+                      </BOUCLE_portfolio>
+                    </div>
+                  </div>
+                </div>
+              </B_portfolio>
+
+            </div>
+          </section>
+        </div>
+        <div class="o-layout__item">
+          <section class="c-section c-article__section">
+            <header class="c-section__header">
+              <h1 class="c-section__title"><:lahumiere:gallery_visitors:></h1>
+            </header>
+            <div class="o-layout">
+              <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+                <div class="c-article__section c-text">
+                  [(#PLUGIN{identite_extra}|oui)
+                    <section class="c-section c-section--nested">
+                      <header class="c-section__header">
+                        <h3 class="c-section__title"><:lahumiere:gallery_address:></h3>
+                      </header>
+                      <div class="c-section__body">
+                        [<p>(#IDENTITE_ADRESSE)[ (#IDENTITE_CODE_POSTAL)[ (#IDENTITE_VILLE)]]</p>]
+                      </div>
+                    </section>
+                  ][(#PLUGIN{open_close}|oui)
+                    <section class="c-section c-section--nested">
+                      <header class="c-section__header">
+                        <h3 class="c-section__title"><:lahumiere:gallery_openinghours:></h3>
+                      </header>
+                      <div class="c-section__body">
+                        [(#CONFIG{open_close/horaires_resume}|propre)]
+                        <INCLURE{fond=inclure/gallery_open_close} />
+                      </div>
+                    </section>
+                  ]
+                  <section class="c-section c-section--nested">
+                    <header class="c-section__header">
+                      <h3 class="c-section__title"><:lahumiere:contact:></h3>
+                    </header>
+                    <div class="c-section__body">
+                      <ul class="c-contact">
+                        [<li class="c-contact__item">
+                          <a href="(#CONFIG{sociaux/facebook})" class="c-contact__link" aria-label="<:lahumiere:contact_facebook:>">[<svg class="o-icon o-icon--l"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{facebook})"></use></svg>]</a>
+                        </li>]
+                        <BOUCLE_contact(ARTICLES){page=contact}{lang}>
+                          <li class="c-contact__item">
+                            <a href="#URL_ARTICLE" class="c-contact__link" aria-label="<:lahumiere:contact_mail:>">[<svg class="o-icon o-icon--l"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{mail})"></use></svg>]</a>
+                          </li>
+                        </BOUCLE_contact>
+                        [<li class="c-contact__item">
+                          <a href="tel:(#IDENTITE_TELEPHONE)" class="c-contact__link" aria-label="<:lahumiere:contact_phone:>">[<svg class="o-icon o-icon--l"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{phone})"></use></svg>]</a>
+                        </li>]
+                      </ul>
+                    </div>
+                  </section>
+
+                </div>
+              </div>
+            </div>
+            <BOUCLE_carte_galerie(GIS){id_rubrique}{0,1}>
+              [(#INCLURE{fond=modeles/carte_gis, id_gis, langue=#ENV{lang} zoom=#ZOOM, hauteur=300px})]
+            </BOUCLE_carte_galerie>
+          </section>
+        </div>
+
+      </div>
+      [(#GET{portfolio}|oui)
+        #MODELE{photoswipe}
+      ]
+    </div>
+  </article>
+</BOUCLE_rubrique_galerie>
+#FILTRE{mini_html}
