@@ -6,24 +6,25 @@
       - article : u-5/10@mobileLs
     -->
   ] [(#SET{variante, #ENV{variante, article}})]
-    [(#SET{varianteClass, #GET{variante}|=={article}|?{'u-5/10@mobileLs', 'u-5/10 u-3/9@tablet'} })]
+    [(#SET{varianteClass, 'u-5/10@mobile u-3/9@mobileLs'})]
 
   [(#REM)
     <!--
       Largeur de l'image en fonction des breakpoints.
       Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
 
-      desktop :       466px
-      tablet :        259px min | 403px max
-      mobileLs :      190px min | 290px max
-      mobile :        280px min | 398px max
+      desktop :       262px     | 303px
+      tabletPlus:     205px     | 261px
+      tablet :        166px min | 260px max
+      mobileLs :      120px min | 187px max
+      mobile :        130px min | 189px max
 
       Largeur des vignettes à afficher :
 
-      S: 300px
-      M: 410px
-      L: 470px
-      XL: 900px
+      S: 190px
+      M: 262px
+      L: 303px
+      XL: 600px
 
       Largeur des images plein écran :
 
@@ -33,18 +34,18 @@
       XL: 1600px
     -->
   ]
-  [(#LARGEUR|>{300}|?{
-    [(#SET{vignette_s, #FICHIER|image_reduire{300,0}|extraire_attribut{src}})]
+  [(#LARGEUR|>{190}|?{
+    [(#SET{vignette_s, #FICHIER|image_reduire{190,0}|extraire_attribut{src}})]
     ,
     [(#SET{vignette_s, #FICHIER})]
   })]
-  [(#LARGEUR|>{410}|?{
-    [(#SET{vignette_m, #FICHIER|image_reduire{410,0}|extraire_attribut{src}})]
+  [(#LARGEUR|>{262}|?{
+    [(#SET{vignette_m, #FICHIER|image_reduire{262,0}|extraire_attribut{src}})]
     ,
     [(#SET{vignette_m, #FICHIER})]
   })]
-  [(#LARGEUR|>{470}|?{
-    [(#SET{vignette_l, #FICHIER|image_reduire{470,0}|extraire_attribut{src}})]
+  [(#LARGEUR|>{303}|?{
+    [(#SET{vignette_l, #FICHIER|image_reduire{303,0}|extraire_attribut{src}})]
     ,
     [(#SET{vignette_l, #FICHIER})]
   })]

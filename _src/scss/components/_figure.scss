@@ -8,10 +8,21 @@
 
 // ----- variante logo-article ----- //
 
-.c-figure--logo-article {
-  // @include mq(desktop) {
-  //   margin-top: $spacing-unit-large;
-  // }
+.c-figure--logo-article {}
+
+// ----- variante portfolio ----- //
+
+.c-figure--portfolio {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-figure__link {
+  display: block;
 }
 
 
@@ -39,11 +50,10 @@
 // -------------------------------------
 
 .c-figure__title,
-.c-figure__desc p,
+.c-figure__desc,
 .c-figure__author {
-  margin: 0;
-  font-family: $font-futuraLight;
-  @include inuit-font-size(15px, false);
+  // font-family: $font-futuraLight;
+  @include inuit-font-size(15px);
 }
 
 
@@ -52,6 +62,7 @@
 // -------------------------------------
 
 .c-figure__title {
+  margin-bottom: $spacing-unit-tiny;
   font-style: italic;
 }
 
@@ -60,7 +71,8 @@
 // desc & author
 // -------------------------------------
 
-.c-figure__desc,
+.c-figure__desc p,
 .c-figure__author {
+  margin: 0;
   color: $color-gray-light;
 }
