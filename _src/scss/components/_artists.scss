@@ -82,8 +82,9 @@
 
 .c-artist__name--list {
   position: relative;
-  padding-left: 1rem;
-  &:before {
+  padding-bottom: $spacing-unit;
+
+  &:after {
     position: absolute;
     bottom: 0;
     left: 0;

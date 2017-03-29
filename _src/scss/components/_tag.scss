@@ -1,0 +1,13 @@
+// =====================================
+// c-tag
+// =====================================
+
+.c-tag {
+  @include inuit-font-size(14px);
+  font-style: italic;
+  &:before {
+    color: $color-gray-light;
+    content: "# ";
+    // @include inuit-font-size(13px, false);
+  }
+}

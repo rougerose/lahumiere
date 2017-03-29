@@ -1,0 +1,48 @@
+// =====================================
+// websites
+// =====================================
+
+.c-websites {}
+
+
+//
+// item
+// -------------------------------------
+
+.c-website__list-item {}
+
+//
+// website
+// -------------------------------------
+
+.c-website {
+  margin-bottom: $spacing-unit;
+  padding-top: $spacing-unit;
+  padding-right: $spacing-unit;
+  @extend .c-artist__name--list;
+}
+
+//
+// name
+// -------------------------------------
+
+.c-website__name {
+  margin-bottom: $spacing-unit-small;
+  @include inuit-font-size(18px);
+}
+
+
+//
+// url
+// -------------------------------------
+
+.c-website__url {
+  word-break: break-all;
+}
+
+
+//
+// categories
+// -------------------------------------
+
+.c-website__categories {}

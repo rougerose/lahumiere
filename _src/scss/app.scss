@@ -88,6 +88,7 @@
 @import "inuitcss/tools/tools.hidden";
 @import "node_modules/sass-mq/mq";
 @import "tools/aliases";
+@import "tools/name-list";
 
 
 // GENERIC
@@ -168,7 +169,9 @@
 @import "components/search-form";
 @import "components/section";
 @import "components/spip-admin";
+@import "components/tag";
 @import "components/text";
+@import "components/websites";
 
 // UTILITIES
 // @import "utilities.animation";
