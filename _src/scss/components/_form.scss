@@ -13,20 +13,14 @@
 
 
 //
-// fields
-// -------------------------------------
-
-.c-form__fields {}
-
-
-//
 // legend
 // -------------------------------------
 
 .c-form__legend {
-  border-bottom: 1px solid $color-black;
+  border-bottom: 1px solid $color-gray-light;
   margin-bottom: $spacing-unit;
   width: 100%;
+  color: $color-gray-light;
   @include inuit-font-size(18px);
   text-transform: uppercase;
 }
@@ -79,7 +73,7 @@
 // -------------------------------------
 
 .c-form__field {
-  border: 1px solid $color-gray-lighter;
+  border: 1px solid $color-gray-light;
   padding: $spacing-unit-small;
   width: 100%;
 }
