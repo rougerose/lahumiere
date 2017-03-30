@@ -9,6 +9,7 @@
 - Ne pas oublier d'utiliser `<multi></multi>` dans les légendes des images.
 - Les images n'ont pas besoin d'être importés deux fois.
 - Rubrique Plaisirs : un seul article par artiste (et autant d'images que nécessaire par article). Compte tenu du fait qu'il n'y a pas de texte, il est inutile de créer une traduction pour chaque article (comme c'est le cas pour la rubrique Artiste). Si l'on souhaite ajouter du texte dans un article, alors il faut utiliser les balises `<multi></multi>`.
+- Rubrique Publications : proposition de déplacer les images dans la rubrique...
 
 ## Rubrique Galerie
 Aucun article nécessaire :

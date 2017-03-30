@@ -75,12 +75,14 @@ var options = {
   watch: {
     files: function () {
       return [
-        options.scss.files
+        options.scss.files,
+        options.js.files
       ]
     },
     run: function () {
       return [
-        ['compile:scss']
+        ['compile:scss'],
+        ['compile:js']
       ]
     }
   }

@@ -5,6 +5,7 @@
 .c-btn {
   border: 1px solid $color-black;
   display: inline-block;
+  background-color: transparent;
   font-family: $font-base;
   text-transform: uppercase;
   border-radius: 2px;
@@ -63,6 +64,35 @@
   }
 }
 
+
+// ----- variante search-close ----- //
+
+.c-btn--search-close {
+  display: none;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  opacity: 0;
+
+  > svg {
+    fill: $color-white;
+  }
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include mq(tablet) {
+    right: 32px;
+    top: 32px;
+  }
+}
 
 //
 // icon

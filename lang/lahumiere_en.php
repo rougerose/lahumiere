@@ -39,5 +39,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   // P
   'previous'              => 'Previous',
   // R
+  'recherche_close'       => 'Close search form',
+  'recherche_label'       => 'Search',
+  'recherche_lien'        => 'Open search form',
+  'recherche_placeholder' => 'Your search',
+  'recherche_submit'      => 'OK',
   'retour_accueil'        => 'Back to homepage'
 );

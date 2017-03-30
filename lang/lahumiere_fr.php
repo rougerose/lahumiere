@@ -39,6 +39,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   // P
   'previous'              => 'Précédent',
   // R
+  'recherche_close'       => 'Fermer le formulaire de recherche',
   'recherche_label'       => 'Rechercher',
   'recherche_lien'        => 'Faire une recherche',
   'recherche_placeholder' => 'Votre recherche',
