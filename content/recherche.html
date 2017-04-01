@@ -1,1 +1,56 @@
-<h1>recherche</h1>
+#SET{articles, #ARRAY} #SET{rubriques, #ARRAY} #SET{documents, #ARRAY} #SET{total, ''}
+
+<BOUCLE_articles(ARTICLES){recherche}{!par points}{lang}>[(#SET{articles, #GET{rubriques}|push{#ID_ARTICLE}})]</BOUCLE_articles>
+<BOUCLE_rubriques(RUBRIQUES){recherche}{!par points}>[(#SET{rubriques, #GET{rubriques}|push{#ID_RUBRIQUE}})]</BOUCLE_rubriques>
+<BOUCLE_documents(DOCUMENTS){recherche}{!par points}{vu=non}{extension IN jpg, png, gif}>
+  <p>#ID_DOCUMENT</p>
+  <BOUCLE_lien_article(documents_liens){id_document}{objet=article}>
+    <B_article>
+      <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{lang}><p>art #ID_DOCUMENT</p> </BOUCLE_article>
+      [(#SET{documents, #GET{documents}|push{#ID_DOCUMENT}})]
+    </B_article>
+  </BOUCLE_lien_article>
+  <BOUCLE_lien_rubrique(documents_liens){id_document}{objet=rubrique}>
+  <p>rub #ID_DOCUMENT</p>
+    [(#SET{documents, #GET{documents}|push{#ID_DOCUMENT}})]
+  </BOUCLE_lien_rubrique>
+</BOUCLE_documents>
+
+[(#SET{total, #GET{articles}|count|plus{#GET{rubriques}|count}|plus{#GET{documents}|count} })]
+
+<article class="c-article">
+  <header class="c-article__header">
+    <h1 class="c-article__title c-article__title--rubric"><:resultats_recherche:> <span class="c-search__variable">#RECHERCHE</span></h1>
+  </header>
+  <div class="c-article__main">
+    <div class="o-layout">
+      <div class="o-layout__item u-7/10@desktop">
+        <div class="c-article__section">
+          [(#GET{total}|>{0}|?{
+            [<p class="c-search__count c-search__count--total">(#GET{total}|singulier_ou_pluriel{lahumiere:recherche_result,lahumiere:recherche_results,nb})</p>]
+            ,
+            <p class="c-search__count c-search__count--total"><:lahumiere:recherche_result_void:></p>
+          })]
+        </div>
+
+        [(#GET{total}|>{0}|oui)
+          [(#GET{articles}|count|>{0}|oui)
+            [<section class="c-search__results">
+               (#INCLURE{fond=inclure/liste/recherche_articles,selection=#GET{articles}, env, ajax})
+            </section>]
+          ][(#GET{rubriques}|count|>{0}|oui)
+            [<section class="c-search__results">
+               (#INCLURE{fond=inclure/liste/recherche_rubriques,selection=#GET{rubriques}, env, ajax})
+            </section>]
+          ][(#GET{documents}|count|>{0}|oui)
+            [<section class="c-search__results">
+               (#INCLURE{fond=inclure/liste/recherche_documents,selection=#GET{documents}, env, ajax})
+            </section>]
+          ]
+        ]
+      </div>
+    </div>
+
+  </div>
+</article>
+#FILTRE{mini_html}

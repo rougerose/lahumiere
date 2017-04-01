@@ -3,7 +3,7 @@
     [(#ENV{action}|form_hidden)]
     [<input type="hidden" name="lang" value="(#ENV{lang})" />]
     <label for="#ENV{_id_champ}" class="c-form__label c-form__label--search"><:lahumiere:recherche_label:></label>
-    <input class="c-form__field c-form__field--search js-form__field--search" id="#ENV{_id_champ}" placeholder="<:lahumiere:recherche_placeholder:>" type="search" autocapitalize="none" autocomplete="off" required />
+    <input class="c-form__field c-form__field--search js-form__field--search" id="#ENV{_id_champ}" name="recherche" placeholder="<:lahumiere:recherche_placeholder:>" type="search" autocapitalize="none" autocomplete="off" required />
     <button type="submit" class="c-btn c-btn--secondary c-form__btn-search"><:lahumiere:recherche_submit:></button>
   </div></form>
   [<button class="c-btn c-btn--search-close js-search-close" aria-label="<:lahumiere:recherche_close:>">

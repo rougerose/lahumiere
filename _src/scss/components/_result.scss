@@ -1,0 +1,60 @@
+// =====================================
+// result
+// =====================================
+
+$indent: 2em;
+
+.c-result {}
+
+
+//
+// title
+// -------------------------------------
+
+.c-result__title {
+  position: relative;
+  margin-bottom: $spacing-unit-tiny;
+  padding-left: $indent;
+  @include inuit-font-size(19px, 1.2);
+
+  &:before {
+    position: absolute;
+    left: 0;
+    // counter-reset est dans le html afin de prendre en compte la numérotation
+    // réelle des éléments et la pagination éventuelle.
+    counter-increment: cpt;
+    content: counter(cpt)'. ';
+  }
+}
+
+
+//
+// description
+// -------------------------------------
+
+.c-result__description {
+  > p {
+    margin-bottom: $spacing-unit-small;
+  }
+}
+
+
+//
+// path
+// -------------------------------------
+
+.c-result__path {
+  color: $color-gray-light;
+  @include inuit-font-size(13px, false);
+  text-transform: uppercase;
+}
+
+
+//
+// indent
+// -------------------------------------
+
+.c-result__description,
+.c-result__path {
+  margin-left: $indent;
+}

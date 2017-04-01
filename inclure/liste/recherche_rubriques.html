@@ -1,0 +1,17 @@
+#SET{selection,#ENV{selection}}
+#SET{decalage_compteur, #ENV{debut_rubriques, 1}}
+<B_rubriques>
+#ANCRE_PAGINATION
+[<h2 class="c-search__count">(#GET{selection}|count|singulier_ou_pluriel{lahumiere:recherche_result_section,lahumiere:recherche_result_sections,nb})</h2>]
+<ul class="c-search__list"[ style="counter-reset: cpt (#GET{decalage_compteur}|moins{1});"]>
+   <BOUCLE_rubriques(RUBRIQUES){id_rubrique IN #GET{selection}}{pagination 2}>
+   <li class="c-search__result c-result">
+     [<h3 class="c-result__title"><a href="#URL_RUBRIQUE">(#TITRE|prenom_nom) [<svg class="o-icon o-icon--s"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]</a></h3>]
+     [<div class="c-result__description">(#INTRODUCTION)</div>]
+     <p class="c-result__path">/ <BOUCLE_hierarchie(HIERARCHIE){id_rubrique}{tout}{' / '}>[(#TITRE)]</BOUCLE_hierarchie></p>
+   </li>
+   </BOUCLE_rubriques>
+</ul>
+[<nav class="c-pagination c-pagination--spip" role="navigation">(#PAGINATION{item})</nav>]
+</B_rubriques>
+#FILTRE{mini_html}

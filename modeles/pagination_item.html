@@ -1,0 +1,32 @@
+[(#REM)
+  <!--
+    Pagination_item
+    ****************
+    Modele repris de dist/modeles/pagination.html
+    mais la première borne démarre à 1.
+  -->
+]
+#ENV*{bloc_ancre}
+#SET{bornes,#ENV{page_courante}|bornes_pagination{#ENV{nombre_pages},10}}
+#SET{premiere, #GET{bornes}|reset}
+#SET{derniere, #GET{bornes}|end}
+#SET{pages,#GET{premiere}|range{#GET{derniere}}}
+#SET{sep,#ENV{separateur,' | '}}
+#SET{elements, #ENV{pas}|moins{1}}
+<B_pages>
+  [(#SET{item, #ENV{page_courante}|moins{2}|mult{#ENV{pas}} })]
+  [<a href='[(#ENV{url}|parametre_url{#ENV{debut},''})]##ENV{ancre}' class='c-pagination__item lien_pagination'
+rel='nofollow'>(#GET{premiere}|>{1}|?{1})</a>
+  [<span class='c-pagination__item c-pagination__item--sep'>(#GET*{sep})</span>]<span class="c-pagination__item c-pagination__item--ellipsis">&hellip;</span>[<span class='c-pagination__item c-pagination__item--sep'>(#GET*{sep})</span>] ]
+  <BOUCLE_pages(POUR){tableau #GET{pages}}>
+    [(#SET{item, #VALEUR|mult{#ENV{pas}}|moins{#GET{elements}} })]
+    [(#VALEUR|=={#ENV{page_courante}}|?{
+      [<span class="c-pagination__item is-selected">(#GET{item})</span>]
+      ,
+      [<a href="[(#ENV{url}|parametre_url{#ENV{debut}, #GET{item}|?{#GET{item}}}|ancre_url{#ENV{ancre}})]" rel="nofollow" class="c-pagination__item lien_pagination">(#GET{item})</a>]
+    })]
+    [<span class='c-pagination__item c-pagination__item--sep'>(#VALEUR|<{#GET{derniere}}|?{#GET{sep}})</span>]
+  </BOUCLE_pages>
+  [[<span class='c-pagination__item c-pagination__item--sep'>(#GET*{sep})</span>]<span class="c-pagination__item c-pagination__item--ellipsis">&hellip;</span>[<span class='c-pagination__item c-pagination__item--sep'>(#GET*{sep})</span>]
+  <a href='[(#ENV{url}|parametre_url{#ENV{debut},#ENV{nombre_pages}|mult{#ENV{pas}}|moins{#GET{elements}}})]##ENV{ancre}' class='lien_pagination' rel='nofollow'>(#GET{derniere}|<{#ENV{nombre_pages}}|?{#ENV{nombre_pages}|mult{#ENV{pas}}|moins{#GET{elements}}})</a>]
+</B_pages>

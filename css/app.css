@@ -645,17 +645,21 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 .c-pagination { margin-bottom: 2.5rem; }
 
-.c-pagination--bottom { margin-bottom: 1.25rem; }
+.c-pagination--top { margin-bottom: 2.5rem; }
 
-@media (min-width: 40em) { .c-pagination--bottom { margin-bottom: 5rem; } }
+.c-pagination--bottom { margin-bottom: 1.25rem; }
 
 .c-pagination--prevnext { text-align: center; }
 
-.c-pagination__item .is-selected { font-weight: bold; }
+.c-pagination--spip { margin-top: 1.25rem; margin-bottom: 0; padding-bottom: 0.3125rem; text-align: center; }
+
+.c-pagination__item.is-selected, .c-pagination__item .is-selected { font-weight: bold; }
 
 .c-pagination__item--prev { margin-right: 1.25rem; }
 
 .c-pagination__item--next { margin-left: 1.25rem; }
+
+.c-pagination__item--sep, .c-pagination__item--ellipsis { color: #bababa; }
 
 .c-pagination__link { display: block; }
 
@@ -671,7 +675,27 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 @media (max-width: 27.4275em) { .c-pagination__text-hide { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 
-.c-search-form__label { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
+.c-result__title { position: relative; margin-bottom: 0.3125rem; padding-left: 2em; font-size: 19px; font-size: 1.1875rem; line-height: 1.2; }
+
+.c-result__title:before { position: absolute; left: 0; counter-increment: cpt; content: counter(cpt) ". "; }
+
+.c-result__description > p { margin-bottom: 0.625rem; }
+
+.c-result__path { color: #bababa; font-size: 13px; font-size: 0.8125rem; text-transform: uppercase; }
+
+.c-result__description, .c-result__path { margin-left: 2em; }
+
+.c-search__variable { color: #cf7633; font-style: italic; }
+
+.c-search__results { border-bottom: 1px solid #efefef; margin-bottom: 2.5rem; }
+
+.c-search__count { font-family: "FuturaHeavy", sans-serif; font-size: 20px; font-size: 1.25rem; line-height: 1; }
+
+.c-search__count--total { font-size: 24px; font-size: 1.5rem; line-height: 1.66667; }
+
+.c-search__list { list-style-type: none; }
+
+.c-search__result { margin-bottom: 1.25rem; }
 
 .c-section__header { margin-bottom: 1.25rem; }
 

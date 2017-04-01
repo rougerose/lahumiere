@@ -6,14 +6,20 @@
   margin-bottom: $spacing-unit-large;
 }
 
+// ----- variante: top ----- //
+
+.c-pagination--top {
+  margin-bottom: $spacing-unit-large;
+}
+
 // ----- variante: bottom ----- //
 
 .c-pagination--bottom {
   margin-bottom: $spacing-unit;
 
-  @include mq(tablet) {
-    margin-bottom: $spacing-unit-huge;
-  }
+  // @include mq(tablet) {
+  //   margin-bottom: $spacing-unit-huge;
+  // }
 }
 
 
@@ -24,11 +30,22 @@
 }
 
 
+// ----- variante: spip ----- //
+
+.c-pagination--spip {
+  margin-top: $spacing-unit;
+  margin-bottom: 0;
+  padding-bottom: $spacing-unit-tiny;
+  text-align: center;
+}
+
+
 //
 // item
 // -------------------------------------
 
 .c-pagination__item {
+  &.is-selected,
   & .is-selected {
     font-weight: bold;
   }
@@ -45,6 +62,17 @@
 .c-pagination__item--next {
   margin-left: $spacing-unit;
 }
+
+// ----- variante: sep ----- //
+
+.c-pagination__item--sep,
+.c-pagination__item--ellipsis {
+  color: $color-gray-light;
+}
+
+// ----- variante: ellipsis ----- //
+
+.c-pagination__item--ellipsis {}
 
 
 //
