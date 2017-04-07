@@ -3,15 +3,13 @@
 <BOUCLE_articles(ARTICLES){recherche}{!par points}{lang}>[(#SET{articles, #GET{rubriques}|push{#ID_ARTICLE}})]</BOUCLE_articles>
 <BOUCLE_rubriques(RUBRIQUES){recherche}{!par points}>[(#SET{rubriques, #GET{rubriques}|push{#ID_RUBRIQUE}})]</BOUCLE_rubriques>
 <BOUCLE_documents(DOCUMENTS){recherche}{!par points}{vu=non}{extension IN jpg, png, gif}>
-  <p>#ID_DOCUMENT</p>
   <BOUCLE_lien_article(documents_liens){id_document}{objet=article}>
     <B_article>
-      <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{lang}><p>art #ID_DOCUMENT</p> </BOUCLE_article>
+      <BOUCLE_article(ARTICLES){id_article=#ID_OBJET}{lang}> </BOUCLE_article>
       [(#SET{documents, #GET{documents}|push{#ID_DOCUMENT}})]
     </B_article>
   </BOUCLE_lien_article>
   <BOUCLE_lien_rubrique(documents_liens){id_document}{objet=rubrique}>
-  <p>rub #ID_DOCUMENT</p>
     [(#SET{documents, #GET{documents}|push{#ID_DOCUMENT}})]
   </BOUCLE_lien_rubrique>
 </BOUCLE_documents>
