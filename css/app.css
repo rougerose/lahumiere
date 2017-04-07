@@ -553,7 +553,7 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 .c-meta--std > .c-meta__item--icon { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
 
-.c-meta--article { margin-top: 2.5rem; }
+.c-meta--article { border-bottom: 1px solid #1a1a1a; margin-top: 2.5rem; }
 
 .c-meta__item { margin-right: 0.3125rem; vertical-align: middle; }
 
@@ -723,7 +723,7 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 @media (min-width: 40em) { .c-section--nested .c-section__body { -ms-flex: 1 0 80%; flex: 1 0 80%; } }
 
-.spip-admin-float { right: auto !important; top: auto !important; bottom: 0; }
+.spip-admin-float { right: 0 !important; top: auto !important; bottom: 0; }
 
 .spip-admin-float .spip-admin-boutons { font-family: "PT Mono", "Menlo", monospace; font-size: 10px; font-size: 0.625rem; line-height: 1; text-align: left; }
 
