@@ -23,6 +23,6 @@ Aucun article nécessaire :
 
 # Todo
 - partager un article Twitter + Facebook
-- plugin metaplus
 - document_portfolio : revoir les largeurs de vignette nécessaires compte tenu du fait que le portfolio est contenu dans la même largeur que le texte (donc plus réduit que la version maquette).
 - adapter le backend notamment en fonction des sélections de page d'accueil et d'expositions
+- CSS print
