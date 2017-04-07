@@ -36,3 +36,25 @@
     background-color: $color-green;
   }
 }
+
+
+// ----- variante emergency (plugin alerte_urgence) ----- //
+
+.c-message--emergency {
+  margin-bottom: $spacing-unit-tiny;
+  overflow: hidden;
+  padding: 1.5em;
+  background-color: $color-theme;
+  color: $color-white;
+  text-align: center;
+  box-shadow: 0 8px 8px -5px rgba($color-theme, 0.5);
+
+  a {
+    color: $color-white;
+    text-decoration:underline;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
