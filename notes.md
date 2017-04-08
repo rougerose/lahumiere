@@ -28,3 +28,4 @@ Aucun article nécessaire :
 - CSS print
 - favicon
 - ajouter une pagination dans la rubrique Publications ?
+- open_graph : ajouter fb:app_id
