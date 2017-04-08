@@ -3,7 +3,7 @@
 // =====================================
 
 .c-cover {
-  margin-bottom: $spacing-unit-huge;
+  margin-bottom: $spacing-unit-large + $spacing-unit;
 }
 
 
@@ -126,11 +126,11 @@
 // -------------------------------------
 
 .c-cover__description {
-  @include inuit-font-size(17px, false);
+  @include inuit-font-size(16px, false);
 
-  @include mq(tablet) {
-    @include inuit-font-size(18px, false);
-  }
+  // @include mq(tablet) {
+  //   @include inuit-font-size(17px, false);
+  // }
 }
 
 

@@ -386,7 +386,7 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 .c-text .c-contact__link { border-bottom-width: 0; }
 
-.c-cover { margin-bottom: 5rem; }
+.c-cover { margin-bottom: 3.75rem; }
 
 .c-cover__link { display: block; }
 
@@ -420,9 +420,7 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 .c-cover__title, .c-cover__subtitle { margin-bottom: 0.625rem; }
 
-.c-cover__description { font-size: 17px; font-size: 1.0625rem; }
-
-@media (min-width: 40em) { .c-cover__description { font-size: 18px; font-size: 1.125rem; } }
+.c-cover__description { font-size: 16px; font-size: 1rem; }
 
 @media (min-width: 27.4375em) { .c-cover__header, .c-cover__description { padding-right: 0.625rem; } }
 

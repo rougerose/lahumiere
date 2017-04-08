@@ -1,3 +1,4 @@
+#SET{position, #ENV{position, top}}
 <nav class="c-nav c-pagination c-pagination--top c-pagination--prevnext" role="navigation">
   <ul class="c-nav__list">
     <li class="c-nav__list-item c-pagination__item c-pagination__item--prev">
@@ -7,7 +8,12 @@
           [<span class="c-nav__text c-pagination__text is-disabled">(#ENV{label_precedent})</span>]
         </span>
       ][(#ENV{page_courante}|<={1}|non)
-        <a href="#ENV{url_precedent}" rel="prev nofollow"  class="c-pagination__link c-pagination__link--prev ajax">
+        [(#GET{position}|=={bottom}|?{
+          [(#SET{urlp, #ENV{url_precedent}|ancre_url{exhibitions}})]
+          ,
+          [(#SET{urlp, #ENV{url_precedent}})]
+        })]
+        <a href="#GET{urlp}" rel="prev nofollow"  class="c-pagination__link c-pagination__link--prev ajax">
           [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronLeft})"></use></svg>]
           [<span class="c-nav__text c-pagination__text">(#ENV{label_precedent})</span>]
         </a>
@@ -23,7 +29,12 @@
           [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
         </span>
       ][(#ENV{page_courante}|>={#ENV{nombre_pages}}|non)
-        <a href="#ENV{url_suivant}" rel="next nofollow"  class="c-pagination__link c-pagination__link--next ajax">
+        [(#GET{position}|=={bottom}|?{
+          [(#SET{urls, #ENV{url_suivant}|ancre_url{exhibitions}})]
+          ,
+          [(#SET{urls, #ENV{url_suivant}})]
+        })]
+        <a href="#GET{urls}" rel="next nofollow"  class="c-pagination__link c-pagination__link--next ajax">
           <span class="c-nav__text c-pagination__text">#ENV{label_suivant}</span>
           [<svg class="o-icon o-icon--m c-pagination__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{chevronRight})"></use></svg>]
         </a>
