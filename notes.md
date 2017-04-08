@@ -27,3 +27,4 @@ Aucun article nécessaire :
 - adapter le backend notamment en fonction des sélections de page d'accueil et d'expositions
 - CSS print
 - favicon
+- ajouter une pagination dans la rubrique Publications ?
