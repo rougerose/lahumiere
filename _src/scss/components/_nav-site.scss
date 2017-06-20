@@ -55,7 +55,7 @@ $logo-width-large: 80px;
     }
 
     @include mq(desktop) {
-      font-family: $font-futuraLight;
+      //font-family: $font-futuraLight;
       @include inuit-font-size(48px, false);
     }
   }

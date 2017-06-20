@@ -623,7 +623,7 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 
 @media (min-width: 40em) { .c-nav-site__home--title { font-size: 24px; font-size: 1.5rem; } }
 
-@media (min-width: 60em) { .c-nav-site__home--title { font-family: "FuturaLight", sans-serif; font-size: 48px; font-size: 3rem; } }
+@media (min-width: 60em) { .c-nav-site__home--title { font-size: 48px; font-size: 3rem; } }
 
 .c-nav-site__logo { height: auto; fill: #cf7633; }
 
@@ -784,8 +784,6 @@ html { font-family: "Futura", sans-serif; color: #1a1a1a; }
 .c-text th { background-color: #bababa; font-weight: normal; }
 
 .c-text caption { margin: 1.25rem 0 0.3125rem; caption-side: top; color: #1a1a1a; text-align: left; }
-
-.c-text .spip_note_ref { font-family: "FuturaLight", sans-serif; }
 
 .c-text--chapo { font-size: 18px; font-size: 1.125rem; line-height: 1.4; }
 
