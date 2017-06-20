@@ -43,8 +43,9 @@
   // ----- headings ----- //
 
   h2, h3, h4, h5, h6 {
-    font-family: $font-futuraHeavy;
     margin: $spacing-unit-large 0 $spacing-unit-small;
+    font-weight: bold;
+    // font-family: $font-futuraHeavy;
   }
 
   h2 {

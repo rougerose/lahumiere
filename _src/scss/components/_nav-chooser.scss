@@ -23,7 +23,8 @@
   margin-bottom: 0;
   margin-right: $spacing-unit-tiny;
   @include inuit-font-size(17px, false);
-  font-family: $font-futuraHeavy;
+  font-weight: bold;
+  // font-family: $font-futuraHeavy;
 }
 
 

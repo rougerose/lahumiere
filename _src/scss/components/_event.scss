@@ -50,8 +50,9 @@
 
 .c-event__title {
   margin-bottom: $spacing-unit-small;
-  font-family: $font-futuraHeavy;
+  // font-family: $font-futuraHeavy;
   @include inuit-font-size(18px, 1.4);
+  font-weight: bold;
 }
 
 

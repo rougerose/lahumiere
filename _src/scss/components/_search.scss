@@ -29,8 +29,9 @@
 // -------------------------------------
 
 .c-search__count {
-  font-family: $font-futuraHeavy;
+  // font-family: $font-futuraHeavy;
   @include inuit-font-size(20px);
+  font-weight: bold;
 }
 
 // ----- variante count--total ----- //
