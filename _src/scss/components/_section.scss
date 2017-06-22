@@ -22,7 +22,7 @@
 // -------------------------------------
 
 .c-section__title {
-  @include inuit-font-size(18px, false);
+  @include inuit-font-size(20px, false);
   text-transform: uppercase;
 
   &:after {
@@ -63,7 +63,7 @@
   // title
   & .c-section__title {
     margin: 0 0 $spacing-unit-small;
-    @include inuit-font-size(17px);
+    @include inuit-font-size(18px);
 
     &:after {
       display: none;

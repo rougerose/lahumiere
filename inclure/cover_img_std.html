@@ -15,21 +15,21 @@
     Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
     ************************************************************************
       desktop hdpi: 810px
-      desktop:      262px | 304px
-      tablet:       260px | 403px
+      desktop:      260px | 302px
+      tablet:       260px | 400px
       mobileLs:     190px | 290px
-      mobile:       280px | 198px
+      mobile:       298px | 416px
     -->
   ]
 
-  [(#SET{405w, #GET{fichier}|image_reduire{405,0}|extraire_attribut{src}})]
+  [(#SET{415w, #GET{fichier}|image_reduire{415,0}|extraire_attribut{src}})]
 
   <figure class="c-cover__figure c-figure">
     [<img src="
-      (#GET{405w})
+      (#GET{415w})
     " srcset="
       [(#GET{fichier}|image_reduire{810,0}|extraire_attribut{src}) 810w,]
-      [(#GET{405w}) 405w,]
+      [(#GET{415w}) 415w,]
       [(#GET{fichier}|image_reduire{300,0}|extraire_attribut{src}) 300w,]
       [(#GET{fichier}|image_reduire{200,0}|extraire_attribut{src}) 200w]
     " sizes="100vw" alt="#TITRE" class="c-cover__img c-figure__img">]

@@ -40,7 +40,7 @@
 
 .c-abstract__title {
   margin-bottom: $spacing-unit-small;
-  @include inuit-font-size(19px);
+  @include inuit-font-size(20px);
   text-transform: uppercase;
 }
 
@@ -51,7 +51,7 @@
 
 .c-abstract__description {
   padding-right: $spacing-unit-small;
-  @include inuit-font-size(16px);
+  @include inuit-font-size(18px);
 
   @include mq(mobile, mobileLs) {
     padding-left: $spacing-unit-small / 2;

@@ -9,8 +9,8 @@
   <nom>Lahumiere</nom>
   <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
 
-  <pipeline nom="insert_head_css" inclure="lahumiere_pipelines.php" />
-  <pipeline nom="insert_head" inclure="lahumiere_pipelines.php" />
+  <!-- <pipeline nom="insert_head_css" inclure="lahumiere_pipelines.php" /> -->
+  <!-- <pipeline nom="insert_head" inclure="lahumiere_pipelines.php" /> -->
 
   <utilise nom="alerte_urgence" />
   <utilise nom="intertitrestdm" />
@@ -34,4 +34,9 @@
   <necessite nom="ps" compatibilite="[0.1.0;0.1.*]" />
   <necessite nom="suivant_precedent" compatibilite="[1.4.2;1.4.*]" />
   <necessite nom="zcore" compatibilite="[2.6.1;2.6.*]" />
+  <spip compatibilite="[3.1.0;3.1.*]">
+     <style type="public" source="css/app.css" />
+     <script type="public" source="js/lib.min.js" />
+     <script type="public" source="js/app.min.js" />
+  </spip>
 </paquet>

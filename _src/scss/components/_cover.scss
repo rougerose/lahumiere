@@ -34,7 +34,7 @@
 // -------------------------------------
 
 .c-cover__meta {
-  @include inuit-font-size(14px);
+  @include inuit-font-size(16px);
 
   @include mq($until: mobileLs) {
     margin-bottom: 0;
@@ -84,14 +84,14 @@
 // -------------------------------------
 
 .c-cover__title {
-  @include inuit-font-size(22px, 1.2)
+  @include inuit-font-size(24px, 1.2)
   transition: color $global-transition;
 }
 
 // ----- variante large ----- //
 
 .c-cover__title--large {
-  @include inuit-font-size(26px, false);
+  @include inuit-font-size(28px, false);
 }
 
 
@@ -101,13 +101,13 @@
 
 .c-cover__subtitle {
   font-style: italic;
-  @include inuit-font-size(17px);
+  @include inuit-font-size(20px);
 }
 
 // ----- variante lage ----- //
 
 .c-cover__subtitle--large {
-  @include inuit-font-size(19px);
+  @include inuit-font-size(22px);
 }
 
 
@@ -126,7 +126,7 @@
 // -------------------------------------
 
 .c-cover__description {
-  @include inuit-font-size(16px, false);
+  @include inuit-font-size(18px, false);
 
   p:last-of-type {
     margin-bottom: 0;
@@ -169,6 +169,14 @@
   }
 }
 
+
+//
+// figure
+// -------------------------------------
+
+.c-cover__figure {
+  text-align: center;
+}
 
 //
 // more

@@ -81,8 +81,8 @@ var options = {
     },
     run: function () {
       return [
-        ['compile:scss'],
-        ['compile:js']
+        ['compile:scss', 'minify:css'],
+        ['compile:js', 'minify:js']
       ]
     }
   }
