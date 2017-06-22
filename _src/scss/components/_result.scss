@@ -15,7 +15,7 @@ $indent: 2em;
   position: relative;
   margin-bottom: $spacing-unit-tiny;
   padding-left: $indent;
-  @include inuit-font-size(19px, 1.2);
+  @include inuit-font-size(24px);
 
   &:before {
     position: absolute;
@@ -33,6 +33,7 @@ $indent: 2em;
 // -------------------------------------
 
 .c-result__description {
+  @include inuit-font-size(18px);
   > p {
     margin-bottom: $spacing-unit-small;
   }
@@ -45,7 +46,7 @@ $indent: 2em;
 
 .c-result__path {
   color: $color-gray-light;
-  @include inuit-font-size(13px, false);
+  @include inuit-font-size(16px, false);
   text-transform: uppercase;
 }
 

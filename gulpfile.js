@@ -151,7 +151,7 @@ gulp.task( 'compile:jsLib', function () {
 gulp.task( 'compile:js', function () {
   gulp.src(['_src/js/*.js'] )
     .pipe(concat("app.js"))
-    .pipe(wrap('(function(){\n\'use strict\';\n<%= contents %>\n})();'))
+    .pipe(wrap('$(function(){\n\'use strict\';\n<%= contents %>\n});'))
     .pipe( gulp.dest( options.js.destination ));
 });
 

@@ -1,4 +1,4 @@
-(function(){
+$(function(){
 'use strict';
 // =====================================
 // portfolio
@@ -54,4 +54,4 @@ function closeSearch() {
   $searchInput.val('');
 }
 
-})();
+});
