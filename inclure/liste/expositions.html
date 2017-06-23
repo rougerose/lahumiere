@@ -48,7 +48,7 @@
   #SET{articles, #ARRAY}
   #SET{compteur, ''}
 
-  <BOUCLE_evenements(EVENEMENTS){!evenement_passe #GET{date_debut}}{!evenement_a_venir #GET{date_fin}}{par date_debut}{id_rubrique}{lang}>
+  <BOUCLE_evenements(EVENEMENTS){!evenement_passe #GET{date_debut}}{!evenement_a_venir #GET{date_fin}}{!par date_debut}{id_rubrique}{lang}>
     [(#SET{articles, #GET{articles}|push{#ID_ARTICLE} })]
   </BOUCLE_evenements>
 

@@ -5,7 +5,7 @@
       Sinon on prend le premier document du porfolio
     -->
   ][(#LOGO_ARTICLE|oui) #SET{fichier,#VAL{IMG/}|concat{#LOGO_ARTICLE**}}]
-    <BOUCLE_portofolio(DOCUMENTS){id_article}{extension IN jpg, gif, png}{vu=non}{0,1}{si #LOGO_ARTICLE|non}>
+    <BOUCLE_portofolio(DOCUMENTS){id_article}{extension IN jpg, gif, png}{vu=non}{par rang_lien}{0,1}{si #LOGO_ARTICLE|non}>
       #SET{fichier, #FICHIER}
     </BOUCLE_portofolio>
 
