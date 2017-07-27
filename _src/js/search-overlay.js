@@ -17,7 +17,7 @@ $(document).keyup(function(e) {
   }
 });
 
-function openSearch() {
+function openSearch(event) {
   event.preventDefault();
   $searchContainer.addClass('is-visible');
   $searchInput.focus();
