@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test documents portfolio</title>
+    #INSERT_HEAD
+  </head>
+  <body>
+
+    [(#REM)
+      <!--
+
+        Largeur de l'image en fonction des breakpoints.
+        Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+
+        desktop :       466px
+        tablet :        259px min | 403px max
+        mobileLs :      190px min | 290px max
+        mobile :        280px min | 398px max
+
+        Largeur des vignettes à afficher :
+
+        S: 300px
+        M: 410px
+        L: 470px
+        XL: 900px
+
+        Largeur des images plein écran :
+
+        S: 600px
+        M: 900px
+        L: 1024px
+        XL: 1600px
+
+      -->
+    ]
+
+
+    <BOUCLE_galerie(DOCUMENTS){extension=jpg}{0,1}{largeur>1024}{par hasard}{statut in prop,publie}>
+    [(#LARGEUR|>{300}|?{
+      [(#SET{vignette_s, #FICHIER|image_reduire{300,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{vignette_s, #FICHIER})]
+    })]
+    [(#LARGEUR|>{410}|?{
+      [(#SET{vignette_m, #FICHIER|image_reduire{410,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{vignette_m, #FICHIER})]
+    })]
+    [(#LARGEUR|>{470}|?{
+      [(#SET{vignette_l, #FICHIER|image_reduire{470,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{vignette_l, #FICHIER})]
+    })]
+    [(#LARGEUR|>{600}|?{
+      [(#SET{image_s, #FICHIER|image_reduire{600,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{image_s, #FICHIER})]
+    })]
+    [(#LARGEUR|>{900}|?{
+      [(#SET{image_m, #FICHIER|image_reduire{900,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{image_m, #FICHIER})]
+    })]
+    [(#LARGEUR|>{1024}|?{
+      [(#SET{image_l, #FICHIER|image_reduire{1024,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{image_l, #FICHIER})]
+    })]
+    [(#LARGEUR|>{1600}|?{
+      [(#SET{image_xl, #FICHIER|image_reduire{1600,0}|extraire_attribut{src}})]
+      ,
+      [(#SET{image_xl, #FICHIER})]
+    })]
+    <img src="#FICHIER" alt="">
+    <img src="[(#GET{image_s})]" alt="">
+    <img src="[(#GET{image_m})]" alt="">
+    <img src="[(#GET{image_l})]" alt="">
+    <img src="[(#GET{image_xl})]" alt="">
+
+    </BOUCLE_galerie>
+  </body>
+</html>

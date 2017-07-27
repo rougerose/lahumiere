@@ -1,0 +1,5 @@
+<composition>
+  <nom>Article Expositions / Version avec logo</nom>
+  <description>Composition pour les articles de la rubrique «Expositions». Le logo de l'article sera affiché (s'il existe).</description>
+  <icon>images/objet-simple.png</icon>
+</composition>

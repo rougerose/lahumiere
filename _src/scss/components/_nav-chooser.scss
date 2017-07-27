@@ -1,0 +1,49 @@
+// =====================================
+// nav-chooser
+// =====================================
+
+.c-nav-chooser {
+  border-bottom: 1px solid $color-black;
+  margin-bottom: $spacing-unit-large;
+  // line-height: 1;
+  // text-transform: none;
+
+  @include mq(tablet) {
+    width: 50%;
+  }
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-nav-chooser__title {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: $spacing-unit-tiny;
+  @include inuit-font-size(17px, false);
+  font-weight: bold;
+  // font-family: $font-futuraHeavy;
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-nav-chooser__link {
+  display: inline-block;
+  margin-right: $spacing-unit-tiny;
+  padding: 0 $spacing-unit-tiny;
+  @include inuit-font-size(17px, false);
+
+  &.is-current {
+    border-bottom: 1px solid $color-black;
+    color: $color-theme;
+  }
+
+  > .o-icon {
+    margin-right: 3px;
+  }
+}

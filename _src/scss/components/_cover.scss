@@ -1,0 +1,187 @@
+// =====================================
+// cover
+// =====================================
+
+.c-cover {
+  margin-bottom: $spacing-unit-large + $spacing-unit;
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-cover__link {
+  display: block;
+
+  &:hover {
+    color: $color-black;
+
+    .c-cover__title {
+      color: $color-theme;
+    }
+
+    .c-cover__more {
+      transform: translateX($spacing-unit);
+      fill: $color-theme;
+    }
+  }
+}
+
+
+//
+// meta
+// -------------------------------------
+
+.c-cover__meta {
+  @include inuit-font-size(16px);
+
+  @include mq($until: mobileLs) {
+    margin-bottom: 0;
+    padding: $spacing-unit-tiny 0 $spacing-unit-small;
+    text-align: center;
+  }
+
+  @include mq(mobileLs) {
+    border-bottom: 1px solid $color-black;
+    padding-bottom: $spacing-unit-tiny;
+  }
+}
+
+
+//
+// text
+// -------------------------------------
+
+.c-cover__text {
+  line-height: 1.4;
+
+  @include mq($until: mobileLs) {
+    text-align: center !important;
+  }
+}
+
+
+//
+// header
+// -------------------------------------
+
+.c-cover__header {
+  margin-bottom: $spacing-unit;
+
+  &:after {
+    display: inline-block;
+    width: 3em;
+    height: 1px;
+    background-color: $color-black;
+    content: "";
+  }
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-cover__title {
+  @include inuit-font-size(24px, 1.2)
+  transition: color $global-transition;
+}
+
+// ----- variante large ----- //
+
+.c-cover__title--large {
+  @include inuit-font-size(28px, false);
+}
+
+
+//
+// subtitle
+// -------------------------------------
+
+.c-cover__subtitle {
+  font-style: italic;
+  @include inuit-font-size(20px);
+}
+
+// ----- variante lage ----- //
+
+.c-cover__subtitle--large {
+  @include inuit-font-size(22px);
+}
+
+
+//
+// title & subtitle
+// -------------------------------------
+
+.c-cover__title,
+.c-cover__subtitle {
+  margin-bottom: $spacing-unit-small;
+}
+
+
+//
+// description
+// -------------------------------------
+
+.c-cover__description {
+  @include inuit-font-size(18px, false);
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  // @include mq(tablet) {
+  //   @include inuit-font-size(17px, false);
+  // }
+}
+
+
+//
+// header & description
+// -------------------------------------
+
+.c-cover__header,
+.c-cover__description {
+  @include mq(mobileLs) {
+    padding-right: $spacing-unit-small;
+  }
+}
+
+// ----- variante --large ----- //
+
+.c-cover__header--large,
+.c-cover__description--large {
+  @include mq(mobileLs) {
+    padding-left: $spacing-unit-small;
+    padding-right: 0;
+  }
+}
+
+// ----- variante --reverse ----- //
+
+.c-cover__header--reverse,
+.c-cover__description--reverse {
+  @include mq(mobileLs) {
+    padding-left: 0;
+    padding-right: $spacing-unit-small;
+  }
+}
+
+
+//
+// figure
+// -------------------------------------
+
+.c-cover__figure {
+  text-align: center;
+}
+
+//
+// more
+// -------------------------------------
+
+.c-cover__more {
+  transition: fill $global-transition, transform $global-transition;
+}

@@ -1,0 +1,59 @@
+<BOUCLE_cover_exhibition(ARTICLES){id_article}{lang}>
+  #SET{event,0}
+  #SET{date_debut, #ENV{date_debut}}
+  #SET{date_fin, #ENV{date_fin}}
+  #SET{statut,''}
+  [(#REM) <!-- Variante std ou large ? --> ]
+  #SET{variante, #ENV{variante, std}}
+  [(#REM)
+    <!--
+      Position de l'élément :
+      classe o-layout--reverse pour l'élément en variante large
+      et en position pair.
+    --> ]
+  #SET{compteur, #ENV{compteur, 1}}
+
+  <BOUCLE_evenement(EVENEMENTS){id_article}{par date_debut}{0,1}>
+    [(#SET{event,1})]
+    [(#DATE_DEBUT|agenda_date_a_venir|?{
+      #SET{statut, <:lahumiere:exhibition_upcoming:>}
+      ,
+      [(#DATE_FIN|agenda_date_a_venir|?{
+        #SET{statut, <:lahumiere:exhibition_current:>}
+        ,
+        #SET{statut, <:lahumiere:exhibition_past:>}
+      })]
+    })]
+    [(#SET{dates, [(#DATE_DEBUT|affdate_debut_fin{#DATE_FIN,non,abbr})]})]
+  </BOUCLE_evenement>
+
+  <article class="o-layout__item[(#GET{variante}|=={std}|oui) u-5/10@mobileLs u-3/9@desktop] c-cover">
+    <a href="#URL_ARTICLE" class="c-cover__link">
+      <p class="c-cover__meta c-meta[(#GET{variante}|=={std}|oui) c-meta--std]">
+        [<span class="c-meta__item c-meta__item--statut">(#GET{statut})</span>]
+        [(#GET{event}|oui)[<svg class="o-icon o-icon--s c-meta__item c-meta__item--icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]]
+        [<span class="c-meta__item c-meta__item--date">(#GET{dates})</span>]
+        [(#GET{event}|non)&nbsp;]
+      </p>
+      [(#GET{variante}|=={large}|oui)<div class="o-layout[(#GET{compteur}|modulo{2}|?{'',' o-layout--reverse'})]">]
+        [(#GET{variante}|=={large}|?{
+          [(#INCLURE{fond=inclure/cover_img_large, id_article})]
+          ,
+          [(#INCLURE{fond=inclure/cover_img_std, id_article})]
+        })]
+        <div class="[(#GET{variante}|=={large}|oui)o-layout__item u-5/10@mobileLs u-4/9@tablet ]c-cover__text">
+          <header class="c-cover__header[(#GET{variante}|=={large}|oui) c-cover__header--large[(#GET{compteur}|modulo{2}|?{'',' c-cover__header--reverse'})]]">
+            <h2 class="c-cover__title[(#GET{variante}|=={large}|oui) c-cover__title--large]">#TITRE</h2>
+            [<p class="c-cover__subtitle">(#SOUSTITRE)</p>]
+          </header>
+          <div class="c-cover__description[(#GET{variante}|=={large}|oui) c-cover__header--large[(#GET{compteur}|modulo{2}|?{'',' c-cover__description--reverse'})]]">
+            [(#REM) <!-- supprimer les éventuels liens insérer dans le descriptif --> ]
+            [(#INTRODUCTION{300}|textebrut|propre)]
+            [<svg class="o-icon o-icon--m c-cover__more"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]
+          </div>
+        </div>
+      [(#GET{variante}|=={large}|oui)</div>]
+    </a>
+  </article>
+</BOUCLE_cover_exhibition>
+#FILTRE{mini_html}

@@ -1,0 +1,35 @@
+[(#SET{vue, #ENV{vue, liste}})]
+
+#SET{ulClass, 'c-artists c-artists--list'}
+#SET{liClass, 'c-artist'}
+
+[(#GET{vue}|=={images}|oui)
+  #SET{ulClass, 'o-layout o-layout--bottom c-artists c-artists--images'}
+  #SET{liClass, 'o-layout__item u-5/10@mobileLs u-3/9@desktop c-artist'}
+]
+
+[(#INCLURE{fond=inclure/nav_liste_ou_images, vue=#GET{vue}})]
+
+<B_articles>
+  <ul[ class="(#GET{ulClass})"]>
+    <BOUCLE_articles(ARTICLES){id_rubrique}{par titre}>
+      <li[ class="(#GET{liClass})"]>
+        <a href="#URL_ARTICLE" class="c-artist__link[ (#GET{vue}|=={images}|oui)c-artist__link--images]">
+          [(#GET{vue}|=={liste}|oui)[<h2 class="c-artist__name c-artist__name--list">(#TITRE|prenom_nom)</h2>]]
+          [(#GET{vue}|=={images}|oui)
+            [(#LOGO_ARTICLE|?{
+              [(#INCLURE{fond=inclure/artist_img_logo, id_article})]
+              ,
+              [(#INCLURE{fond=inclure/artist_img_document, id_article})]
+            })]
+            [<h2 class="c-artist__name c-artist__name--images">(#TITRE|prenom_nom)</h2>]
+          ]
+        </a>
+      </li>
+    </BOUCLE_articles>
+      [(#REM)
+        <!-- Bug webkit : Si le nombre d'éléments est impair, la deuxième colonne est légèrement plus basse que la première. On ajoute un élément supplémentaire. --> ]
+      [(#GET{vue}|=={liste}|oui)[(#TOTAL_BOUCLE|modulo{2}|oui)<li class="#GET{liClass}">&nbsp;</li>]]
+  </ul>
+</B_articles>
+#FILTRE{mini_html}

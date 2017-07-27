@@ -1,0 +1,33 @@
+// =====================================
+// nav-utils
+// =====================================
+
+.c-nav-utils {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: right;
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-nav-utils__item {
+  display: inline-block;
+  vertical-align: middle;
+
+  @include mq($until: tablet) {
+    width: 50%;
+  }
+}
+
+// ----- variante: search-trigger ----- //
+
+.c-nav-utils__item--search-trigger {
+  padding: $spacing-unit-small $spacing-unit;
+  padding-left: 0;
+  color: $color-gray;
+  text-align: left;
+}

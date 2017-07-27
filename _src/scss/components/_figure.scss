@@ -1,0 +1,78 @@
+// =====================================
+// figure
+// =====================================
+
+.c-figure {
+  margin-bottom: $spacing-unit;
+}
+
+// ----- variante logo-article ----- //
+
+.c-figure--logo-article {}
+
+// ----- variante portfolio ----- //
+
+.c-figure--portfolio {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-figure__link {
+  display: block;
+}
+
+
+//
+// img
+// -------------------------------------
+
+.c-figure__img {}
+
+
+//
+// caption
+// -------------------------------------
+
+.c-figure__caption {
+  margin-left: 1px;
+  padding-top: $spacing-unit-tiny;
+  padding-left: $spacing-unit-tiny;
+  border-left: 1px solid rgba($color-gray-light, 0.5);
+}
+
+
+//
+// title, desc & author
+// -------------------------------------
+
+.c-figure__title,
+.c-figure__desc,
+.c-figure__author {
+  // font-family: $font-futuraLight;
+  @include inuit-font-size(15px);
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-figure__title {
+  margin-bottom: $spacing-unit-tiny;
+  font-style: italic;
+}
+
+
+//
+// desc & author
+// -------------------------------------
+
+.c-figure__desc p,
+.c-figure__author {
+  margin: 0;
+  color: $color-gray-light;
+}

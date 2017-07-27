@@ -1,0 +1,156 @@
+// *************************************
+//
+// Webfonts
+//
+// *************************************
+
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3374513, 2017-04-14T15:16:51-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: FuturaPT-Book by ParaType
+ * URL: http://www.myfonts.com/fonts/paratype/futura-book/futura-book/
+ *
+ * Webfont: FuturaPT-BookObl by ParaType
+ * URL: http://www.myfonts.com/fonts/paratype/futura-book/italic/
+ *
+ * Webfont: FuturaPT-Heavy by ParaType
+ * URL: http://www.myfonts.com/fonts/paratype/futura-book/heavy/
+ *
+ * Webfont: FuturaPT-HeavyObl by ParaType
+ * URL: http://www.myfonts.com/fonts/paratype/futura-book/heavy-obl/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3374513
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright &#x00A9; 1995 ParaGraph Intl., &#x00A9; 1998 ParaType Inc., ParaType Ltd. All rights reserved.
+ *
+ * © 2017 MyFonts Inc
+*/
+
+@font-face {font-family: 'FuturaPT';font-weight: normal;font-style: normal;src: url('webfonts/337DB1_0_0.eot');src: url('webfonts/337DB1_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/337DB1_0_0.woff2') format('woff2'),url('webfonts/337DB1_0_0.woff') format('woff'),url('webfonts/337DB1_0_0.ttf') format('truetype'),url('webfonts/337DB1_0_0.svg#wf') format('svg');}
+
+
+@font-face {font-family: 'FuturaPT';font-weight: normal;font-style: italic;src: url('webfonts/337DB1_1_0.eot');src: url('webfonts/337DB1_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/337DB1_1_0.woff2') format('woff2'),url('webfonts/337DB1_1_0.woff') format('woff'),url('webfonts/337DB1_1_0.ttf') format('truetype'),url('webfonts/337DB1_1_0.svg#wf') format('svg');}
+
+
+@font-face {font-family: 'FuturaPT';font-weight: bold;font-style: normal;src: url('webfonts/337DB1_2_0.eot');src: url('webfonts/337DB1_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/337DB1_2_0.woff2') format('woff2'),url('webfonts/337DB1_2_0.woff') format('woff'),url('webfonts/337DB1_2_0.ttf') format('truetype'),url('webfonts/337DB1_2_0.svg#wf') format('svg');}
+
+
+@font-face {font-family: 'FuturaPT';font-weight: bold;font-style: italic;src: url('webfonts/337DB1_3_0.eot');src: url('webfonts/337DB1_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/337DB1_3_0.woff2') format('woff2'),url('webfonts/337DB1_3_0.woff') format('woff'),url('webfonts/337DB1_3_0.ttf') format('truetype'),url('webfonts/337DB1_3_0.svg#wf') format('svg');}
+
+// -------------------------------------
+// Futura
+// -------------------------------------
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: url('webfonts/FuturaStd-Book.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-Book.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-Book.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-Book.svg#FuturaStd-Book') format('svg'); /* Legacy iOS */
+//     font-style: normal;
+//     font-weight: normal;
+//     // text-rendering: optimizeLegibility;
+// }
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: url('webfonts/FuturaStd-BookOblique.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-BookOblique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-BookOblique.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-BookOblique.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-BookOblique.svg#FuturaStd-BookOblique') format('svg'); /* Legacy iOS */
+//     font-style: italic;
+//     font-weight: normal;
+//     // text-rendering: optimizeLegibility;
+// }
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: url('webfonts/FuturaStd-HeavyOblique.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-HeavyOblique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-HeavyOblique.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-HeavyOblique.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-HeavyOblique.svg#FuturaStd-HeavyOblique') format('svg'); /* Legacy iOS */
+//     font-style: italic;
+//     font-weight: bold;
+//     // text-rendering: optimizeLegibility;
+// }
+//
+// @font-face {
+//     font-family: 'Futura';
+//     src: url('webfonts/FuturaStd-Heavy.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-Heavy.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-Heavy.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-Heavy.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-Heavy.svg#FuturaStd-Heavy') format('svg'); /* Legacy iOS */
+//     font-style: normal;
+//     font-weight: bold;
+//     // text-rendering: optimizeLegibility;
+// }
+
+
+// -------------------------------------
+// Futura Light
+// -------------------------------------
+
+// @font-face {
+//     font-family: 'FuturaLight';
+//     src: url('webfonts/FuturaStd-Light.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-Light.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-Light.svg#FuturaStd-Light') format('svg'); /* Legacy iOS */
+//     font-style: normal;
+//     font-weight: normal;
+//     // text-rendering: optimizeLegibility;
+// }
+//
+// @font-face {
+//     font-family: 'FuturaLight';
+//     src: url('webfonts/FuturaStd-LightOblique.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-LightOblique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-LightOblique.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-LightOblique.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-LightOblique.svg#FuturaStd-LightOblique') format('svg'); /* Legacy iOS */
+//     font-style: italic;
+//     font-weight: normal;
+//     // text-rendering: optimizeLegibility;
+// }
+
+// -------------------------------------
+// Futura Heavy
+// -------------------------------------
+
+// @font-face {
+//     font-family: 'FuturaHeavy';
+//     src: url('webfonts/FuturaStd-Heavy.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-Heavy.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-Heavy.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-Heavy.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-Heavy.svg#FuturaStd-Heavy') format('svg'); /* Legacy iOS */
+//     font-style: normal;
+//     font-weight: normal;
+//     // text-rendering: optimizeLegibility;
+// }
+//
+// @font-face {
+//     font-family: 'FuturaHeavy';
+//     src: url('webfonts/FuturaStd-HeavyOblique.eot'); /* IE9 Compat Modes */
+//     src: url('webfonts/FuturaStd-HeavyOblique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//          url('webfonts/FuturaStd-HeavyOblique.woff') format('woff'), /* Modern Browsers */
+//          url('webfonts/FuturaStd-HeavyOblique.ttf') format('truetype'), /* Safari, Android, iOS */
+//          url('webfonts/FuturaStd-HeavyOblique.svg#FuturaStd-HeavyOblique') format('svg'); /* Legacy iOS */
+//     font-style: italic;
+//     font-weight: normal;
+//     // text-rendering: optimizeLegibility;
+// }

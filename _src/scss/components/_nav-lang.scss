@@ -1,0 +1,29 @@
+// =====================================
+// nav-lang
+// =====================================
+
+.c-nav-lang {}
+
+
+//
+// item
+// -------------------------------------
+
+.c-nav-lang__item {
+  padding: $spacing-unit-small 0;
+  color: $color-gray-light;
+
+  &.is-current {
+    color: $color-theme;
+  }
+}
+
+// ----- variante: separator ----- //
+
+.c-nav-lang__item--separator {
+  &:before {
+    margin: 0 3px;
+    content: "/";
+    color: $color-gray-light;
+  }
+}

@@ -1,0 +1,95 @@
+<BOUCLE_document_portfolio(DOCUMENTS){id_document}>
+  [(#REM)
+    <!--
+      Deux variantes possibles qui modifie la classe de o-layout__item c-figure :
+      - rubrique : u-5/10 u-3/9@tablet
+      - article : u-5/10@mobileLs
+    -->
+  ] [(#SET{variante, #ENV{variante, article}})]
+    [(#SET{varianteClass, 'u-5/10@mobile u-3/9@mobileLs'})]
+
+  [(#REM)
+    <!--
+      Largeur de l'image en fonction des breakpoints.
+      Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+
+      desktop :       262px     | 303px
+      tabletPlus:     205px     | 261px
+      tablet :        166px min | 260px max
+      mobileLs :      120px min | 187px max
+      mobile :        130px min | 189px max
+
+      Largeur des vignettes à afficher :
+
+      S: 190px
+      M: 262px
+      L: 303px
+      XL: 600px
+
+      Largeur des images plein écran :
+
+      S: 600px
+      M: 900px
+      L: 1024px
+      XL: 1600px
+    -->
+  ]
+  [(#LARGEUR|>{190}|?{
+    [(#SET{vignette_s, #FICHIER|image_reduire{190,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{vignette_s, #FICHIER})]
+  })]
+  [(#LARGEUR|>{262}|?{
+    [(#SET{vignette_m, #FICHIER|image_reduire{262,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{vignette_m, #FICHIER})]
+  })]
+  [(#LARGEUR|>{303}|?{
+    [(#SET{vignette_l, #FICHIER|image_reduire{303,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{vignette_l, #FICHIER})]
+  })]
+  [(#LARGEUR|>{600}|?{
+    [(#SET{image_s, #FICHIER|image_reduire{600,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{image_s, #FICHIER})]
+  })]
+  [(#LARGEUR|>{900}|?{
+    [(#SET{image_m, #FICHIER|image_reduire{900,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{image_m, #FICHIER})]
+  })]
+  [(#LARGEUR|>{1024}|?{
+    [(#SET{image_l, #FICHIER|image_reduire{1024,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{image_l, #FICHIER})]
+  })]
+  [(#LARGEUR|>{1600}|?{
+    [(#SET{image_xl, #FICHIER|image_reduire{1600,0}|extraire_attribut{src}})]
+    ,
+    [(#SET{image_xl, #FICHIER})]
+  })]
+
+  [(#SET{alt, [(#TITRE|sinon{#DESCRIPTIF}|sinon{#FICHIER|basename}|textebrut)]})]
+
+  <figure class="o-layout__item[ (#GET{varianteClass}) ]c-figure c-figure--portfolio" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="#GET{image_xl}" itemprop="contentUrl" data-size="[(#GET{image_xl}|largeur)][x(#GET{image_xl}|hauteur)]" data-s="[(#GET{image_s})]" data-s-size="[(#GET{image_s}|largeur)][x(#GET{image_s}|hauteur)]" data-m="[(#GET{image_m})]" data-m-size="[(#GET{image_m}|largeur)][x(#GET{image_m}|hauteur)]" data-l="[(#GET{image_l})]" data-l-size="[(#GET{image_l}|largeur)][x(#GET{image_l}|hauteur)]"[ data-title="(#TITRE|textebrut)"][ data-desc="(#DESCRIPTIF|textebrut)"][ data-author="(#CREDITS|textebrut)"] class="c-figure__link">
+      <img src="
+        [(#GET{vignette_l})]
+      " srcset="
+        [(#GET{vignette_s})[ (#GET{vignette_s}|largeur)w]]
+        [(#GET{vignette_m}|=={#GET{vignette_s}}|non)[,(#GET{vignette_m})[ (#GET{vignette_m}|largeur)w]]]
+        [(#GET{vignette_l}|=={#GET{vignette_m}}|non)[,(#GET{vignette_l})[ (#GET{vignette_l}|largeur)w]]]
+        [(#GET{image_m}|=={#GET{vignette_m}}|non)[,(#GET{image_m})[ (#GET{image_m}|largeur)w]]]
+      " sizes="100vw" itemprop="thumbnail" alt="[(#GET{alt})]" class="c-figure__img" />
+    </a>
+    [(#TITRE|ou{#DESCRIPTIF}|ou{#CREDITS}|oui)
+      <figcaption itemprop="caption" class="c-figure__caption">
+        [<h3 class="c-figure__title" itemprop="name">(#TITRE)</h3>]
+        [<div class="c-figure__desc" itemprop="description">(#DESCRIPTIF)</div>]
+        [<p class="c-figure__author" itemprop="author">(#CREDITS)</p>]
+      </figcaption>
+    ]
+  </figure>
+</BOUCLE_document_portfolio>
+#FILTRE{mini_html}

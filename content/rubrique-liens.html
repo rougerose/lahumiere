@@ -1,0 +1,37 @@
+<BOUCLE_rubrique_liens(RUBRIQUES){id_rubrique}>
+  [(#INCLURE{fond=inclure/nav_secteur-galerie, env})]
+  <article class="c-article">
+    <header class="c-article__header">
+      <h1 class="c-article__title c-article__title--rubric">[(#TITRE)]</h1>
+    </header>
+
+    <div class="c-article__main">
+      <div class="o-layout">
+        [<div class="o-layout__item u-7/10@desktop">
+          <div class="c-article__section c-text c-text--chapo">
+            (#TEXTE)
+          </div>
+        </div>]
+        <div class="o-layout__item">
+          <ul class="o-layout c-websites">
+            <BOUCLE_sites(SITES){id_rubrique}{par num nom_site, nom_site}{lang_select=non}>
+            <li class="o-layout__item u-5/10@mobileLs c-website__list-item">
+              <article class="c-website">
+                [<h2 class="c-website__name"><a href="#URL_SITE">(#NOM_SITE) [<svg class="o-icon o-icon--m"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]</a></h2>]
+                [(#DESCRIPTIF)]
+                <B_tags>
+                  <footer class="c-website__categories">
+                    <BOUCLE_tags(MOTS){id_syndic}{par num titre, titre}{" "}>[<span class="c-tag">(#TITRE)</span>]</BOUCLE_tags>
+                  </footer>
+                </B_tags>
+              </article>
+            </li>
+            </BOUCLE_sites>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</BOUCLE_rubrique_liens>
+#FILTRE{mini_html}

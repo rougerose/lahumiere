@@ -1,0 +1,96 @@
+// =====================================
+// artists
+// =====================================
+
+.c-artists {}
+
+// ----- variante: list ----- //
+
+.c-artists--list {
+  margin: 0;
+  list-style: none;
+  columns: 2 200px;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+
+  @include mq(desktop) {
+    width: 75%;
+  }
+}
+
+// ----- variante: images ----- //
+
+.c-artists--images {
+  > li {
+    margin-bottom: $spacing-unit-small;
+  }
+}
+
+
+// =====================================
+// artist
+// =====================================
+
+.c-artist {}
+
+
+//
+// link
+// -------------------------------------
+
+.c-artist__link {
+  display: block;
+}
+
+// ----- variante: images ----- //
+
+.c-artist__link--images {
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// img
+// -------------------------------------
+
+.c-artist__img {
+  margin-bottom: $spacing-unit;
+}
+
+
+//
+// name
+// -------------------------------------
+
+.c-artist__name {
+  margin-bottom: 0;
+  @include inuit-font-size(18px, false);
+  text-transform: uppercase;
+}
+
+// ----- variante: images ----- //
+
+.c-artist__name--images {
+  border-bottom: 1px solid $color-theme;
+  padding-bottom: $spacing-unit;
+  transition: border-color $global-transition;
+}
+
+// ----- variante: list ----- //
+
+.c-artist__name--list {
+  position: relative;
+  padding-bottom: $spacing-unit;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 1.5rem;
+    background-color: $color-theme;
+    content: "";
+  }
+}

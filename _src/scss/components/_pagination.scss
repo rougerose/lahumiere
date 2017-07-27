@@ -1,0 +1,146 @@
+// =====================================
+// pagination
+// =====================================
+
+.c-pagination {
+  margin-bottom: $spacing-unit-large;
+}
+
+// ----- variante: top ----- //
+
+.c-pagination--top {
+  margin-bottom: $spacing-unit-large;
+}
+
+// ----- variante: bottom ----- //
+
+.c-pagination--bottom {
+  margin-bottom: $spacing-unit;
+
+  // @include mq(tablet) {
+  //   margin-bottom: $spacing-unit-huge;
+  // }
+}
+
+
+// ----- variante: prevnext ----- //
+
+.c-pagination--prevnext {
+  text-align: center;
+}
+
+
+// ----- variante: spip ----- //
+
+.c-pagination--spip {
+  margin-top: $spacing-unit;
+  margin-bottom: 0;
+  padding-bottom: $spacing-unit-tiny;
+  text-align: center;
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-pagination__item {
+  &.is-selected,
+  & .is-selected {
+    font-weight: bold;
+  }
+}
+
+// ----- variante: prev ----- //
+
+.c-pagination__item--prev {
+  margin-right: $spacing-unit;
+}
+
+// ----- variante: next ----- //
+
+.c-pagination__item--next {
+  margin-left: $spacing-unit;
+}
+
+// ----- variante: sep ----- //
+
+.c-pagination__item--sep,
+.c-pagination__item--ellipsis {
+  color: $color-gray-light;
+}
+
+// ----- variante: ellipsis ----- //
+
+.c-pagination__item--ellipsis {}
+
+
+//
+// link
+// -------------------------------------
+
+.c-pagination__link {
+  display: block;
+
+  &.is-disabled {
+    color: $color-is-disabled;
+    cursor: not-allowed;
+  }
+}
+
+// ----- variante: prev ----- //
+
+.c-pagination__link--prev {
+  &:hover {
+    .c-pagination__icon {
+      background-color: $color-theme;
+      color: $color-black;
+      transform: translateX(-10px);
+    }
+  }
+}
+
+// ----- variante: next ----- //
+
+.c-pagination__link--next {
+  &:hover {
+    .c-pagination__icon {
+      background-color: $color-theme;
+      color: $color-black;
+      transform: translateX(10px);
+    }
+  }
+}
+
+
+//
+// icon
+// -------------------------------------
+
+.c-pagination__icon {
+  margin-bottom: .125em;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: transform $global-transition, background-color $global-transition;
+}
+
+
+//
+// text
+// -------------------------------------
+
+.c-pagination__text {
+  vertical-align: middle;
+  @include inuit-font-size(18px, false);
+}
+
+
+//
+// text-hide
+// -------------------------------------
+
+.c-pagination__text-hide {
+  @include mq($until: mobileLs) {
+    @include inuit-hidden-visually;
+  }
+}

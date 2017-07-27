@@ -1,0 +1,88 @@
+<BOUCLE_composition_article_exposition(ARTICLES){id_article}>
+  #SET{afficher_logo, #ENV{afficher_logo, 1}}
+  #SET{id_event, 0}
+  #SET{portfolio, 0}
+
+  <BOUCLE_evenement(EVENEMENTS){id_article}{0,1}>
+    #SET{id_event, #ID_EVENEMENT}
+    [(#DATE_DEBUT|agenda_date_a_venir|?{
+      #SET{statut, <:lahumiere:exhibition_upcoming:>}
+      ,
+      [(#DATE_FIN|agenda_date_a_venir|?{
+        #SET{statut, <:lahumiere:exhibition_current:>}
+        ,
+        #SET{statut, <:lahumiere:exhibition_past:>}
+      })]
+    })]
+    [(#SET{dates, [(#DATE_DEBUT|affdate_debut_fin{#DATE_FIN,non,abbr})]})]
+    [(#SET{date_debut, #DATE_DEBUT})]
+    [(#SET{date_fin, #DATE_FIN})]
+  </BOUCLE_evenement>
+
+  <article class="c-article">
+    <header class="c-article__header">
+      <h1 class="c-article__title">[(#TITRE)]</h1>
+      [<p class="c-article__subtitle">(#SOUSTITRE)</p>]
+      <p class="c-meta c-meta--article">
+        [<span class="c-meta__item c-meta__item--statut">(#GET{statut})</span>]
+        [<svg class="o-icon o-icon--s c-meta__item c-meta__item--icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]
+        [<span class="c-meta__item c-meta__item--date">(#GET{dates})</span>]
+      </p>
+    </header>
+
+    [(#GET{afficher_logo}|oui)
+      [(#LOGO_ARTICLE|oui)
+        [(#INCLURE{fond=inclure/article_logo, id_article})]
+      ]
+    ]
+
+    <div class="c-article__main">
+      <div class="o-layout">
+        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-7/10@desktop">
+          [<div class="c-article__section c-text c-text--chapo">
+            (#CHAPO)
+          </div>]
+          [<div class="c-article__section c-text">
+            (#TEXTE)
+          </div>]
+          [<div class="c-article__section c-article__footnotes c-text c-text--footnotes">
+            (#NOTES)
+          </div>]
+        </div>
+
+        <div class="o-layout__item u-9/10@mobileLs u-push-1/10@mobileLs u-8/10@desktop">
+
+          <B_portfolio>
+            <div class="c-article__section">
+              <div id="portfolio" class="o-layout c-portfolio js-portfolio" itemscope itemtype="http://schema.org/ImageGallery">
+                <div class="c-portfolio__sizer u-5/10@mobileLs"></div>
+                <div class="js-photoswipe">
+                  <BOUCLE_portfolio(DOCUMENTS){id_article}{extension IN jpg, png, gif}{vu=non}{par rang_lien, num titre, id_document}>
+                    [(#SET{portfolio, 1})]
+                    [(#INCLURE{fond=inclure/document_portfolio, id_document, lang, variante=article})]
+                  </BOUCLE_portfolio>
+                </div>
+              </div>
+            </div>
+          </B_portfolio>
+
+          [(#GET{id_event}|oui)
+            <div class="c-article__section c-article__event">
+              [(#INCLURE{fond=inclure/evenement_article, id_evenement=#GET{id_event}, env})]
+            </div>
+          ]
+
+          [(#SET{label_prev, lahumiere:exhibition_previous})] [(#SET{label_next, lahumiere:exhibition_next})]
+          [(#INCLURE{fond=inclure/nav_prev-next_article, id_article, id_rubrique, lang, label_prev=#GET{label_prev}, label_next=#GET{label_next}})]
+
+        </div>
+
+      </div>
+
+      [(#GET{portfolio}|oui)
+        #MODELE{photoswipe}
+      ]
+    </div>
+  </article>
+</BOUCLE_composition_article_exposition>
+#FILTRE{mini_html}

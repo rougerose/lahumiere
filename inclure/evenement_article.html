@@ -1,0 +1,24 @@
+<BOUCLE_evenement(EVENEMENTS){id_evenement}>
+<div class="c-event">
+  <div class="c-event__content">
+    <h2 class="c-event__title">[(#INFO_TITRE{article, #ID_ARTICLE})[. (#INFO_SOUSTITRE{article, #ID_ARTICLE})]]</h2>
+    <p class="c-event__dates">
+      [(#SET{start, #DATE_DEBUT|affdate})][(#SET{end, #DATE_FIN|affdate})]
+      <time class="c-event__date-debut" datetime="[(#DATE_DEBUT|date_iso)]"><:lahumiere:exhibition_start{date=#GET{start}}:></time> <time class="c-event_date-fin" datetime="[(#DATE_FIN|date_iso)]"><:lahumiere:exhibition_end{date=#GET{end}}:></time>
+    </p>
+    [(#LIEU|ou{#ADRESSE}|oui)
+      <div class="c-event__place">
+        [<p class="c-event__name">(#LIEU)</p>]
+        [<div class="c-event__address">(#ADRESSE)</div>]
+      </div>
+    ]
+  </div>
+  <div class="c-event__action">
+    [<a href="[(#URL_PAGE{add-to-cal}|parametre_url{id_evenement, #ID_EVENEMENT})]" aria-label="<:lahumiere:exhibition_add_to_cal:>" class="c-btn c-btn--primary c-btn--xs">
+      <svg class="o-icon o-icon--m c-btn__icon"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{calAdd})"></use></svg>
+      <span class="c-btn__label"><:lahumiere:exhibition_add_to_cal:></span>
+    </a>]
+  </div>
+</div>
+</BOUCLE_evenement>
+#FILTRE{mini_html}

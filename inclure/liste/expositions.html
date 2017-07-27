@@ -1,0 +1,89 @@
+[(#REM)
+  <!--
+    Variables d'agenda:
+      - reprises sur le modèle du squelette agenda (cf. plugin Agenda)
+      - affichage sur 12 mois + le début est calé sur le 1er janvier.
+  -->
+]
+#SET{affichage_duree,12}
+#SET{affichage_debut, debut_mois_1}
+#SET{date_debut,#ENV{date_debut,#ENV{date}}|agenda_date_debut_liste{#GET{affichage_debut}}}
+#SET{date_prev,#GET{date_debut}|agenda_moisdecal{#GET{affichage_duree}|mult{-1},'Y-m-d H:i:00'}}
+#SET{date_fin,#GET{date_debut}|agenda_moisdecal{#GET{affichage_duree},'Y-m-d H:i:00'}}
+
+
+[(#REM)
+  <!--
+    Variables pour la navigation
+  -->
+]
+#SET{hasprev,''}
+#SET{hasnext,''}
+
+<BOUCLE_prev(EVENEMENTS){id_rubrique}{!evenement_a_venir #GET{date_prev}}{0,1}>
+  #SET{hasprev,1}
+</BOUCLE_prev>
+<BOUCLE_next(EVENEMENTS){id_rubrique}{!evenement_passe #GET{date_fin}}{0,1}>
+  #SET{hasnext,1}
+</BOUCLE_next>
+
+<div id="exhibitions">
+  [(#GET{hasprev}|=={1}|ou{#GET{hasnext}|=={1}}|oui)
+    #INCLURE{fond=inclure/nav_prev-next-year_expositions,
+      label_courant=#ENV{date}|affdate{Y},
+      label_precedent=#GET{date_prev}|affdate_periode{#GET{affichage_duree}},
+      label_suivant=#GET{date_fin}|affdate_periode{#GET{affichage_duree}},
+      nombre_pages=#VAL{1}|plus{#GET{hasprev}|?{1,0}}|plus{#GET{hasnext}|?{1,0}},
+      page_courante=#GET{hasprev}|?{2,1},
+      url_precedent=#SELF|parametre_url{date,#GET{date_prev}|affdate{Y}},
+      url_suivant=#SELF|parametre_url{date,#GET{date_fin}|affdate{Y}}}
+  ]
+
+
+  [(#REM)
+    <!--
+      Variables pour l'affichage des expositions
+    -->
+  ]
+  #SET{articles, #ARRAY}
+  #SET{compteur, ''}
+
+  <BOUCLE_evenements(EVENEMENTS){!evenement_passe #GET{date_debut}}{!evenement_a_venir #GET{date_fin}}{!par date_debut}{id_rubrique}{lang}>
+    [(#SET{articles, #GET{articles}|push{#ID_ARTICLE} })]
+  </BOUCLE_evenements>
+
+  <BOUCLE_expos_variante_large(ARTICLES pb_selection){spip_pb_selection.id_article IN #GET{articles}}{spip_pb_selection.id_rubrique=#ID_RUBRIQUE}{par ordre}{doublons}>
+    [(#SET{compteur, #COMPTEUR_BOUCLE})]
+    [(#INCLURE{fond=inclure/cover_exhibition,
+      id_article,
+      lang,
+      date_debut=#GET{date_debut},
+      date_fin=#GET{date_fin},
+      variante=large,
+      compteur=#GET{compteur}
+    })]
+  </BOUCLE_expos_variante_large>
+
+  <BOUCLE_expos_variante_std(ARTICLES){id_article IN #GET{articles}}{doublons}>
+    [(#INCLURE{fond=inclure/cover_exhibition,
+      id_article,
+      lang,
+      date_debut=#GET{date_debut},
+      date_fin=#GET{date_fin},
+      variante=std
+    })]
+  </BOUCLE_expos_variante_std>
+
+  [(#GET{hasprev}|=={1}|ou{#GET{hasnext}|=={1}}|oui)
+    #INCLURE{fond=inclure/nav_prev-next-year_expositions,
+      label_courant=#ENV{date}|affdate{Y},
+      label_precedent=#GET{date_prev}|affdate_periode{#GET{affichage_duree}},
+      label_suivant=#GET{date_fin}|affdate_periode{#GET{affichage_duree}},
+      nombre_pages=#VAL{1}|plus{#GET{hasprev}|?{1,0}}|plus{#GET{hasnext}|?{1,0}},
+      page_courante=#GET{hasprev}|?{2,1},
+      url_precedent=#SELF|parametre_url{date,#GET{date_prev}|affdate{Y}},
+      url_suivant=#SELF|parametre_url{date,#GET{date_fin}|affdate{Y}},
+      position=bottom}
+  ]
+</div>
+#FILTRE{mini_html}

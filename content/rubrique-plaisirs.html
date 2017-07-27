@@ -1,0 +1,24 @@
+<BOUCLE_rubrique_plaisirs(RUBRIQUES){id_rubrique}>
+  [(#INCLURE{fond=inclure/nav_secteur-galerie, env})]
+  <article class="c-article">
+    <header class="c-article__header">
+      <h1 class="c-article__title c-article__title--rubric">[(#TITRE)]</h1>
+    </header>
+
+    <div class="c-article__main">
+      <div class="o-layout">
+        [<div class="o-layout__item u-7/10@desktop">
+          <div class="c-article__section c-text c-text--chapo">
+            (#TEXTE)
+          </div>
+        </div>]
+
+        <div class="o-layout__item">
+          <INCLURE{fond=inclure/liste/artistes-multi, lang_select=non, env, ajax} />
+        </div>
+      </div>
+
+    </div>
+  </article>
+</BOUCLE_rubrique_plaisirs>
+#FILTRE{mini_html}

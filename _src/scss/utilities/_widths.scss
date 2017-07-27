@@ -1,0 +1,29 @@
+// =====================================
+// widths
+// =====================================
+
+//
+// Plutôt que d'activer $inuit-offsets, qui produit beaucoup de code qui n'est
+// pas utilisé, on ajoute juste la classe nécessaire.
+//
+
+[class*="u-push-"] {
+  position: relative !important;
+  right: auto !important;
+}
+
+.u-push-1\/10 {
+  left: (1 / 10) * 100% !important;
+}
+
+@include mq(mobileLs) {
+  .u-push-1\/10\@mobileLs {
+    left: (1 / 10) * 100% !important;
+  }
+}
+
+@include mq(tablet) {
+  .u-push-1\/10\@tablet {
+    left: (1 / 10) * 100% !important;
+  }
+}

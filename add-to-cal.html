@@ -1,0 +1,20 @@
+[(#HTTP_HEADER{Content-Type: text/calendar; charset:#CHARSET;})][(#HTTP_HEADER{Content-Disposition: attachment; filename=Lahumiere_exhibition_#ID_EVENEMENT.ics})]
+<B_event>
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+<BOUCLE_event(EVENEMENTS){id_evenement}>
+BEGIN:VEVENT
+UID:[(#VAL{0}|uniqid)]
+SUMMARY:[(#INFO_TITRE{article, #ID_ARTICLE}|filtrer_ical)[. (#INFO_SOUSTITRE{article, #ID_ARTICLE}|filtrer_ical)]]
+DTSTAMP:[(#DATE|date_ical)]
+DTSTART:[(#DATE_DEBUT|date_ical)]
+DTEND:[(#DATE_FIN|date_ical)]
+URL;VALUE=URI:[(#URL_ARTICLE|url_absolue)]
+[(#LIEU|ou{#ADRESSE}|oui)
+LOCATION:[(#LIEU|filtrer_ical) ][(#ADRESSE|textebrut|filtrer_ical)]]
+END:VEVENT
+</BOUCLE_event>
+END:VCALENDAR
+</B_event>

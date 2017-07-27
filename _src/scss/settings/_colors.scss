@@ -1,0 +1,31 @@
+// *************************************
+//
+// Colors globals
+//
+// *************************************
+
+
+$color-black: #1a1a1a;
+$color-white: #fff;
+
+$color-gray-lighter: #efefef;
+$color-gray-light: #bababa;
+$color-gray: #7d7d7d;
+$color-gray-dark: #666666;
+$color-gray-darker: #5b5b5b;
+
+$color-yellow: #f8e71c;
+$color-orange: #cf7633;
+$color-red: #e01111;
+
+$color-green: #4caf50;
+$color-green-dark: #417505;
+
+
+
+$color-base: $color-gray-darker;
+$color-theme: $color-orange;
+$color-link: $color-black;
+$color-link-hover: $color-theme;
+
+$color-is-disabled: $color-gray-lighter;
