@@ -36,7 +36,7 @@
   <necessite nom="zcore" compatibilite="[2.6.1;2.6.*]" />
 
   <spip compatibilite="[3.1.0;3.1.*]">
-     <style type="public" source="css/app.css" />
+     <style type="public" source="css/app.min.css" />
      <script type="public" source="js/lib.min.js" />
      <script type="public" source="js/app.min.js" />
   </spip>

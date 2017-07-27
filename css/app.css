@@ -941,3 +941,18 @@ html { font-family: "FuturaPT", sans-serif; color: #1a1a1a; }
 @media (min-width: 27.4375em) { .u-push-1\/10\@mobileLs { left: 10% !important; } }
 
 @media (min-width: 40em) { .u-push-1\/10\@tablet { left: 10% !important; } }
+
+@media print { @page { margin: 0.5cm; }
+  /** 1. Black prints faster: http://www.sanbeiji.com/archives/953 */
+  *, *:before, *:after, *:first-letter, *:first-line { background: transparent !important; color: #000 !important; /* [1] */ -webkit-box-shadow: none !important; box-shadow: none !important; text-shadow: none !important; }
+  html { font: 12pt/1.4 "FuturaPT", sans-serif; }
+  body { padding: 0; margin: 0 10%; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+  .o-wrapper { max-width: inherit; }
+  .c-nav-site { text-align: center; }
+  .c-nav-site .o-layout__item { width: 100% !important; }
+  .c-nav-site__home--logo { margin-bottom: 1.375rem; }
+  .c-nav-utils, .c-nav-site__list, .c-nav-secondary, .c-footer { display: none; } }
