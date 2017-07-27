@@ -4,7 +4,7 @@
   etat="dev"
   logo="prive/themes/spip/images/lahumiere-48.png"
   prefix="lahumiere"
-  version="2.0.1"
+  version="2.0.2"
 >
   <nom>Lahumiere</nom>
   <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
@@ -20,20 +20,20 @@
   <utilise nom="sociaux" />
   <utilise nom="titre_logo" />
 
-  <necessite nom="agenda" compatibilite="[3.18.3;3.18.*]" />
-  <necessite nom="compositions" compatibilite="[3.5.9;3.5.*]" />
-  <necessite nom="identite_extra" compatibilite="[1.3.0;1.3.*]" />
-  <necessite nom="gis" compatibilite="[4.43.2;4.43.*]" />
-  <necessite nom="medoc" compatibilite="[2.3.0;2.3.*]" />
-  <necessite nom="metasplus" compatibilite="[1.1.9;1.1.*]" />
-  <necessite nom="mll" compatibilite="[1.2.4;1.2.*]" />
-  <necessite nom="open_close" compatibilite="[1.0.0;1.0.*]" />
-  <necessite nom="ordoc" compatibilite="[1.1.1;1.1.*]" />
-  <necessite nom="pages" compatibilite="[1.3.7;1.3.*]" />
-  <necessite nom="pb_selection" compatibilite="[3.1.4;3.1.*]" />
-  <necessite nom="ps" compatibilite="[0.1.0;0.1.*]" />
-  <necessite nom="suivant_precedent" compatibilite="[1.4.2;1.4.*]" />
-  <necessite nom="zcore" compatibilite="[2.6.1;2.6.*]" />
+  <necessite nom="agenda" />
+  <necessite nom="compositions" />
+  <necessite nom="identite_extra" />
+  <necessite nom="gis" />
+  <necessite nom="medoc" />
+  <necessite nom="metasplus" />
+  <necessite nom="mll" />
+  <necessite nom="open_close" />
+  <necessite nom="ordoc" />
+  <necessite nom="pages" />
+  <necessite nom="pb_selection" />
+  <necessite nom="ps" />
+  <necessite nom="suivant_precedent" />
+  <necessite nom="zcore" />
 
   <spip compatibilite="[3.1.0;3.1.*]">
      <style type="public" source="css/app.min.css" />
