@@ -1,0 +1,68 @@
+<BOUCLE_logo_article(ARTICLES){id_article}>
+[(#REM)
+  <!--
+  Largeur du logo en fonction des breakpoints.
+  Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+  ************************************************************************
+    desktop hdpi : 1600px
+    desktop: 952px
+    tablet: 538 | 826
+    mobileLs: 399 | 599
+    mobile: 300 | 418
+  -->
+]
+
+[(#REM)
+  <!--
+    Le logo devrait avoir une largeur mimum de 1600 px.
+    Sinon on "fabrique" une image à cette taille.
+  -->
+]
+  [(#LOGO_ARTICLE|largeur|>={1600}|?{
+    [(#SET{fichier, #LOGO_ARTICLE|image_reduire{1600,0} })]
+    ,
+    [(#SET{fichier, #LOGO_ARTICLE|image_passe_partout{1600,0}|image_recadre{1600,0,'center','#000000'} })]
+  })]
+
+[(#REM)
+  <!--
+    Une image de 952 px de largeur sera utilisée deux fois,
+    version par défaut et une seconde fois explicitement.
+  -->
+]
+  [(#SET{952w, #GET{fichier}|image_reduire{952,0} })]
+
+[(#REM)
+  <!--
+    Titre, descriptif et alt
+  -->
+]
+  [(#PLUGIN{titre_logo}|?{
+    [(#SET{titre, #TITRE_LOGO})]
+    [(#SET{descriptif, #DESCRIPTIF_LOGO})]
+    [(#SET{alt, [(#TITRE_LOGO|sinon{#DESCRIPTIF_LOGO}|sinon{#LOGO_ARTICLE**}|supprimer_tags)]})]
+  ,
+    [(#SET{alt, [(#LOGO_ARTICLE**)]})]
+  })]
+
+<figure class="c-figure c-figure--logo-article">
+  [<img src="
+    (#GET{952w}|extraire_attribut{src})
+  " srcset="
+    [(#GET{fichier}|extraire_attribut{src}) 1600w,]
+    [(#GET{952w}|extraire_attribut{src}) 952w,]
+    [(#GET{fichier}|image_reduire{800,0}|extraire_attribut{src}) 800w,]
+    [(#GET{fichier}|image_reduire{600,0}|extraire_attribut{src}) 600w,]
+    [(#GET{fichier}|image_reduire{400,0}|extraire_attribut{src}) 400w]
+  " sizes="100vw" alt="#GET{alt}" class="c-figure__img">]
+  [(#PLUGIN{titre_logo}|oui)
+    [(#GET{titre}|ou{#GET{descriptif}}|oui)
+      <figcaption class="c-figure__caption">
+        [<h3 class="c-figure__title">(#GET{titre})</h3>]
+        [<div class="c-figure__desc">(#GET{descriptif})</div>]
+      </figcaption>
+    ]
+  ]
+</figure>
+</BOUCLE_logo_article>
+#FILTRE{mini_html}

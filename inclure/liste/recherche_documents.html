@@ -1,0 +1,27 @@
+#SET{selection,#ENV{selection}}
+#SET{decalage_compteur, #ENV{debut_documents, 1}}
+#SET{url_doc, ''}
+#SET{id_article, ''}
+#SET{id_rubrique, ''}
+<B_documents>
+#ANCRE_PAGINATION
+[<h2 class="c-search__count">(#GET{selection}|count|singulier_ou_pluriel{lahumiere:recherche_result_document,lahumiere:recherche_result_documents,nb})</h2>]
+<ul class="c-search__list"[ style="counter-reset: cpt (#GET{decalage_compteur}|moins{1});"]>
+   <BOUCLE_documents(DOCUMENTS){id_document IN #GET{selection}}{pagination 10}>
+     [(#REM) <!-- calcul de l'url --> ]
+       <BOUCLE_lien_article(documents_liens){id_document}{objet=article}>[
+        (#SET{url_doc, #INFO_URL{article,#ID_OBJET}})] #SET{id_article, #ID_OBJET} <BOUCLE_rub(ARTICLES){id_article=#GET{id_article}}>#SET{id_rubrique, #ID_RUBRIQUE}</BOUCLE_rub></BOUCLE_lien_article>
+       <BOUCLE_lien_rubrique(documents_liens){id_document}{objet=rubrique}>[
+        (#SET{url_doc,#INFO_URL{rubrique,#ID_OBJET}})] #SET{id_rubrique, #ID_OBJET} </BOUCLE_lien_rubrique>
+      [(#REM) <!-- hierarchie --> ]
+
+   <li class="c-search__result c-result">
+     [<h3 class="c-result__title"><a href="[(#GET{url_doc}|ancre_url{portfolio})]">(#TITRE|sinon{#FICHIER|basename}) [<svg class="o-icon o-icon--s"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{arrowRightLarge})"></use></svg>]</a></h3>]
+     [<div class="c-result__description">(#DESCRIPTIF)</div>]
+     <BOUCLE_rub_hierarchie(RUBRIQUES){id_rubrique=#GET{id_rubrique}}><p class="c-result__path">/ <BOUCLE_hierarchie(HIERARCHIE){id_rubrique}{' / '}{tout}>[(#TITRE)]</BOUCLE_hierarchie>[(#GET{id_article}|is_numeric|oui)[ / (#INFO_TITRE{article, #GET{id_article}}|prenom_nom)]]</p></BOUCLE_rub_hierarchie>
+   </li>
+ </BOUCLE_documents>
+</ul>
+[<nav class="c-pagination c-pagination--spip" role="navigation">(#PAGINATION{item})</nav>]
+</B_documents>
+#FILTRE{mini_html}

@@ -1,0 +1,28 @@
+<BOUCLE_rubrique_vue_images_document(DOCUMENTS){id_article}{vu=non}{extension IN jpg, png, gif}{0,1}{par rang_lien}>
+[(#REM)
+  <!--
+  Largeur du logo en fonction des breakpoints.
+  Pour les valeurs des breakpoints, voir _src/scss/settings/_globals.scss
+  ************************************************************************
+    desktop hdpi: 800px
+    desktop:      262px | 304px
+    tablet:       259px | 403px
+    mobileLs:     190px | 290px
+    mobile:       290px | 398px
+  -->
+][(#REM)
+  <!--
+    Une image de 405px de largeur sera utilisée deux fois,
+    version par défaut et une seconde fois explicitement.
+  -->
+][(#SET{405w, #FICHIER|image_reduire{405,0}|extraire_attribut{src} })]
+
+[<img src="
+  (#GET{405w})
+" srcset="
+  [(#FICHIER|image_reduire{800,0}|extraire_attribut{src}) 800w,]
+  [(#GET{405w}) 405w,]
+  [(#FICHIER|image_reduire{305,0}|extraire_attribut{src}) 305w,]
+  [(#FICHIER|image_reduire{190,0}|extraire_attribut{src}) 190w]
+" sizes="100vw" alt="[(#INFO_TITRE{article, #ID_ARTICLE}|prenom_nom)]" class="c-artist__img">]
+</BOUCLE_rubrique_vue_images_document>

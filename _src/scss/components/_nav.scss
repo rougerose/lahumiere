@@ -1,0 +1,30 @@
+// =====================================
+// nav
+// =====================================
+
+//
+// Styles communs à tous les éléments de navigation
+//
+
+.c-nav {
+  text-transform: uppercase;
+}
+
+
+//
+// list
+// -------------------------------------
+
+.c-nav__list {
+  margin: 0;
+  list-style: none;
+}
+
+
+//
+// list-item
+// -------------------------------------
+
+.c-nav__list-item {
+  display: inline-block;
+}

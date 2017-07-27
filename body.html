@@ -1,0 +1,14 @@
+<body>
+  <div class="o-wrapper">
+    <INCLURE{fond=header/#ENV{type-page}, env} />
+    <div class="o-layout">
+      <div class="o-layout__item u-9/10@tablet u-push-1/10@tablet">
+        <main>
+          <INCLURE{fond=content/#ENV{type-page}, env} />
+        </main>
+        <INCLURE{fond=footer/#ENV{type-page}, env} />
+      </div>
+    </div>
+  </div>
+</body>
+#FILTRE{mini_html}

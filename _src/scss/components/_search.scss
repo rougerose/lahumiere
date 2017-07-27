@@ -1,0 +1,59 @@
+// =====================================
+// search
+// =====================================
+
+.c-search {}
+
+
+//
+// variable
+// -------------------------------------
+
+.c-search__variable {
+  color: $color-theme;
+  font-style: italic;
+}
+
+//
+// results
+// -------------------------------------
+
+.c-search__results {
+  border-bottom: 1px solid $color-gray-lighter;
+  margin-bottom: $spacing-unit-large;
+}
+
+
+//
+// count
+// -------------------------------------
+
+.c-search__count {
+  // font-family: $font-futuraHeavy;
+  @include inuit-font-size(20px);
+  font-weight: bold;
+}
+
+// ----- variante count--total ----- //
+
+.c-search__count--total {
+  @include inuit-font-size(24px);
+}
+
+
+//
+// list
+// -------------------------------------
+
+.c-search__list {
+  list-style-type: none;
+}
+
+
+//
+// result
+// -------------------------------------
+
+.c-search__result {
+  margin-bottom: $spacing-unit;
+}

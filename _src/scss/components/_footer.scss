@@ -1,0 +1,22 @@
+// =====================================
+// footer
+// =====================================
+
+.c-footer {
+  border-top: 1px solid $color-black;
+  margin-top: $spacing-unit-large;
+  padding-top: $spacing-unit-large;
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-footer__item {
+  margin-bottom: $spacing-unit-large;
+
+  @include mq($until: mobileLs) {
+    text-align: center;
+  }
+}

@@ -1,0 +1,111 @@
+// =====================================
+// button
+// =====================================
+
+.c-btn {
+  border: 1px solid $color-black;
+  display: inline-block;
+  background-color: transparent;
+  font-family: $font-base;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all $global-transition;
+}
+
+// ----- variantes size ----- //
+
+.c-btn--xs {
+  padding: $spacing-unit-tiny;
+  @include inuit-font-size(12px, normal);
+}
+
+.c-btn--s {
+  padding: $spacing-unit-small $spacing-unit-small $spacing-unit-tiny;
+  @include inuit-font-size(16px, normal);
+}
+
+// ----- variantes color ----- //
+
+.c-btn--primary {
+  border-color: $color-gray-lighter;
+  background-color: transparent;
+  color: $color-black;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-white;
+    border-color: $color-theme;
+    background-color: $color-theme;
+  }
+
+  &:active,
+  &:focus {
+    border-color: darken($color-theme, 15%) lighten($color-theme, 20%) lighten($color-theme, 20%) darken($color-theme, 15%);
+  }
+}
+
+.c-btn--secondary {
+  background-color: $color-black;
+  border-color: $color-black;
+  color: $color-white;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-white;
+    border-color: $color-theme;
+    background-color: $color-theme;
+  }
+
+  &:active,
+  &:focus {
+    border-color: darken($color-theme, 15%) lighten($color-theme, 20%) lighten($color-theme, 20%) darken($color-theme, 15%);
+  }
+}
+
+
+// ----- variante search-close ----- //
+
+.c-btn--search-close {
+  display: none;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  opacity: 0;
+
+  > svg {
+    fill: $color-white;
+  }
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include mq(tablet) {
+    right: 32px;
+    top: 32px;
+  }
+}
+
+//
+// icon
+// -------------------------------------
+
+.c-btn__icon {}
+
+
+//
+// label
+// -------------------------------------
+
+.c-btn__label {
+  margin-left: $spacing-unit-tiny;
+  vertical-align: middle;
+}

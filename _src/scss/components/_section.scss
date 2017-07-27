@@ -1,0 +1,83 @@
+// =====================================
+// section
+// =====================================
+
+.c-section {}
+
+//
+// header
+// -------------------------------------
+
+.c-section__header {
+  margin-bottom: $spacing-unit;
+
+  @include mq(tablet) {
+    margin-bottom: $spacing-unit-large;
+  }
+}
+
+
+//
+// title
+// -------------------------------------
+
+.c-section__title {
+  @include inuit-font-size(20px, false);
+  text-transform: uppercase;
+
+  &:after {
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+    content: "";
+
+    @include mq(tablet) {
+      width: 50%;
+    }
+  }
+}
+
+
+// ----- variante nested ----- //
+
+.c-section--nested {
+  @include mq(mobileLs) {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: $spacing-unit-small;
+  }
+
+  // header
+  & > .c-section__header {
+    margin-bottom: 0;
+
+    @include mq(mobileLs) {
+      flex: 1 0 25%;
+    }
+
+    @include mq(tablet) {
+      flex: 1 0 20%;
+    }
+  }
+
+  // title
+  & .c-section__title {
+    margin: 0 0 $spacing-unit-small;
+    @include inuit-font-size(18px);
+
+    &:after {
+      display: none;
+    }
+  }
+
+  // body
+  .c-section__body {
+    @include mq(mobileLs) {
+      flex: 1 0 75%;
+    }
+
+    @include mq(tablet) {
+      flex: 1 0 80%;
+    }
+  }
+}

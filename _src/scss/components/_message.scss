@@ -1,0 +1,60 @@
+// =====================================
+// message
+// =====================================
+
+.c-message {
+
+  &.is-closed {
+    font-weight: bold;
+  }
+
+  &.is-opened {
+    color: $color-green;
+    font-weight: bold;
+  }
+
+  &.is-error,
+  &.is-closed {
+    color: $color-red;
+  }
+}
+
+// ----- variante reverse ----- //
+
+.c-message--reverse {
+
+  &.is-error,
+  &.is-ok {
+    color: $color-white;
+  }
+
+  &.is-error {
+    background-color: $color-red;
+  }
+
+  &.is-ok {
+    background-color: $color-green;
+  }
+}
+
+
+// ----- variante emergency (plugin alerte_urgence) ----- //
+
+.c-message--emergency {
+  margin-bottom: $spacing-unit-tiny;
+  overflow: hidden;
+  padding: 1.5em;
+  background-color: $color-theme;
+  color: $color-white;
+  text-align: center;
+  box-shadow: 0 8px 8px -5px rgba($color-theme, 0.5);
+
+  a {
+    color: $color-white;
+    text-decoration:underline;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

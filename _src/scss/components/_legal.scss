@@ -1,0 +1,55 @@
+// =====================================
+// legal
+// =====================================
+
+.c-legal {
+  border-top: 1px solid $color-black;
+  margin-bottom: $spacing-unit;
+  padding-top: $spacing-unit;
+  @include inuit-font-size(13px);
+  letter-spacing: $global-letter-spacing;
+  text-transform: uppercase;
+
+  @include mq(tablet) {
+    display: table;
+    width: 100%;
+  }
+}
+
+
+//
+// item
+// -------------------------------------
+
+.c-legal__item {
+  margin-bottom: $spacing-unit-small;
+  text-align: center;
+
+  @include mq(tablet) {
+    display: table-cell;
+    text-align: left;
+  }
+}
+
+// ----- variantes copyright ----- //
+
+.c-legal__item--copyright {}
+
+.c-legal__item--credits {
+  @include mq(tablet) {
+    text-align: right;
+  }
+}
+
+
+//
+// link
+// -------------------------------------
+
+.c-legal__link {
+  margin: 0 $spacing-unit-small;
+
+  @include mq(tablet) {
+    margin-right: 0;
+  }
+}

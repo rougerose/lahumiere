@@ -1,0 +1,14 @@
+#SET{vue, #ENV{vue}}
+
+<nav class="c-nav c-nav-chooser" role="navigation">
+  <h1 class="c-nav-chooser__title"><:lahumiere:nav_view:></h1>
+  [<a href="(#SELF|parametre_url{vue,liste})" class="c-nav-chooser__link[ (#GET{vue}|=={liste}|?{is-current})] ajax">
+    [<svg class="o-icon o-icon--bottom o-icon--s"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{list})"></use></svg>]
+    <span><:lahumiere:nav_list:></span>
+  </a>]
+  [<a href="(#SELF|parametre_url{vue, images})" class="c-nav-chooser__link[ (#GET{vue}|=={images}|?{is-current})] ajax">
+    [<svg class="o-icon o-icon--bottom o-icon--s"><use xlink:href="(#CHEMIN{images/icons-sprite.svg}|ancre_url{grid})"></use></svg>]
+    <span><:lahumiere:nav_images:></span>
+  </a>]
+</nav>
+#FILTRE{mini_html}
