@@ -27,6 +27,8 @@
     [(#SET{dates, [(#DATE_DEBUT|affdate_debut_fin{#DATE_FIN,non,abbr})]})]
   </BOUCLE_evenement>
 
+  <BOUCLE_mot_actualite(MOTS){id_article}{id_mot=27}>[(#SET{statut, <:lahumiere:news:>})]</BOUCLE_mot_actualite>
+
   <article class="o-layout__item[(#GET{variante}|=={std}|oui) u-5/10@mobileLs u-3/9@desktop] c-cover">
     <a href="#URL_ARTICLE" class="c-cover__link">
       <p class="c-cover__meta c-meta[(#GET{variante}|=={std}|oui) c-meta--std]">
