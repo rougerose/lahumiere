@@ -36,6 +36,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'nav_list'                   => 'list',
   'nav_view'                   => 'View',
   'next'                       => 'Suivant',
+  'news'                       => 'News',
   // P
   'previous'                   => 'Previous',
   // R

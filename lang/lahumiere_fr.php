@@ -36,6 +36,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'nav_list'                   => 'liste',
   'nav_view'                   => 'Afficher',
   'next'                       => 'Suivant',
+  'news'                       => 'Actualité',
   // P
   'previous'                   => 'Précédent',
   // R
@@ -50,7 +51,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'recherche_result_documents' => '@nb@ documents',
   'recherche_result_section'   => '1 rubrique',
   'recherche_result_sections'  => '@nb@ rubriques',
-  'recherche_result'            => '1 résultat',
+  'recherche_result'           => '1 résultat',
   'recherche_results'          => '@nb@ résultats',
   'recherche_result_void'      => 'Aucun résultat',
   'retour_accueil'             => 'Retour à la page d\'accueil'
