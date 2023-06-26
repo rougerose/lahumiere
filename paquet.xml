@@ -9,26 +9,19 @@
   <nom>Lahumiere</nom>
   <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
 
-  <!-- <pipeline nom="insert_head_css" inclure="lahumiere_pipelines.php" /> -->
-  <!-- <pipeline nom="insert_head" inclure="lahumiere_pipelines.php" /> -->
-
   <utilise nom="alerte_urgence" />
   <utilise nom="intertitrestdm" />
   <utilise nom="bellespuces" />
   <utilise nom="fulltext" />
-  <!-- <utilise nom="minidoc" /> -->
   <utilise nom="sociaux" />
-  <!-- <utilise nom="titre_logo" /> -->
 
   <necessite nom="agenda" />
   <necessite nom="compositions" />
   <necessite nom="identite_extra" />
   <necessite nom="gis" />
-  <!-- <necessite nom="medoc" /> -->
   <necessite nom="metasplus" />
   <necessite nom="mll" />
   <necessite nom="open_close" />
-  <!-- <necessite nom="ordoc" /> -->
   <necessite nom="pages" />
   <necessite nom="pb_selection" />
   <necessite nom="ps" />
