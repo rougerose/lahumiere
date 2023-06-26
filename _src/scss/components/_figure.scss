@@ -8,14 +8,14 @@
 
 // ----- variante logo-article ----- //
 
-.c-figure--logo-article {}
+.c-figure--logo-article {
+}
 
 // ----- variante portfolio ----- //
 
 .c-figure--portfolio {
   margin-bottom: $spacing-unit-large;
 }
-
 
 //
 // link
@@ -25,13 +25,12 @@
   display: block;
 }
 
-
 //
 // img
 // -------------------------------------
 
-.c-figure__img {}
-
+.c-figure__img {
+}
 
 //
 // caption
@@ -44,7 +43,6 @@
   border-left: 1px solid rgba($color-gray-light, 0.5);
 }
 
-
 //
 // title, desc & author
 // -------------------------------------
@@ -56,7 +54,6 @@
   @include inuit-font-size(15px);
 }
 
-
 //
 // title
 // -------------------------------------
@@ -65,7 +62,6 @@
   margin-bottom: $spacing-unit-tiny;
   font-style: italic;
 }
-
 
 //
 // desc & author
