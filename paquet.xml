@@ -16,7 +16,7 @@
   <utilise nom="intertitrestdm" />
   <utilise nom="bellespuces" />
   <utilise nom="fulltext" />
-  <utilise nom="minidoc" />
+  <!-- <utilise nom="minidoc" /> -->
   <utilise nom="sociaux" />
   <utilise nom="titre_logo" />
 
@@ -28,7 +28,7 @@
   <necessite nom="metasplus" />
   <necessite nom="mll" />
   <necessite nom="open_close" />
-  <necessite nom="ordoc" />
+  <!-- <necessite nom="ordoc" /> -->
   <necessite nom="pages" />
   <necessite nom="pb_selection" />
   <necessite nom="ps" />
