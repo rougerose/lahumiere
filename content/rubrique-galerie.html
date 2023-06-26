@@ -91,7 +91,7 @@
               </div>
             </div>
             <BOUCLE_carte_galerie(GIS){id_rubrique}{0,1}>
-              [(#INCLURE{fond=modeles/carte_gis, id_gis, langue=#ENV{lang} zoom=#ZOOM, hauteur=300px})]
+              [(#INCLURE{fond=modeles/carte_gis, id_gis, langue=#ENV{lang}, zoom=#ZOOM, hauteur=300px})]
             </BOUCLE_carte_galerie>
           </section>
         </div>
@@ -103,4 +103,3 @@
     </div>
   </article>
 </BOUCLE_rubrique_galerie>
-#FILTRE{mini_html}
