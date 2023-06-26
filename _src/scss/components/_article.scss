@@ -6,7 +6,6 @@
   margin-bottom: $spacing-unit;
 }
 
-
 //
 // header
 // -------------------------------------
@@ -18,7 +17,6 @@
     text-align: center;
   }
 }
-
 
 //
 // title
@@ -47,7 +45,6 @@
   @include inuit-font-size(24px, false);
 }
 
-
 //
 // main
 // -------------------------------------
@@ -58,7 +55,6 @@
     padding-right: $spacing-unit-small;
   }
 }
-
 
 //
 // section
@@ -72,27 +68,25 @@
   // }
 }
 
-
 //
 // chapo
 // -------------------------------------
 
-.c-article__chapo {}
-
+.c-article__chapo {
+}
 
 //
 // text
 // -------------------------------------
 
-.c-article__text {}
-
+.c-article__text {
+}
 
 //
 // footnotes
 // -------------------------------------
 
 .c-article__footnotes {
-
   &:before {
     display: block;
     margin-bottom: $spacing-unit-small;
@@ -100,5 +94,12 @@
     width: 30%;
     content: "";
     background-color: $color-gray-light;
+  }
+}
+
+// photoswipe caption
+.c-article {
+  & .pswp__caption__center {
+    font-size: unset;
   }
 }
