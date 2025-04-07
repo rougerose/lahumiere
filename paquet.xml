@@ -1,20 +1,18 @@
 <paquet
   categorie="squelette"
-  compatibilite="[3.1.3;4.2.*]"
+  compatibilite="[3.1.3;4.4.*]"
   etat="stable"
   logo="prive/themes/spip/images/lahumiere-48.png"
   prefix="lahumiere"
-  version="2.0.9"
+  version="2.0.10"
 >
   <nom>Lahumiere</nom>
   <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
 
-  <utilise nom="alerte_urgence" />
-  <utilise nom="intertitrestdm" />
-  <utilise nom="bellespuces" />
-  <utilise nom="fulltext" />
-  <utilise nom="sociaux" />
-
+  <necessite nom="alerte_urgence" />
+  <necessite nom="porte_plume_intertitres" />
+  <necessite nom="fulltext" />
+  <necessite nom="sociaux" />
   <necessite nom="agenda" />
   <necessite nom="compositions" />
   <necessite nom="identite_extra" />
@@ -27,8 +25,10 @@
   <necessite nom="ps" />
   <necessite nom="suivant_precedent" />
   <necessite nom="zcore" />
+  <necessite nom="bellespuces" />
+  <necessite nom="yaml" />
 
-  <spip compatibilite="[3.1.0;4.2.*]">
+  <spip compatibilite="[3.1.0;4.4.*]">
      <style type="public" source="css/app.css" />
      <script type="public" source="js/lib.min.js" />
      <script type="public" source="js/app.js" />
