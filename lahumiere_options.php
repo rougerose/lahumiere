@@ -1,15 +1,15 @@
 <?php
 
-if (!defined("_ECRIRE_INC_VERSION")) return;
+if (!defined('_ECRIRE_INC_VERSION')) {
+	return;
+}
 
 // zcore
-$GLOBALS['z_blocs'] = array('content', 'head', 'head_js', 'header', 'footer');
-
+$GLOBALS['z_blocs'] = ['content', 'head', 'head_js', 'header', 'footer'];
 
 // Intertitres
 $GLOBALS['debut_intertitre'] = '<h2 class="spip">';
 $GLOBALS['fin_intertitre'] = '</h2>';
-
 
 // Développement
 
